@@ -3,14 +3,14 @@ div.seatCharts-container {
 }
 div.seatCharts-cell {
 
-	height: 30px;
-	width: 30px;
-	margin: 3px;
+	height: 20px;
+	width: 20px;
+	margin: 2px;
 	float: left;
 	text-align: center;
 	outline: none;
-	font-size: 15px;
-	line-height:30px;
+	font-size: 0px;
+	line-height:20px;
 
 }
 div.seatCharts-seat {

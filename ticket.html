@@ -5,7 +5,7 @@
   <script src="static/js/jquery.datetimepicker.js"></script>  
   <script src="static/js/jquery.seat-charts.js"></script>  
   <meta charset="utf-8">
-  <title>Hey-Movie</title>
+  <title>Seating</title>
   <link rel="stylesheet" href="static/css/pure/pure.css" />
   <link rel="stylesheet" href="static/css/layouts/marketing.css" />
   <link rel="stylesheet" href="static/css/jquery/jquery-ui.css" />
@@ -20,7 +20,7 @@
 			$counter = $('#counter'),
 			sc = $('#seat-map').seatCharts({
 			map: [//19 hang
-				'_________ffeeeeeeeeeeeeeeeeeeeeff_________',//11-30  		   D
+				'_________ffeeeeeeeeeeeeeeeeeeeeff_________',//11-30  		     D
 				's_eeeeee_ffeeeeeeeeeeeeeeeeeeeeef_eeeeee_s',//3-8, 9-29, 30-35  E
 				's_eeeeee_feeeeeeeeeeeeeeeeeeeeeef_eeeeee_s',//4-9, 10-31, 32-37 F
 				's_eeeeee_feeeeeeeeeeeeeeeeeeeeeee_eeeeee_s',//3-8, 9-31, 32-37  G
@@ -41,7 +41,14 @@
 				's________fffeeeee_________eeeeeff________s',//11-30  		   X
 				's________________________________________s',//nothing		   Y
 				'___________rrrrrrrrrrrrrrrrrrrr___________',//11-30  		   Z
-
+				'__________________________________________',//nothing
+				'__ssssssssssssssssssssssssssssssssssssss__',//2-39 AA
+				'__fsssssssssssssssssssssssssssssssssssff__',//3-37 BB
+				'__fssssssssssssssssssssssssssssssssssssf__',//3-38 CC
+				'__fsssssssssssssssssssssssssssssssssssff__',//3-37 DD
+				'__ffssssssssssssssssssssssssssssssssssff__',//4-37 EE
+				'__ffsssssssssssssssssssssssssssssssssfff__',//4-36 FF
+				'__fffssssssssssssssssssssssssssssssssfff__',//5-36 GG
 				
 			],
 			seats: {
@@ -113,9 +120,9 @@
   <div class="header">
     <div class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
       <ul>
-        <li class="pure-menu-selected pure-menu-home"><a href="/">Hey Movie</a></li>
+        <!-- <li class="pure-menu-selected pure-menu-home"><a href="/">Hey Movie</a></li>
         <li class="pure-menu-normal"><a href="/logout">Log out</a></li>
-        <li class="pure-menu-normal"><a href="/profile">User Profile</a></li>
+        <li class="pure-menu-normal"><a href="/profile">User Profile</a></li> -->
       </ul>
     </div>
   </div>
@@ -134,7 +141,7 @@
 	<div class="wrapper">
 		<div class="container">
 			<div id="seat-map" style="text-align:center; margin-left: 7%;">
-				<div class="front-indicator" style="text-align:center; width:92%">Screen</div>
+				<div class="front-indicator" style="text-align:center; width:92%">Stage</div>
 				
 			</div>
 			<div class="booking-details" style="display:none">
