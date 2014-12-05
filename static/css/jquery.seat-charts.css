@@ -1,0 +1,82 @@
+div.seatCharts-container {
+	/*min-width: 700px;*/
+}
+div.seatCharts-cell {
+
+	height: 30px;
+	width: 30px;
+	margin: 3px;
+	float: left;
+	text-align: center;
+	outline: none;
+	font-size: 15px;
+	line-height:30px;
+
+}
+div.seatCharts-seat {
+	background-color: #1f8dd6;
+	color: white;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	cursor: default;
+}
+div.seatCharts-seat:focus {
+	border: none;
+}
+/*
+.seatCharts-seat:focus {
+	outline: none;
+}
+*/
+
+div.seatCharts-space {
+	background-color: white;
+}
+div.seatCharts-row {
+	height: 50px;
+}
+
+div.seatCharts-seat.first {
+	background-color: #1F8DD6;
+}
+
+div.seatCharts-seat.second {
+	background-color: #18CE81;
+}
+
+div.seatCharts-row:after {
+	clear: both;
+}
+
+div.seatCharts-seat.selected {
+	background-color: black;
+}
+
+div.seatCharts-seat.focused {
+	background-color: rgb(3, 76, 158);
+}
+
+div.seatCharts-seat.unavailable {
+	background-color: red;
+	cursor: not-allowed;
+}
+
+div.seatCharts-seat.reserved {
+	background-color: orange;
+	cursor: not-allowed;
+}
+
+div.seatCharts-seat.na {
+	background-color: grey;
+	cursor: not-allowed;
+}
+
+ul.seatCharts-legendList {
+	list-style: none;
+}
+
+li.seatCharts-legendItem {
+	margin-top: 10px;
+	line-height: 2;
+}

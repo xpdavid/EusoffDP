@@ -2,58 +2,58 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-<style type="text/css">
-body {
-	overflow:hidden;
-	background-image: url('img/intro_bg.png');
-}
-#light {
-	position:absolute;
-	left:0;
-	top:0;
-	z-index:2001;
-	height:200px;
-	width:200px;
-	border:100px solid rgba(0, 0, 0, 0.6);
-	border-radius:200px;
-	border:1px solid #000\9;
-	background-color:green\9;
-	filter:progid:DXImageTransform.Microsoft.Chroma(color=green) progid:DXImageTransform.Microsoft.Alpha(opacity=60)\9;
-}
+	<style type="text/css">
+		body {
+			overflow:hidden;
+			background-image: url('img/intro_bg.png');
+		}
+		#light {
+			position:absolute;
+			left:0;
+			top:0;
+			z-index:2001;
+			height:200px;
+			width:200px;
+			border:100px solid rgba(0, 0, 0, 0.6);
+			border-radius:200px;
+			border:1px solid #000\9;
+			background-color:green\9;
+			filter:progid:DXImageTransform.Microsoft.Chroma(color=green) progid:DXImageTransform.Microsoft.Alpha(opacity=60)\9;
+		}
 
-#title {
-	position: absolute;
-	top: 50%;
-	left: 60%;
-}
+		#title {
+			position: absolute;
+			top: 50%;
+			left: 60%;
+		}
 
-</style>
+	</style>
 
 </head>
 <body scroll=0>
-<div id="title">
-	<img src="img/intro_title.png">
-</div>
-<div id='light' onclick="loadMainPage()"></div>
-<script type='text/javascript'>
-var w = screen.width;
-console.log(w);
-var l = document.getElementById('light');
-l.style.borderWidth = (w+200)+'px';
-console.log(l.style.borderWidth);
-l.style.borderRadius = w*2+'px';
-l.style.top = l.style.left = (-w-200)+'px';
-document.onmousemove = function(e){
-    with(l.style)
-{
-left =((e&&e.clientX?e.clientX:event.clientX)-w-300)+'px';
-top = ((e&&e.clientY?e.clientY:event.clientY)-w-300)+'px';
-}
-};
+	<div id="title">
+		<img src="img/intro_title.png">
+	</div>
+	<div id='light' onclick="loadMainPage()"></div>
+	<script type='text/javascript'>
+		var w = screen.width;
+		console.log(w);
+		var l = document.getElementById('light');
+		l.style.borderWidth = (w+200)+'px';
+		console.log(l.style.borderWidth);
+		l.style.borderRadius = w*2+'px';
+		l.style.top = l.style.left = (-w-200)+'px';
+		document.onmousemove = function(e){
+			with(l.style)
+			{
+				left =((e&&e.clientX?e.clientX:event.clientX)-w-300)+'px';
+				top = ((e&&e.clientY?e.clientY:event.clientY)-w-300)+'px';
+			}
+		};
 
-function loadMainPage(){
-	window.location.href = "main.html";
-}
-</script>
+		function loadMainPage(){
+			window.location.href = "new_main.html";
+		}
+	</script>
 </body>
 </html>
