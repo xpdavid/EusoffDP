@@ -13,12 +13,67 @@
   <link rel="stylesheet" href="static/css/jquery.seat-charts.css" />
 </head>
 <body>
-<script>
+  <script>
+  	$(document).ready(function(){
+  		$('#choose-first-floor').click(function() {
+  			$('#choose-first-floor').addClass('selected');
+  			$('#choose-second-floor').removeClass('selected');
+  			$('#floor1').show();
+  			$('#floor2').hide();
+  		});
+
+  		$('#choose-second-floor').click(function() {
+  			$('#choose-second-floor').addClass('selected');
+  			$('#choose-first-floor').removeClass('selected');
+  			$('#floor2').show();
+  			$('#floor1').hide();
+  		});
+  	});
+  </script>
+  <div class="header">
+    <div class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+      <ul>
+        <!-- <li class="pure-menu-selected pure-menu-home"><a href="/">Hey Movie</a></li>
+        <li class="pure-menu-normal"><a href="/logout">Log out</a></li>
+        <li class="pure-menu-normal"><a href="/profile">User Profile</a></li> -->
+      </ul>
+    </div>
+  </div>
+
+<h2 class="content-head is-center" style="margin-top: 5%; margin-bottom: 5%">Book Ticket</h2>
+<div id='floor-menu' style="text-align: center">
+	<button type="submit" id="choose-first-floor" class="pure-button pure-button-floor selected">first floor</button>
+	<button type="submit" id="choose-second-floor" class="pure-button pure-button-floor">second floor</button>
+</div>
+
+<div id="floor1" class="content book-movie1" style="text-align:center;">
+	<div class="wrapper">
+		<div class="container">
+			<div id="seat-map1" style="margin-left: 0%; width: 1033px">
+				<div class="front-indicator" style="text-align:center;">Stage</div>
+				
+			</div>
+			<div class="booking-details" style="display:none">
+				<h2>Booking Details</h2>
+				
+				<h3> Selected Seats (<span id="counter">0</span>):</h3>
+				<ul id="selected-seats"></ul>
+			</div>
+		</div>
+	</div>
+	<form action="/movie/book" method="post" class="pure-form pure-form-single" style="margin-top: 5%;">
+		<input id="email" name="email" type="email" placeholder="Your Email here" />
+		<input id="seat1" name="seat1" type="text" placeholder="Seat" />
+		<div id="shows-option"></div>
+		<br /><br /><br />
+		<button type="submit" class="pure-button pure-button-primary" style="margin-bottom: 10%">Book!</button>
+	</form>
+	<script>
 	$(document).ready(function(){
 
 		var $cart = $('#selected-seats'),
 			$counter = $('#counter'),
-			sc = $('#seat-map').seatCharts({
+			sc = $('#seat-map1').seatCharts({
 			map: [//19 hang
 				'_________ffeeeeeeeeeeeeeeeeeeeeff_________',//11-30  		     D
 				's_eeeeee_ffeeeeeeeeeeeeeeeeeeeeef_eeeeee_s',//3-8, 9-29, 30-35  E
@@ -82,7 +137,7 @@
 						.data('seatId', this.settings.id)
 						.appendTo($cart);
 					
-					$('#seat').val($('#seat').val() + this.settings.id + ',');
+					$('#seat1').val($('#seat1').val() + this.settings.id + ',');
 					/*
 					 * Lets update the counter and total
 					 *
@@ -124,29 +179,21 @@
         });
 
 	    $(window).resize(function(){
-	        $(".book-movie").css({
-		        margin: "0 0 0 " + (($(window).width() > 1033) ? (($(window).width() - 1033) / 2 - 20) : 0) + "px"
+	        var px = (($(window).width() > 1033) ? (($(window).width() - 1033) / 2 - 20) : 0) + "px";
+	        $(".book-movie1").css({
+		        margin: "0 " + px + " 0 " + px
 		    });
 	    });   
 	    $(window).resize();
 
 	}); 
-</script>
-  <div class="header">
-    <div class="pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
-      <ul>
-        <!-- <li class="pure-menu-selected pure-menu-home"><a href="/">Hey Movie</a></li>
-        <li class="pure-menu-normal"><a href="/logout">Log out</a></li>
-        <li class="pure-menu-normal"><a href="/profile">User Profile</a></li> -->
-      </ul>
-    </div>
-  </div>
+	</script>
+</div>
 
-<h2 class="content-head is-center" style="margin-top: 5%; margin-bottom: 5%">Book Ticket</h2>
-<div class="content book-movie" style="text-align:center;">
+<div id="floor2" class="content book-movie2" style="text-align:center; display:none">
 	<div class="wrapper">
 		<div class="container">
-			<div id="seat-map" style="margin-left: 0%; width: 1033px">
+			<div id="seat-map2" style="margin-left: 0%; width: 1033px">
 				<div class="front-indicator" style="text-align:center;">Stage</div>
 				
 			</div>
@@ -160,11 +207,131 @@
 	</div>
 	<form action="/movie/book" method="post" class="pure-form pure-form-single" style="margin-top: 5%;">
 		<input id="email" name="email" type="email" placeholder="Your Email here" />
-		<input id="seat" name="seat" type="text" placeholder="Seat" />
+		<input id="seat2" name="seat2" type="text" placeholder="Seat" />
 		<div id="shows-option"></div>
 		<br /><br /><br />
 		<button type="submit" class="pure-button pure-button-primary" style="margin-bottom: 10%">Book!</button>
 	</form>
+	<script>
+	$(document).ready(function(){
+
+		var $cart = $('#selected-seats'),
+			$counter = $('#counter'),
+			sc = $('#seat-map2').seatCharts({
+			map: [//19 hang
+				'_________ffffffffffffffffffffffff_________',//11-30  		     D
+				's_eeeeee_ffeeeeeeeeeeeeeeeeeeeeef_eeeeee_s',//3-8, 9-29, 30-35  E
+				's_eeeeee_feeeeeeeeeeeeeeeeeeeeeef_eeeeee_s',//4-9, 10-31, 32-37 F
+				's_eeeeee_feeeeeeeeeeeeeeeeeeeeeee_eeeeee_s',//3-8, 9-31, 32-37  G
+				's_eeeeee_frrrrrrrrrrrrrrrrrrrrrrf_eeeeee_s',//4-9, 10-31, 32-37 H
+				's_eeeeee_frrrrrrrrrrrrrrrrrrrrrrr_eeeeee_s',//3-8, 9-31, 32-37  J
+				'__eeeeee_rrrrrrrrrrrrrrrrrrrrrrrr_eeeeee__',//3-8, 9-32, 33-38  K
+				's_eeeeee_feeeeeeeeeeeeeeeeeeeeeee_eeeeee_s',//3-8, 9-31, 32-37  L
+				's_eeeeee_eeeeeeeeeeeeeeeeeeeeeeee_eeeeee_s',//3-8, 9-32, 33-38  M
+				's_eeeeee_frrrrrrrrrreeeeeeeeeeeee_eeeeee_s',//3-8, 9-31, 32-37  N
+				's_eeeeee_eeeeeeeeeeeeeeeeeeeeeeee_eeeeee_s',//3-8, 9-32, 33-38  P
+				's_eeeeee_feeeeeeeeeeeeeeeeeeeeeee_eeeeee_s',//3-8, 9-31, 32-37  Q
+				's_eeeeee_eeeeeeeeeeeeeeeeeeeeeeee_eeeeee_s',//3-8, 9-32, 33-38  R
+				'__eeeeee_feeeeeeeeeeeeeeeeeeeeeee_eeeeee__',//3-8, 9-31, 32-37  S
+				's_eeeeee_feeeeeeeeeeeeeeeeeeeeeef_eeeeee_s',//4-9, 10-31, 32-37 T
+				's_eeeeee_ffeeeeeeeeeeeeeeeeeeeeef_eeeeee_s',//4-9, 10-30, 31-36 U
+				's_eeeeee_feeeeeeeeeeeeeeeeeeeeeef_eeeeee_s',//4-9, 10-31, 32-37 V
+				's_eeeeee_ffeeeeee_________eeeeeef_eeeeee_s',//4-9, 10-30, 31-36 W
+				's________fffeeeee_________eeeeeff________s',//11-30  		   X
+				's________________________________________s',//nothing		   Y
+				'___________rrrrrrrrrrrrrrrrrrrr___________',//11-30  		   Z
+				'__________________________________________',//nothing
+				'__ssssssssssssssssssssssssssssssssssssss__',//2-39 AA
+				'__fsssssssssssssssssssssssssssssssssssff__',//3-37 BB
+				'__fssssssssssssssssssssssssssssssssssssf__',//3-38 CC
+				'__fsssssssssssssssssssssssssssssssssssff__',//3-37 DD
+				'__ffssssssssssssssssssssssssssssssssssff__',//4-37 EE
+				'__ffsssssssssssssssssssssssssssssssssfff__',//4-36 FF
+				'__fffssssssssssssssssssssssssssssssssfff__',//5-36 GG
+				
+			],
+			seats: {
+				f: {
+					price   : 0,
+					classes : 'seatCharts-seat seatCharts-cell na', //your custom CSS class
+					category: 'N/A'
+				},
+				e: {
+					price   : 25,
+					classes : 'seatCharts-seat seatCharts-cell available first', //your custom CSS class
+					category: 'cat 1'
+				},	
+				r: {
+					price	: 0,
+					classes : 'seatCharts-seat seatCharts-cell reserved', //your custom CSS class
+					category: 'reserved'
+				},
+				s: {
+					price   : 22,
+					classes : 'seatCharts-seat seatCharts-cell available second', //your custom CSS class
+					category: 'cat 2'
+				},
+			
+			},
+			click: function () {
+				if (this.status() == 'available') {
+					//let's create a new <li> which we'll add to the cart items
+					$('<li>'+' Seat # '+ this.settings.id + '</li>')
+						.attr('id', 'cart-item-'+this.settings.id)
+						.data('seatId', this.settings.id)
+						.appendTo($cart);
+					
+					$('#seat2').val($('#seat2').val() + this.settings.id + ',');
+					/*
+					 * Lets update the counter and total
+					 *
+					 * .find function will not find the current seat, because it will change its stauts only after return
+					 * 'selected'. This is why we have to add 1 to the length and the current seat price to the total.
+					 */
+					$counter.text(sc.find('selected').length+1);
+					return 'selected';
+				} else if (this.status() == 'selected') {
+					//update the counter
+					$counter.text(sc.find('selected').length-1);
+				
+					//remove the item from our cart
+					$('#cart-item-'+this.settings.id).remove();
+				
+					//seat has been vacated
+					return 'available';
+				} else if (this.status() == 'unavailable') {
+					//seat has been already booked
+					return 'unavailable';
+				} else {
+					return this.style();
+				}
+			}
+		});
+
+ 		// $(document).on('change','#show_select',function(){
+   //          $.post('/ajax/get_selected_seat', {'show_id':$('#show_select').val()}, function(data) {
+			// 	sc.get(JSON.parse(data)).status('unavailable');	
+			// });
+   //      });
+
+        $(".na").each(function(){
+        	sc.get($(this).attr("id")).status('unavailable');	
+        });
+
+        $(".reserved").each(function(){
+        	sc.get($(this).attr("id")).status('unavailable');	
+        });
+
+	    $(window).resize(function(){
+	    	var px = (($(window).width() > 1033) ? (($(window).width() - 1033) / 2 - 20) : 0) + "px";
+	        $(".book-movie2").css({
+		        margin: "0 " + px + " 0 " + px
+		    });
+	    });   
+	    $(window).resize();
+
+	}); 
+	</script>
 </div>
 
   </body>
