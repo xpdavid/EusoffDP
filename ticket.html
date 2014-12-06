@@ -109,10 +109,18 @@
 			}
 		});
 
- 		$(document).on('change','#show_select',function(){
-            $.post('/ajax/get_selected_seat', {'show_id':$('#show_select').val()}, function(data) {
-				sc.get(JSON.parse(data)).status('unavailable');	
-			});
+ 		// $(document).on('change','#show_select',function(){
+   //          $.post('/ajax/get_selected_seat', {'show_id':$('#show_select').val()}, function(data) {
+			// 	sc.get(JSON.parse(data)).status('unavailable');	
+			// });
+   //      });
+
+        $(".na").each(function(){
+        	sc.get($(this).attr("id")).status('unavailable');	
+        });
+
+        $(".reserved").each(function(){
+        	sc.get($(this).attr("id")).status('unavailable');	
         });
 
 	}); 
@@ -140,8 +148,8 @@
 	</form>
 	<div class="wrapper">
 		<div class="container">
-			<div id="seat-map" style="text-align:center; margin-left: 12%;">
-				<div class="front-indicator" style="text-align:center; width:86%">Stage</div>
+			<div id="seat-map" style="text-align:center; margin-left: 7%;">
+				<div class="front-indicator" style="text-align:center; width:92%">Stage</div>
 				
 			</div>
 			<div class="booking-details" style="display:none">
