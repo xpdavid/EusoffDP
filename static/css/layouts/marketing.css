@@ -84,6 +84,19 @@ a.pure-button-primary {
     font-size: 120%;
 }
 
+.pure-button-floor {
+    width: 130px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.pure-button-floor.selected {
+    background-color: black;
+    width: 130px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 
 /*
  * -- MENU STYLES --
