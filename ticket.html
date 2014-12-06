@@ -123,6 +123,13 @@
         	sc.get($(this).attr("id")).status('unavailable');	
         });
 
+	    $(window).resize(function(){
+	        $(".book-movie").css({
+		        margin: "0 0 0 " + (($(window).width() > 1033) ? (($(window).width() - 1033) / 2 - 20) : 0) + "px"
+		    });
+	    });   
+	    $(window).resize();
+
 	}); 
 </script>
   <div class="header">
@@ -135,21 +142,12 @@
     </div>
   </div>
 
-<div class="content book-movie">
-	<h2 class="content-head is-center" style="margin-top: 5%; margin-bottom: 5%">Book Ticket</h2>
-	<form action="/movie/book" method="post" class="pure-form pure-form-single" style="margin-top: 5%;">
-		<input id="bmovie" disabled="disabled" name="movie" type="text" placeholder="Movie Title" />
-		<input id="bmovie_id" type="hidden" name="movie_id" />
-		<input type="hidden" name="user_id" value = "<%=user.customer_id%>" />
-		<input id="seat" name="seat" type="text" placeholder="Seat" />
-		<div id="shows-option"></div>
-		<br /><br /><br />
-		<button type="submit" class="pure-button pure-button-primary" style="margin-bottom: 10%">Buy now</button>
-	</form>
+<h2 class="content-head is-center" style="margin-top: 5%; margin-bottom: 5%">Book Ticket</h2>
+<div class="content book-movie" style="text-align:center;">
 	<div class="wrapper">
 		<div class="container">
-			<div id="seat-map" style="text-align:center; margin-left: 7%;">
-				<div class="front-indicator" style="text-align:center; width:92%">Stage</div>
+			<div id="seat-map" style="margin-left: 0%; width: 1033px">
+				<div class="front-indicator" style="text-align:center;">Stage</div>
 				
 			</div>
 			<div class="booking-details" style="display:none">
@@ -160,6 +158,13 @@
 			</div>
 		</div>
 	</div>
+	<form action="/movie/book" method="post" class="pure-form pure-form-single" style="margin-top: 5%;">
+		<input id="email" name="email" type="email" placeholder="Your Email here" />
+		<input id="seat" name="seat" type="text" placeholder="Seat" />
+		<div id="shows-option"></div>
+		<br /><br /><br />
+		<button type="submit" class="pure-button pure-button-primary" style="margin-bottom: 10%">Book!</button>
+	</form>
 </div>
 
   </body>
