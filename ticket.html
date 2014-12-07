@@ -66,7 +66,7 @@
 		<input id="seat1" name="seat1" type="text" placeholder="Seat" />
 		<div id="shows-option"></div>
 		<br /><br /><br />
-		<button type="submit" class="pure-button pure-button-primary" style="margin-bottom: 10%">Book!</button>
+		<button type="submit" class="pure-button pure-button-primary book-button1" style="margin-bottom: 10%">Book!</button>
 	</form>
 	<script>
 	$(document).ready(function(){
@@ -137,7 +137,7 @@
 						.data('seatId', this.settings.id)
 						.appendTo($cart);
 					
-					$('#seat1').val($('#seat1').val() + this.settings.id + ',');
+					// $('#seat1').val($('#seat1').val() + this.settings.id + ',');
 					/*
 					 * Lets update the counter and total
 					 *
@@ -178,6 +178,13 @@
         	sc.get($(this).attr("id")).status('unavailable');	
         });
 
+        $('.book-button1').click(function(e) {
+        	$(".seatCharts-cell.selected").each(function(){
+        		$('#seat1').val($('#seat1').val() + $(this).attr("id") + ',');
+        	});
+  			e.preventDefault();
+  		});
+
 	    $(window).resize(function(){
 	        var px = (($(window).width() > 1033) ? (($(window).width() - 1033) / 2 - 20) : 0) + "px";
 	        $(".book-movie1").css({
@@ -216,7 +223,7 @@
 		<input id="seat2" name="seat2" type="text" placeholder="Seat" />
 		<div id="shows-option"></div>
 		<br /><br /><br />
-		<button type="submit" class="pure-button pure-button-primary" style="margin-bottom: 10%">Book!</button>
+		<button type="submit" class="pure-button pure-button-primary book-button2" style="margin-bottom: 10%">Book!</button>
 	</form>
 	<script>
 	$(document).ready(function(){
@@ -229,7 +236,6 @@
 				'__s_____________________________________s__',//2
 				's_________________________________________s',//3
 				's_________________________________________s',//4
-				'_',
 				'_',
 				'__s_____________________________________s__',//1
 				'r_s_____________________________________s_r',//2
@@ -250,7 +256,6 @@
 				'__s_____________________________________s__',//17
 				's_s_____________________________________s_s',//18
 				'__s_____________________________________s__',//19
-				'_',
 				'_',
 				'__s_____________________________________s__',//20
 				's_s_____________________________________s_s',//21
@@ -305,7 +310,7 @@
 						.data('seatId', this.settings.id)
 						.appendTo($cart);
 					
-					$('#seat2').val($('#seat2').val() + this.settings.id + ',');
+					// $('#seat2').val($('#seat2').val() + this.settings.id + ',');
 					/*
 					 * Lets update the counter and total
 					 *
@@ -345,6 +350,13 @@
         $(".reserved").each(function(){
         	sc.get($(this).attr("id")).status('unavailable');	
         });
+
+        $('.book-button2').click(function(e) {
+        	$(".seatCharts-cell.selected").each(function(){
+        		$('#seat2').val($('#seat2').val() + $(this).attr("id") + ',');
+        	});
+  			e.preventDefault();
+  		});
 
 	}); 
 	</script>
