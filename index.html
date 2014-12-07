@@ -23,17 +23,22 @@
 		#title {
 			position: absolute;
 			top: 13%;
-			left: 50%;
+			left: 48%;
 		}
-		#info {
+		#infobox {
 			position: absolute;
-			background-color: rgba(255, 255, 255, 0.3);
+			background-color: rgba(255, 255, 255, 0.2);
 			border: 10px;
-			border-radius: 3%;
+			border-radius: 2%;
 			height: 300px;
 			width: 400px;
 			top: 40%;
 			left: 17%;
+		}
+		.info {
+			margin-left: 20px;
+			color: white;
+			font-family: "Ayuthaya";
 		}
 
 		.icon {
@@ -83,16 +88,22 @@
 	<div id='synopsis' class='focus icon' style="position:absolute;top:37%;left:75%" onclick="">
 		<img src="img/icon_synopsis.png" onmouseover="this.src='img/text_synopsis.png';" onmouseout="this.src='img/icon_synopsis.png';" alt="cricket">
 	</div>
-	<div id='ticket' class='focus icon' style="position:absolute;top:63%;left:51%" onclick="">
+	<div id='ticket' class='focus icon' style="position:absolute;top:64%;left:51%" onclick="">
 		<a href="ticket.html"><img src="img/icon_ticket.png" onmouseover="this.src='img/text_ticket.png';" onmouseout="this.src='img/icon_ticket.png';" alt="cricket"></a>
 	</div>
-	<div id='contact' class='focus icon' style="position:absolute;top:63%;left:63%" onclick="">
+	<div id='contact' class='focus icon' style="position:absolute;top:64%;left:63%" onclick="">
 		<img src="img/icon_contact.png" onmouseover="this.src='img/text_contact.png';" onmouseout="this.src='img/icon_contact.png';" alt="cricket">
 	</div>
-	<div id='sponsor' class='focus icon' style="position:absolute;top:63%;left:75%" onclick="">
+	<div id='sponsor' class='focus icon' style="position:absolute;top:64%;left:75%" onclick="">
 		<img src="img/icon_sponsor.png" onmouseover="this.src='img/text_sponsor.png';" onmouseout="this.src='img/icon_sponsor.png';" alt="cricket">
 	</div>
-	<div id='info'> </div>
+	<div id='infobox'> 
+		<p class='info' style='font-size:23px;'>General Information</p>
+		<p class='info'>Date: 30th January 2015
+						<br>Time: 7:30pm - 10:30pm
+						<br>Venue: NUS University Cultural Centre
+						<br>Ticket Prices: $26/$22</p>
+	</div>
 	<script type='text/javascript'>
 		var w = screen.width;
 		console.log(w);
