@@ -22,62 +22,77 @@
 		}
 		#title {
 			position: absolute;
-			top: 50%;
-			left: 60%;
+			top: 13%;
+			left: 50%;
+		}
+		#info {
+			position: absolute;
+			background-color: rgba(255, 255, 255, 0.3);
+			border: 10px;
+			border-radius: 3%;
+			height: 300px;
+			width: 400px;
+			top: 40%;
+			left: 17%;
 		}
 
-.icon {
-  border: 10px solid #fff; 
-  border-radius: 50%; 
-  float: left;
-  height: 120px;
-  width: 120px;
-  margin: 20px;
-  overflow: hidden;
+		.icon {
+  			border: 7px solid #fff; 
+  			border-radius: 50%; 
+  			float: left;
+  			height: 100px;
+  			width: 100px;
+  			margin: 20px;
+  			overflow: hidden;
    
-  -webkit-box-shadow: 5px 5px 5px #111;
-          box-shadow: 5px 5px 5px #111;  
-}
-/*FOCUS*/
-.focus {
-  -webkit-transition: all 1s ease;
-     -moz-transition: all 1s ease;
-       -o-transition: all 1s ease;
-      -ms-transition: all 1s ease;
-          transition: all 1s ease;
-}
+  			-webkit-box-shadow: 5px 5px 5px #111;
+          			box-shadow: 5px 5px 5px #111;  
+		}
+		/*FOCUS*/
+		.focus {
+  			-webkit-transition: all 1s ease;
+     		   -moz-transition: all 1s ease;
+       		     -o-transition: all 1s ease;
+      		    -ms-transition: all 1s ease;
+          		    transition: all 1s ease;
+		}
  
-.focus:hover {
-  border: 10px solid #fff;
-  border-radius: 0%;
-   -webkit-transform: rotate(360deg);
-     -moz-transform: rotate(360deg);
-       -o-transform: rotate(360deg);
-      -ms-transform: rotate(360deg);
-          transform: rotate(360deg);
-}
+		.focus:hover {
+  			border: 7px solid #fff;
+  			border-radius: 0%;
+   			-webkit-transform: rotate(360deg);
+     		   -moz-transform: rotate(360deg);
+       		     -o-transform: rotate(360deg);
+      		    -ms-transform: rotate(360deg);
+          	        transform: rotate(360deg);
+		}
 
 	</style>
 
 </head>
 <body scroll=0>
-	<div id='home' class='focus icon' style="position:absolute;top:35%;left:17%" onclick="">
+	<div id='title'>
+		<img src="img/title.png">
+	</div>
+	<div id='home' class='focus icon' style="position:absolute;top:37%;left:51%" onclick="">
 		<img src="img/icon_home.png" onmouseover="this.src='img/text_home.png';" onmouseout="this.src='img/icon_home.png';" alt="cricket">
 	</div>
-	<div id='gallery' class='focus icon' style="position:absolute;top:35%;left:42%" onclick="">
+	<div id='gallery' class='focus icon' style="position:absolute;top:37%;left:63%" onclick="">
 		<img src="img/icon_gallery.png" onmouseover="this.src='img/text_gallery.png';" onmouseout="this.src='img/icon_gallery.png';" alt="cricket">
 	</div>
-	<div id='synopsis' class='focus icon' style="position:absolute;top:35%;left:67%" onclick="">
+	<div id='synopsis' class='focus icon' style="position:absolute;top:37%;left:75%" onclick="">
 		<img src="img/icon_synopsis.png" onmouseover="this.src='img/text_synopsis.png';" onmouseout="this.src='img/icon_synopsis.png';" alt="cricket">
 	</div>
-	<div id='ticket' class='focus icon' style="position:absolute;top:63%;left:17%" onclick="">
+	<div id='ticket' class='focus icon' style="position:absolute;top:63%;left:51%" onclick="">
 		<a href="ticket.html"><img src="img/icon_ticket.png" onmouseover="this.src='img/text_ticket.png';" onmouseout="this.src='img/icon_ticket.png';" alt="cricket"></a>
 	</div>
-	<div id='contact' class='focus icon' style="position:absolute;top:63%;left:42%" onclick="">
+	<div id='contact' class='focus icon' style="position:absolute;top:63%;left:63%" onclick="">
 		<img src="img/icon_contact.png" onmouseover="this.src='img/text_contact.png';" onmouseout="this.src='img/icon_contact.png';" alt="cricket">
 	</div>
-	<div id='sponsor' class='focus icon' style="position:absolute;top:63%;left:67%" onclick="">
+	<div id='sponsor' class='focus icon' style="position:absolute;top:63%;left:75%" onclick="">
 		<img src="img/icon_sponsor.png" onmouseover="this.src='img/text_sponsor.png';" onmouseout="this.src='img/icon_sponsor.png';" alt="cricket">
+	</div>
+	<div id='info'> </div>
 	<script type='text/javascript'>
 		var w = screen.width;
 		console.log(w);
