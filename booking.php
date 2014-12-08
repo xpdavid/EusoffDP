@@ -21,6 +21,9 @@
 		}
 	}
 
+	// success, redirect back
+	header('Location: index.html');
+
 	// since this application is rather simple, I keep everything inside this file
 	function establish() {
 		$con = mysql_connect(DB_HOST, DB_USERNAME, DB_PWD);
