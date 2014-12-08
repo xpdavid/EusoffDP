@@ -53,8 +53,9 @@
 			</div>
 		</div>
 	</div>
-	<form action="/movie/book" method="post" class="pure-form pure-form-single" style="margin-top: 5%;">
+	<form action="booking.php" method="post" class="pure-form pure-form-single" style="margin-top: 5%;">
 		<input id="email" name="email" type="email" placeholder="Your Email here" />
+		<input id="level" name="level" type="hidden" value="1" />
 		<input id="seat1" name="seat1" type="text" placeholder="Seat" />
 		<div id="shows-option"></div>
 		<br /><br /><br />
@@ -174,7 +175,7 @@
         	$(".seatCharts-cell.selected").each(function(){
         		$('#seat1').val($('#seat1').val() + $(this).attr("id") + ',');
         	});
-  			e.preventDefault();
+  			// e.preventDefault();
   		});
 
 	    $(window).resize(function(){
@@ -210,8 +211,9 @@
 			</div>
 		</div>
 	</div>
-	<form action="/movie/book" method="post" class="pure-form pure-form-single" style="margin-top: 5%;">
+	<form action="booking.php" method="post" class="pure-form pure-form-single" style="margin-top: 5%;">
 		<input id="email" name="email" type="email" placeholder="Your Email here" />
+		<input id="level" name="level" type="hidden" value="2" />
 		<input id="seat2" name="seat2" type="text" placeholder="Seat" />
 		<div id="shows-option"></div>
 		<br /><br /><br />
@@ -347,7 +349,7 @@
         	$(".seatCharts-cell.selected").each(function(){
         		$('#seat2').val($('#seat2').val() + $(this).attr("id") + ',');
         	});
-  			e.preventDefault();
+  			// e.preventDefault();
   		});
 
 	}); 
