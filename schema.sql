@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS booking;
+
+CREATE TABLE booking (
+	id INT AUTO_INCREMENT,
+	email VARCHAR(50) NOT NULL,
+	level INT,
+	row VARCHAR(2),
+	col VARCHAR(2),
+
+	PRIMARY KEY(id)
+);
