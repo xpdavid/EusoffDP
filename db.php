@@ -25,7 +25,7 @@
 		// mysql_close($con);
 		
 	}
-
+ 
 	function confirm_booking($book_id) {
 		$con = establish();
 		mysql_select_db(DB_NAME, $con);
