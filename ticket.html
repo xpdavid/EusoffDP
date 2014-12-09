@@ -155,11 +155,12 @@
 			}
 		});
 
- 		// $(document).on('change','#show_select',function(){
-   //          $.post('/ajax/get_selected_seat', {'show_id':$('#show_select').val()}, function(data) {
-			// 	sc.get(JSON.parse(data)).status('unavailable');	
-			// });
-   //      });
+ 		$.post('include/get_pending_seat.php', {'level': 1}, function(data) {
+			var seats = JSON.parse(data);
+			for (var i = 0; i < seats.length; i++) {
+				sc.get(seats[i]).status('unavailable');	
+			};
+		});
 
         $(".na").each(function(){
         	sc.get($(this).attr("id")).status('unavailable');	
@@ -329,11 +330,12 @@
 			}
 		});
 
- 		// $(document).on('change','#show_select',function(){
-   //          $.post('/ajax/get_selected_seat', {'show_id':$('#show_select').val()}, function(data) {
-			// 	sc.get(JSON.parse(data)).status('unavailable');	
-			// });
-   //      });
+        $.post('include/get_pending_seat.php', {'level': 2}, function(data) {
+			var seats = JSON.parse(data);
+			for (var i = 0; i < seats.length; i++) {
+				sc.get(seats[i]).status('unavailable');	
+			};
+		});
 
         $(".na").each(function(){
         	sc.get($(this).attr("id")).status('unavailable');	

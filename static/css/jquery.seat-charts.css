@@ -38,11 +38,13 @@ div.seatCharts-row {
 }
 
 div.seatCharts-seat.first {
-	background-color: #1F8DD6;
+	/*background-color: #1F8DD6;*/
+	background-color: #5EC936;
 }
 
 div.seatCharts-seat.second {
-	background-color: #18CE81;
+	/*background-color: #18CE81;*/
+	background-color: #F68EF9;
 }
 
 div.seatCharts-row:after {
@@ -63,7 +65,8 @@ div.seatCharts-seat.unavailable {
 }
 
 div.seatCharts-seat.reserved {
-	background-color: orange;
+	/*background-color: orange;*/
+	background-color: #0030FF;
 	cursor: not-allowed;
 }
 

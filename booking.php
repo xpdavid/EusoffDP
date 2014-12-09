@@ -1,7 +1,5 @@
 <?php
-
-	require_once("db.php");
-
+	require_once("include/db.php");
 	$email = $_REQUEST['email'];
 	$level = 0;
 	$seats = [];
@@ -20,8 +18,8 @@
 			store_booking($email, $level, $value);
 		}
 	}
-
+	echo "OK! redirecting";
 	// success, redirect back
-	// header('Location: index.html');
+	echo "<script>setTimeout(\"window.location.href='index.html'\",2000)</script>";
 
 ?>

@@ -1,6 +1,5 @@
 <?php
-	
-	require_once("config.php");
+	require_once("constant.php");
 	
 	// since this application is rather simple, I keep everything inside this file
 	function establish() {
@@ -25,7 +24,7 @@
 		// mysql_close($con);
 		
 	}
- 
+
 	function confirm_booking($book_id) {
 		$con = establish();
 		mysql_select_db(DB_NAME, $con);
@@ -86,6 +85,35 @@
 			// mysql_close($con);
 			return FALSE;
 		}
+	}
+
+	function get_all_occupied_seats($level) {
+		$con = establish();
+		mysql_select_db(DB_NAME, $con);
+
+		$query = "SELECT seat_code FROM " . SEAT_TABLE . " WHERE status = " . SEAT_STATUS_OCCUPIED . " AND level = '" . $level . "'";
+		$result = mysql_query($query);
+
+		$seats = [];
+		while ($row = mysql_fetch_array($result)) {
+			$seats[] = $row['seat_code'];
+		}
+		return $seats;
+	}
+
+	function get_all_reserved_seats($level) {
+		$con = establish();
+		mysql_select_db(DB_NAME, $con);
+
+		$query = "SELECT seat_code FROM " . SEAT_TABLE . " WHERE status = " . SEAT_STATUS_RESERVED . " AND level = '" . $level . "'";
+		// echo $query;
+		$result = mysql_query($query);
+
+		$seats = [];
+		while ($row = mysql_fetch_array($result)) {
+			$seats[] = $row['seat_code'];
+		}
+		return $seats;
 	}
 
 ?>
