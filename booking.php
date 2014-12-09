@@ -12,8 +12,8 @@
 		$level = 2;
 		$seats = explode(',', $_REQUEST['seat2']);
 	}
-	echo($level);
-	print_r($seats);
+	// echo($level);
+	// print_r($seats);
 
 	foreach ($seats as $value) {
 		if (($value != '') && ($value != NULL)) {
