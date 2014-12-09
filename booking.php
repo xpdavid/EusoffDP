@@ -1,6 +1,6 @@
 <?php
 
-	require_once("config.php");
+	require_once("db.php");
 
 	$email = $_REQUEST['email'];
 	$level = 0;
@@ -24,81 +24,4 @@
 	// success, redirect back
 	// header('Location: index.html');
 
-	// since this application is rather simple, I keep everything inside this file
-	function establish() {
-		$con = mysql_connect(DB_HOST, DB_USERNAME, DB_PWD);
-		if (!$con) {   
-			die('Could not connect: ' . mysql_error());
-		}
-		return $con;
-	}
-
-	function store_booking($email, $level, $seat) {
-		$con = establish();
-		mysql_select_db(DB_NAME, $con);
-
-		$mapped_result = seat_map($level, $seat);
-		$row = $mapped_result['row'];
-		$col = $mapped_result['col'];
-		$query = "INSERT INTO " . BOOKING_TABLE . "(email, level, row, col) VALUES ('$email', '$level', '$row', '$col')";
-		echo $query;
-		$result = mysql_query($query);
-		mysql_close($con);
-		
-		if (empty($result)) {
-			return TRUE;
-		} else {
-			return FALSE;
-		}
-	}
-
-
-	function seat_map($level, $seat) {
-		// $seat should be row_col
-		$seat = explode("_", $seat);
-		$row = $seat[0];
-		$col = $seat[1];
-
-		$mrow = '';
-		$mcol = '';
-		
-		if ($level == 1) {
-			switch ($row) {
-				case 1:
-					$mrow = 'D';
-					$mcol = $col - 1;
-					break;
-
-				case 2:
-					if ($col == 1) {
-						$mrow = 'LL';
-						$mcol = 6;
-					} else if ($col <= 8) {
-						$mrow = 'E';
-						$mcol = $col;
-					} else if ($col <= 32) {
-						$mrow = 'E';
-						$mcol = $col - 3;
-					} else if ($col <= 40) {
-						$mrow = 'E';
-						$mcol = $col - 5;
-					} else if ($col == 42) {
-						$mrow = 'LL';
-						$mcol = 39;
-					}
-					break;
-				
-				default:
-					# code...
-					break;
-			}
-		} else if ($level == 2) {
-
-		} else {
-
-		}
-
-		$result = ['row' => $mrow, 'col' => $mcol];
-		return $result;
-	}
 ?>
