@@ -22,7 +22,7 @@
 	}
 
 	// success, redirect back
-	header('Location: index.html');
+	// header('Location: index.html');
 
 	// since this application is rather simple, I keep everything inside this file
 	function establish() {
@@ -34,11 +34,14 @@
 	}
 
 	function store_booking($email, $level, $seat) {
-		$con = db_connect();
+		$con = establish();
 		mysql_select_db(DB_NAME, $con);
 
 		$mapped_result = seat_map($level, $seat);
-		$query = "INSERT INTO " . BOOKING_TABLE . "(email, level, row, col) VALUES ($email, $level, $mapped_result['row'], $mapped_result['col'])";
+		$row = $mapped_result['row'];
+		$col = $mapped_result['col'];
+		$query = "INSERT INTO " . BOOKING_TABLE . "(email, level, row, col) VALUES ('$email', '$level', '$row', '$col')";
+		echo $query;
 		$result = mysql_query($query);
 		mysql_close($con);
 		
