@@ -1,0 +1,403 @@
+<html>
+<head>
+<title>Eusoff Dance Production 1314 </title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<!-- Add FancyBox -->
+<link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+<script type="text/javascript" src="default.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var activeElem=$("#left-content-img");
+		$("#aboutus_ic").click(function(){
+			// TODO
+			if($("#about-us-content")!=activeElem){
+				activeElem.fadeOut(1000, function(){
+					$("#about-us-content").fadeIn(1000, function(){
+						activeElem=$("#about-us-content");
+				})
+			});
+			}
+		});
+		$("#aboutus_ic").mouseover(function(){
+			$(this).stop(true,false);
+			$(this).animate({
+				width:90
+			},500, function(){
+				
+			});
+		});
+		$("#aboutus_ic").mouseout(function(){
+			$(this).stop(true,false);
+			$(this).animate({
+				width:32
+			},500, function(){
+				
+			});
+		});
+		$("#gallery_ic").click(function(){
+			// TODO
+			if($("#gallery-us-content")!=activeElem){
+				activeElem.fadeOut(1000, function(){
+					$("#gallery-us-content").fadeIn(1000, function(){
+						activeElem=$("#gallery-us-content");
+				})
+			});
+			}
+		});			
+		$("#gallery_ic").mouseover(function(){
+			$(this).stop(true,false);
+			$(this).animate({
+				width:100
+			},500, function(){
+				
+			});
+		});
+		$("#gallery_ic").mouseout(function(){
+			$(this).stop(true,false);
+			$(this).animate({
+				width:32
+			},500, function(){
+				
+			});
+		});
+		$("#people_ic").click(function(){
+			// TODO
+			if($("#people-us-content")!=activeElem){
+				activeElem.fadeOut(1000, function(){
+					$("#people-us-content").fadeIn(1000, function(){
+						activeElem=$("#people-us-content");
+				})
+			});
+			}
+		});	
+		$("#people_ic").mouseover(function(){
+			$(this).stop(true,false);
+			$(this).animate({
+				width:100
+			},500, function(){
+				
+			});
+		});
+		$("#people_ic").mouseout(function(){
+			$(this).stop(true,false);
+			$(this).animate({
+				width:32
+			},500, function(){
+				
+			});
+		});
+		$("#ticket_ic").click(function(){
+			// TODO
+			if($("#ticket-instruction")!=activeElem){
+				activeElem.fadeOut(1000, function(){
+					$("#ticket-instruction").fadeIn(1000, function(){
+						activeElem=$("#ticket-instruction");
+				})
+			});
+			}
+		});	
+		$("#ticket_ic").mouseover(function(){
+			$(this).stop(true,false);
+			$(this).animate({
+				width:90
+			},500, function(){
+				
+			});
+		});
+		$("#ticket_ic").mouseout(function(){
+			$(this).stop(true,false);
+			$(this).animate({
+				width:32
+			},500, function(){
+				
+			});
+		});
+		$("#contact_ic").click(function(){
+			// TODO
+			if($("#contact-us-content")!=activeElem){
+				activeElem.fadeOut(1000, function(){
+					$("#contact-us-content").fadeIn(1000, function(){
+						activeElem=$("#contact-us-content");
+				})
+			});
+			}
+		});	
+		$("#contact_ic").mouseover(function(){
+			$(this).stop(true,false);
+			$(this).animate({
+				width:90
+			},500, function(){
+				
+			});
+		});
+		$("#contact_ic").mouseout(function(){
+			$(this).stop(true,false);
+			$(this).animate({
+				width:32
+			},500, function(){
+				
+			});
+		});
+		$("#sponsor_ic").click(function(){
+			// TODO
+			if($("#sponsor-content")!=activeElem){
+				activeElem.fadeOut(1000, function(){
+					$("#sponsor-content").fadeIn(1000, function(){
+						activeElem=$("#sponsor-content");
+				})
+			});
+			}
+		});
+		$("#sponsor_ic").mouseover(function(){
+			$(this).stop(true,false);
+			$(this).animate({
+				width:90
+			},500, function(){
+				
+			});
+		});
+		$("#sponsor_ic").mouseout(function(){
+			$(this).stop(true,false);
+			$(this).animate({
+				width:32
+			},500, function(){
+				
+			});
+		});
+
+		//gallery
+		$("#cast").click(function(){
+			if($("#gallery-cast")!=activeElem){
+				activeElem.fadeOut(1000, function(){
+					$("#gallery-cast").fadeIn(1000, function(){
+						activeElem=$("#gallery-cast");
+				})
+			});
+			}
+		});
+
+		$("#comms").click(function(){
+					if($("#gallery-comm")!=activeElem){
+						activeElem.fadeOut(1000, function(){
+							$("#gallery-comm").fadeIn(1000, function(){
+								activeElem=$("#gallery-comm");
+						})
+					});
+					}
+				});
+
+		$("#pastyear").click(function(){
+			if($("#gallery-pastyear")!=activeElem){
+				activeElem.fadeOut(1000, function(){
+					$("#gallery-pastyear").fadeIn(1000, function(){
+						activeElem=$("#gallery-pastyear");
+				})
+			});
+			}
+		});
+	});
+
+	function changeLevel(ul){
+		$("li#selected").removeAttr('id');
+		ul.id = 'selected';
+		var levelNum = ul.value;
+        if(levelNum == 2){
+            document.getElementById("seating-plan-level").src = 'https://docs.google.com/spreadsheet/pub?key=0Ath6NNSfxtwJdG15R0Y2SUt6T2RwLVNmOUl0WG92Vmc&single=true&gid=1&output=html&widget=true';	
+	    } else {
+            document.getElementById("seating-plan-level").src = 'https://docs.google.com/spreadsheet/pub?key=0Ath6NNSfxtwJdG15R0Y2SUt6T2RwLVNmOUl0WG92Vmc&single=true&gid=0&output=html&widget=true';
+        }
+    }
+</script>
+
+<!-- FancyBox -->
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".fancybox").fancybox();
+	});
+</script>
+
+<div id="main">
+<!--	
+	<div id="intro-page">
+		<img id="intro-page-img" src="img/intro bg.png" />
+		<img id="intro-page-title" src="img/intro page title.png ">
+	</div>
+-->
+	<div id="background"></div>
+	<div id="left-content">
+		<img id="left-content-img" src="img/title.png" />
+		
+		<div id="about-us-content" hidden="true" class="sub-content"><img src="img/about_us_text.png" style="width:1100px;height:auto;margin-top:-80px;margin-left:-100px;" /></div>
+		
+		<div id="gallery-us-content" hidden="true" class="sub-content"><img src="img/gallery_text.png" style="width:500px;height:auto;margin-top:-30px;margin-left:-10px;" />
+			<table id="gallery_table" cellpadding="10">
+				<tr><td><img id="cast" src="img/gallery_cast_dances.png" /></td></tr>
+				<tr><td><img id="comms" src="img/gallery_comms.png" /></td></tr>
+				<tr><td><img id="pastyear" src="img/gallery_pastyear.png" /></td></tr>
+			</table>
+		</div>
+		
+		<div id="gallery-cast" hidden="true" class="gallery sub-content">
+			<div class="gallery-content">
+				<a class="fancybox" rel="group" href="img/cast/1- Dance 1.jpg" title="Dance 1"><img class="fancybox_img" src="img/cast/Dance1_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group" href="img/cast/2- Dance 2.jpg" title="Dance 2"><img class="fancybox_img" src="img/cast/Dance2_samll.jpg" alt="" /></a>
+				<a class="fancybox" rel="group" href="img/cast/3- Dance 3.jpg" title="Dance 3"><img class="fancybox_img" src="img/cast/Dance3_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group" href="img/cast/4- Dance 4.jpg" title="Dance 4"><img class="fancybox_img" src="img/cast/Dance4_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group" href="img/cast/5- Dance 5.jpg" title="Dance 5"><img class="fancybox_img" src="img/cast/Dance5_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group" href="img/cast/6- Dance 6.jpg" title="Dance 6"><img class="fancybox_img" src="img/cast/Dance6_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group" href="img/cast/7- Dance 7.jpg" title="Dance 7"><img class="fancybox_img" src="img/cast/Dance7_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group" href="img/cast/8- Dance 8.jpg" title="Dance 8"><img class="fancybox_img" src="img/cast/Dance8_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group" href="img/cast/1_large.jpg" title="Vivian Liew and Daryll Ng as Dance Directors"><img class="fancybox_img" src="img/cast/1_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group" href="img/cast/2_large.jpg" title="Amanda See as Kath"><img class="fancybox_img" src="img/cast/2_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group" href="img/cast/3_large.jpg" title="Bella as The Matron"><img class="fancybox_img" src="img/cast/3_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group" href="img/cast/4_large.jpg" title="Bryan Wong as Glenn"><img class="fancybox_img" src="img/cast/4_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group" href="img/cast/5_large.jpg" title="Kok Chun Hou as Fred"><img class="fancybox_img" src="img/cast/5_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group" href="img/cast/6_large.jpg" title="Park Yu Jin as Pauline"><img class="fancybox_img" src="img/cast/6_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group" href="img/cast/7_large.jpg" title="Shannen Tan and Fatimah as Drama Directors"><img class="fancybox_img" src="img/cast/7_small.jpg" alt="" /></a>
+			</div>
+		</div>
+
+		<div id="gallery-comm" hidden="true" class="gallery sub-content">
+			<div class="gallery-content">
+				<a class="fancybox" rel="group1" href="img/comm/1_large.jpg" title="Terence Lo and Megan Chew as Producers"><img class="fancybox_img" src="img/comm/1_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group1" href="img/comm/2_large.jpg" title="Emilia Yong as Scriptwriter"><img class="fancybox_img" src="img/comm/2_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group1" href="img/comm/3_large.jpg" title="Yang Jieshen as Administrative Director"><img class="fancybox_img" src="img/comm/3_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group1" href="img/comm/4_large.jpg" title="Alvin Tan as Production Manager"><img class="fancybox_img" src="img/comm/4_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group1" href="img/comm/5_large.jpg" title="Dance Committee"><img class="fancybox_img" src="img/comm/5_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group1" href="img/comm/7_large.jpg" title="Stage Managers"><img class="fancybox_img" src="img/comm/7_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group1" href="img/comm/6_large.jpg" title="Lights Committee"><img class="fancybox_img" src="img/comm/6_small.jpg" alt="" /></a><br />
+				<a class="fancybox" rel="group1" href="img/comm/12_large.jpg" title="Sounds Committee"><img class="fancybox_img" src="img/comm/12_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group1" href="img/comm/8_large.jpg" title="Logistics Committee"><img class="fancybox_img" src="img/comm/8_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group1" href="img/comm/9_large.jpg" title="Publicity Committee"><img class="fancybox_img" src="img/comm/9_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group1" href="img/comm/10_large.jpg" title="Sponsorship and Marketing Committee"><img class="fancybox_img" src="img/comm/10_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group1" href="img/comm/11_large.jpg" title="Sets Committee"><img class="fancybox_img" src="img/comm/11_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group1" href="img/comm/13_large.jpg" title="Wardrobe Committee"><img class="fancybox_img" src="img/comm/13_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group1" href="img/comm/14_large.jpg" title="Stage Design Committee"><img class="fancybox_img" src="img/comm/14_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group1" href="img/comm/15_large.jpg" title="Main Committee"><img class="fancybox_img" src="img/comm/15_small.jpg" alt="" /></a>
+			</div>			
+		</div>
+
+		<div id="gallery-pastyear" hidden="true" class="gallery sub-content">
+			<div class="gallery-content">
+				<a class="fancybox" rel="group2" href="img/pastyear/1_large.jpg" ><img class="fancybox_img" src="img/pastyear/1_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group2" href="img/pastyear/2_large.jpg" ><img class="fancybox_img" src="img/pastyear/2_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group2" href="img/pastyear/3_large.JPG" ><img class="fancybox_img" src="img/pastyear/3_small.JPG" alt="" /></a>
+				<a class="fancybox" rel="group2" href="img/pastyear/4_large.jpg" ><img class="fancybox_img" src="img/pastyear/4_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group2" href="img/pastyear/5_large.jpg" ><img class="fancybox_img" src="img/pastyear/5_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group2" href="img/pastyear/6_large.jpg" ><img class="fancybox_img" src="img/pastyear/6_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group2" href="img/pastyear/7_large.JPG" ><img class="fancybox_img" src="img/pastyear/7_small.JPG" alt="" /></a>
+				<a class="fancybox" rel="group2" href="img/pastyear/8_large.JPG" ><img class="fancybox_img" src="img/pastyear/8_small.JPG" alt="" /></a>
+				<a class="fancybox" rel="group2" href="img/pastyear/9_large.JPG" ><img class="fancybox_img" src="img/pastyear/9_small.JPG" alt="" /></a>
+				<a class="fancybox" rel="group2" href="img/pastyear/10_large.jpg" ><img class="fancybox_img" src="img/pastyear/10_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group2" href="img/pastyear/11_large.jpg" ><img class="fancybox_img" src="img/pastyear/11_small.jpg" alt="" /></a><br />
+				<a class="fancybox" rel="group2" href="img/pastyear/12_large.JPG" ><img class="fancybox_img" src="img/pastyear/12_small.JPG" alt="" /></a>
+				<a class="fancybox" rel="group2" href="img/pastyear/13_large.JPG" ><img class="fancybox_img" src="img/pastyear/13_small.JPG" alt="" /></a>
+				<a class="fancybox" rel="group2" href="img/pastyear/14_large.jpg" ><img class="fancybox_img" src="img/pastyear/14_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group2" href="img/pastyear/15_large.JPG" ><img class="fancybox_img" src="img/pastyear/15_small.JPG" alt="" /></a>
+				<a class="fancybox" rel="group2" href="img/pastyear/16_large.jpg" ><img class="fancybox_img" src="img/pastyear/16_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group2" href="img/pastyear/17_large.jpg" ><img class="fancybox_img" src="img/pastyear/17_small.jpg" alt="" /></a>
+				<a class="fancybox" rel="group2" href="img/pastyear/18_large.JPG" ><img class="fancybox_img" src="img/pastyear/18_small.JPG" alt="" /></a>
+				<a class="fancybox" rel="group2" href="img/pastyear/19_large.JPG" ><img class="fancybox_img" src="img/pastyear/19_small.JPG" alt="" /></a>
+				<a class="fancybox" rel="group2" href="img/pastyear/20_large.JPG" ><img class="fancybox_img" src="img/pastyear/20_small.JPG" alt="" /></a>			
+			</div>
+		</div>
+		
+		<div id="people-us-content" hidden="true" class="sub-content"><img src="img/synopsis_text.png" style="width:500px;height:auto;margin-top:50px;margin-left:-10px;" /></div>
+
+		<div id="contact-us-content" hidden="true" class="sub-content"><img src="img/contact_us_text.png" style="width:500px;height:auto;margin-top:50px;margin-left:-15px;" />
+			<div id="address">
+				<p>10 Kent Ridge Drive,</p>
+				<p>National University of Singapore,</p>
+				<p>Singapore 119242</p>
+				<a href="mailto:ehdp@eusoff.nus.edu.sg">ehdp@eusoff.nus.edu.sg</a>
+			</div>
+		</div>
+	    
+        <div id="ticket-instruction" hidden="true" class="sub-content">
+            <div id="ticket-instruction-content">
+            <p><b>Step 1: Choosing your Seats</b><br>
+            Press the link below for the seating plan and choose your desired seats. Record them down on a piece of paper<br>
+            <a class="fancybox" href="#ticket-content">Seating Plan</a><br>
+            <br><b>Step 2: Contacting our Marketing Team</b><br>
+            Contact our marketing team through any of the various means as listed below,<br>
+
+            <b>Phone</b>: Jing Jie - 92762002 & Lionel - 97412956<br>
+
+            <b>Email</b>: <a href="mailto:ehdpticketing@gmail.com">ehdpticketing@gmail.com</a><br>
+
+            Include the following details in your message,<br>
+             1. Name 2. Contact Number 3. Seat Numbers<br>
+            <br><b>Step 3: Receiving of Invoice from our Marketing Team</b><br>
+            Our marketing team will reply with regards to your ticket purchase within 24 hours<br>
+            <br><b>Step 4: Payment</b><br>
+            Please make payment in CASH to Jing Jie A405 or Lionel B420 within 3 days of receiving the invoice from our marketing team to confirm your seats<br>
+
+            <br><b>Step 5: Collection of Tickets</b><br>
+            Once payment is received, you may collect your tickets from Jing Jie or Lionel within the week<br>
+
+            <br><font color="red">PLEASE NOTE: Seats are only confirmed when you receive a confirmation email upon payment. Reserved seats will be released if payment is not received after the initial 3 days upon receiving the invoice from our marketing team</font><br><br />
+
+            THANK YOU FOR SUPPORTING EHDP 2013/14 - "Love is a Place"</p>
+            </div>        
+        </div>
+        	
+		<div id="ticket-content" hidden="true">
+			<b><h2>Seating Plan</h2></b>
+            <div id="menu">
+			 	<ul>
+					<li id="selected" onclick="changeLevel(this)" value="1"><a href="#level1">Level 1</a></li>
+					<li onclick="changeLevel(this)" value="2"><a href="#level2">Level 2</a></li>
+				</ul>
+			<!--	<iframe width='1000' height='600' frameborder='0' src='https://docs.google.com/spreadsheet/pub?key=0Ath6NNSfxtwJdG15R0Y2SUt6T2RwLVNmOUl0WG92Vmc&output=html&widget=true'></iframe> -->
+			</div>
+
+			 <div id="seating-level">
+				<!-- <img id="level-img" src="./img/level1.jpg"> -->
+                <iframe id="seating-plan-level"  width='1000' height='500' frameborder='0' src='https://docs.google.com/spreadsheet/pub?key=0Ath6NNSfxtwJdG15R0Y2SUt6T2RwLVNmOUl0WG92Vmc&single=true&gid=0&output=html&widget=true'></iframe>
+			</div>
+		</div>
+
+		<div id="sponsor-content" hidden="true" class="sub-content">
+			<div id="logo-content">
+				<img class="logo" src="./img/joop_logo.jpg">
+				<img class="logo" src="./img/porn_logo.jpg">
+				<img class="logo" src="./img/occasion_logo.jpg">
+				<img class="logo" src="./img/brew_logo.jpg">
+                <img class="logo" src="./img/xinwang_logo.png">
+			</div>
+		</div>
+	</div>
+	<div id="right">
+
+		<div id="video">
+			<!-- <iframe width="400" height="300" src="//www.youtube-nocookie.com/embed/kn6-c223DUU?rel=0" frameborder="0" allowfullscreen></iframe> -->
+			<iframe width="400" height="300" src="//www.youtube.com/embed/-cwhcLWHgS8?autoplay=1" frameborder="0" allowfullscreen></iframe>
+		</div>
+
+		<div id="follow">
+            <a style="float:left; margin-left:40px;" href="https://docs.google.com/forms/d/1x10iJZxpb3ArrkdkUJ570HeBNlXdC4QB8i_z2TUMVNE/viewform" target="blank"><img src="img/flower.png" /></a>
+			<a href="http://instagram.com/ehdp1314?ref=badge" target="blank"><img class="follow_ic" src="img/instagram.png" /></a>
+			<a href="https://twitter.com/EHDP1314" target="blank"><img class="follow_ic" src="img/twiter.png" /></a>
+			<a href="http://www.facebook.com/eusoffdp" target="blank"><img class="follow_ic" src="img/fb.png" /></a>
+		</div>
+
+		<div id="nav">
+			<div id="nav-icons">
+				<div id="sponsor_ic" class="icon"></div>
+				<div id="contact_ic" class="icon"></div>
+				<div id="ticket_ic" class="icon"></div>
+				<div id="people_ic" class="icon"></div>
+				<div id="gallery_ic" class="icon"></div>
+				<div id="aboutus_ic" class="icon"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
