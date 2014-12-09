@@ -8,19 +8,17 @@ CREATE TABLE seat (
 	status INT DEFAULT 0, # 0 available, 1 reserved, 2 occupied
 	seat_code VARCHAR(10),
 
-	PRIMARY KEY (seat_id),
+	PRIMARY KEY (seat_id)
 );
 
 DROP TABLE IF EXISTS booking;
 
 CREATE TABLE booking (
-	booking_id INT AUTO_INCREMENT,
+	book_id INT AUTO_INCREMENT,
 	email VARCHAR(50) NOT NULL,
-	seat_id INT 
+	seat_id INT,
 	status INT DEFAULT 0, # 0 pending, 1 success, 2 cancelled
 
-	PRIMARY KEY (booking_id),
-	FOREIGN KEY (seat_id) REFERENCES seat(seat_id) ON DELETE CASCADE,
+	PRIMARY KEY (book_id),
+	FOREIGN KEY (seat_id) REFERENCES seat(seat_id) ON DELETE CASCADE
 );
-
-

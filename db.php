@@ -58,13 +58,32 @@
 
 		$query = "SELECT seat_id FROM " . SEAT_TABLE . "WHERE seat_code = '" . $code . "'";
 		$result = mysql_query($query);
-		mysql_close($con);
 
-		echo '///' . $result . '////'
+		if ($result) {
+			$result = mysql_fetch_array($result);
+			mysql_close($con);
+			return $result['seat_id'];
+		} else {
+			mysql_close($con);
+			return FALSE;
+		}
 	}
 
 	function get_seat_id_by_book_id($book_id) {
+		$con = establish();
+		mysql_select_db(DB_NAME, $con);
 
+		$query = "SELECT seat_id FROM " . BOOK_TABLE . "WHERE book_id = '" . $book_id . "'";
+		$result = mysql_query($query);
+
+		if ($result) {
+			$result = mysql_fetch_array($result);
+			mysql_close($con);
+			return $result['seat_id'];
+		} else {
+			mysql_close($con);
+			return FALSE;
+		}
 	}
 
 ?>
