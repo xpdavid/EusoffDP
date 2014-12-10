@@ -102,11 +102,11 @@
 		return $seats;
 	}
 
-	function get_all_reserved_seats($level) {
+	function get_all_unavailable_seats($level) {
 		$con = establish();
 		mysql_select_db(DB_NAME, $con);
 
-		$query = "SELECT seat_code FROM " . SEAT_TABLE . " WHERE status = " . SEAT_STATUS_RESERVED . " AND level = '" . $level . "'";
+		$query = "SELECT seat_code FROM " . SEAT_TABLE . " WHERE status != " . SEAT_STATUS_AVAILABLE . " AND level = '" . $level . "'";
 		// echo $query;
 		$result = mysql_query($query);
 
