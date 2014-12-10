@@ -48,9 +48,9 @@
 <div class="content ticket-management">
 	<h2 class="content-head is-center" style="margin-top: 5%; margin-bottom: 0%">Ticket Management</h2>
 
-	<div id="tab1" class="mtab_content" style="margin-bottom: 5%;">
+	<div id="tab1" class="mtab_content" style="margin-bottom: 5%; text-align: center">
 		<br />
-		<table class="pure-table">
+		<table class="pure-table" style='margin:0px auto;'>
 			<thead>
 				<tr style="text-align:center; font-size: 13px">
 					<th>Email</th>
@@ -78,12 +78,12 @@ ADMIN_HEADER;
 				$status_content = "";
 				if ($status == BOOKING_STATUS_PENDING) {
 					$status_content = "<span id=status$id style='color:yellow'>Pending</span>";
-				} else if ($status = BOOKING_STATUS_SUCCEED) {
+				} else if ($status == BOOKING_STATUS_SUCCEED) {
 					$status_content = "<span id=status$id style='color:green'>Confirmed</span>";
 					$confirm_class = "button-disabled";
-				} else if ($status = BOOKING_STATUS_CANCELLED) {
+				} else if ($status == BOOKING_STATUS_CANCELLED) {
 					$status_content = "<span id=status$id style='color:red'>Cancelled</span>";
-					$cancel_class = "button-disabled";
+					$confirm_class = "button-disabled";
 					$cancel_class = "button-disabled";
 				}
 				if ($i % 2 === 0) {
