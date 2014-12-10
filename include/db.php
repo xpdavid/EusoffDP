@@ -16,7 +16,8 @@
 		// transaction required
 
 		$seat_id = get_seat_id_by_seat_code($seat);
-		$query1 = "INSERT INTO " . BOOKING_TABLE . "(email, seat_id) VALUES ('$email', $seat_id);";
+		$query1 = "INSERT INTO " . BOOKING_TABLE . "(email, seat_id, booking_time) VALUES ('$email', $seat_id, NOW());";
+		echo $query1;
 		$result1 = mysql_query($query1, $con);
 
 		$query2 = "UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_RESERVED ." WHERE seat_id = $seat_id;";
@@ -29,7 +30,7 @@
 		$con = establish();
 		mysql_select_db(DB_NAME, $con);
 
-		$query = "UPDATE " . BOOK_TABLE . " SET status = " . BOOKING_STATUS_SUCCEED . ") WHERE book_id = $book_id";
+		$query = "UPDATE " . BOOKING_TABLE . " SET status = " . BOOKING_STATUS_SUCCEED . ") WHERE book_id = $book_id";
 		$result = mysql_query($query);
 
 		$seat_id = get_seat_id_by_book_id($book_id);
@@ -43,7 +44,7 @@
 		$con = establish();
 		mysql_select_db(DB_NAME, $con);
 
-		$query = "UPDATE " . BOOK_TABLE . " SET status = " . BOOKING_STATUS_CANCELLED . ") WHERE book_id = $book_id";
+		$query = "UPDATE " . BOOKING_TABLE . " SET status = " . BOOKING_STATUS_CANCELLED . ") WHERE book_id = $book_id";
 		$result = mysql_query($query);
 
 		$seat_id = get_seat_id_by_book_id($book_id);
@@ -74,7 +75,7 @@
 		$con = establish();
 		mysql_select_db(DB_NAME, $con);
 
-		$query = "SELECT seat_id FROM " . BOOK_TABLE . " WHERE book_id = '" . $book_id . "'";
+		$query = "SELECT seat_id FROM " . BOOKING_TABLE . " WHERE book_id = '" . $book_id . "'";
 		$result = mysql_query($query);
 
 		if ($result) {
@@ -112,6 +113,26 @@
 		$seats = [];
 		while ($row = mysql_fetch_array($result)) {
 			$seats[] = $row['seat_code'];
+		}
+		return $seats;
+	}
+
+	function get_all_booking_info() {
+		$con = establish();
+		mysql_select_db(DB_NAME, $con);
+
+		$query = "SELECT * FROM " . SEAT_TABLE . " s, " . BOOKING_TABLE . " b WHERE s.seat_id = b.seat_id";
+		$result = mysql_query($query);
+
+		$seats = [];
+		while ($row = mysql_fetch_array($result)) {
+			$seat['email'] = $row['email'];
+			$seat['seat'] = $row['row'] . '-' . $row['col'];
+			$seat['status'] = $row['status'];
+			$seat['id'] = $row['book_id'];
+			$seat['booking_time'] = $row['booking_time'];
+
+			$seats[] = $seat;
 		}
 		return $seats;
 	}
