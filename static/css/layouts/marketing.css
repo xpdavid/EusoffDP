@@ -589,3 +589,8 @@ li.stars>*{
     max-width:140px;
     background-position: 0 0;
 }
+
+.button-disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}

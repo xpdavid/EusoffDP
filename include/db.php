@@ -30,12 +30,15 @@
 		$con = establish();
 		mysql_select_db(DB_NAME, $con);
 
-		$query = "UPDATE " . BOOKING_TABLE . " SET status = " . BOOKING_STATUS_SUCCEED . ") WHERE book_id = $book_id";
+		$query = "UPDATE " . BOOKING_TABLE . " SET status = " . BOOKING_STATUS_SUCCEED . " WHERE book_id = $book_id";
+echo $query;
 		$result = mysql_query($query);
 
 		$seat_id = get_seat_id_by_book_id($book_id);
-		$query = "UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_OCCUPIED . ") WHERE seat_id = $seat_id";
+		$query = "UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_OCCUPIED . " WHERE seat_id = $seat_id";
 		$result = mysql_query($query);
+
+		return true;
 
 		// mysql_close($con);
 	}
@@ -44,11 +47,11 @@
 		$con = establish();
 		mysql_select_db(DB_NAME, $con);
 
-		$query = "UPDATE " . BOOKING_TABLE . " SET status = " . BOOKING_STATUS_CANCELLED . ") WHERE book_id = $book_id";
+		$query = "UPDATE " . BOOKING_TABLE . " SET status = " . BOOKING_STATUS_CANCELLED . " WHERE book_id = $book_id";
 		$result = mysql_query($query);
 
 		$seat_id = get_seat_id_by_book_id($book_id);
-		$query = "UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_AVAILABLE . ") WHERE seat_id = $seat_id";
+		$query = "UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_AVAILABLE . " WHERE seat_id = $seat_id";
 		$result = mysql_query($query);
 
 		// mysql_close($con);
