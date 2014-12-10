@@ -40,14 +40,14 @@ ADMIN_HEADER;
 				$seat = $all_booking[$i]['seat'];
 				$status = $all_booking[$i]['status'];
 				$id = $all_booking[$i]['id'];
-				// $booking_time = $all_booking[i]['booking_time'];
+				$booking_time = $all_booking[$i]['booking_time'];
 				if ($i % 2 === 0) {
 					$table_body .= 
 					"<tr class='pure-table-odd' style='font-size: 12px'>
 						<td>$email</td>
 						<td>$seat</td>
 						<td>$status</td>
-						<td>1</td>
+						<td>$booking_time</td>
 						<td>
 						    <a class='pure-button' id=con$id href=''>Confirm</a>
 							<a class='pure-button button-error' id=can$id href=''>Cancel</a>

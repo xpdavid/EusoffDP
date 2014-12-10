@@ -16,7 +16,8 @@
 		// transaction required
 
 		$seat_id = get_seat_id_by_seat_code($seat);
-		$query1 = "INSERT INTO " . BOOKING_TABLE . "(email, seat_id) VALUES ('$email', $seat_id);";
+		$query1 = "INSERT INTO " . BOOKING_TABLE . "(email, seat_id, booking_time) VALUES ('$email', $seat_id, NOW());";
+		echo $query1;
 		$result1 = mysql_query($query1, $con);
 
 		$query2 = "UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_RESERVED ." WHERE seat_id = $seat_id;";
@@ -129,6 +130,7 @@
 			$seat['seat'] = $row['row'] . '-' . $row['col'];
 			$seat['status'] = $row['status'];
 			$seat['id'] = $row['book_id'];
+			$seat['booking_time'] = $row['booking_time'];
 
 			$seats[] = $seat;
 		}

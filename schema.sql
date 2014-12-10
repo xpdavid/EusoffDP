@@ -17,6 +17,7 @@ CREATE TABLE booking (
 	email VARCHAR(50) NOT NULL,
 	seat_id INT,
 	status INT DEFAULT 0, # 0 pending, 1 success, 2 cancelled
+	booking_time DATETIME,
 
 	PRIMARY KEY (book_id),
 	FOREIGN KEY (seat_id) REFERENCES seat(seat_id) ON DELETE CASCADE
