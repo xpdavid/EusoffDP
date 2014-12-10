@@ -213,10 +213,10 @@
 		}
 		// row Z(19)
 		for ($i = 11; $i <= 15; $i ++) {
-			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'W', '" . $i . "', '18_" . ($i + 2) . "');";
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Z', '" . $i . "', '19_" . ($i + 2) . "');";
 		}
 	        for ($i = 26; $i <= 30; $i ++) {
-			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'W', '" . $i . "', '18_" . ($i + 1) . "');";
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Z', '" . $i . "', '19_" . ($i + 1) . "');";
 		}
 		
 ?>

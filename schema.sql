@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS booking;
 DROP TABLE IF EXISTS seat;
 
 CREATE TABLE seat (
@@ -10,8 +11,6 @@ CREATE TABLE seat (
 
 	PRIMARY KEY (seat_id)
 );
-
-DROP TABLE IF EXISTS booking;
 
 CREATE TABLE booking (
 	book_id INT AUTO_INCREMENT,
