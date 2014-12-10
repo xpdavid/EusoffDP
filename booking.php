@@ -3,6 +3,7 @@
 	$email = $_REQUEST['email'];
 	$level = 0;
 	$seats = [];
+	$success = true;
 	if ($_REQUEST['level'] == 1) {
 		$level = 1;
 		$seats = explode(',', $_REQUEST['seat1']);
@@ -18,8 +19,15 @@
 			store_booking($email, $level, $value);
 		}
 	}
-	echo "OK! redirecting";
-	// success, redirect back
-	echo "<script>setTimeout(\"window.location.href='index.html'\",2000)</script>";
+
+	if ($success){
+		redirect();
+	} else {
+
+	}
+
+	function redirect(){
+		echo "<script>setTimeout(\"window.location.href='booking_redirect.html'\",0)</script>";
+	}
 
 ?>
