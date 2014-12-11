@@ -71,7 +71,7 @@ label {
  * I want my pure-button elements to look a little different
  */
 .pure-button {
-    background-color: #1f8dd6;
+    background-color: grey;
     color: white;
     padding: 0.5em 2em;
     border-radius: 5px;
@@ -85,14 +85,14 @@ a.pure-button-primary {
 }
 
 .pure-button-floor {
-    width: 130px;
+    text-align: center;
     margin-left: 10px;
     margin-right: 10px;
 }
 
 .pure-button-floor.selected {
     background-color: black;
-    width: 130px;
+    text-align: center;
     margin-left: 10px;
     margin-right: 10px;
 }

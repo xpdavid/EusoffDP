@@ -28,8 +28,10 @@
   		});
   	});
   </script>
-
-<h2 class="content-head is-center" style="margin-top: 5%; margin-bottom: 5%">Book Ticket</h2>
+<div class="ticket-head">Book Ticket</div>
+<div class='head-pic'>
+		<a href="/dp1415"><img src="img/title.png" width="250" height="54"></a>
+</div>
 <div id='floor-menu' style="text-align: center">
 	<button type="submit" id="choose-first-floor" class="pure-button pure-button-floor selected">first floor</button>
 	<button type="submit" id="choose-second-floor" class="pure-button pure-button-floor">second floor</button>
@@ -41,11 +43,9 @@
 		<div class="container">
 			<div id="seat-map1" style="margin-left: 0%; width: 1033px">
 				<div class="front-indicator" style="text-align:center;">Stage</div>
-				
 			</div>
 			<div class="booking-details" style="display:none">
 				<h2>Booking Details</h2>
-				
 				<h3> Selected Seats (<span id="counter">0</span>):</h3>
 				<ul id="selected-seats1"></ul>
 			</div>
@@ -355,6 +355,5 @@
 	}); 
 	</script>
 </div>
-
-  </body>
+</body>
 </html>
