@@ -177,6 +177,13 @@
   			// e.preventDefault();
   		});
 
+  		$('.book-button2').click(function(e) {
+        	$(".seatCharts-cell.selected").each(function(){
+        		$('#seat2').val($('#seat2').val() + $(this).attr("id") + ',');
+        	});
+  			// e.preventDefault();
+  		});
+
 	    $(window).resize(function(){
 	        var px = (($(window).width() > 1033) ? (($(window).width() - 1033) / 2 - 20) : 0) + "px";
 	        $(".book-movie1").css({
@@ -344,14 +351,6 @@
         $(".reserved").each(function(){
         	sc.get($(this).attr("id")).status('unavailable');	
         });
-
-        $('.book-button2').click(function(e) {
-        	$(".seatCharts-cell.selected").each(function(){
-        		$('#seat2').val($('#seat2').val() + $(this).attr("id") + ',');
-        	});
-  			// e.preventDefault();
-  		});
-
 	}); 
 	</script>
 </div>

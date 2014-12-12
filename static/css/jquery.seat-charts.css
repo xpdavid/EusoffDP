@@ -29,7 +29,7 @@ div.seatCharts-cell {
 	float: left;
 	text-align: center;
 	outline: none;
-	font-size: 10px;
+	font-size: 0px;
 	line-height:20px;
 
 }
