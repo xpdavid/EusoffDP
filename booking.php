@@ -11,8 +11,8 @@
 		$level = 2;
 		$seats = explode(',', $_REQUEST['seat2']);
 	}
-	echo($level);
-	print_r($_REQUEST);
+	// echo($level);
+	// print_r($_REQUEST);
 
 	foreach ($seats as $value) {
 		if (($value != '') && ($value != NULL)) {
@@ -21,7 +21,7 @@
 	}
 
 	if ($success){
-		// redirect();
+		redirect();
 	} else {
 
 	}
