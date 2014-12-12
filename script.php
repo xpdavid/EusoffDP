@@ -269,6 +269,8 @@
 		for ($i = 35; $i <= 39; $i ++) {
 			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'LL', '" . $i . "', '" . (41 - $i) . "_42');";
 		}
+
+	//
 		
 		
 ?>

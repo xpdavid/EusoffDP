@@ -77,7 +77,7 @@ ADMIN_HEADER;
 				$confirm_class = "";
 				$status_content = "";
 				if ($status == BOOKING_STATUS_PENDING) {
-					$status_content = "<span id=status$id style='color:yellow'>Pending</span>";
+					$status_content = "<span id=status$id style='color:blue'>Pending</span>";
 				} else if ($status == BOOKING_STATUS_SUCCEED) {
 					$status_content = "<span id=status$id style='color:green'>Confirmed</span>";
 					$confirm_class = "button-disabled";
@@ -95,7 +95,7 @@ ADMIN_HEADER;
 						<td>$booking_time</td>
 						<td>
 							<span class='cancel-button' id=$id><a class='pure-button button-error $cancel_class' id=can$id href=''>Cancel</a></span>
-							<span class='confirm-button' id=$id><a class='pure-button $confirm_class' id=con$id href=''>Confirm</a></span>
+							<span class='confirm-button' id=$id><a class='pure-button button-normal $confirm_class' id=con$id href=''>Confirm</a></span>
 						</td>
 					</tr>";
 				} else {
@@ -107,7 +107,7 @@ ADMIN_HEADER;
 						<td>$booking_time</td>
 						<td>
 							<span class='cancel-button' id=$id><a class='pure-button button-error $cancel_class' id=can$id href=''>Cancel</a></span>
-							<span class='confirm-button' id=$id><a class='pure-button $confirm_class' id=con$id href=''>Confirm</a></span>
+							<span class='confirm-button' id=$id><a class='pure-button button-normal $confirm_class' id=con$id href=''>Confirm</a></span>
 						</td>
 					</tr>";
 				}
