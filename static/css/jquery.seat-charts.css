@@ -52,7 +52,7 @@ div.front-indicator {
 	right: 0;
 	width: 200px;
 	height: 30px;
-	border: 0px solid grey;
+	border: 1px solid grey;
 	border-radius: 3%;
 	
 }
