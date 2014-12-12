@@ -16,6 +16,7 @@
 <script>
 	$(document).ready(function(){
 		$('#woshiadmin').click(function(e) {
+			// there is a severe security issue here, need improvement
 			if ($('#admin-password').val() == "DP1415admin") {
 				$('.authentication').hide();
 				$('.ticket-management').show();
