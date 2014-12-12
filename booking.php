@@ -50,10 +50,11 @@
 </head>
 
 <body>
-	<div id='msgbox'>
+	<!--<div id='msgbox'>
 		<p id='msg'>Booking success!
 		<br>Redirecting to homepage...</p>
-	</div>
+	</div>-->
+	<div style="text-align:center; margin-top:20%">Congratulations! Your booking information is successfully recorded, please contact XXX for payment and ticket collection.</div>
 	<script type='text/javascript'>
 		setTimeout(function() {window.location.href='index.html'},3000);
 	</script>
