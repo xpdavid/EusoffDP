@@ -270,7 +270,84 @@
 			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'LL', '" . $i . "', '" . (41 - $i) . "_42');";
 		}
 
-	//
-		
-		
+	// level 2
+		// row A
+		for ($i = 7; $i <= 34; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'A', '" . $i . "', '39_" . ($i + 2) . "');";
+		}
+		// row B
+		for ($i = 6; $i <= 34; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'B', '" . $i . "', '40_" . ($i + 2) . "');";
+		}
+		// row C
+		for ($i = 5; $i <= 36; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'C', '" . $i . "', '41_" . ($i + 1) . "');";
+		}
+		// row D
+		for ($i = 4; $i <= 36; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'D', '" . $i . "', '42_" . ($i + 2) . "');";
+		}
+		// row E
+		for ($i = 4; $i <= 37; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'E', '" . $i . "', '43_" . ($i + 2) . "');";
+		}
+		// row F
+		for ($i = 3; $i <= 37; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'F', '" . $i . "', '44_" . ($i + 2) . "');";
+		}
+		// row G
+		for ($i = 5; $i <= 36; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'G', '" . $i . "', '45_" . ($i + 1) . "');";
+		}
+		// row LL
+		for ($i = 1; $i <= 19; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'LL', '" . $i . "', '" . ($i + 5) . "_3');";
+		}
+		for ($i = 20; $i <= 33; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'LL', '" . $i . "', '" . ($i + 6) . "_3');";
+		}
+		for ($i = 34; $i <= 47; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'LL', '" . $i . "', '" . (73 - $i) . "_41');";
+		}
+		for ($i = 48; $i <= 66; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'LL', '" . $i . "', '" . (72 - $i) . "_3');";
+		}
+		// row UL
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '1', '1_3');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '2', '2_3');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '3', '3_1');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '4', '4_1');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '5', '7_1');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '6', '9_1');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '7', '11_1');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '8', '13_1');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '9', '17_1');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '10', '19_1');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '11', '21_1');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '12', '23_1');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '13', '27_1');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '14', '29_1');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '15', '31_1');";
+		for ($i = 16; $i <= 20; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '" . $i . "', '" . (19 + $i) . "_1');";
+		}
+		for ($i = 21; $i <= 25; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '" . $i . "', '" . (60 - $i) . "_43');";
+		}
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '26', '31_43');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '27', '29_43');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '28', '27_43');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '29', '23_43');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '30', '21_43');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '31', '19_43');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '32', '17_43');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '33', '13_43');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '34', '11_43');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '35', '9_43');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '36', '7_43');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '37', '4_43');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '38', '3_43');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '39', '2_41');";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '40', '1_41');";
+
 ?>
