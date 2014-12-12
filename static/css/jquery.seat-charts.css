@@ -1,3 +1,23 @@
+div.ticket-head {
+	background-color: black;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	width: 80%;
+	height: 150px;
+	line-height: 150px;
+	color: white;
+	text-align: center;
+	vertical-align: middle;
+	margin-bottom: 2%;
+	font-size: 30px;
+}
+div.head-pic {
+	position: absolute;
+	top: 2%;
+	left: 70%;
+}
 div.seatCharts-container {
 	/*min-width: 700px;*/
 }
@@ -24,6 +44,18 @@ div.seatCharts-seat {
 div.seatCharts-seat:focus {
 	border: none;
 }
+div.front-indicator {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	left: 0;
+	right: 0;
+	width: 200px;
+	height: 30px;
+	border: 3px solid grey;
+	border-radius: 3%;
+	
+}
 /*
 .seatCharts-seat:focus {
 	outline: none;
@@ -39,12 +71,12 @@ div.seatCharts-row {
 
 div.seatCharts-seat.first {
 	/*background-color: #1F8DD6;*/
-	background-color: #5EC936;
+	background-color: #79bf5e;
 }
 
 div.seatCharts-seat.second {
 	/*background-color: #18CE81;*/
-	background-color: #F68EF9;
+	background-color: #e99ccf;
 }
 
 div.seatCharts-row:after {
@@ -66,7 +98,7 @@ div.seatCharts-seat.unavailable {
 
 div.seatCharts-seat.reserved {
 	/*background-color: orange;*/
-	background-color: #0030FF;
+	background-color: #79a6c4;
 	cursor: not-allowed;
 }
 

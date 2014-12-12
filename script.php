@@ -211,12 +211,64 @@
                 for ($i = 31; $i <= 36; $i ++) {
 			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'W', '" . $i . "', '18_" . ($i + 4) . "');";
 		}
-		// row Z(19)
+		// row X(19)
 		for ($i = 11; $i <= 15; $i ++) {
-			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Z', '" . $i . "', '19_" . ($i + 2) . "');";
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'X', '" . $i . "', '19_" . ($i + 2) . "');";
 		}
-	    for ($i = 26; $i <= 30; $i ++) {
-			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Z', '" . $i . "', '19_" . ($i + 1) . "');";
+	        for ($i = 26; $i <= 30; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'X', '" . $i . "', '19_" . ($i + 1) . "');";
 		}
+		// row Z(21)
+		for ($i = 11; $i <= 30; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Z', '" . $i . "', '21_" . ($i + 1) . "');";
+		}
+		// row AA(23)
+		for ($i = 2; $i <= 39; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'AA', '" . $i . "', '23_" . ($i + 1) . "');";
+		}
+		// row BB(24)
+		for ($i = 3; $i <= 37; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'BB', '" . $i . "', '24_" . ($i + 1) . "');";
+                		}
+		// row CC(25)
+		for ($i = 3; $i <= 38; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'CC', '" . $i . "', '25_" . ($i + 1) . "');";
+		}
+		// row DD(26)
+		for ($i = 3; $i <= 37; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'DD', '" . $i . "', '26_" . ($i + 1) . "');";
+		}
+		// row EE(27)
+		for ($i = 4; $i <= 37; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'EE', '" . $i . "', '27_" . ($i + 1) . "');";
+		}
+		// row FF(28)
+		for ($i = 4; $i <= 36; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'FF', '" . $i . "', '28_" . ($i + 1) . "');";
+		}
+		// row GG(29)
+		for ($i = 5; $i <= 36; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'GG', '" . $i . "', '26_" . ($i + 1) . "');";
+		}
+		// row LL
+		for ($i = 6; $i <= 10; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'LL', '" . $i . "', '" . ($i - 4) . "_1');";
+		}
+		for ($i = 11; $i <= 16; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'LL', '" . $i . "', '" . ($i - 3) . "_1');";
+		}
+		for ($i = 17; $i <= 22; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'LL', '" . $i . "', '" . ($i - 2) . "_1');";
+		}
+		for ($i = 23; $i <= 28; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'LL', '" . $i . "', '" . (43 - $i) . "_42');";
+		}
+		for ($i = 29; $i <= 34; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'LL', '" . $i . "', '" . (42 - $i) . "_42');";
+		}
+		for ($i = 35; $i <= 39; $i ++) {
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'LL', '" . $i . "', '" . (41 - $i) . "_42');";
+		}
+		
 		
 ?>
