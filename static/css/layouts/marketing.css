@@ -591,11 +591,11 @@ li.stars>*{
     background-position: 0 0;
 }
 
+.button-normal {
+  background-color: green;
+}
+
 .button-disabled {
   background-color: grey;
   cursor: not-allowed;
-}
-
-.button-normal {
-  background-color: green;
 }
