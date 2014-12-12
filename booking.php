@@ -21,13 +21,49 @@
 	}
 
 	if ($success){
-		redirect();
-	} else {
-
+		echo <<<REDIRECT
+<!doctype html>
+<html>
+<head>
+	<style type="text/css">
+	#msgbox {
+		position: absolute;
+		margin-left: auto;
+		margin-right: auto;
+		left: 0;
+		right: 0;
+		top:25%;
+		height: 150px;
+		width: 400px;
+		border: 10px solid grey;
+		border-radius: 2%;
 	}
 
-	function redirect(){
-		echo "<script>setTimeout(\"window.location.href='booking_redirect.html'\",0)</script>";
+	#msg {
+		margin-top:13%;
+		color:grey;
+		text-align:center;
+		font-size:25px;
+		font-family: "Times New Roman";
+	}
+	</style>
+</head>
+
+<body>
+	<div id='msgbox'>
+		<p id='msg'>Booking success!
+		<br>Redirecting to homepage...</p>
+	</div>
+	<script type='text/javascript'>
+		setTimeout(function() {window.location.href='index.html'},3000);
+	</script>
+</body>
+
+
+</html>
+REDIRECT;
+	} else {
+
 	}
 
 ?>

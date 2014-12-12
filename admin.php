@@ -15,6 +15,20 @@
 <body>
 <script>
 	$(document).ready(function(){
+		$('#woshiadmin').click(function(e) {
+			if ($('#admin-password').val() == "DP1415admin") {
+				$('.authentication').hide();
+				$('.ticket-management').show();
+			} else {
+				var left = $('#admin-password').width()/2+10;
+				$('#admin-password').stop()
+                    .animate({ left: left-20+"px" }, 30).animate({ left: left+10+"px" }, 30)
+                    .animate({ left: left-20+"px" }, 30).animate({ left: left+10+"px" }, 30)
+                    .animate({ left: left+"px" }, 30);
+			}
+			e.preventDefault();
+		});
+
   		$('.confirm-button').click(function(e) {
   			if (confirm("Are you sure you want confirm the booking?")) {
   				var id = $(this).attr('id');
@@ -45,7 +59,14 @@
   		
   	});
 </script>
-<div class="content ticket-management">
+<div class="authentication">
+	<form class="pure-form pure-form-single" style="margin-top: 15%;">
+		<input style="width:50%; position:absolute; left:25%" id="admin-password" name="password" type="password" placeholder="Admin password" required="required" />
+		<br /><br />
+		<button type="submit" id="woshiadmin" class="pure-button pure-button-primary" style="margin-bottom: 10%">I'm Admin!</button>
+	</form>
+</div>
+<div class="content ticket-management" style="display:none">
 	<h2 class="content-head is-center" style="margin-top: 5%; margin-bottom: 0%">Ticket Management</h2>
 
 	<div id="tab1" class="mtab_content" style="margin-bottom: 5%; text-align: center">
