@@ -86,7 +86,7 @@ $(document).ready(function(){
 		// Fallback for Internet Explorer and older browsers
 		
 		slideShow.bind('showNext',function(){
-			$('li:first').fadeOut('slow',function(){
+			$('li:first').fadeOut(800,function(){
 				$(this).remove().appendTo(ul).show();
 				updateZindex();
 			});
@@ -95,7 +95,7 @@ $(document).ready(function(){
 		slideShow.bind('showPrevious',function(){
 			var liLast = $('li:last').hide().remove().prependTo(ul);
 			updateZindex();
-			liLast.fadeIn('slow');
+			liLast.fadeIn(800);
 		});
 	// }
 	
