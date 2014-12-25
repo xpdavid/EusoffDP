@@ -12,7 +12,7 @@ body{
 	
 	background-image:url('../img/gallery/contour2.png'),url('../img/gallery/page_bg.jpg');
 	background-repeat:no-repeat,no-repeat;
-	background-position: center 119px, center -200px;
+	background-position: center 219px, center -200px;
 
 	font:15px Calibri,Arial,sans-serif;
 	border:1px solid transparent;
@@ -24,7 +24,7 @@ body{
 	height:598px;
 	width:887px;
 	position:relative;
-	margin:120px auto 50px;
+	margin:220px auto 50px;
 }
 
 #slideShow{
