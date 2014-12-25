@@ -27,8 +27,8 @@ $(document).ready(function(){
 			// Enlarging the slideshow and photo:
 			
 			slideShow.animate({
-				height      : 588,
-				width       : 877,
+				height      : 598,
+				width       : 887,
 				marginTop	: 0,
 				marginLeft	: 0
 			},'fast',function(){

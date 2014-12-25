@@ -10,9 +10,9 @@ html{
 body{
 	color:#999;
 	
-	background-image:url('../img/gallery/contour.png'),url('../img/gallery/page_bg.jpg');
+	background-image:url('../img/gallery/contour2.png'),url('../img/gallery/page_bg.jpg');
 	background-repeat:no-repeat,no-repeat;
-	background-position: center 117px, center -200px;
+	background-position: center 119px, center -200px;
 
 	font:15px Calibri,Arial,sans-serif;
 	border:1px solid transparent;
@@ -21,8 +21,8 @@ body{
 /* Styling the slideshow */
 
 #slideShowContainer{
-	height:588px;
-	width:877px;
+	height:598px;
+	width:887px;
 	position:relative;
 	margin:120px auto 50px;
 }
@@ -42,9 +42,9 @@ body{
 
 #slideShow ul{
 	position:absolute;
-	top:15px;
+	top:0px;
 	right:15px;
-	bottom:15px;
+	bottom:0px;
 	left:15px;
 	list-style:none;
 	overflow:hidden;
@@ -65,7 +65,7 @@ body{
 	overflow:hidden;
 	width:36px;
 	height:37px;
-	background:url('../img/gallery/arrows.png') no-repeat;
+	background:url('../img/gallery/arrows2.png') no-repeat;
 	position:absolute;
 	top:50%;
 	margin-top:-21px;
