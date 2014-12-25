@@ -10,78 +10,78 @@ $(document).ready(function(){
 	
 	updateZindex();
 
-	if($.support.transform){
+	// if($.support.transform){
 	
-		// Modern browsers with support for css3 transformations
+	// 	// Modern browsers with support for css3 transformations
 	
-		li.find('img').css('rotate',function(i){
-			// Rotating the images counterclockwise
-			return (-180*i) + 'deg';
-		});
+	// 	// li.find('img').css('rotate',function(i){
+	// 	// 	// Rotating the images counterclockwise
+	// 	// 	return (-180*i) + 'deg';
+	// 	// });
 	
-		// Binding a custom event. the direction and degrees parameters
-		// are passed when the event is triggered later on in the code.
+	// 	// Binding a custom event. the direction and degrees parameters
+	// 	// are passed when the event is triggered later on in the code.
 	
-		slideShow.bind('rotateContainer',function(e,direction,degrees){
+	// 	slideShow.bind('rotateContainer',function(e,direction,degrees){
 			
-			// Enlarging the slideshow and photo:
+	// 		// Enlarging the slideshow and photo:
 			
-			slideShow.animate({
-				height      : 598,
-				width       : 887,
-				marginTop	: 0,
-				marginLeft	: 0
-			},'fast',function(){
+	// 		slideShow.animate({
+	// 			height      : 598,
+	// 			width       : 887,
+	// 			marginTop	: 0,
+	// 			marginLeft	: 0
+	// 		},'slow',function(){
 				
-				if(direction == 'next'){
+	// 			if(direction == 'next'){
 				
-					// Moving the topmost image containing Li at
-					// the bottom after a fadeOut animation
+	// 				// Moving the topmost image containing Li at
+	// 				// the bottom after a fadeOut animation
 					
-					$('li:first').fadeOut('slow',function(){
-						$(this).remove().appendTo(ul).show();
-						updateZindex();
-					});
-				}
-				else {
+	// 				$('li:first').fadeOut('slow',function(){
+	// 					$(this).remove().appendTo(ul).show();
+	// 					updateZindex();
+	// 				});
+	// 			}
+	// 			else {
 					
-					// Showing the bottomost Li element on top 
-					// with a fade in animation. Notice that we are
-					// updating the z-indexes.
+	// 				// Showing the bottomost Li element on top 
+	// 				// with a fade in animation. Notice that we are
+	// 				// updating the z-indexes.
 					
-					var liLast = $('li:last').hide().remove().prependTo(ul);
-					updateZindex();
-					liLast.fadeIn('slow');
-				}
+	// 				var liLast = $('li:last').hide().remove().prependTo(ul);
+	// 				updateZindex();
+	// 				liLast.fadeIn('slow');
+	// 			}
 				
-				// Rotating the slideShow. css('rotate') gives us the
-				// current rotation in radians. We are converting it to
-				// degress so we can add 90 or -90 to rotate it to its new value.
+	// 			// Rotating the slideShow. css('rotate') gives us the
+	// 			// current rotation in radians. We are converting it to
+	// 			// degress so we can add 90 or -90 to rotate it to its new value.
 				
-				slideShow.animate({				
-					rotate:Math.round($.rotate.radToDeg(slideShow.css('rotate'))+degrees) + 'deg'
-				},'slow').animate({
-					height      : 578,
-					width       : 867,
-					marginTop	: 10,
-					marginLeft	: 10
-				},'fast');
-			});
-		});
+	// 			slideShow.animate({				
+	// 				rotate:Math.round($.rotate.radToDeg(slideShow.css('rotate'))+degrees) + 'deg'
+	// 			},'slow').animate({
+	// 				height      : 578,
+	// 				width       : 867,
+	// 				marginTop	: 10,
+	// 				marginLeft	: 10
+	// 			},'fast');
+	// 		});
+	// 	});
 		
-		// By triggering the custom events below, we can 
-		// show the previous / next images in the slideshow.
+	// 	// By triggering the custom events below, we can 
+	// 	// show the previous / next images in the slideshow.
 		
-		slideShow.bind('showNext',function(){
-			slideShow.trigger('rotateContainer',['next',180]);
-		});
+	// 	slideShow.bind('showNext',function(){
+	// 		slideShow.trigger('rotateContainer',['next',180]);
+	// 	});
 		
-		slideShow.bind('showPrevious',function(){
-			slideShow.trigger('rotateContainer',['previous',-180]);
-		});
-	}
+	// 	slideShow.bind('showPrevious',function(){
+	// 		slideShow.trigger('rotateContainer',['previous',-180]);
+	// 	});
+	// }
 	
-	else{
+	// else{
 		
 		// Fallback for Internet Explorer and older browsers
 		
@@ -97,7 +97,7 @@ $(document).ready(function(){
 			updateZindex();
 			liLast.fadeIn('slow');
 		});
-	}
+	// }
 	
 	// Listening for clicks on the arrows, and
 	// triggering the appropriate event.
