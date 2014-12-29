@@ -21,7 +21,7 @@
 	}
 
 	if ($success){
-		header("Location: /dp1415/booking_redirect.html");
+		header("Location: /booking_redirect.html");
 	} else {
 
 	}
