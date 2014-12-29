@@ -57,8 +57,20 @@
   			}
   		});
 
+		
   		
   	});
+
+	function switch_table() {
+		if ($("#will_filter").is(':checked')) {
+			$('#tab1').hide();
+			$('#tab2').show();
+		} else {
+			$('#tab2').hide();
+			$('#tab1').show();
+		}
+	}
+
 </script>
 <div class="authentication">
 	<form class="pure-form pure-form-single" style="margin-top: 15%;">
@@ -69,7 +81,14 @@
 </div>
 <div class="content ticket-management" style="display:none">
 	<h2 class="content-head is-center" style="margin-top: 5%; margin-bottom: 0%">Ticket Management</h2>
+	<div class="filter">
+		<form class="pure-form pure-form-single">
+			<input type="checkbox" id="will_filter" onclick="switch_table()"/> &nbsp;Hide all cancelled bookings
+		</form>
+	</div>
+ADMIN_HEADER;
 
+	$table1_header =<<<T1_HEADER
 	<div id="tab1" class="mtab_content" style="margin-bottom: 5%; text-align: center">
 		<br />
 		<table class="pure-table" style='margin:0px auto;'>
@@ -84,10 +103,10 @@
 			</thead>
 
 			<tbody>
-ADMIN_HEADER;
+T1_HEADER;
 			
 			$all_booking = get_all_booking_info();
-			$table_body = "";
+			$table1_body = "";
 
 			for ($i = 0; $i < count($all_booking); $i ++) {
 				$email = $all_booking[$i]['email'];
@@ -109,7 +128,7 @@ ADMIN_HEADER;
 					$cancel_class = "button-disabled";
 				}
 				if ($i % 2 === 0) {
-					$table_body .= 
+					$table1_body .= 
 					"<tr class='pure-table-odd' style='font-size: 12px'>
 						<td>$email</td>
 						<td>$seat</td>
@@ -121,7 +140,7 @@ ADMIN_HEADER;
 						</td>
 					</tr>";
 				} else {
-					$table_body .= 
+					$table1_body .= 
 					"<tr style='font-size: 12px'>
 						<td>$email</td>
 						<td>$seat</td>
@@ -135,14 +154,98 @@ ADMIN_HEADER;
 				}
 			}
 
-			$table_footer = <<<ADMIN_FOOTER
+			$table1_footer = <<<T1_FOOTER
 			</tbody>
 		</table>
 	</div>
+T1_FOOTER;
+
+	
+
+
+
+
+
+
+
+
+	$table2_header =<<<T2_HEADER
+	<div id="tab2" class="mtab_content" style="margin-bottom: 5%; text-align: center; display:none">
+		<br />
+		<table class="pure-table" style='margin:0px auto;'>
+			<thead>
+				<tr style="text-align:center; font-size: 13px">
+					<th>Email</th>
+					<th>Seat</th>
+					<th>Status</th>
+					<th>Booking Time</th>
+					<th>Operation</th>
+				</tr>
+			</thead>
+
+			<tbody>
+T2_HEADER;
+			
+			$all_booking = get_filtered_booking_info();
+			$table2_body = "";
+
+			for ($i = 0; $i < count($all_booking); $i ++) {
+				$email = $all_booking[$i]['email'];
+				$seat = $all_booking[$i]['seat'];
+				$status = $all_booking[$i]['status'];
+				$id = $all_booking[$i]['id'];
+				$booking_time = $all_booking[$i]['booking_time'];
+				$cancel_class = "";
+				$confirm_class = "";
+				$status_content = "";
+				if ($status == BOOKING_STATUS_PENDING) {
+					$status_content = "<span id=status$id style='color:blue'>Pending</span>";
+				} else if ($status == BOOKING_STATUS_SUCCEED) {
+					$status_content = "<span id=status$id style='color:green'>Confirmed</span>";
+					$confirm_class = "button-disabled";
+				} else if ($status == BOOKING_STATUS_CANCELLED) {
+					$status_content = "<span id=status$id style='color:red'>Cancelled</span>";
+					$confirm_class = "button-disabled";
+					$cancel_class = "button-disabled";
+				}
+				if ($i % 2 === 0) {
+					$table2_body .= 
+					"<tr class='pure-table-odd' style='font-size: 12px'>
+						<td>$email</td>
+						<td>$seat</td>
+						<td>$status_content</td>
+						<td>$booking_time</td>
+						<td>
+							<span class='cancel-button' id=$id><a class='pure-button button-error $cancel_class' id=can$id href=''>Cancel</a></span>
+							<span class='confirm-button' id=$id><a class='pure-button button-normal $confirm_class' id=con$id href=''>Confirm</a></span>
+						</td>
+					</tr>";
+				} else {
+					$table2_body .= 
+					"<tr style='font-size: 12px'>
+						<td>$email</td>
+						<td>$seat</td>
+						<td>$status_content</td>
+						<td>$booking_time</td>
+						<td>
+							<span class='cancel-button' id=$id><a class='pure-button button-error $cancel_class' id=can$id href=''>Cancel</a></span>
+							<span class='confirm-button' id=$id><a class='pure-button button-normal $confirm_class' id=con$id href=''>Confirm</a></span>
+						</td>
+					</tr>";
+				}
+			}
+
+			$table2_footer = <<<T2_FOOTER
+			</tbody>
+		</table>
+	</div>
+T2_FOOTER;
+
+			$table_footer = <<<ADMIN_FOOTER
 </div>
 </body>
 </html>
 ADMIN_FOOTER;
 
-	echo $table_header . $table_body . $table_footer;
+	echo $table_header . $table1_header . $table1_body . $table1_footer . $table2_header . $table2_body . $table2_footer . $table_footer;
 ?>
