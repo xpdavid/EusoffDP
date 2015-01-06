@@ -139,4 +139,24 @@
 		return $seats;
 	}
 
+	function get_filtered_booking_info() {
+		$con = establish();
+		mysql_select_db(DB_NAME, $con);
+
+		$query = "SELECT * FROM " . SEAT_TABLE . " s, " . BOOKING_TABLE . " b WHERE s.seat_id = b.seat_id AND b.status <> " . BOOKING_STATUS_CANCELLED;
+		$result = mysql_query($query);
+
+		$seats = [];
+		while ($row = mysql_fetch_array($result)) {
+			$seat['email'] = $row['email'];
+			$seat['seat'] = "L" . $row['level'] . " " . $row['row'] . '-' . $row['col'];
+			$seat['status'] = $row['status'];
+			$seat['id'] = $row['book_id'];
+			$seat['booking_time'] = $row['booking_time'];
+
+			$seats[] = $seat;
+		}
+		return $seats;
+	}
+
 ?>
