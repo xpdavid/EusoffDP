@@ -123,7 +123,7 @@
 		$con = establish();
 		mysql_select_db(DB_NAME, $con);
 
-		$query = "SELECT * FROM " . SEAT_TABLE . " s, " . BOOKING_TABLE . " b WHERE s.seat_id = b.seat_id";
+		$query = "SELECT * FROM " . SEAT_TABLE . " s, " . BOOKING_TABLE . " b WHERE s.seat_id = b.seat_id ORDER BY b.booking_time DESC";
 		$result = mysql_query($query);
 
 		$seats = [];
@@ -143,7 +143,7 @@
 		$con = establish();
 		mysql_select_db(DB_NAME, $con);
 
-		$query = "SELECT * FROM " . SEAT_TABLE . " s, " . BOOKING_TABLE . " b WHERE s.seat_id = b.seat_id AND b.status <> " . BOOKING_STATUS_CANCELLED;
+		$query = "SELECT * FROM " . SEAT_TABLE . " s, " . BOOKING_TABLE . " b WHERE s.seat_id = b.seat_id AND b.status <> " . BOOKING_STATUS_CANCELLED . " ORDER BY b.booking_time DESC";
 		$result = mysql_query($query);
 
 		$seats = [];
