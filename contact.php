@@ -1,3 +1,6 @@
+<?php
+	require_once("include/constant.php");
+?>
 <!doctype html>
 <html>
 <head>
@@ -51,7 +54,7 @@
 	</div>
 	<div id="body">
 		<div id="title">
-			<a href="/"><img src="img/title.png" width="700" height="200"></a>
+			<a href="/<?php echo RELATIVE_PATH; ?>"><img src="img/title.png" width="700" height="200"></a>
 		</div>
 		<div id="poster"><img src="img/poster.png" width="280" height="400"></div>
 		<div id="infobox">

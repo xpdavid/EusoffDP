@@ -21,7 +21,7 @@
 	}
 
 	if ($success){
-		header("Location: /booking_redirect.html");
+		header("Location: booking_redirect.php");
 	} else {
 
 	}

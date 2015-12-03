@@ -1,4 +1,4 @@
-<?php require_once "gallery-header.html"; ?>
+<?php require_once "gallery-header.php"; ?>
 <div id="slideShowContainer">
 	
     <div id="slideShow">

@@ -1,3 +1,6 @@
+<?php
+	require_once("include/constant.php");
+?>
 <!doctype html>
 <html>
 <head>
@@ -35,10 +38,10 @@
 		<p id='msg'>Booking success!
 		<br>Please contact Kenneth Quek <h style="color:yellow">97838052</h> to get your ticket
 		<br>Redirecting to homepage...
-		<br>You can also click <a style="color: grey" href="/">here</a></p>
+		<br>You can also click <a style="color: grey" href="index.php">here</a></p>
 	</div>
 	<script type='text/javascript'>
-		setTimeout(function() {window.location.href='index.html'},8000);
+		setTimeout(function() {window.location.href='index.php'},8000);
 	</script>
 </body>
 

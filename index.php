@@ -1,3 +1,6 @@
+<?php
+	require_once("include/constant.php");
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
@@ -88,22 +91,22 @@
 		<img src="img/barb_wire2.gif" style="position:absolute;top:75%;left:70%" height="200px" width="500px">
 	</div>
 	<div id='home' class='focus icon' style="position:absolute;top:33%;left:51%" onclick="">
-		<a href="home.html"><img src="img/icon_home.png" onmouseover="this.src='img/text_home.png';" onmouseout="this.src='img/icon_home.png';" alt="cricket"></a>
+		<a href="home.php"><img src="img/icon_home.png" onmouseover="this.src='img/text_home.png';" onmouseout="this.src='img/icon_home.png';" alt="cricket"></a>
 	</div>
 	<div id='gallery' class='focus icon' style="position:absolute;top:33%;left:63%" onclick="">
 		<a href="gallery.php"><img src="img/icon_gallery.png" onmouseover="this.src='img/text_gallery.png';" onmouseout="this.src='img/icon_gallery.png';" alt="cricket"></a>
 	</div>
 	<div id='synopsis' class='focus icon' style="position:absolute;top:33%;left:75%" onclick="">
-		<a href="synopsis.html"><img src="img/icon_synopsis.png" onmouseover="this.src='img/text_synopsis.png';" onmouseout="this.src='img/icon_synopsis.png';" alt="cricket"></a>
+		<a href="synopsis.php"><img src="img/icon_synopsis.png" onmouseover="this.src='img/text_synopsis.png';" onmouseout="this.src='img/icon_synopsis.png';" alt="cricket"></a>
 	</div>
 	<div id='ticket' class='focus icon' style="position:absolute;top:61%;left:51%" onclick="">
-		<a href="ticket.html"><img src="img/icon_ticket.png" onmouseover="this.src='img/text_ticket.png';" onmouseout="this.src='img/icon_ticket.png';" alt="cricket"></a>
+		<a href="ticket.php"><img src="img/icon_ticket.png" onmouseover="this.src='img/text_ticket.png';" onmouseout="this.src='img/icon_ticket.png';" alt="cricket"></a>
 	</div>
 	<div id='contact' class='focus icon' style="position:absolute;top:61%;left:63%" onclick="">
-		<a href="contact.html"><img src="img/icon_contact.png" onmouseover="this.src='img/text_contact.png';" onmouseout="this.src='img/icon_contact.png';" alt="cricket"></a>
+		<a href="contact.php"><img src="img/icon_contact.png" onmouseover="this.src='img/text_contact.png';" onmouseout="this.src='img/icon_contact.png';" alt="cricket"></a>
 	</div>
 	<div id='sponsor' class='focus icon' style="position:absolute;top:61%;left:75%" onclick="">
-		<a href="sponsor.html"><img src="img/icon_sponsor.png" onmouseover="this.src='img/text_sponsor.png';" onmouseout="this.src='img/icon_sponsor.png';" alt="cricket"></a>
+		<a href="sponsor.php"><img src="img/icon_sponsor.png" onmouseover="this.src='img/text_sponsor.png';" onmouseout="this.src='img/icon_sponsor.png';" alt="cricket"></a>
 	</div>
 	<div id='infobox'> 
 		<p class='info' style='font-size:25px;'>General Information</p>
@@ -129,9 +132,9 @@
 			}
 		};
 
-		function loadMainPage(){
-			window.location.href = "new_main.html";
-		}
+		//function loadMainPage(){
+		//	window.location.href = "new_main.html";
+		//}
 	</script>
 </body>
 </html>

@@ -1,3 +1,6 @@
+<?php
+	require_once("include/constant.php");
+?>
 <!doctype html>
 <html>
 <head>
@@ -29,7 +32,7 @@
 
 	<div id="body">
 		<div id="title">
-			<a href="/"><img src="img/title.png" width="700" height="200"></a>
+			<a href="/<?php echo RELATIVE_PATH;?>"><img src="img/title.png" width="700" height="200"></a>
 		</div>
 		<div id="sponsor"><img src="img/NIC logo.jpg" width="400px" height="300px"></div><div id='barb_wire'>
 		<img src="img/barb_wire.gif" style="position:absolute;top:59%;left:-2%" height="300px" width="500px">

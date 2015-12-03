@@ -1,3 +1,6 @@
+<?php
+	require_once("include/constant.php");
+?>
 <!doctype html>
 <html>
 <head>
@@ -52,7 +55,7 @@
 	</div>
 	<div id="body">
 		<div id="title">
-			<a href="/"><img src="img/title.png" width="700" height="200"></a>
+			<a href="/<?php echo RELATIVE_PATH;?>"><img src="img/title.png" width="700" height="200"></a>
 		</div>
 		<div id="video"><iframe width="420" height="315" src="http://www.youtube.com/embed/tNLVoPN1chg">
 		</iframe></div>
