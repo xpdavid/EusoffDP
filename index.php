@@ -79,8 +79,7 @@
 
 </head>
 <body scroll=0>
-	<script>
-	</script>
+	<script></script>
 	<div id='title'>
 		<img src="img/title.png" width="700" height="200">
 	</div>
@@ -136,5 +135,7 @@
 		//	window.location.href = "new_main.html";
 		//}
 	</script>
+	<div style = "position:absolute; bottom:2%; left: 3%"><?php include('footer.php'); ?> </div>
 </body>
+
 </html>

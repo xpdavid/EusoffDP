@@ -244,6 +244,7 @@ T2_FOOTER;
 			$table_footer = <<<ADMIN_FOOTER
 </div>
 </body>
+<?php include('footer.php'); ?>
 </html>
 ADMIN_FOOTER;
 

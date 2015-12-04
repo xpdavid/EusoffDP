@@ -28,6 +28,6 @@
     <a id="nextLink" href="#">&laquo;</a>
     
 </div>
-
 </body>
+<?php include('footer.php'); ?>
 </html>

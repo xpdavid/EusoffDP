@@ -14,7 +14,7 @@
 			margin-right: auto;
 			left: 0;
 			right: 0;
-			height: 800px;
+			height: 600px;
 			background-color: rgba(0, 0, 0, 0.7);
 			width: 60%;
 		}
@@ -71,5 +71,6 @@
 			</div>
 		</div>
 	</div>
+	<?php include('footer.php'); ?>
 </body>
 </html>
