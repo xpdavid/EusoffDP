@@ -12,10 +12,10 @@ Eusoff Dance Production website
 8. In database `dp_booking`, open `SQL` tab, paste and run the content
 9. enter url `localhost/DP1415` in browser
 
-##Proposed changes
-### General
+##Proposed Changes
+###General
 * Change fonts to `Helvetica` or similar
-### Booking Page
+###Booking Page
 * Change background
 * Add seat selection restriction: Cannot leave one seat empty in between booked seats
 * Modify the layout of the page with an immediate update of information in the side bar
@@ -26,11 +26,11 @@ Eusoff Dance Production website
   *  Mailing Address
   *  Modes of Ticket Collection: from friends / mailing
   *  Purchase of flower(s) for Charity: Amount
-### Checkout Page
+###Checkout Page
 * Display information prompting users to transfer payment to designated bank account (to be confirmed)
-### Gallery
+###Gallery
 * Change background
-### Index Page
+###Index Page
 * Modify the spin of menu buttons
-### Synopsis Page
+###Synopsis Page
 * Modify the layout into one column  
