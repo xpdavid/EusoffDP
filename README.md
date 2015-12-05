@@ -15,6 +15,7 @@ Eusoff Dance Production website
 ##Proposed Changes
 ###General
 * Change fonts to `Helvetica` or similar
+
 ###Booking Page
 * Change background
 * Add seat selection restriction: Cannot leave one seat empty in between booked seats
@@ -26,11 +27,15 @@ Eusoff Dance Production website
   *  Mailing Address
   *  Modes of Ticket Collection: from friends / mailing
   *  Purchase of flower(s) for Charity: Amount
+
 ###Checkout Page
 * Display information prompting users to transfer payment to designated bank account (to be confirmed)
+
 ###Gallery
 * Change background
+
 ###Index Page
 * Modify the spin of menu buttons
+
 ###Synopsis Page
 * Modify the layout into one column  
