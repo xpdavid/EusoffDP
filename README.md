@@ -3,14 +3,15 @@ Eusoff Dance Production website
 
 ##How to setup
 1. copy folder `DP1415` to path xampp/htdocs
-2. start your `apache` and `mysql` server
-3. enter url `localhost/phpmyadmin`
-4. create a database named `dp_booking`
-5. import file `schema.sql` into database `dp_booking`
-6. enter url `localhost/script.php` in browser
-7. copy the content of the page 
-8. In database `dp_booking`, open `SQL` tab, paste and run the content
-9. enter url `localhost/DP1415` in browser
+2. Update database username and password in `include/constant.php`
+3. start your `apache` and `mysql` server
+4. enter url `localhost/phpmyadmin`
+5. create a database named `dp_booking`
+6. import file `schema.sql` into database `dp_booking`
+7. enter url `localhost/script.php` in browser
+8. copy the content of the page 
+9. In database `dp_booking`, open `SQL` tab, paste and run the content
+10. enter url `localhost/DP1415` in browser
 
 ##Proposed Changes
 ###General
