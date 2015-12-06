@@ -600,3 +600,161 @@ li.stars>*{
   background-color: grey;
   cursor: not-allowed;
 }
+
+/*
+Progress Step Bar style
+*/
+.step_bar_warp {
+  width:80%;
+  text-align: center;
+  margin: auto;
+  margin-top:20px;
+}
+.progress {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  color: #849397;
+  position: relative;
+}
+.progress > li {
+  position: relative;
+  display: table-cell;
+  text-align: center;
+  font-size: 0.8em;
+}
+.progress > li:before {
+  content: attr(data-step);
+  display: block;
+  margin: 0 auto;
+  background: #DFE3E4;
+  width: 3em;
+  height: 3em;
+  text-align: center;
+  margin-bottom: 0.25em;
+  line-height: 3em;
+  border-radius: 100%;
+  position: relative;
+  z-index: 1000;
+}
+.progress > li:after {
+  content: '';
+  position: absolute;
+  display: block;
+  background: #DFE3E4;
+  width: 100%;
+  height: 0.5em;
+  top: 1.25em;
+  left: 50%;
+  margin-left: 1.5em\9;
+  z-index: -1;
+}
+.progress > li:last-child:after {
+  display: none;
+}
+.progress > li.is-complete {
+  color: #2ECC71;
+}
+.progress > li.is-complete:before, .progress > li.is-complete:after {
+  color: #FFF;
+  background: #2ECC71;
+}
+.progress > li.is-active {
+  color: #3498DB;
+}
+.progress > li.is-active:before {
+  color: #FFF;
+  background: #3498DB;
+}
+
+/**
+ * Needed for IE8
+ */
+.progress__last:after {
+  display: none !important;
+}
+
+
+/**
+ * Some Generic Stylings
+ */
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+
+/*
+Booking Summary style
+*/
+
+.summary {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 40px;
+  color: white !important;
+}
+
+.summary > h3 {
+  color: white;
+  text-align: left;
+}
+
+.summary > hr {
+  border: 0; 
+  height: 1px; 
+  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
+}
+
+.summary > table {
+  text-align: left;
+  width: 100%;
+}
+
+.summary > table button {
+  height: 30px;
+}
+
+.button-success {
+            background: rgb(28, 184, 65); /* this is a green */
+        }
+.button-error {
+            background: rgb(202, 60, 60); /* this is a maroon */
+        }
+
+/*
+message box
+*/
+
+.alert-box {
+  color:#555;
+  border-radius:5px;
+  font-size:15px;
+  padding:10px 36px;
+  margin:10px;
+}
+.error {
+  color: #D8000C;
+  background-color: #FFBABA;
+}
+.success {
+  color: #4F8A10;
+  background-color: #DFF2BF;
+}
+.warning {
+  color: #9F6000;
+  background-color: #FEEFB3;
+}
+.notice {
+  color: #00529B;
+  background-color: #BDE5F8;
+}
+
+
+

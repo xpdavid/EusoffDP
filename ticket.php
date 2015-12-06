@@ -24,6 +24,8 @@
   <script src="fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
   <link rel="stylesheet" href="fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" media="screen" />
   <script src="fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+  <!-- booking helper function -->
+  <script src="static/js/booking_checker.js"></script>
 </head>
 <body style="background: black">
   <script type="text/javascript">
@@ -67,45 +69,36 @@
 	<div>You can also download the seating plan from <a href="static/seating_plan.pdf" style="color:yellow">here</a></div>
 </div>
 
+<div class="step_bar_warp">
+	<ol class="progress">  
+		<li class="is-active" data-step="1">Step 1: Select your seats</li>  
+		<li data-step="2">Step 2: Your booking details</li>  
+		<li data-step="3">Step 3: 'Flower Buddle'</li>
+		<li data-step="4" class="progress__last">Step 4: Checkout</li>
+	</ol>
+</div>
+
 <div id="floor1" class="content book-movie1" style="text-align:center;">
 <a class="fancybox" rel="group" href="img/level1.png"><img src="img/level1.png" style="position:absolute;top:16%;left:20%" width="170px" height="240px" alt=""/></a>
 <a class="fancybox" rel="group" href="img/level1p.png"><img src="img/level1p.png" style="position:absolute;top:16%;left:67%" width="170px" height="240px" alt=""/></a>
 
-<div id="procedures" style="width:80%;border:2px solid white;margin-left:auto;margin-right:auto;left:0px;right:0px;text-align:center;">
-	<p style="font-size: 20px;top:20px;">How To Book</p>
-	<div id="info" style="margin-left:80px;text-align:left;">
-	<p>1. Select your seats by looking at the seating plan
-	<br>2. Log in to book your seats via _______
-	<br>3. Payment to be due within three days by cash payment to any EHDP Marketing member.
-	<br>4. A confirmation email will be sent to you if the booking was successful.</p>
-</div>
-</div>
+
 	<div class="wrapper">
 		<div class="container">
 			<div id="seat-map1" style="margin-top: 30px; margin-left: 0%; width: 1033px">
 				<div class="front-indicator" style="text-align:center;">Stage</div>
 			</div>
-			<div class="booking-details" style="display:none">
-				<h2>Booking Details</h2>
-				<h3> Selected Seats (<span id="counter">0</span>):</h3>
-				<ul id="selected-seats1"></ul>
-			</div>
 		</div>
 	</div>
-	<form action="booking.php" method="post" class="pure-form pure-form-single" style="margin-top: 5%;">
-		<input id="email" name="email" type="email" placeholder="Your Email here" required="required" />
-		<input id="level" name="level" type="hidden" value="1" />
-		<input id="seat1" name="seat1" type="hidden" placeholder="Seat" />
-		<div id="shows-option"></div>
-		<br /><br />
-		<button type="submit" class="pure-button pure-button-primary book-button1" style="margin-bottom: 10%">Book!</button>
-	</form>
 	<script>
 	$(document).ready(function(){
-
-		var $cart = $('#selected-seats1'),
-			$counter = $('#counter'),
-			sc = $('#seat-map1').seatCharts({
+		$summary_table = $('#summary_table>tbody');
+		var sc = $('#seat-map1').seatCharts({
+			naming : {
+				getId: function(character, row, column) {
+    				return "1_" + row + '_' + column; // notice it is not _ but -
+				}
+			},
 			map: [//19 hang
 				'_________ffeeeeeeeeeeeeeeeeeeeeff_________',//11-30  		     D
 				's_eeeeee_ffeeeeeeeeeeeeeeeeeeeeef_eeeeee_s',//3-8, 9-29, 30-35  E
@@ -136,7 +129,6 @@
 				'__ffssssssssssssssssssssssssssssssssssff__',//4-37 EE
 				'__ffsssssssssssssssssssssssssssssssssfff__',//4-36 FF
 				'__fffssssssssssssssssssssssssssssssssfff__',//5-36 GG
-				
 			],
 			seats: {
 				f: {
@@ -147,7 +139,7 @@
 				e: {
 					price   : 25,
 					classes : 'seatCharts-seat seatCharts-cell available first', //your custom CSS class
-					category: 'cat 1'
+					category: 'Cat $25 seat'
 				},	
 				r: {
 					price	: 0,
@@ -157,38 +149,37 @@
 				s: {
 					price   : 22,
 					classes : 'seatCharts-seat seatCharts-cell available second', //your custom CSS class
-					category: 'cat 2'
+					category: 'Cat $22 seat'
 				},
 			
 			},
 			click: function () {
 				if (this.status() == 'available') {
-					//let's create a new <li> which we'll add to the cart items
-					$('<li>'+' Seat # '+ this.settings.id + '</li>')
-						.attr('id', 'cart-item-'+this.settings.id)
-						.data('seatId', this.settings.id)
-						.appendTo($cart);
-					
-					// $('#seat1').val($('#seat1').val() + this.settings.id + ',');
-					/*
-					 * Lets update the counter and total
-					 *
-					 * .find function will not find the current seat, because it will change its stauts only after return
-					 * 'selected'. This is why we have to add 1 to the length and the current seat price to the total.
-					 */
-					$counter.text(sc.find('selected').length+1);
+					var price    = this.data().price;
+            		var category = this.data().category;
+            		var id = this.node().attr("id");
+            		$summary_table.append("<tr id = \"summary_"+ id +"\"><td>" + 
+            			category + "</td><td>"+ id +"</td><td class=\"single_price\">S$" + price + 
+            			".00&nbsp&nbsp<button class=\"button-error pure-button\" onclick=\"cancel_seat('"+ id +"');\">Delete</button></td></tr>");
+					compute_total();
+					// add current seat to the summary
+					var all_seat = sc.find("selected").seatIds;
+					all_seat[all_seat.length] = id;
+					check_seat_between(sc, all_seat, 1);
+					// we don't allow one seat between two booked seats
 					return 'selected';
 				} else if (this.status() == 'selected') {
-					//update the counter
-					$counter.text(sc.find('selected').length-1);
-				
-					//remove the item from our cart
-					$('#cart-item-'+this.settings.id).remove();
-				
-					//seat has been vacated
+					var id = this.node().attr("id");
+					$("#summary_" + id).remove();
+					compute_total();
+					// update the summary
+					var all_seat = sc.find("selected").seatIds;
+					all_seat.remove(id)
+					check_seat_between(sc, all_seat, 1, id);
+					// check wheter there are seats between two booked seats
 					return 'available';
 				} else if (this.status() == 'unavailable') {
-					//seat has been already booked
+
 					return 'unavailable';
 				} else {
 					return this.style();
@@ -203,27 +194,13 @@
 			};
 		});
 
-        $(".na").each(function(){
+        $("div#seat-map1 .na").each(function(){
         	sc.get($(this).attr("id")).status('unavailable');	
         });
 
-        $(".reserved").each(function(){
+        $("div#seat-map1 .reserved").each(function(){
         	sc.get($(this).attr("id")).status('unavailable');	
         });
-
-        $('.book-button1').click(function(e) {
-        	$(".seatCharts-cell.selected").each(function(){
-        		$('#seat1').val($('#seat1').val() + $(this).attr("id") + ',');
-        	});
-  			// e.preventDefault();
-  		});
-
-  		$('.book-button2').click(function(e) {
-        	$(".seatCharts-cell.selected").each(function(){
-        		$('#seat2').val($('#seat2').val() + $(this).attr("id") + ',');
-        	});
-  			// e.preventDefault();
-  		});
 
 	    $(window).resize(function(){
 	        var px = (($(window).width() > 1033) ? (($(window).width() - 1033) / 2 - 20) : 0) + "px";
@@ -250,30 +227,20 @@
 		<div class="container">
 			<div id="seat-map2" style="margin-left: 0%; width: 1060px">
 				<div class="front-indicator" style="text-align:center;">Stage</div>
-				
-			</div>
-			<div class="booking-details" style="display:none">
-				<h2>Booking Details</h2>
-				
-				<h3> Selected Seats (<span id="counter">0</span>):</h3>
-				<ul id="selected-seats2"></ul>
 			</div>
 		</div>
 	</div>
-	<form action="booking.php" method="post" class="pure-form pure-form-single" style="margin-top: 5%;">
-		<input id="email" name="email" type="email" placeholder="Your Email here" required="required" />
-		<input id="level" name="level" type="hidden" value="2" />
-		<input id="seat2" name="seat2" type="hidden" placeholder="Seat" />
-		<div id="shows-option"></div>
-		<br /><br />
-		<button type="submit" class="pure-button pure-button-primary book-button2" style="margin-bottom: 10%">Book!</button>
-	</form>
+
 	<script>
 	$(document).ready(function(){
 
-		var $cart = $('#selected-seats2'),
-			$counter = $('#counter'),
-			sc = $('#seat-map2').seatCharts({
+		var sc2 = $('#seat-map2').seatCharts({
+			// need to rewrite the id_system
+			naming : {
+				getId: function(character, row, column) {
+    				return "2_" + row + '_' + column; // the second floor
+				}
+			},
 			map: [//19 hang
 				'__s_____________________________________s__',//1
 				'__s_____________________________________s__',//2
@@ -347,32 +314,31 @@
 			},
 			click: function () {
 				if (this.status() == 'available') {
-					//let's create a new <li> which we'll add to the cart items
-					$('<li>'+' Seat # '+ this.settings.id + '</li>')
-						.attr('id', 'cart-item-'+this.settings.id)
-						.data('seatId', this.settings.id)
-						.appendTo($cart);
-					
-					// $('#seat2').val($('#seat2').val() + this.settings.id + ',');
-					/*
-					 * Lets update the counter and total
-					 *
-					 * .find function will not find the current seat, because it will change its stauts only after return
-					 * 'selected'. This is why we have to add 1 to the length and the current seat price to the total.
-					 */
-					$counter.text(sc.find('selected').length+1);
+					var price    = this.data().price;
+            		var category = this.data().category;
+            		var id = this.node().attr("id");
+            		$summary_table.append("<tr id = \"summary_"+ id +"\"><td>" + 
+            			category + "</td><td>"+ id +"</td><td class=\"single_price\">S$" + price + 
+            			".00&nbsp&nbsp<button class=\"button-error pure-button\" onclick=\"cancel_seat('"+ id +"');\">Delete</button></td></tr>");
+					compute_total();
+					// add current seat to the summary
+					var all_seat = sc2.find("selected").seatIds;
+					all_seat[all_seat.length] = id;
+					check_seat_between(sc2, all_seat, 2);
+					// we don't allow one seat between two booked seats
 					return 'selected';
 				} else if (this.status() == 'selected') {
-					//update the counter
-					$counter.text(sc.find('selected').length-1);
-				
-					//remove the item from our cart
-					$('#cart-item-'+this.settings.id).remove();
-				
-					//seat has been vacated
+					var id = this.node().attr("id");
+					$("#summary_" + id).remove();
+					compute_total();
+					// update the summary
+					var all_seat = sc2.find("selected").seatIds;
+					all_seat.remove(id)
+					check_seat_between(sc2, all_seat, 2, id);
+					// check wheter there are seats between two booked seats
 					return 'available';
 				} else if (this.status() == 'unavailable') {
-					//seat has been already booked
+
 					return 'unavailable';
 				} else {
 					return this.style();
@@ -383,20 +349,47 @@
         $.post('include/get_pending_seat.php', {'level': 2}, function(data) {
 			var seats = JSON.parse(data);
 			for (var i = 0; i < seats.length; i++) {
-				sc.get(seats[i]).status('unavailable');	
+				sc2.get(seats[i]).status('unavailable');	
 			};
 		});
 
-        $(".na").each(function(){
-        	sc.get($(this).attr("id")).status('unavailable');	
+        $("div#seat-map2 .na").each(function(){
+        	sc2.get($(this).attr("id")).status('unavailable');	
         });
 
-        $(".reserved").each(function(){
-        	sc.get($(this).attr("id")).status('unavailable');	
+        $("div#seat-map2 .reserved").each(function(){
+        	sc2.get($(this).attr("id")).status('unavailable');	
         });
 	}); 
 	</script>
 </div>
+
+<div class="summary" id = "summary">
+	<h3>Your Booking Summary</h3>
+	<hr>
+	<table border="0" width="100%" id = "summary_table">
+		<thead>
+			<tr>
+				<th width="40%"><strong>Items</strong></th>
+				<th width="40%"><strong>Seat Number</strong></th>
+				<th width="20%"><strong>Price</strong></th>
+			</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
+	<hr>
+	<div style="text-align: right;">
+		Qunatity:
+		<span id="booking_quantity">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		Total:
+		<span id="booking_price">0</span>.00
+	</div>
+	<div class="alert-box warning" id="alert_box" style="display:none;">Notice: You cannot leave a seat between.</div>
+	<button class="pure-button pure-button-disabled" id="booking_button">Please select an seat</button>
+</div>
+
 </body>
 <?php include('footer.php'); ?>
 </html>
