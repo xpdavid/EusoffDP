@@ -13,7 +13,7 @@
 			margin-right: auto;
 			left: 0;
 			right: 0;
-			height: 800px;
+			height: 750px;
 			background-color: rgba(0, 0, 0, 0.7);
 			width: 60%;
 		}
@@ -31,7 +31,7 @@
 			background-color: rgba(255, 255, 255, 0.2);
 			border: 10px;
 			border-radius: 5px;
-			height: 550px;
+			height: 510px;
 			width: 500px;
 			top: 34%;
 			left: 45%;
@@ -40,7 +40,7 @@
 			margin-left: 20px;
 			margin-right: 20px;
 			color: white;
-			font-family: "Athelas";
+			font-family: "helvetica";
 			font-size: 15px;
 		}
 	</style>

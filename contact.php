@@ -14,7 +14,7 @@
 			margin-right: auto;
 			left: 0;
 			right: 0;
-			height: 600px;
+			height: 620px;
 			background-color: rgba(0, 0, 0, 0.7);
 			width: 60%;
 		}
@@ -41,7 +41,7 @@
 			margin-left: 20px;
 			margin-right: 20px;
 			color: white;
-			font-family: "Athelas";		
+			font-family: "helvetica";		
 		}
 	</style>
 </head>

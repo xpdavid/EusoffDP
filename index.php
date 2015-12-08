@@ -41,7 +41,7 @@
 		.info {
 			margin-left: 20px;
 			color: white;
-			font-family: "Athelas";
+			font-family: "helvetica";
 		}
 
 		.icon {

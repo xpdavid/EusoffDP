@@ -7,20 +7,21 @@
 	<style type="text/css">
 		body {
 			background-image: url('img/prison_bg.png');
-			overflow: hidden;
+			overflow-y: auto;
+			overflow-x: hidden;
 		}
 		#body {
 			margin-left: auto;
 			margin-right: auto;
 			left: 0;
 			right: 0;
-			height: 600px;
+			height: 1000px;
 			background-color: rgba(0, 0, 0, 0.7);
 			width: 60%;
 		}
 		#video {
 			position: absolute;
-			left: 12%;
+			left: 26%;
 			top: 36%;
 		}
 		#title {
@@ -32,16 +33,17 @@
 			background-color: rgba(255, 255, 255, 0.2);
 			border: 10px;
 			border-radius: 5px;
-			height: 360px;
-			width: 500px;
-			top: 34%;
-			left: 50%;
+			height: 210px;
+			width: 1000px;
+			top: 115%;
+			left: 13%;
+			overflow: hidden;
 		}
 		#info {
 			margin-left: 20px;
 			margin-right: 20px;
 			color: white;
-			font-family: "Athelas";
+			font-family: "helvetica";
 			font-size: 18px;
 		}
 	</style>
@@ -57,9 +59,10 @@
 		<div id="title">
 			<a href="/<?php echo RELATIVE_PATH;?>"><img src="img/title.png" width="700" height="200"></a>
 		</div>
-		<div id="video"><iframe width="420" height="315" src="http://www.youtube.com/embed/tNLVoPN1chg">
+		<div id="video"><iframe width="630" height="473" src="http://www.youtube.com/embed/tNLVoPN1chg">
 		</iframe></div>
 		<div id="infobox">
+			
 			<div id="info">
 				<p>
 					This year, on the 30th of January, Eusoff Hall invites you to join us for a production that promises to enthrall you with a deliciously dark plot, a captivating cast and dances that will fill your hearts and excite your senses.</p>

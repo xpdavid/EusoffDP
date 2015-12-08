@@ -14,7 +14,7 @@
 			margin-right: auto;
 			left: 0;
 			right: 0;
-			height: 600px;
+			height: 620px;
 			background-color: rgba(0, 0, 0, 0.7);
 			width: 60%;
 		}
