@@ -28,7 +28,7 @@
 		color: white;
 		margin-top: 25px;
 		font-size:18px;
-		font-family: "Athelas";
+		font-family: "helvetica";
 	}
 	</style>
 </head>

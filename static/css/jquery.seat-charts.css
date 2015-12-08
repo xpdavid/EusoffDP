@@ -107,6 +107,12 @@ div.seatCharts-seat.na {
 	cursor: not-allowed;
 }
 
+div.seatCharts-seat.blocked {
+	/*background-color: orange;*/
+	background-color: #800080;
+	cursor: not-allowed;
+}
+
 ul.seatCharts-legendList {
 	list-style: none;
 }

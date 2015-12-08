@@ -28,6 +28,7 @@
   <script src="static/js/booking_checker.js"></script>
 </head>
 <body style="background: black">
+  <?php include('track.php')	?>
   <script type="text/javascript">
   	$(document).ready(function(){
   		$('#choose-first-floor').click(function() {
@@ -56,6 +57,7 @@
 	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #FFF"></div> &nbsp;&nbsp;&nbsp;Selected seat<br />
 	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #F00"></div> &nbsp;&nbsp;&nbsp;Booked seat<br />
 	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #808080"></div> &nbsp;&nbsp;&nbsp;Dummy seat<br />
+	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #800080"></div> &nbsp;&nbsp;&nbsp;Blocked seat<br />
 </div>
 <br />
 <div class='head-pic'>
@@ -151,6 +153,11 @@
 					classes : 'seatCharts-seat seatCharts-cell available second', //your custom CSS class
 					category: 'Cat $22 seat'
 				},
+				b: {
+					price   : 0,
+					classes : 'seatCharts-seat seatCharts-cell blocked', //your custom CSS class
+					category: 'blocked'
+				},
 			
 			},
 			click: function () {
@@ -199,6 +206,11 @@
         });
 
         $("div#seat-map1 .reserved").each(function(){
+        	sc.get($(this).attr("id")).status('unavailable');	
+        });
+
+
+        $("div#seat-map1 .blocked").each(function(){
         	sc.get($(this).attr("id")).status('unavailable');	
         });
 
@@ -310,6 +322,11 @@
 					classes : 'seatCharts-seat seatCharts-cell available second', //your custom CSS class
 					category: 'cat 2'
 				},
+				b: {
+					price   : 0,
+					classes : 'seatCharts-seat seatCharts-cell blocked', //your custom CSS class
+					category: 'blocked'
+				},
 			
 			},
 			click: function () {
@@ -358,6 +375,10 @@
         });
 
         $("div#seat-map2 .reserved").each(function(){
+        	sc2.get($(this).attr("id")).status('unavailable');	
+        });
+
+        $("div#seat-map2 .blocked").each(function(){
         	sc2.get($(this).attr("id")).status('unavailable');	
         });
 	}); 

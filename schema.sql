@@ -17,8 +17,19 @@ CREATE TABLE booking (
 	email VARCHAR(50) NOT NULL,
 	seat_id INT,
 	status INT DEFAULT 0, # 0 pending, 1 success, 2 cancelled
-	booking_time DATETIME,
+	exp_time DATETIME,
 
 	PRIMARY KEY (book_id),
 	FOREIGN KEY (seat_id) REFERENCES seat(seat_id) ON DELETE CASCADE
+);
+
+CREATE TABLE user (
+	email VARCHAR(50) NOT NULL,
+	name VARCHAR(50) NOT NULL,
+	matric_num VARCHAR(9) NOT NULL,
+	mailing_addr VARCHAR(100),
+	collection_mode INT, NOT NULL,
+	# need to add flowers
+
+	PRIMARY KEY (email)
 );

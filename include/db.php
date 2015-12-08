@@ -10,18 +10,22 @@
 		return $con;
 	}
 
-	function store_booking($email, $level, $seat) {
+	function store_booking($level, $seat) {
 		$con = establish();
 		mysql_select_db(DB_NAME, $con);
 		// transaction required
 
 		$seat_id = get_seat_id_by_seat_code($seat);
-		$query1 = "INSERT INTO " . BOOKING_TABLE . "(email, seat_id, booking_time) VALUES ('$email', $seat_id, NOW());";
+		$query1 = "INSERT INTO " . BOOKING_TABLE . "(email, seat_id, exp_time, status) VALUES ('', $seat_id, NOW() + 600, 'BOOKING_STATUS_PENDING');";
 		// echo $query1;
 		$result1 = mysql_query($query1, $con);
 
-		$query2 = "UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_RESERVED ." WHERE seat_id = $seat_id;";
+
+
+		$query2 = "UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_BLOCKED ." WHERE seat_id = $seat_id;";
 		$result2 = mysql_query($query2, $con);
+
+
 		// mysql_close($con);
 		
 	}
