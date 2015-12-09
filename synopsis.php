@@ -10,34 +10,41 @@
 			overflow-y: auto;
 			overflow-x: hidden;
 		}
-		#body {
-			margin-left: auto;
-			margin-right: auto;
-			left: 0;
+		#barb_wire img {
+			position: absolute;
+			top: -7%;
 			right: 0;
-			height: 1000px;
+			height: 200px;
+			width: 400px;
+		}
+		#barb_wire2 img {
+			position: absolute;
+			top: 0;
+			left: -12%;
+			height: 200px;
+			width: 600px;
+		}
+		#container {
 			background-color: rgba(0, 0, 0, 0.7);
 			width: 60%;
+			margin: 40px auto;
 		}
-		#video {
-			position: absolute;
-			left: 26%;
-			top: 36%;
+		#video iframe {
+			width: 630px;
+			height: 473px;
+			display: block;
+			margin: 0 auto;
 		}
 		#title {
 			margin-top: 4%;
 			margin-left: 19%;
 		}
 		#infobox {
-			position: absolute;
 			background-color: rgba(255, 255, 255, 0.2);
 			border: 10px;
 			border-radius: 5px;
-			height: 210px;
-			width: 1000px;
-			top: 115%;
-			left: 13%;
 			overflow: hidden;
+			margin-top: 40px;
 		}
 		#info {
 			margin-left: 20px;
@@ -50,19 +57,20 @@
 </head>
 <body>
 	<div id='barb_wire'>
-		<img src="img/barb_wire.gif" style="position:absolute;top:-7%;left:80%" height="200px" width="400px">
+		<img src="img/barb_wire.gif">
 	</div>
 	<div id='barb_wire2'>
-		<img src="img/barb_wire2.gif" style="position:absolute;top:0%;left:-12%" height="200px" width="600px">
+		<img src="img/barb_wire2.gif">
 	</div>
-	<div id="body">
+	<div id="container">
 		<div id="title">
 			<a href="/<?php echo RELATIVE_PATH;?>"><img src="img/title.png" width="700" height="200"></a>
 		</div>
-		<div id="video"><iframe width="630" height="473" src="http://www.youtube.com/embed/tNLVoPN1chg">
-		</iframe></div>
+		<div id="video">
+			<iframe src="http://www.youtube.com/embed/tNLVoPN1chg">
+			</iframe>
+		</div>
 		<div id="infobox">
-			
 			<div id="info">
 				<p>
 					This year, on the 30th of January, Eusoff Hall invites you to join us for a production that promises to enthrall you with a deliciously dark plot, a captivating cast and dances that will fill your hearts and excite your senses.</p>
