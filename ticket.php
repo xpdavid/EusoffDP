@@ -28,7 +28,7 @@
   <script src="static/js/booking_checker.js"></script>
 </head>
 <body style="background: black">
-  <?php include('track.php')	?>
+  <?php include('track.php'); ?>
   <script type="text/javascript">
   	$(document).ready(function(){
   		$('#choose-first-floor').click(function() {

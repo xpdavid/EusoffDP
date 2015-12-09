@@ -16,7 +16,7 @@
 		// transaction required
 
 		$seat_id = get_seat_id_by_seat_code($seat);
-		$query1 = "INSERT INTO " . BOOKING_TABLE . "(email, seat_id, exp_time, status) VALUES ('', $seat_id, ADDTIME(NOW(), "00:10:00"), '" . BOOKING_STATUS_PENDING . "');";
+		$query1 = "INSERT INTO " . BOOKING_TABLE . "(email, seat_id, exp_time, status) VALUES ('', $seat_id, ADDTIME(NOW(), \"00:10:00\"), '" . BOOKING_STATUS_PENDING . "');";
 		// echo $query1;
 		$result1 = mysql_query($query1, $con);
 
