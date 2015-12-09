@@ -12,8 +12,8 @@ function compute_total(){
 }
 
 function check_seat_between(sc, all_seat, floor, ignore_id){ // ignore_id is optional
-	var indicate = true;
-	for(var i = 0; i < all_seat.length; i = i + 1) {
+	var indicate = true; // assume there is no seat alone
+	for(var i = 0; i < all_seat.length; i = i + 1) { // for every select seat
 		var id = all_seat[i];
 		var prefix = id.split("_")[1];
 		var suffix = parseInt(id.split("_")[2]);
@@ -21,32 +21,32 @@ function check_seat_between(sc, all_seat, floor, ignore_id){ // ignore_id is opt
 		var new_seat_2 = floor + "_" + prefix + "_" + (suffix + 1);
 		var new_seat_3 = floor + "_" + prefix + "_" + (suffix - 1);
 		var new_seat_4 = floor + "_" + prefix + "_" + (suffix - 2);
-		try {
-			if (new_seat_1 != ignore_id) {
-				if (sc.get(new_seat_1).status() == "selected" || sc.get(new_seat_1).status() == "unavailable") {
-					if (sc.get(new_seat_2).status() == "selected" || sc.get(new_seat_2).status() == "unavailable") {
-						indicate = true;
-						continue;
-					} else {
-						indicate = false;
-						break;
-					}
+		var new_seat_1_status = "unavailable";var new_seat_2_status = "unavailable"; // assume is unavailable for all
+		var new_seat_3_status = "unavailable";var new_seat_4_status = "unavailable";
+		try { new_seat_1_status = sc.get(new_seat_1).status(); } catch(err) {} // update the status
+		try { new_seat_2_status = sc.get(new_seat_2).status(); } catch(err) {} // the seat id may no be existed, catch the error
+		try { new_seat_3_status = sc.get(new_seat_3).status(); } catch(err) {}
+		try { new_seat_4_status = sc.get(new_seat_4).status(); } catch(err) {} 
+		if (new_seat_1 != ignore_id) { 
+			if (all_seat.indexOf(new_seat_1) >= 0 || new_seat_1_status == "unavailable") {
+				if (all_seat.indexOf(new_seat_2) >= 0 || new_seat_2_status == "unavailable") {
+					// keep indicator
+				} else {
+					indicate = false;
+					break;
 				}
 			}
-		} catch(err) {}
-		try {
-			if (new_seat_4 != ignore_id) {
-				if (sc.get(new_seat_4).status() == "selected" || sc.get(new_seat_4).status() == "unavailable") {
-					if (sc.get(new_seat_3).status() == "selected" || sc.get(new_seat_3).status() == "unavailable") {
-						indicate = true;
-						continue;
-					} else {
-						indicate = false;
-						break;
-					}
+		}
+		if (new_seat_4 != ignore_id) {
+			if (all_seat.indexOf(new_seat_4) >= 0 || new_seat_4_status == "unavailable") {
+				if (all_seat.indexOf(new_seat_3) >= 0 || new_seat_3_status == "unavailable") {
+					// keep indicator
+				} else {
+					indicate = false;
+					break;
 				}
 			}
-		} catch(err) {}
+		}
 	}
 	if (indicate) {
 		$("#alert_box").hide();
