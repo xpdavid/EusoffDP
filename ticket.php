@@ -174,9 +174,7 @@
 					check_seat_between(sc, all_seat, 1);
 					// we don't allow one seat between two booked seats
 
-					$.post('include/toggle_blocked_seat.php', {'seat_id': id}, function(data) {
-						console.log(data);
-					});
+					$.post('include/toggle_blocked_seat.php', {'seat_code': id}, function(data) {});
 
 					return 'selected';
 				} else if (this.status() == 'selected') {
@@ -189,7 +187,7 @@
 					check_seat_between(sc, all_seat, 1, id);
 					// check wheter there are seats between two booked seats
 
-					$.post('include/toggle_blocked_seat.php', {'seat_id': id}, function(data) {});
+					$.post('include/toggle_blocked_seat.php', {'seat_code': id}, function(data) {});
 
 					return 'available';
 				} else if (this.status() == 'unavailable') {
@@ -203,7 +201,6 @@
 
  		$.post('include/get_pending_seat.php', {'level': 1}, function(data) {
 			var seats = JSON.parse(data);
-			window.alert(seats);
 			for (var i = 0; i < seats.length; i++) {
 				sc.get(seats[i]).status('unavailable');	
 			};
@@ -211,7 +208,6 @@
 
 		$.post('include/get_blocked_seat.php', {'level': 1}, function(data) {
 			var seats = JSON.parse(data);
-			window.alert(seats);
 			for (var i = 0; i < seats.length; i++) {
 				sc.get(seats[i]).status('blocked');	
 			};
@@ -359,6 +355,11 @@
 					all_seat[all_seat.length] = id;
 					check_seat_between(sc2, all_seat, 2);
 					// we don't allow one seat between two booked seats
+
+					$.post('include/toggle_blocked_seat.php', {'seat_code': id}, function(data) {
+						window.alert(data);
+					});
+
 					return 'selected';
 				} else if (this.status() == 'selected') {
 					var id = this.node().attr("id");
@@ -369,6 +370,9 @@
 					all_seat.remove(id)
 					check_seat_between(sc2, all_seat, 2, id);
 					// check wheter there are seats between two booked seats
+
+					$.post('include/toggle_blocked_seat.php', {'seat_code': id}, function(data) {});
+
 					return 'available';
 				} else if (this.status() == 'unavailable') {
 
@@ -386,10 +390,10 @@
 			};
 		});
 
-		$.post('include/get_blocked_seat.php', {'level': 1}, function(data) {
+		$.post('include/get_blocked_seat.php', {'level': 2}, function(data) {
 			var seats = JSON.parse(data);
 			for (var i = 0; i < seats.length; i++) {
-				sc.get(seats[i]).status('blocked');	
+				sc2.get(seats[i]).status('blocked');	
 			};
 		});
 
@@ -402,9 +406,6 @@
         	sc2.get($(this).attr("id")).status('unavailable');	
         });
 
-        $("div#seat-map2 .blocked").each(function(){
-        	sc2.get($(this).attr("id")).status('unavailable');	
-        });
 	}); 
 	</script>
 </div>

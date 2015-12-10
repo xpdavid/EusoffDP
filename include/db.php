@@ -61,36 +61,21 @@
 		// mysql_close($con);
 	}
 
-	function toggle_blocked_seat($seat_id) {
-		echo $seat_id;
-		echo "<br/>";
-		$level = $seat_id[0];
-		echo $level;
-		echo "<br/>";
-		$seat_code = substr($seat_id, 2);
-		echo $seat_code;echo "<br/>";
+	function toggle_blocked_seat($seat_code) {
 		$con = establish();
 		mysql_select_db(DB_NAME, $con);
 
 		$query = "SELECT status FROM " . SEAT_TABLE . " WHERE seat_code = '" . $seat_code . "'";
 		$result = mysql_query($query);
-		echo $query;echo "<br/>";
-		echo $result;echo "<br/>";
+
 		while ($row = mysql_fetch_array($result)) {
 			if ($row['status'] == SEAT_STATUS_BLOCKED) {
-				echo $row['status'];
-				echo "<br/>";
-				$query = "UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_AVAILABLE . " WHERE level = $level AND seat_code = '" . $seat_code . "'";
+				$query = "UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_AVAILABLE . " WHERE seat_code = '" . $seat_code . "'";
 				$result = mysql_query($query);
-				echo "type1";
 			}
 			else {
-				echo $row['status'];
-				echo "<br/>";
-				$query = "UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_BLOCKED . " , exp_time = NOW() + INTERVAL 10 MINUTE WHERE level = $level AND seat_code = '" . $seat_code . "'";
+				$query = "UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_BLOCKED . " , exp_time = NOW() + INTERVAL 10 MINUTE WHERE seat_code = '" . $seat_code . "'";
 				$result = mysql_query($query);
-				echo $query;
-				echo "type2";
 			}
 		}
 		return $seat_code;	
@@ -148,7 +133,7 @@
 		$con = establish();
 		mysql_select_db(DB_NAME, $con);
 
-		$query = "SELECT seat_code FROM " . SEAT_TABLE . " WHERE status != " . SEAT_STATUS_AVAILABLE . " AND level = '" . $level . "'";
+		$query = "SELECT seat_code FROM " . SEAT_TABLE . " WHERE status = " . SEAT_STATUS_OCCUPIED . " AND level = '" . $level . "'";
 		// echo $query;
 		$result = mysql_query($query);
 
@@ -163,9 +148,16 @@
 		$con = establish();
 		mysql_select_db(DB_NAME, $con);
 
-		$query = "SELECT seat_code FROM " . SEAT_TABLE . " WHERE status = " . SEAT_STATUS_BLOCKED . " AND level = '" . $level . " AND exp_time > NOW()"; 
+		$query = "SELECT seat_code FROM " . SEAT_TABLE . " WHERE status = " . SEAT_STATUS_BLOCKED . " AND exp_time <= NOW()"; 
 		$result = mysql_query($query);
-		echo $query;
+
+		while ($row = mysql_fetch_array($result)) {
+			$query1 = "UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_AVAILABLE . " WHERE seat_code = '" . $row['seat_code'] . "'";
+			$result1 = mysql_query($query1);
+		}
+
+		$query = "SELECT seat_code FROM " . SEAT_TABLE . " WHERE status = " . SEAT_STATUS_BLOCKED . " AND level = " . $level . " AND exp_time > NOW()"; 
+		$result = mysql_query($query);
 		$seats = [];
 		while ($row = mysql_fetch_array($result)) {
 			$seats[] = $row['seat_code'];
