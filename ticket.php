@@ -1,7 +1,7 @@
 <?php
 	require_once("include/constant.php");
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <script src="static/js/jquery-2.1.1.min.js"></script>
@@ -28,7 +28,6 @@
   <script src="static/js/booking_checker.js"></script>
 </head>
 <body style="background: black">
-  <?php include('track.php'); ?>
   <script type="text/javascript">
   	$(document).ready(function(){
   		$('#choose-first-floor').click(function() {
@@ -174,6 +173,11 @@
 					all_seat[all_seat.length] = id;
 					check_seat_between(sc, all_seat, 1);
 					// we don't allow one seat between two booked seats
+
+					$.post('include/toggle_blocked_seat.php', {'seat_id': id}, function(data) {
+						console.log(data);
+					});
+
 					return 'selected';
 				} else if (this.status() == 'selected') {
 					var id = this.node().attr("id");
@@ -184,6 +188,9 @@
 					all_seat.remove(id)
 					check_seat_between(sc, all_seat, 1, id);
 					// check wheter there are seats between two booked seats
+
+					$.post('include/toggle_blocked_seat.php', {'seat_id': id}, function(data) {});
+
 					return 'available';
 				} else if (this.status() == 'unavailable') {
 
@@ -196,8 +203,17 @@
 
  		$.post('include/get_pending_seat.php', {'level': 1}, function(data) {
 			var seats = JSON.parse(data);
+			window.alert(seats);
 			for (var i = 0; i < seats.length; i++) {
 				sc.get(seats[i]).status('unavailable');	
+			};
+		});
+
+		$.post('include/get_blocked_seat.php', {'level': 1}, function(data) {
+			var seats = JSON.parse(data);
+			window.alert(seats);
+			for (var i = 0; i < seats.length; i++) {
+				sc.get(seats[i]).status('blocked');	
 			};
 		});
 
@@ -369,6 +385,14 @@
 				sc2.get(seats[i]).status('unavailable');	
 			};
 		});
+
+		$.post('include/get_blocked_seat.php', {'level': 1}, function(data) {
+			var seats = JSON.parse(data);
+			for (var i = 0; i < seats.length; i++) {
+				sc.get(seats[i]).status('blocked');	
+			};
+		});
+
 
         $("div#seat-map2 .na").each(function(){
         	sc2.get($(this).attr("id")).status('unavailable');	

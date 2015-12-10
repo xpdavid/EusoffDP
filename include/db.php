@@ -16,13 +16,13 @@
 		// transaction required
 
 		$seat_id = get_seat_id_by_seat_code($seat);
-		$query1 = "INSERT INTO " . BOOKING_TABLE . "(email, seat_id, exp_time, status) VALUES ('', $seat_id, ADDTIME(NOW(), \"00:10:00\"), '" . BOOKING_STATUS_PENDING . "');";
+		$query1 = "INSERT INTO " . BOOKING_TABLE . "(email, seat_id, booking_time) VALUES ('email', $seat_id, NOW());";
 		// echo $query1;
 		$result1 = mysql_query($query1, $con);
 
 
 
-		$query2 = "UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_BLOCKED ." WHERE seat_id = $seat_id;";
+		$query2 = "UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_RESERVED .", exp_time = DATE_ADD(NOW(), INTERVAL 10 MINUTE) WHERE seat_id = $seat_id;";
 		$result2 = mysql_query($query2, $con);
 
 
@@ -46,6 +46,7 @@
 		// mysql_close($con);
 	}
 
+
 	function cancel_booking($book_id) {
 		$con = establish();
 		mysql_select_db(DB_NAME, $con);
@@ -58,6 +59,41 @@
 		$result = mysql_query($query);
 
 		// mysql_close($con);
+	}
+
+	function toggle_blocked_seat($seat_id) {
+		echo $seat_id;
+		echo "<br/>";
+		$level = $seat_id[0];
+		echo $level;
+		echo "<br/>";
+		$seat_code = substr($seat_id, 2);
+		echo $seat_code;echo "<br/>";
+		$con = establish();
+		mysql_select_db(DB_NAME, $con);
+
+		$query = "SELECT status FROM " . SEAT_TABLE . " WHERE seat_code = '" . $seat_code . "'";
+		$result = mysql_query($query);
+		echo $query;echo "<br/>";
+		echo $result;echo "<br/>";
+		while ($row = mysql_fetch_array($result)) {
+			if ($row['status'] == SEAT_STATUS_BLOCKED) {
+				echo $row['status'];
+				echo "<br/>";
+				$query = "UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_AVAILABLE . " WHERE level = $level AND seat_code = '" . $seat_code . "'";
+				$result = mysql_query($query);
+				echo "type1";
+			}
+			else {
+				echo $row['status'];
+				echo "<br/>";
+				$query = "UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_BLOCKED . " , exp_time = NOW() + INTERVAL 10 MINUTE WHERE level = $level AND seat_code = '" . $seat_code . "'";
+				$result = mysql_query($query);
+				echo $query;
+				echo "type2";
+			}
+		}
+		return $seat_code;	
 	}
 
 	function get_seat_id_by_seat_code($code) {
@@ -121,6 +157,20 @@
 			$seats[] = $row['seat_code'];
 		}
 		return $seats;
+	}
+
+	function get_all_blocked_seats($level) {
+		$con = establish();
+		mysql_select_db(DB_NAME, $con);
+
+		$query = "SELECT seat_code FROM " . SEAT_TABLE . " WHERE status = " . SEAT_STATUS_BLOCKED . " AND level = '" . $level . " AND exp_time > NOW()"; 
+		$result = mysql_query($query);
+		echo $query;
+		$seats = [];
+		while ($row = mysql_fetch_array($result)) {
+			$seats[] = $row['seat_code'];
+		}
+		return $seats;		
 	}
 
 	function get_all_booking_info() {

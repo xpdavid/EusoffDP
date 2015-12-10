@@ -8,6 +8,7 @@ CREATE TABLE seat (
 	col VARCHAR(2) NOT NULL,
 	status INT DEFAULT 0, # 0 available, 1 reserved, 2 occupied
 	seat_code VARCHAR(10),
+	exp_time: DATETIME,
 
 	PRIMARY KEY (seat_id)
 );
@@ -17,7 +18,7 @@ CREATE TABLE booking (
 	email VARCHAR(50) NOT NULL,
 	seat_id INT,
 	status INT DEFAULT 0, # 0 pending, 1 success, 2 cancelled
-	exp_time DATETIME,
+	booking_time: DATETIME,
 
 	PRIMARY KEY (book_id),
 	FOREIGN KEY (seat_id) REFERENCES seat(seat_id) ON DELETE CASCADE
