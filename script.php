@@ -248,7 +248,7 @@
 		}
 		// row GG(29)
 		for ($i = 5; $i <= 36; $i ++) {
-			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'GG', '" . $i . "', '1_26_" . ($i + 1) . "');";
+			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'GG', '" . $i . "', '1_29_" . ($i + 1) . "');";
 		}
 		// row LL
 		for ($i = 6; $i <= 10; $i ++) {
