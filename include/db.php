@@ -61,23 +61,20 @@
 		// mysql_close($con);
 	}
 
-	function toggle_blocked_seat($seat_code) {
+	function toggle_blocked_seat($seat_code, $action) {
 		$con = establish();
 		mysql_select_db(DB_NAME, $con);
 
-		$query = "SELECT status FROM " . SEAT_TABLE . " WHERE seat_code = '" . $seat_code . "'";
-		$result = mysql_query($query);
-
-		while ($row = mysql_fetch_array($result)) {
-			if ($row['status'] == SEAT_STATUS_BLOCKED) {
-				$query = "UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_AVAILABLE . " WHERE seat_code = '" . $seat_code . "'";
-				$result = mysql_query($query);
-			}
-			else {
-				$query = "UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_BLOCKED . " , exp_time = NOW() + INTERVAL 10 MINUTE WHERE seat_code = '" . $seat_code . "'";
-				$result = mysql_query($query);
-			}
+		if ($action == "block") {
+			$query = "UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_BLOCKED . " , exp_time = NOW() + INTERVAL 10 MINUTE WHERE seat_code = '" . $seat_code . "'";
+			$result = mysql_query($query);
 		}
+
+		if ($action == "unblock") {
+			$query = "UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_AVAILABLE . " WHERE seat_code = '" . $seat_code . "'";
+			$result = mysql_query($query);
+		}
+
 		return $seat_code;	
 	}
 

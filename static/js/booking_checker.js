@@ -80,17 +80,61 @@ function check_has_item_in_summary() {
 	// to check wehter there is item in the summary
 	var count = $("#summary_table tbody tr").size();
 	if (count == 0) {
-		$("#booking_button").html("Please select an seat");
+		$("#booking_button").val("Please select an seat");
 		$("#booking_button").attr('class', 'pure-button pure-button-disabled');
+		$("#booking_button").prop( "disabled", true );
+		return false;
 	} else {
-		$("#booking_button").html("Continue");
+		$("#booking_button").val("Continue");
 		$("#booking_button").attr('class', 'button-success pure-button');
+		$("#booking_button").prop( "disabled", false);
+		return true;
 	}
 }
 
 function cancel_seat(id) {
 	$("#" + id).click();
 }
+
+function check_filed() {
+	var msg = personal_detail_checker();
+	if (msg === true) {
+		$("#personal_detail_alert").hide();
+	} else {
+		$("#personal_detail_alert").html(msg);
+		$("#personal_detail_alert").show();
+	}
+}
+
+
+function personal_detail_checker() {
+	if ($("#name").val() == "" || $("#m_num").val() == "" || $("#email").val() == "") {
+		return "Please fill in all the fields.";
+	}
+	if (!(/^[a-z]([a-z0-9]*[-_]?[a-z0-9]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+[\.][a-z]{2,3}([\.][a-z]{2})?$/.test($("#email").val()))) {
+		return "Please enter a correct email."
+	}
+	if ($("#collect_method").get(0).selectedIndex == 0) {
+
+	}
+
+	if ($("#collect_method").get(0).selectedIndex == 1) {
+		if ($("#address_1").val() == "" || $("#address_2").val() == "" || $("#zip").val() == "" || $("#phone_num").val() == "") {
+			return "Please fill in all the fields in the mailing detail.";
+		}
+
+		if (!(/^\d+$/.test($("#zip").val()))){
+			return "Please enter a correct ZIP code"
+		}
+
+		if (!(/^\d+$/.test($("#phone_num").val()))){
+			return "Please enter a correct phone number"
+		}
+	}
+
+	return true;
+}
+
 
 // count down object
 function clock(total, span_id, end_f) {

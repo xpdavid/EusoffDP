@@ -187,19 +187,25 @@
             		all_seat;
 
             		// add current seat to the summary
-            		$.post('include/get_real_seat_name.php', {'seat_code': id, method:'block'}, function(data) {
-            			real_seat_name = data;           		
+            		$.post('include/get_real_seat_name.php', {'seat_code': id}, function(data) {
+            			real_seat_name = data;  
+
+
             			$summary_table.append("<tr id = \"summary_"+ id +"\"><td>" + 
             				category + "</td><td>" + real_seat_name +"</td><td class=\"single_price\">S$" + price + 
             				".00&nbsp&nbsp<button class=\"button-error pure-button\" onclick=\"cancel_seat('"+ id +"');\">Delete</button></td></tr>");
+            			compute_total();
+
+
+            			select_seat[id] = {
+							s_id : id,
+							s_category : category,
+							s_price : price,
+							s_name : real_seat_name
+						};
+                    	$("#select_seat_id").val(JSON.stringify(select_seat));
             		});
-					compute_total();
-					select_seat[id] = {
-						s_id : id,
-						s_category : category,
-						s_price : price
-					};
-                    $("#select_seat_id").val(JSON.stringify(select_seat));
+					
 
 					
 					// we don't allow one seat between two booked seats
@@ -208,7 +214,7 @@
 					check_seat_between(sc, all_seat, 1);
 					
 					// block the seat
-					$.post('include/toggle_blocked_seat.php', {'seat_code': id, method:'block'}, function(data) {});
+					$.post('include/toggle_blocked_seat.php', {'seat_code': id, action:'block'}, function(data) {});
 
 					return 'selected';
 				} else if (this.status() == 'selected') {
@@ -228,7 +234,7 @@
 					check_seat_between(sc, all_seat, 1, id);
 					
 					// unblock the seat
-					$.post('include/toggle_blocked_seat.php', {'seat_code': id, method:'block'}, function(data) {});
+					$.post('include/toggle_blocked_seat.php', {'seat_code': id, action:'unblock'}, function(data) {});
 
 					return 'available';
 				} else if (this.status() == 'unavailable') {
@@ -379,20 +385,25 @@
             		all_seat;
             		
             		// add current seat to the summary
-            		$.post('include/get_real_seat_name.php', {'seat_code': id, method:'block'}, function(data) {
+            		$.post('include/get_real_seat_name.php', {'seat_code': id}, function(data) {
             			real_seat_name = data;           		
 
             			$summary_table.append("<tr id = \"summary_"+ id +"\"><td>" + 
             				category + "</td><td>"+ real_seat_name +"</td><td class=\"single_price\">S$" + price + 
             				".00&nbsp&nbsp<button class=\"button-error pure-button\" onclick=\"cancel_seat('"+ id +"');\">Delete</button></td></tr>");
+            			compute_total();
+
+
+            			select_seat[id] = {
+							s_id : id,
+							s_category : category,
+							s_price : price,
+							s_name : real_seat_name
+						};
+                    	$("#select_seat_id").val(JSON.stringify(select_seat));
+
             		});
-					compute_total();
-					select_seat[id] = {
-						s_id : id,
-						s_category : category,
-						s_price : price
-					};
-                    $("#select_seat_id").val(JSON.stringify(select_seat));
+					
 					
 
 					// we don't allow one seat between two booked seats
@@ -401,7 +412,7 @@
 					check_seat_between(sc2, all_seat, 2);
 					
 					// block the seat
-					$.post('include/toggle_blocked_seat.php', {'seat_code': id, method:'block'}, function(data) {});
+					$.post('include/toggle_blocked_seat.php', {'seat_code': id, action:'unblock'}, function(data) {});
 
 					return 'selected';
 				} else if (this.status() == 'selected') {
@@ -488,7 +499,7 @@
 	<div class="alert-box warning" id="alert_box" style="display:none;">Notice: You cannot leave a seat between.</div>
 	<form action="personal_detail.php" method="post" id="summary_submit">
 		<input type="hidden" id = "select_seat_id" name = "select_seat" value="none"/>
-		<button class="pure-button pure-button-disabled" id="booking_button" onclick="">Please select a seat</button>
+		<input type = "button" disabled="disabled" class="pure-button pure-button-disabled" id="booking_button" value="Please select a seat" onclick="$('#summary_submit').submit()"  />
 	</form>
 </div>
 

@@ -738,6 +738,7 @@ message box
   font-size:15px;
   padding:10px 36px;
   margin:10px;
+  text-align: center;
 }
 .error {
   color: #D8000C;
@@ -756,5 +757,22 @@ message box
   background-color: #BDE5F8;
 }
 
+/*
+For personal_detail.php
+*/
 
+.container_p {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+} 
 
+.container_p span{
+  font-weight: 200;
+  font-size: 30px;
+
+}
+
+#collect_method {
+  margin-top: 15px;
+} 
