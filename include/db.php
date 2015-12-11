@@ -98,6 +98,21 @@
 		}
 	}
 
+	function get_real_seat_name_by_seat_code($seat_code) {
+		$con = establish();
+		mysql_select_db(DB_NAME, $con);
+
+		$query = "SELECT level, row, col FROM " . SEAT_TABLE . " WHERE seat_code = '" . $seat_code . "'";
+		$result = mysql_query($query);
+		if ($result) {
+			$result = mysql_fetch_array($result);
+			return $result['level'] . " " . $result['row'] . " " . (string)$result['col'];
+		} else {
+			return FALSE;
+		}
+		
+	}
+
 	function get_seat_id_by_book_id($book_id) {
 		$con = establish();
 		mysql_select_db(DB_NAME, $con);
