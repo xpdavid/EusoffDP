@@ -29,7 +29,10 @@
 </head>
 <body style="background: black">
   <script type="text/javascript">
+  	var select_seat = {};
+
   	$(document).ready(function(){
+
   		$('#choose-first-floor').click(function() {
   			$('#choose-first-floor').addClass('selected');
   			$('#choose-second-floor').removeClass('selected');
@@ -44,7 +47,24 @@
   			$('#floor1').hide();
   		});
 
+
   		$(".fancybox").fancybox();
+
+  			    $(window).resize(function(){
+	        var px = (($(window).width() > 1033) ? (($(window).width() - 1033) / 2 - 20) : 0) + "px";
+	        $(".book-movie1").css({
+		        margin: "0 " + px + " 0 " + px
+		    });
+
+		    var px = (($(window).width() > 1060) ? (($(window).width() - 1060) / 2 - 20) : 0) + "px";
+	        $(".book-movie2").css({
+		        margin: "0 " + px + " 0 " + px
+		    });
+
+	    });   
+	    $(window).resize();
+
+
   	});
   </script>
 <div class="ticket-head">Ticket Booking</div>
@@ -161,45 +181,64 @@
 			},
 			click: function () {
 				if (this.status() == 'available') {
-					var price    = this.data().price;
-            		var category = this.data().category;
-            		var id = this.node().attr("id");
+					var price    = this.data().price,
+            		category = this.data().category,
+            		id = this.node().attr("id"),
+            		all_seat;
 
+            		// add current seat to the summary
             		$.post('include/get_real_seat_name.php', {'seat_code': id, method:'block'}, function(data) {
             			real_seat_name = data;           		
-
             			$summary_table.append("<tr id = \"summary_"+ id +"\"><td>" + 
             				category + "</td><td>" + real_seat_name +"</td><td class=\"single_price\">S$" + price + 
             				".00&nbsp&nbsp<button class=\"button-error pure-button\" onclick=\"cancel_seat('"+ id +"');\">Delete</button></td></tr>");
             		});
 					compute_total();
-					// add current seat to the summary
-					var all_seat = sc.find("selected").seatIds;
+					select_seat[id] = {
+						s_id : id,
+						s_category : category,
+						s_price : price
+					};
+                    $("#select_seat_id").val(JSON.stringify(select_seat));
+
+					
+					// we don't allow one seat between two booked seats
+					all_seat = sc.find("selected").seatIds;
 					all_seat[all_seat.length] = id;
 					check_seat_between(sc, all_seat, 1);
-					// we don't allow one seat between two booked seats
-
+					
+					// block the seat
 					$.post('include/toggle_blocked_seat.php', {'seat_code': id, method:'block'}, function(data) {});
 
 					return 'selected';
 				} else if (this.status() == 'selected') {
-					var id = this.node().attr("id");
+					var id = this.node().attr("id"),
+					all_seat;
+
+					// update the summary
 					$("#summary_" + id).remove();
 					compute_total();
-					// update the summary
-					var all_seat = sc.find("selected").seatIds;
+					select_seat[id] = undefined;
+                    $("#select_seat_id").val(JSON.stringify(select_seat));
+					
+
+					// check wheter there are seats between two booked seats
+					all_seat = sc.find("selected").seatIds;
 					all_seat.remove(id)
 					check_seat_between(sc, all_seat, 1, id);
-					// check wheter there are seats between two booked seats
-
+					
+					// unblock the seat
 					$.post('include/toggle_blocked_seat.php', {'seat_code': id, method:'block'}, function(data) {});
 
 					return 'available';
 				} else if (this.status() == 'unavailable') {
-
+					
 					return 'unavailable';
+
 				} else {
+					
 					return this.style();
+				
 				}
 			}
 		});
@@ -230,20 +269,6 @@
         $("div#seat-map1 .blocked").each(function(){
         	sc.get($(this).attr("id")).status('unavailable');	
         });
-
-	    $(window).resize(function(){
-	        var px = (($(window).width() > 1033) ? (($(window).width() - 1033) / 2 - 20) : 0) + "px";
-	        $(".book-movie1").css({
-		        margin: "0 " + px + " 0 " + px
-		    });
-
-		    var px = (($(window).width() > 1060) ? (($(window).width() - 1060) / 2 - 20) : 0) + "px";
-	        $(".book-movie2").css({
-		        margin: "0 " + px + " 0 " + px
-		    });
-
-	    });   
-	    $(window).resize();
 
 	}); 
 	</script>
@@ -348,10 +373,12 @@
 			},
 			click: function () {
 				if (this.status() == 'available') {
-					var price    = this.data().price;
-            		var category = this.data().category;
-            		var id = this.node().attr("id");
+					var price    = this.data().price,
+            		category = this.data().category,
+            		id = this.node().attr("id"),
+            		all_seat;
             		
+            		// add current seat to the summary
             		$.post('include/get_real_seat_name.php', {'seat_code': id, method:'block'}, function(data) {
             			real_seat_name = data;           		
 
@@ -360,33 +387,51 @@
             				".00&nbsp&nbsp<button class=\"button-error pure-button\" onclick=\"cancel_seat('"+ id +"');\">Delete</button></td></tr>");
             		});
 					compute_total();
-					// add current seat to the summary
-					var all_seat = sc2.find("selected").seatIds;
+					select_seat[id] = {
+						s_id : id,
+						s_category : category,
+						s_price : price
+					};
+                    $("#select_seat_id").val(JSON.stringify(select_seat));
+					
+
+					// we don't allow one seat between two booked seats
+					all_seat = sc2.find("selected").seatIds;
 					all_seat[all_seat.length] = id;
 					check_seat_between(sc2, all_seat, 2);
-					// we don't allow one seat between two booked seats
-
+					
+					// block the seat
 					$.post('include/toggle_blocked_seat.php', {'seat_code': id, method:'block'}, function(data) {});
 
 					return 'selected';
 				} else if (this.status() == 'selected') {
-					var id = this.node().attr("id");
+					var id = this.node().attr("id"),
+					all_seat;
+					
+					// update the summary
 					$("#summary_" + id).remove();
 					compute_total();
-					// update the summary
+					select_seat[id] = undefined;
+                    $("#select_seat_id").val(JSON.stringify(select_seat));
+
+
+					// check wheter there are seats between two booked seats
 					var all_seat = sc2.find("selected").seatIds;
 					all_seat.remove(id)
 					check_seat_between(sc2, all_seat, 2, id);
-					// check wheter there are seats between two booked seats
-
+					
+					// unblock the seat
 					$.post('include/toggle_blocked_seat.php', {'seat_code': id, method:'block'}, function(data) {});
 
 					return 'available';
 				} else if (this.status() == 'unavailable') {
 
 					return 'unavailable';
+
 				} else {
+
 					return this.style();
+
 				}
 			}
 		});
@@ -441,7 +486,10 @@
 		<span id="booking_price">0</span>.00
 	</div>
 	<div class="alert-box warning" id="alert_box" style="display:none;">Notice: You cannot leave a seat between.</div>
-	<button class="pure-button pure-button-disabled" id="booking_button">Please select an seat</button>
+	<form action="personal_detail.php" method="post" id="summary_submit">
+		<input type="hidden" id = "select_seat_id" name = "select_seat" value="none"/>
+		<button class="pure-button pure-button-disabled" id="booking_button" onclick="">Please select a seat</button>
+	</form>
 </div>
 
 </body>
