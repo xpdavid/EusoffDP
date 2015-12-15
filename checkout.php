@@ -11,6 +11,12 @@
         $data = json_decode($_POST['data']);
         // security check e.g whether the price is correct
 
+        // flowers price
+        $all_flower = json_encode($data -> flower); // stored flower data as JSON data in the database
+        $flower_total_price = 0;
+        foreach($data -> flower  as $flower => $value) {
+            $flower_total_price = $flower_total_price + $value -> total;
+        }
 
         // first create user
         $user_id = create_user($data->email, $data->name, $data->m_num, $data->collect, $data->flower);
@@ -24,22 +30,17 @@
           $all_seat_code = $all_seat_code . "," . $seat_code;
         }
         $all_seat_code = substr($all_seat_code, 1, strlen($all_seat_code) - 1); // delete the beginning ','
+
+        $total_price = $seat_total_price + $flower_total_price;
         // store_booking
-        $booking_id = store_booking($user_id, $all_seat_code);
+        $booking_id = store_booking($user_id, $all_seat_code, $total_price);
 
         // third change seat status
         foreach($data -> select_seat  as $seat_code => $value) {
           change_seat_status($seat_code, SEAT_STATUS_BOOKED, $user_id);
         }
 
-        // flowers price
-        $all_flower = json_encode($data -> flower); // stored flower data as JSON data in the database
-        $flower_total_price = 0;
-        foreach($data -> flower  as $flower => $value) {
-          $flower_total_price = $flower_total_price + $value -> total;
-        }
 
-        $total_price = $seat_total_price + $flower_total_price;
 
         $msg = <<<MSG_HEADER
         <h2>Your booking details have been successfully stored in our database</h2>

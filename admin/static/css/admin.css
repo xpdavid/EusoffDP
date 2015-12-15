@@ -1,0 +1,77 @@
+
+
+body {
+    background: url(../../../img/prison_bg.png);
+    font-family: Helvetica;
+}
+
+a:link{
+    text-decoration:none;   /* 指正常的未被访问过的链接*/
+    color:white;
+}
+
+a:visited{
+    text-decoration:none; /*指已经访问过的链接*/
+    color:white;
+ }
+
+a:hover{
+    text-decoration:none;/*指鼠标在链接*/
+    color:white;
+}
+a:active{
+    text-decoration:none;/* 指正在点的链接*/
+    color:white;
+}
+
+.container {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    color: #FFFFFF !important;
+}
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-success {
+    background: rgb(28, 184, 65); /* this is a green */
+}
+
+.button-error {
+    background: rgb(202, 60, 60); /* this is a maroon */
+}
+
+.button-warning {
+    background: rgb(223, 117, 20); /* this is an orange */
+}
+
+.button-secondary {
+    background: rgb(66, 184, 221); /* this is a light blue */
+}
+
+.booking_confirm {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.PENDING {
+    background-color: rgba(223, 117, 20, 0.4);
+}
+
+.SUCCEED {
+    background-color: rgba(28, 184, 65, 0.4);
+}
+
+.CANCELLED {
+    background-color: rgba(202, 60, 60, 0.4);
+}
+
+.user_info {
+    font-size: 20px;
+}
+

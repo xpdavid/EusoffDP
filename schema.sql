@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS booking;
 DROP TABLE IF EXISTS seat;
 DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS admin;
 
 CREATE TABLE seat (
 	seat_id INT AUTO_INCREMENT,
@@ -19,6 +20,7 @@ CREATE TABLE booking (
 	book_id INT AUTO_INCREMENT,
 	seats TEXT,
 	status INT DEFAULT 0, # 0 pending, 1 success, 2 cancelled, 3 blocked
+	total_price INT NOT NULL,
 	belong_user INT,
 	booking_time DATETIME,
 	PRIMARY KEY (book_id)
@@ -33,3 +35,13 @@ CREATE TABLE user (
 	flower TEXT,
 	PRIMARY KEY (id)
 );
+
+CREATE TABLE admin (
+	id INT AUTO_INCREMENT,
+	username VARCHAR(50) NOT NULL,
+	userpass VARCHAR(50) NOT NULL,
+	PRIMARY KEY (id)
+);
+
+INSERT INTO `admin` (`id`, `username`, `userpass`) VALUES
+(1, 'DP1516', '4c12fd02d3c22cf0c26c7eff13dd68f5'); # 15/16_eusoff_dp

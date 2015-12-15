@@ -38,11 +38,11 @@
 
 	}
 
-	function store_booking($user_id, $all_seats) {
+	function store_booking($user_id, $all_seats, $total) {
 		global $db_conn;
 
-		$stmt = $db_conn->prepare("INSERT INTO " . BOOKING_TABLE . "(seats, status, belong_user, booking_time) VALUES (?, " . BOOKING_STATUS_PENDING . " ,?, NOW())");
-		$stmt->bind_param("sd", $all_seats, $user_id);
+		$stmt = $db_conn->prepare("INSERT INTO " . BOOKING_TABLE . "(seats, status, belong_user, total_price ,booking_time) VALUES (?, " . BOOKING_STATUS_PENDING . " ,? , ?, NOW())");
+		$stmt->bind_param("sdd", $all_seats, $user_id, $total);
 		$stmt->execute();
 
 		$stmt = $db_conn->prepare("SELECT LAST_INSERT_ID();");
@@ -72,19 +72,23 @@
 	}
 
 
-	function get_real_seat_name_by_seat_code($seat_code) {
+	function get_real_seat_name_by_seat_code($seat_codes) {
 		global $db_conn;
 
+		$all_seats = explode(",", $seat_codes);
+		$names = "";
 		$stmt = $db_conn->prepare("SELECT level, row, col FROM " . SEAT_TABLE . " WHERE seat_code = ?");
-		$stmt->bind_param("s", $seat_code);
-		$stmt->execute();
-		$stmt->bind_result($level, $row, $col);
-		if ($stmt->fetch()) {
-			return $level. " " . $row . " " . $col;
-		} else {
-			return FALSE;
+		for($i = 0; $i < count($all_seats); $i++) {
+			$stmt->bind_param("s", $all_seats[$i]);
+			$stmt->execute();
+			$stmt->bind_result($level, $row, $col);
+			if ($stmt->fetch()) {
+				$names = $names. "," . $level. " " . $row . " " . $col;
+			}
 		}
-		
+		$names = substr($names, 1, strlen($names) - 1); // delete the beginning ','
+		return $names;
+
 	}
 
 
