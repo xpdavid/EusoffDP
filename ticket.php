@@ -432,7 +432,7 @@
 					check_seat_between(sc2, all_seat, 2, id);
 					
 					// unblock the seat
-					$.post('include/toggle_blocked_seat.php', {'seat_code': id, method:'block'}, function(data) {});
+					$.post('include/toggle_blocked_seat.php', {'seat_code': id, action:'block'}, function(data) {});
 
 					return 'available';
 				} else if (this.status() == 'unavailable') {

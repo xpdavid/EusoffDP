@@ -117,7 +117,7 @@
 			You have &nbsp;&nbsp;<span id = "count_down">10:00</span>&nbsp;&nbsp; to complete the booking, the seat(s) is(are) reserved for 10 minutes
 		</div>
 	</div>
-  <form class="pure-form">
+  <form class="pure-form" action="flowers.php" id ="personal_detail_form" method="post">
   
   <input type="hidden" name="select_seat" id="select_seat" value='<?php echo $_POST['select_seat']; ?>' />
 	
@@ -177,6 +177,7 @@
     <div class="alert-box error" id = "personal_detail_alert" style="display:none">
       
     </div>
+    <input type= "hidden" id = "datas" name="data" value="">
 		<input type = "button" class="button-success pure-button" id="booking_button" onclick="check_filed();" value="Continue">
 	</div>
   </form>

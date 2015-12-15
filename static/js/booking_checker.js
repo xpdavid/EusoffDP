@@ -15,6 +15,8 @@ function compute_total(){
 	
 	// update summary
 	check_has_item_in_summary();
+
+	return total;
 }
 
 function check_seat_between(sc, all_seat, floor, ignore_id){
@@ -100,18 +102,43 @@ function check_filed() {
 	var msg = personal_detail_checker();
 	if (msg === true) {
 		$("#personal_detail_alert").hide();
+		wrap_personal_detail();
+		$("#personal_detail_form").submit();
 	} else {
 		$("#personal_detail_alert").html(msg);
 		$("#personal_detail_alert").show();
 	}
 }
 
+function wrap_personal_detail() {
+	var select_seat = JSON.parse($("#select_seat").val());
+	var collect_details = undefined;
+		details = {
+			remain_time: count_down.get_remain(),
+			select_seat: select_seat,
+			name: $("#name").val(),
+			m_num: $("#m_num").val(),
+			email: $("#email").val(),
+			collect_method: $("#collect_method").get(0).selectedIndex,
+			collect_detail: collect_details
+		};
+	if ($("#collect_method").get(0).selectedIndex == 1) {
+		collect_details = {
+			address_1 : $("#address_1").val(),
+			address_2 : $("#address_2").val(),
+			zip : $("#zip").val(),
+			phone_num : $("#phone_num").val()
+		};
+		details["collect_detail"] = collect_details;
+	}
+	$("#datas").val(JSON.stringify(details));
+}
 
 function personal_detail_checker() {
 	if ($("#name").val() == "" || $("#m_num").val() == "" || $("#email").val() == "") {
 		return "Please fill in all the fields.";
 	}
-	if (!(/^[a-z]([a-z0-9]*[-_]?[a-z0-9]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+[\.][a-z]{2,3}([\.][a-z]{2})?$/.test($("#email").val()))) {
+	if (!(/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/.test($("#email").val()))) {
 		return "Please enter a correct email."
 	}
 	if ($("#collect_method").get(0).selectedIndex == 0) {
@@ -119,7 +146,7 @@ function personal_detail_checker() {
 	}
 
 	if ($("#collect_method").get(0).selectedIndex == 1) {
-		if ($("#address_1").val() == "" || $("#address_2").val() == "" || $("#zip").val() == "" || $("#phone_num").val() == "") {
+		if ($("#address_1").val() == ""  || $("#zip").val() == "" || $("#phone_num").val() == "") {
 			return "Please fill in all the fields in the mailing detail.";
 		}
 
@@ -136,12 +163,96 @@ function personal_detail_checker() {
 }
 
 
+function compute_total_price() {
+	var total_flower = flower1.total + flower2.total + flower3.total;
+	$("#flower_price").html(flower1.total + flower2.total + flower3.total);
+	var total_ticket = compute_total();
+	$("#total_price").html(total_ticket + total_flower);
+}
+
+function checkout() {
+	var pre_data = JSON.parse($("#pre_data").val());
+	var flower_data = {
+		flower_1 : flower1,
+		flower_2 : flower2,
+		flower_3 : flower3,
+	}
+	pre_data["flower"] = flower_data;
+	$("#data").val(JSON.stringify(pre_data));
+	$("#checkout_form").submit();
+}
+
+// flower object
+function flower(name, unit_price, id) {
+	this.name = name;
+	this.unit_price = unit_price;
+	this.quantity = 0;
+	this.id = id;
+	this.total = 0;
+}
+
+flower.prototype.add = function() {
+	this.quantity = this.quantity + 1;
+	this.total = this.total + this.unit_price;
+	this.update_display();
+}
+
+flower.prototype.minus = function() {
+	if (this.quantity - 1 >= 0) {
+		this.quantity = this.quantity - 1;
+		this.total = this.total - this.unit_price;
+	}
+	this.update_display();
+}
+
+flower.prototype.set_quantity = function(quantity) {
+	this.quantity = quantity;
+	this.total = this.unit_price * quantity;
+}
+
+flower.prototype.update_display = function() {
+	$("#" + this.id + "_quantity").val(this.quantity);
+	$("#" + this.id + "_total").html(this.total);
+	compute_total_price();
+}
+
+flower.prototype.init = function() {
+	var self = this;
+	$("#" + this.id + "_minus").bind("click", function() {
+		self.minus();
+		self.update_display();
+	});
+	$("#" + this.id + "_add").bind("click", function() {
+		self.add();
+		self.update_display();
+	});
+	$("#" + this.id + "_quantity").keyup(function() {
+		var num = $("#" + self.id + "_quantity").val();
+		if (/^\d+$/.test(num)) {
+			self.set_quantity(parseInt(num));
+		} else {
+			self.set_quantity(0);
+		}
+		self.update_display();
+	});
+}
+
+
+
 // count down object
 function clock(total, span_id, end_f) {
 	this.remain = total;
 	this.span_id = span_id;
 	this.timer = undefined;
 	this.end_f = end_f;
+}
+
+clock.prototype.set_remain = function(t) {
+	this.remain = t;
+}
+
+clock.prototype.get_remain = function(t) {
+	return this.remain;
 }
 
 clock.prototype.move = function() {

@@ -776,3 +776,36 @@ For personal_detail.php
 #collect_method {
   margin-top: 15px;
 } 
+
+/*
+For flowers.php
+*/
+
+.flower {
+  padding: 5px;
+}
+
+#summary_flower_table input {
+  width: 25px;
+  text-align: center;
+}
+
+/*
+for checkout.php
+*/
+
+.booking_info h2,h3 {
+  color:white;
+}
+
+.booking_info p {
+  color: white;
+}
+
+.booking_info {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.booking_hide {
+  display: none;
+}
