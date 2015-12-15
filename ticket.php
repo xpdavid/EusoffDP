@@ -186,16 +186,16 @@
             		id = this.node().attr("id"),
             		all_seat;
 
-            		// add current seat to the summary
+            		
             		$.post('include/get_real_seat_name.php', {'seat_code': id}, function(data) {
             			real_seat_name = data;  
 
-
+            			// add current seat to the summary
             			$summary_table.append("<tr id = \"summary_"+ id +"\"><td>" + 
             				category + "</td><td>" + real_seat_name +"</td><td class=\"single_price\">S$" + price + 
             				".00&nbsp&nbsp<button class=\"button-error pure-button\" onclick=\"cancel_seat('"+ id +"');\">Delete</button></td></tr>");
+            			
             			compute_total();
-
 
             			select_seat[id] = {
 							s_id : id,
@@ -204,14 +204,14 @@
 							s_name : real_seat_name
 						};
                     	$("#select_seat_id").val(JSON.stringify(select_seat));
-            		});
-					
 
-					
-					// we don't allow one seat between two booked seats
-					all_seat = sc.find("selected").seatIds;
-					all_seat[all_seat.length] = id;
-					check_seat_between(sc, all_seat, 1);
+
+						// we don't allow one seat between two booked seats
+						all_seat = sc.find("selected").seatIds;
+						all_seat[all_seat.length] = id;
+						check_seat_between(sc, all_seat, 1);
+
+            		});
 					
 					// block the seat
 					$.post('include/toggle_blocked_seat.php', {'seat_code': id, action:'block'}, function(data) {});
@@ -384,15 +384,15 @@
             		id = this.node().attr("id"),
             		all_seat;
             		
-            		// add current seat to the summary
+
             		$.post('include/get_real_seat_name.php', {'seat_code': id}, function(data) {
             			real_seat_name = data;           		
 
+            			// add current seat to the summary
             			$summary_table.append("<tr id = \"summary_"+ id +"\"><td>" + 
             				category + "</td><td>"+ real_seat_name +"</td><td class=\"single_price\">S$" + price + 
             				".00&nbsp&nbsp<button class=\"button-error pure-button\" onclick=\"cancel_seat('"+ id +"');\">Delete</button></td></tr>");
             			compute_total();
-
 
             			select_seat[id] = {
 							s_id : id,
@@ -402,14 +402,14 @@
 						};
                     	$("#select_seat_id").val(JSON.stringify(select_seat));
 
-            		});
-					
-					
 
-					// we don't allow one seat between two booked seats
-					all_seat = sc2.find("selected").seatIds;
-					all_seat[all_seat.length] = id;
-					check_seat_between(sc2, all_seat, 2);
+
+						// we don't allow one seat between two booked seats
+						all_seat = sc2.find("selected").seatIds;
+						all_seat[all_seat.length] = id;
+						check_seat_between(sc2, all_seat, 2);
+
+            		});
 					
 					// block the seat
 					$.post('include/toggle_blocked_seat.php', {'seat_code': id, action:'unblock'}, function(data) {});

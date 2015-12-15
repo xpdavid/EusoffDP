@@ -37,7 +37,7 @@
         $(document).ready(function(){
 
             // get the select seat
-            var select_seat = JSON.parse($("#select_seat").html());
+            var select_seat = JSON.parse($("#select_seat").val());
             for (var id in select_seat) {
                 // add to summary
                 $("#summary_table>tbody").append("<tr><td>" +
@@ -93,7 +93,6 @@
 
 	<div class="summary" id = "summary" style="background: rgba(0, 0, 0, 0.8); width:72%; padding:10px;">
 		<h3>Your Booking Summary</h3>
-        <div style="display: none" id="select_seat"><?php echo $_POST['select_seat']; ?></div>
 		<table border="0" width="100%" id = "summary_table">
       <thead>
         <tr>
@@ -119,7 +118,10 @@
 		</div>
 	</div>
   <form class="pure-form">
-	<div class="container_p" style="background: rgba(0, 0, 0, 0.8); width:72%; padding:10px; text-align:left;">
+  
+  <input type="hidden" name="select_seat" id="select_seat" value='<?php echo $_POST['select_seat']; ?>' />
+	
+  <div class="container_p" style="background: rgba(0, 0, 0, 0.8); width:72%; padding:10px; text-align:left;">
 		<h3 style="color:white; text-align:left;">Your personal detail:</h3>
 		<div class="pure-g">
     		<div class="pure-u-1-3"><p>Name</p></div>

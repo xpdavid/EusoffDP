@@ -141,6 +141,7 @@ function clock(total, span_id, end_f) {
 	this.remain = total;
 	this.span_id = span_id;
 	this.timer = undefined;
+	this.end_f = end_f;
 }
 
 clock.prototype.move = function() {
@@ -175,7 +176,7 @@ clock.prototype.add_zero = function(num, n) {
 }
 
 clock.prototype.end = function () {
-	end_f();
+	this.end_f();
 }
 
 // enhance the array object to support remove of one certain element
