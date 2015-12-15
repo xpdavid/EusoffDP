@@ -42,8 +42,8 @@ function check_seat_between(sc, all_seat, floor, ignore_id){
 		
 		// check the status of the right side of the current seat
 		if (new_seat_1 != ignore_id) { 
-			if (all_seat.indexOf(new_seat_1) >= 0 || new_seat_1_status == "unavailable") {
-				if (all_seat.indexOf(new_seat_2) >= 0 || new_seat_2_status == "unavailable") {
+			if (all_seat.indexOf(new_seat_1) >= 0 || new_seat_1_status == "unavailable" || new_seat_1_status == "blocked") {
+				if (all_seat.indexOf(new_seat_2) >= 0 || new_seat_2_status == "unavailable" || new_seat_2_status == "blocked") {
 					// keep indicator
 				} else {
 					indicate = false;
@@ -54,8 +54,8 @@ function check_seat_between(sc, all_seat, floor, ignore_id){
 		
 		// check the status of the left side of the current seat
 		if (new_seat_4 != ignore_id) {
-			if (all_seat.indexOf(new_seat_4) >= 0 || new_seat_4_status == "unavailable") {
-				if (all_seat.indexOf(new_seat_3) >= 0 || new_seat_3_status == "unavailable") {
+			if (all_seat.indexOf(new_seat_4) >= 0 || new_seat_4_status == "unavailable" || new_seat_4_status == "blocked") {
+				if (all_seat.indexOf(new_seat_3) >= 0 || new_seat_3_status == "unavailable" || new_seat_3_status == "blocked") {
 					// keep indicator
 				} else {
 					indicate = false;
@@ -112,24 +112,21 @@ function check_filed() {
 
 function wrap_personal_detail() {
 	var select_seat = JSON.parse($("#select_seat").val());
-	var collect_details = undefined;
-		details = {
+	var	details = {
 			remain_time: count_down.get_remain(),
 			select_seat: select_seat,
 			name: $("#name").val(),
 			m_num: $("#m_num").val(),
 			email: $("#email").val(),
-			collect_method: $("#collect_method").get(0).selectedIndex,
-			collect_detail: collect_details
+			collect: {
+				method: $("#collect_method").get(0).selectedIndex
+			}
 		};
 	if ($("#collect_method").get(0).selectedIndex == 1) {
-		collect_details = {
-			address_1 : $("#address_1").val(),
-			address_2 : $("#address_2").val(),
-			zip : $("#zip").val(),
-			phone_num : $("#phone_num").val()
-		};
-		details["collect_detail"] = collect_details;
+			details["collect"]["address_1"] = $("#address_1").val(),
+			details["collect"]["address_2"] = $("#address_2").val(),
+			details["collect"]["zip"] = $("#zip").val(),
+			details["collect"]["phone_num"] = $("#phone_num").val()
 	}
 	$("#datas").val(JSON.stringify(details));
 }
@@ -175,10 +172,10 @@ function checkout() {
 	var flower_data = {
 		flower_1 : flower1,
 		flower_2 : flower2,
-		flower_3 : flower3,
-	}
+		flower_3 : flower3
+	};
 	pre_data["flower"] = flower_data;
-	$("#data").val(JSON.stringify(pre_data));
+	$("#datas").val(JSON.stringify(pre_data));
 	$("#checkout_form").submit();
 }
 
@@ -273,6 +270,7 @@ clock.prototype.show = function() {
 
 clock.prototype.start = function() {
 	var self = this;
+	this.show();
 	this.timer = setInterval(function() {
 		self.move();
 	}, 1000);

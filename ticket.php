@@ -154,29 +154,29 @@
 			seats: {
 				f: {
 					price   : 0,
-					classes : 'seatCharts-seat seatCharts-cell na', //your custom CSS class
+					classes : 'seatCharts-seat seatCharts-cell na', // dummy seat
 					category: 'N/A'
 				},
 				e: {
 					price   : 25,
-					classes : 'seatCharts-seat seatCharts-cell available first', //your custom CSS class
+					classes : 'seatCharts-seat seatCharts-cell available first', // cat 25
 					category: 'Cat $25 seat'
 				},	
 				r: {
 					price	: 0,
-					classes : 'seatCharts-seat seatCharts-cell reserved', //your custom CSS class
+					classes : 'seatCharts-seat seatCharts-cell reserved', // reserved
 					category: 'reserved'
 				},
 				s: {
 					price   : 22,
-					classes : 'seatCharts-seat seatCharts-cell available second', //your custom CSS class
+					classes : 'seatCharts-seat seatCharts-cell available second', // cat 22
 					category: 'Cat $22 seat'
 				},
 				b: {
 					price   : 0,
-					classes : 'seatCharts-seat seatCharts-cell blocked', //your custom CSS class
+					classes : 'seatCharts-seat seatCharts-cell blocked', // blocked seat
 					category: 'blocked'
-				},
+				}
 			
 			},
 			click: function () {
@@ -249,7 +249,7 @@
 			}
 		});
 
- 		$.post('include/get_pending_seat.php', {'level': 1}, function(data) {
+ 		$.post('include/get_booked_seat.php', {'level': 1}, function(data) {
 			var seats = JSON.parse(data);
 			for (var i = 0; i < seats.length; i++) {
 				sc.get(seats[i]).status('unavailable');	
@@ -352,29 +352,29 @@
 			seats: {
 				f: {
 					price   : 0,
-					classes : 'seatCharts-seat seatCharts-cell na', //your custom CSS class
+					classes : 'seatCharts-seat seatCharts-cell na', // dummy seat
 					category: 'N/A'
 				},
 				e: {
 					price   : 25,
-					classes : 'seatCharts-seat seatCharts-cell available first', //your custom CSS class
-					category: 'cat 1'
-				},	
+					classes : 'seatCharts-seat seatCharts-cell available first', // cat 25
+					category: 'Cat $25 seat'
+				},
 				r: {
 					price	: 0,
-					classes : 'seatCharts-seat seatCharts-cell reserved', //your custom CSS class
+					classes : 'seatCharts-seat seatCharts-cell reserved', // reserved
 					category: 'reserved'
 				},
 				s: {
 					price   : 22,
-					classes : 'seatCharts-seat seatCharts-cell available second', //your custom CSS class
-					category: 'cat 2'
+					classes : 'seatCharts-seat seatCharts-cell available second', // cat 22
+					category: 'Cat $22 seat'
 				},
 				b: {
 					price   : 0,
-					classes : 'seatCharts-seat seatCharts-cell blocked', //your custom CSS class
+					classes : 'seatCharts-seat seatCharts-cell blocked', // blocked seat
 					category: 'blocked'
-				},
+				}
 			
 			},
 			click: function () {
@@ -447,7 +447,7 @@
 			}
 		});
 
-        $.post('include/get_pending_seat.php', {'level': 2}, function(data) {
+        $.post('include/get_booked_seat.php', {'level': 2}, function(data) {
 			var seats = JSON.parse(data);
 			for (var i = 0; i < seats.length; i++) {
 				sc2.get(seats[i]).status('unavailable');	

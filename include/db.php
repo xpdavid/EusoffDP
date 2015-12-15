@@ -10,24 +10,47 @@
 		return $con;
 	}
 
-	function store_booking($level, $seat) {
+	function change_seat_status($seat_code, $status, $booking_id) {
+		$con = establish();
+		mysql_select_db(DB_NAME, $con);
+
+		$query = "UPDATE " . SEAT_TABLE . " SET status = '$status', belong_booking = '$booking_id' WHERE seat_code = '$seat_code'";
+		$result = mysql_query($query);
+
+		return $result;
+	}
+
+	function create_user($email, $name, $matric_num, $collect, $flower) {
+		$con = establish();
+		mysql_select_db(DB_NAME, $con);
+
+		$collect_json = json_encode($collect);
+		$flower_json = json_encode($flower);
+
+		$query1 = "INSERT INTO " . USER_TABLE . "(email, name, matric_num, collect, flower) VALUES ('$email', '$name', '$matric_num', '$collect_json', '$flower_json');";
+		$result1 = mysql_query($query1);
+
+		$query2 = "SELECT LAST_INSERT_ID();";
+		$result2 = mysql_query($query2);
+		$last_id = mysql_fetch_array($result2);
+		return $last_id["LAST_INSERT_ID()"];
+
+	}
+
+	function store_booking($user_id, $all_seats) {
 		$con = establish();
 		mysql_select_db(DB_NAME, $con);
 		// transaction required
 
-		$seat_id = get_seat_id_by_seat_code($seat);
-		$query1 = "INSERT INTO " . BOOKING_TABLE . "(email, seat_id, booking_time) VALUES ('email', $seat_id, NOW());";
-		// echo $query1;
-		$result1 = mysql_query($query1, $con);
 
+		$query1 = "INSERT INTO " . BOOKING_TABLE . "(seats, status, belong_user, booking_time) VALUES ('$all_seats', " . BOOKING_STATUS_PENDING . " ,$user_id, NOW());";
+		$result1 = mysql_query($query1);
 
+		$query2 = "SELECT LAST_INSERT_ID();";
+		$result2 = mysql_query($query2);
+		$last_id = mysql_fetch_array($result2);
+		return $last_id["LAST_INSERT_ID()"];
 
-		$query2 = "UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_RESERVED .", exp_time = DATE_ADD(NOW(), INTERVAL 10 MINUTE) WHERE seat_id = $seat_id;";
-		$result2 = mysql_query($query2, $con);
-
-
-		// mysql_close($con);
-		
 	}
 
 	function confirm_booking($book_id) {
@@ -38,7 +61,7 @@
 		$result = mysql_query($query);
 
 		$seat_id = get_seat_id_by_book_id($book_id);
-		$query = "UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_OCCUPIED . " WHERE seat_id = $seat_id";
+		$query = "UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_BOOKED . " WHERE seat_id = $seat_id";
 		$result = mysql_query($query);
 
 		return true;
@@ -78,6 +101,7 @@
 		return $seat_code;	
 	}
 
+	// about to delete
 	function get_seat_id_by_seat_code($code) {
 		$con = establish();
 		mysql_select_db(DB_NAME, $con);
@@ -131,7 +155,7 @@
 		$con = establish();
 		mysql_select_db(DB_NAME, $con);
 
-		$query = "SELECT seat_code FROM " . SEAT_TABLE . " WHERE status = " . SEAT_STATUS_OCCUPIED . " AND level = '" . $level . "'";
+		$query = "SELECT seat_code FROM " . SEAT_TABLE . " WHERE status = " . SEAT_STATUS_BOOKED . " AND level = '" . $level . "'";
 		$result = mysql_query($query);
 
 		$seats = [];
@@ -141,11 +165,11 @@
 		return $seats;
 	}
 
-	function get_all_unavailable_seats($level) {
+	function get_all_booked_seats($level) {
 		$con = establish();
 		mysql_select_db(DB_NAME, $con);
 
-		$query = "SELECT seat_code FROM " . SEAT_TABLE . " WHERE status = " . SEAT_STATUS_OCCUPIED . " AND level = '" . $level . "'";
+		$query = "SELECT seat_code FROM " . SEAT_TABLE . " WHERE status = " . SEAT_STATUS_BOOKED . " AND level = '" . $level . "'";
 		// echo $query;
 		$result = mysql_query($query);
 
