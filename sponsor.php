@@ -4,49 +4,53 @@
 <!doctype html>
 <html>
 <head>
-	<style type="text/css">
-		body {
-			background-image: url('img/prison_bg.png');
-			overflow: hidden;
-		}
-		#body {
-			margin-left: auto;
-			margin-right: auto;
-			left: 0;
-			right: 0;
-			height: 620px;
-			background-color: rgba(0, 0, 0, 0.7);
-			width: 60%;
-		}
-		#sponsor {
-			text-align: center;
-			margin-top: 7%;
-		}
-		#title {
-			margin-top: 2%;
-			margin-left: 19%;
-		}
-	</style>
-</head>
-<body>
+	<meta charset="utf-8">
+  	<title>Seating</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	 
+  	 <link rel="stylesheet" href="static/css/pure/pure.css" />
+  	<!--[if lte IE 8]>
+   	<link rel="stylesheet" href="static/css/pure/grids-responsive-old-ie-min.css">
+  	<![endif]-->
+  	<!--[if gt IE 8]><!-->
+  	<link rel="stylesheet" href="static/css/pure/grids-responsive-min.css">
+  	<!--<![endif]-->
 
-	<div id="body">
-		<div id="title">
-			<a href="/<?php echo RELATIVE_PATH;?>"><img src="img/title.png" width="700" height="200"></a>
-		</div>
-		<div id="sponsor"><img src="img/NIC logo.jpg" width="400px" height="300px"></div><div id='barb_wire'>
-		<img src="img/barb_wire.gif" style="position:absolute;top:59%;left:-2%" height="300px" width="500px">
+  	<link rel="stylesheet" href="static/css/layouts/marketing.css" />
+  	<style>
+  		.sponsor_img {
+  			padding: 10px;
+  		}
+  	</style>
+ </head>
+<body style="background-image: url('img/prison_bg.png');">
+
+	<div class="container_p">
+    	<a href="index.php"><img src="img/title.png" width="700" height="200"></a>
 	</div>
-	<div id='barb_wire2'>
-		<img src="img/barb_wire2.gif" style="position:absolute;top:75%;left:70%" height="200px" width="500px">
-	</div>
-		<div id='barb_wire'>
-		<img src="img/barb_wire.gif" style="position:absolute;top:59%;left:-2%" height="300px" width="500px">
-	</div>
-	<div id='barb_wire2'>
-		<img src="img/barb_wire2.gif" style="position:absolute;top:75%;left:70%" height="200px" width="500px">
-	</div>
-	</div>
+
+	<div class="container_p">
+		<div class="pure-g">
+        	<div class="pure-u-1-2">
+            	<img src="img/sponsors/Simply_Connect_Logo.jpg" class="pure-img sponsor_img" >
+        	</div>
+        	<div class="pure-u-1-2">
+            	<img src="img/sponsors/fastjobs_logo.jpg" class="pure-img sponsor_img" >
+        	</div>
+    	</div>
+    	<div class="pure-g">
+    		<div class="pure-u-3-8" style="text-align:right">
+            	
+        	</div>
+        	<div class="pure-u-1-8" style="text-align:right">
+            	<img src="img/sponsors/MSF_logo.jpg" class="pure-img sponsor_img" width="200">
+        	</div>
+        	<div class="pure-u-1-2">
+            	<img src="img/sponsors/ZALORA_LOGO.png" class="pure-img sponsor_img" width="190">
+        	</div>
+    	</div>
+    </div>
+	
 </body>
 <?php include('footer.php'); ?>
 </html>

@@ -46,7 +46,7 @@
         <h2>Your booking details have been successfully stored in our database</h2>
         <h3>Booking Reference: $booking_id</h3>
         <p>
-          Please transfer S$$total_price.00 to .....
+          Please transfer S$$total_price.00 to to POSB 032-62536-3 and then email dpsponsorship@eusoff.nus.edu.sg with your reference number. 
         </p>
 MSG_HEADER;
 
@@ -76,13 +76,13 @@ MSG_HEADER;
    	<link rel="stylesheet" href="static/css/pure/grids-responsive-old-ie-min.css">
   <![endif]-->
   <!--[if gt IE 8]><!-->
-   <link rel="stylesheet" href="static/css/pure/grids-responsive-min.css">
+  <link rel="stylesheet" href="static/css/pure/grids-responsive-min.css">
   <!--<![endif]-->
   <link rel="stylesheet" href="static/css/layouts/marketing.css" />
   <link rel="stylesheet" href="static/css/jquery/jquery-ui.css" />
 
-    <script src="static/js/jquery-2.1.1.min.js"></script>
-    <script src="static/js/booking_checker.js"></script>
+  <script src="static/js/jquery-2.1.1.min.js"></script>
+  <script src="static/js/booking_checker.js"></script>
 
 </head>
 

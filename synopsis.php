@@ -72,12 +72,9 @@
 		</div>
 		<div id="infobox">
 			<div id="info">
-				<p>
-					This year, on the 30th of January, Eusoff Hall invites you to join us for a production that promises to enthrall you with a deliciously dark plot, a captivating cast and dances that will fill your hearts and excite your senses.</p>
+				<p>This is a story. Like most other stories, this is a story about people. What happens when you take a pair of orphaned siblings and give one of them the ability to bring life to a complete standstill? Aaron and Brenda have never known their parents and like any other orphans, they have none to rely on but each other. However, when Aaron’s greed gets the better of him, he takes away his sister’s chance at a scholarship, disappearing from her life for seven years. Guilt-stricken, his return to Singapore is marked by his meteoric rise through the ranks in the corporate world and his clumsy steps towards redemption. What happens when he eventually confesses his remorse? People are rarely ever completely good or bad. Join us as we celebrate kinship, love and self-abnegation.</p>
 
-				<p>Welcome to Death Row, where those who have committed the worse crimes against humanity sit and wait for their clocks to run out. We follow the prison counselor as he unravels the lives and secrets of four convicted murderers; a true psychopath, a distraught mother, a crooked lawyer and a filial son.</p>
-
-				<p>As we listen to their stories, the counselor slowly realizes that perhaps, we are not so different after all. Are they more human than we thought, or do we all have a little bit of monster in us?</p>
+				<p>Chan Huan Jun, Scriptwriter</p>
 
 			</div>
 		</div>

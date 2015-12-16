@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-	<title>Eusoff DP1415</title>
+	<title>Continuum - EHDP 2015/ 2016</title>
 	<style type="text/css">
 		body {
 			overflow:hidden;
@@ -30,10 +30,9 @@
 		}
 		#infobox {
 			position: absolute;
-			background-color: rgba(255, 255, 255, 0.15);
+			background-color: rgba(255, 255, 255, 0.10);
 			border: 10px;
 			border-radius: 5px;
-			height: 300px;
 			width: 400px;
 			top: 37%;
 			left: 17%;
@@ -109,11 +108,12 @@
 	</div>
 	<div id='infobox'> 
 		<p class='info' style='font-size:25px;'>General Information</p>
-		<p class='info' style='font-size:20px;'>Date: 30th January 2015
-						<br>Time: 7:30pm - 10:30pm
-						<br>Venue: NUS University Cultural Centre
-						<br>Ticket Prices: $25/$22
-						<br>Please contact Kenneth Quek 97838052 after you have booked the ticket</p>
+		<p class='info' style='font-size:20px;'>
+			Date: 5 February 2016
+			<br>Time: 7:30pm
+			<br>Venue: NUS University Cultural Centre
+			<br>Ticket prices: $25 and $30
+		</p>
 	</div>
 	<script type='text/javascript'>
 		var w = screen.width;
