@@ -71,7 +71,19 @@ a:active{
     background-color: rgba(202, 60, 60, 0.4);
 }
 
-.user_info {
-    font-size: 20px;
+
+.booking_summary {
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
 }
 
+.quantity {
+    font-size: 20px;
+    font-weight: 200;
+    color: orangered;
+}
+
+#for_method2 {
+    display: none;
+}
