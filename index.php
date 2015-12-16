@@ -135,7 +135,7 @@
 		//	window.location.href = "new_main.html";
 		//}
 	</script>
-	<div style = "position:absolute; bottom:2%; left: 3%"><?php include('footer.php'); ?> </div>
+	<div style = "position:absolute; bottom:2%; left: 45%"><?php include('footer.php'); ?> </div>
 </body>
 
 </html>

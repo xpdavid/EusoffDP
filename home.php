@@ -31,7 +31,6 @@
 			background-color: rgba(255, 255, 255, 0.2);
 			border: 10px;
 			border-radius: 5px;
-			height: 510px;
 			width: 500px;
 			top: 34%;
 			left: 45%;
@@ -73,5 +72,11 @@
 		</div>
 	</div>
 </body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 <?php include('footer.php'); ?>
 </html>

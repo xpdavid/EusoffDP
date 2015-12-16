@@ -110,7 +110,7 @@
 	function get_all_blocked_seats($level) {
 		global $db_conn;
 		// update the blocked seat status which has expired
-		$stmt = $db_conn->prepare("UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_AVAILABLE . " WHERE status = " . SEAT_STATUS_BOOKED . " AND exp_time <= NOW()");
+		$stmt = $db_conn->prepare("UPDATE " . SEAT_TABLE . " SET status = " . SEAT_STATUS_AVAILABLE . " WHERE status = " . SEAT_STATUS_BLOCKED . " AND exp_time <= NOW()");
 		$stmt->execute();
 
 
