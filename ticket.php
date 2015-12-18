@@ -70,8 +70,9 @@
 <div class="ticket-head">Ticket Booking</div>
 
 <div class="legend" >
+	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #357EC7"></div> &nbsp;&nbsp;&nbsp;Cat $30 seat<br />
 	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #79BF5E"></div> &nbsp;&nbsp;&nbsp;Cat $25 seat<br />
-	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #E16B56"></div> &nbsp;&nbsp;&nbsp;Cat $22 seat<br />
+	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #E16B56"></div> &nbsp;&nbsp;&nbsp;Cat $21 seat<br />
 	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #79A6C4"></div> &nbsp;&nbsp;&nbsp;Reserved seat<br />
 	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #FFF"></div> &nbsp;&nbsp;&nbsp;Selected seat<br />
 	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #F00"></div> &nbsp;&nbsp;&nbsp;Booked seat<br />
@@ -122,34 +123,34 @@
 			},
 			map: [//19 hang
 				'_________ffeeeeeeeeeeeeeeeeeeeeff_________',//11-30  		     D
-				's_eeeeee_ffeeeeeeeeeeeeeeeeeeeeef_eeeeee_s',//3-8, 9-29, 30-35  E
-				's_eeeeee_feeeeeeeeeeeeeeeeeeeeeef_eeeeee_s',//4-9, 10-31, 32-37 F
-				's_eeeeee_feeeeeeeeeeeeeeeeeeeeeee_eeeeee_s',//3-8, 9-31, 32-37  G
-				's_eeeeee_frrrrrrrrrrrrrrrrrrrrrrf_eeeeee_s',//4-9, 10-31, 32-37 H
-				's_eeeeee_frrrrrrrrrrrrrrrrrrrrrrr_eeeeee_s',//3-8, 9-31, 32-37  J
-				'__eeeeee_rrrrrrrrrrrrrrrrrrrrrrrr_eeeeee__',//3-8, 9-32, 33-38  K
-				's_eeeeee_feeeeeeeeeeeeeeeeeeeeeee_eeeeee_s',//3-8, 9-31, 32-37  L
-				's_eeeeee_eeeeeeeeeeeeeeeeeeeeeeee_eeeeee_s',//3-8, 9-32, 33-38  M
-				's_eeeeee_frrrrrrrrrreeeeeeeeeeeee_eeeeee_s',//3-8, 9-31, 32-37  N
-				's_eeeeee_eeeeeeeeeeeeeeeeeeeeeeee_eeeeee_s',//3-8, 9-32, 33-38  P
-				's_eeeeee_feeeeeeeeeeeeeeeeeeeeeee_eeeeee_s',//3-8, 9-31, 32-37  Q
-				's_eeeeee_eeeeeeeeeeeeeeeeeeeeeeee_eeeeee_s',//3-8, 9-32, 33-38  R
-				'__eeeeee_feeeeeeeeeeeeeeeeeeeeeee_eeeeee__',//3-8, 9-31, 32-37  S
-				's_eeeeee_feeeeeeeeeeeeeeeeeeeeeef_eeeeee_s',//4-9, 10-31, 32-37 T
-				's_eeeeee_ffeeeeeeeeeeeeeeeeeeeeef_eeeeee_s',//4-9, 10-30, 31-36 U
-				's_eeeeee_feeeeeeeeeeeeeeeeeeeeeef_eeeeee_s',//4-9, 10-31, 32-37 V
-				's_eeeeee_ffeeeeee_________eeeeeef_eeeeee_s',//4-9, 10-30, 31-36 W
-				's________fffeeeee_________eeeeeff________s',//11-30  		   X
-				's________________________________________s',//nothing		   Y
+				't_ssssss_ffeeeeeeeeeeeeeeeeeeeeef_ssssss_t',//3-8, 9-29, 30-35  E
+				't_ssssss_feeeeeeeeeeeeeeeeeeeeeef_ssssss_t',//4-9, 10-31, 32-37 F
+				't_ssssss_feeeeeeeeeeeeeeeeeeeeeee_ssssss_t',//3-8, 9-31, 32-37  G
+				't_ssssss_feeeeeeeeeeeeeeeeeeeeeef_ssssss_t',//4-9, 10-31, 32-37 H
+				't_ssssss_feeeeeeeeeeeeeeeeeeeeeee_ssssss_t',//3-8, 9-31, 32-37  J
+				'__ssssss_eeeeeeeeeeeeeeeeeeeeeeee_ssssss__',//3-8, 9-32, 33-38  K
+				't_ssssss_feeeeeeeeeeeeeeeeeeeeeee_ssssss_t',//3-8, 9-31, 32-37  L
+				't_ssssss_eeeeeeeeeeeeeeeeeeeeeeee_ssssss_t',//3-8, 9-32, 33-38  M
+				't_ssssss_feeeeeeeeeeeeeeeeeeeeeee_ssssss_t',//3-8, 9-31, 32-37  N
+				't_ssssss_eeeeeeeeeeeeeeeeeeeeeeee_ssssss_t',//3-8, 9-32, 33-38  P
+				't_ssssss_feeeeeeeeeeeeeeeeeeeeeee_ssssss_t',//3-8, 9-31, 32-37  Q
+				't_ssssss_eeeeeeeeeeeeeeeeeeeeeeee_ssssss_t',//3-8, 9-32, 33-38  R
+				'__ssssss_feeeeeeeeeeeeeeeeeeeeeee_ssssss__',//3-8, 9-31, 32-37  S
+				't_ssssss_feeeeeeeeeeeeeeeeeeeeeef_ssssss_t',//4-9, 10-31, 32-37 T
+				't_ssssss_ffeeeeeeeeeeeeeeeeeeeeef_ssssss_t',//4-9, 10-30, 31-36 U
+				't_ssssss_feeeeeeeeeeeeeeeeeeeeeef_ssssss_t',//4-9, 10-31, 32-37 V
+				't_ssssss_ffeeeeee_________eeeeeef_ssssss_t',//4-9, 10-30, 31-36 W
+				't________fffeeeee_________eeeeeff________t',//11-30  		   X
+				't________________________________________t',//nothing		   Y
 				'___________rrrrrrrrrrrrrrrrrrrr___________',//11-30  		   Z
 				'__________________________________________',//nothing
-				'__ssssssssssssssssssssssssssssssssssssss__',//2-39 AA
-				'__fsssssssssssssssssssssssssssssssssssff__',//3-37 BB
-				'__fssssssssssssssssssssssssssssssssssssf__',//3-38 CC
-				'__fsssssssssssssssssssssssssssssssssssff__',//3-37 DD
-				'__ffssssssssssssssssssssssssssssssssssff__',//4-37 EE
-				'__ffsssssssssssssssssssssssssssssssssfff__',//4-36 FF
-				'__fffssssssssssssssssssssssssssssssssfff__',//5-36 GG
+				'__tttttttttttttttttttttttttttttttttttttt__',//2-39 AA
+				'__ftttttttttttttttttttttttttttttttttttff__',//3-37 BB
+				'__fttttttttttttttttttttttttttttttttttttf__',//3-38 CC
+				'__ftttttttttttttttttttttttttttttttttttff__',//3-37 DD
+				'__ffttttttttttttttttttttttttttttttttttff__',//4-37 EE
+				'__fftttttttttttttttttttttttttttttttttfff__',//4-36 FF
+				'__fffttttttttttttttttttttttttttttttttfff__',//5-36 GG
 			],
 			seats: {
 				f: {
@@ -157,20 +158,25 @@
 					classes : 'seatCharts-seat seatCharts-cell na', // dummy seat
 					category: 'N/A'
 				},
-				e: {
-					price   : 25,
-					classes : 'seatCharts-seat seatCharts-cell available first', // cat 25
-					category: 'Cat $25 seat'
-				},	
 				r: {
 					price	: 0,
 					classes : 'seatCharts-seat seatCharts-cell reserved', // reserved
 					category: 'reserved'
 				},
+				e: {
+					price   : 30,
+					classes : 'seatCharts-seat seatCharts-cell available first', // cat 25
+					category: 'Cat $30 seat'
+				},	
 				s: {
-					price   : 22,
-					classes : 'seatCharts-seat seatCharts-cell available second', // cat 22
-					category: 'Cat $22 seat'
+					price   : 25,
+					classes : 'seatCharts-seat seatCharts-cell available second', // cat 25
+					category: 'Cat $25 seat'
+				},	
+				t: {
+					price   : 21,
+					classes : 'seatCharts-seat seatCharts-cell available third', // cat 22
+					category: 'Cat $21 seat'
 				},
 				b: {
 					price   : 0,
@@ -302,51 +308,51 @@
 				}
 			},
 			map: [//19 hang
-				'__s_____________________________________s__',//1
-				'__s_____________________________________s__',//2
-				's_________________________________________s',//3
-				's_________________________________________s',//4
+				'__t_____________________________________t__',//1
+				'__t_____________________________________t__',//2
+				't_________________________________________t',//3
+				't_________________________________________t',//4
 				'_',
-				'__s_____________________________________s__',//1
-				'r_s_____________________________________s_r',//2
-				'__s_____________________________________s__',//3
-				'r_s_____________________________________s_r',//4
-				'__s_____________________________________s__',//5
-				'r_s_____________________________________s_r',//6
-				'__s_____________________________________s__',//7
-				'r_s_____________________________________s_r',//8
-				'__s_____________________________________s__',//9
-				'__s_____________________________________s__',//10
-				'__s_____________________________________s__',//11
-				's_s_____________________________________s_s',//12
-				'__s_____________________________________s__',//13
-				's_s_____________________________________s_s',//14
-				'__s_____________________________________s__',//15
-				's_s_____________________________________s_s',//16
-				'__s_____________________________________s__',//17
-				's_s_____________________________________s_s',//18
-				'__s_____________________________________s__',//19
+				'__t_____________________________________t__',//1
+				't_t_____________________________________t_t',//2
+				'__t_____________________________________t__',//3
+				't_t_____________________________________t_t',//4
+				'__t_____________________________________t__',//5
+				't_t_____________________________________t_t',//6
+				'__t_____________________________________t__',//7
+				't_t_____________________________________t_t',//8
+				'__t_____________________________________t__',//9
+				'__t_____________________________________t__',//10
+				'__t_____________________________________t__',//11
+				't_t_____________________________________t_t',//12
+				'__t_____________________________________t__',//13
+				't_t_____________________________________t_t',//14
+				'__t_____________________________________t__',//15
+				't_t_____________________________________t_t',//16
+				'__t_____________________________________t__',//17
+				't_t_____________________________________t_t',//18
+				'__t_____________________________________t__',//19
 				'_',
-				'__s_____________________________________s__',//20
-				's_s_____________________________________s_s',//21
-				'__s_____________________________________s__',//22
-				's_s_____________________________________s_s',//23
-				'__s_____________________________________s__',//24
-				's_s_____________________________________s_s',//25
-				'__s_____________________________________s__',//26
-				'__s_____________________________________s__',//27
-				'__s_____________________________________s__',//28
-				's_s_____________________________________s_s',//29
-				's_s_____________________________________s_s',//30
-				's_s_____________________________________s_s',//31
-				's_s_____________________________________s_s',//32
-				's_s_ffffssssssssssssssssssssssssssssfff_s_s',//33 + A 7-34
-				'____fffsssssssssssssssssssssssssssssfff____',//B 6-34
-				'____fssssssssssssssssssssssssssssssssff____',//C 5-36
-				'____fsssssssssssssssssssssssssssssssssf____',//D 4-36
-				'____fssssssssssssssssssssssssssssssssss____',//E 4-37
-				'____sssssssssssssssssssssssssssssssssss____',//F 3-37
-				'____fssssssssssssssssssssssssssssssssff____',//G 5-36
+				'__t_____________________________________t__',//20
+				't_t_____________________________________t_t',//21
+				'__t_____________________________________t__',//22
+				't_t_____________________________________t_t',//23
+				'__t_____________________________________t__',//24
+				't_t_____________________________________t_t',//25
+				'__t_____________________________________t__',//26
+				'__t_____________________________________t__',//27
+				'__t_____________________________________t__',//28
+				't_t_____________________________________t_t',//29
+				't_t_____________________________________t_t',//30
+				't_t_____________________________________t_t',//31
+				't_t_____________________________________t_t',//32
+				't_t_ffffttttttttttttttttttttttttttttfff_t_t',//33 + A 7-34
+				'____ffftttttttttttttttttttttttttttttfff____',//B 6-34
+				'____fttttttttttttttttttttttttttttttttff____',//C 5-36
+				'____ftttttttttttttttttttttttttttttttttf____',//D 4-36
+				'____ftttttttttttttttttttttttttttttttttt____',//E 4-37
+				'____ttttttttttttttttttttttttttttttttttt____',//F 3-37
+				'____fttttttttttttttttttttttttttttttttff____',//G 5-36
 				
 			],
 			seats: {
@@ -355,20 +361,25 @@
 					classes : 'seatCharts-seat seatCharts-cell na', // dummy seat
 					category: 'N/A'
 				},
-				e: {
-					price   : 25,
-					classes : 'seatCharts-seat seatCharts-cell available first', // cat 25
-					category: 'Cat $25 seat'
-				},
 				r: {
 					price	: 0,
 					classes : 'seatCharts-seat seatCharts-cell reserved', // reserved
 					category: 'reserved'
 				},
+				e: {
+					price   : 30,
+					classes : 'seatCharts-seat seatCharts-cell available first', // cat 25
+					category: 'Cat $30 seat'
+				},	
 				s: {
-					price   : 22,
-					classes : 'seatCharts-seat seatCharts-cell available second', // cat 22
-					category: 'Cat $22 seat'
+					price   : 25,
+					classes : 'seatCharts-seat seatCharts-cell available second', // cat 25
+					category: 'Cat $25 seat'
+				},	
+				t: {
+					price   : 21,
+					classes : 'seatCharts-seat seatCharts-cell available third', // cat 22
+					category: 'Cat $21 seat'
 				},
 				b: {
 					price   : 0,

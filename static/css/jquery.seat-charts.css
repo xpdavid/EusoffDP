@@ -71,11 +71,15 @@ div.seatCharts-row {
 
 div.seatCharts-seat.first {
 	/*background-color: #1F8DD6;*/
-	background-color: #79bf5e;
+	background-color: #357EC7;
 }
 
 div.seatCharts-seat.second {
 	/*background-color: #18CE81;*/
+	background-color: #79bf5e;
+}
+
+div.seatCharts-seat.third {
 	background-color: #E16B56;
 }
 
