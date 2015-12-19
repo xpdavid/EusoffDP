@@ -73,6 +73,7 @@
 	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #357EC7"></div> &nbsp;&nbsp;&nbsp;Cat $30 seat<br />
 	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #79BF5E"></div> &nbsp;&nbsp;&nbsp;Cat $25 seat<br />
 	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #E16B56"></div> &nbsp;&nbsp;&nbsp;Cat $21 seat<br />
+	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #EDE275"></div> &nbsp;&nbsp;&nbsp;Wheel chair seat<br />
 	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #79A6C4"></div> &nbsp;&nbsp;&nbsp;Reserved seat<br />
 	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #FFF"></div> &nbsp;&nbsp;&nbsp;Selected seat<br />
 	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #F00"></div> &nbsp;&nbsp;&nbsp;Booked seat<br />
@@ -122,27 +123,27 @@
 				}
 			},
 			map: [//19 hang
-				'_________ffeeeeeeeeeeeeeeeeeeeeff_________',//11-30  		     D
+				'______ww_ffeeeeeeeeeeeeeeeeeeeeff_ww______',//11-30  		     D
 				't_ssssss_ffeeeeeeeeeeeeeeeeeeeeef_ssssss_t',//3-8, 9-29, 30-35  E
 				't_ssssss_feeeeeeeeeeeeeeeeeeeeeef_ssssss_t',//4-9, 10-31, 32-37 F
 				't_ssssss_feeeeeeeeeeeeeeeeeeeeeee_ssssss_t',//3-8, 9-31, 32-37  G
 				't_ssssss_feeeeeeeeeeeeeeeeeeeeeef_ssssss_t',//4-9, 10-31, 32-37 H
 				't_ssssss_feeeeeeeeeeeeeeeeeeeeeee_ssssss_t',//3-8, 9-31, 32-37  J
-				'__ssssss_eeeeeeeeeeeeeeeeeeeeeeee_ssssss__',//3-8, 9-32, 33-38  K
+				'v_ssssss_eeeeeeeeeeeeeeeeeeeeeeee_ssssss_v',//3-8, 9-32, 33-38  K
 				't_ssssss_frrrrrrrrrrrrrrrrrrrrrrr_ssssss_t',//3-8, 9-31, 32-37  L
 				't_ssssss_rrrrrrrrrrrrrrrrrrrrrrrr_ssssss_t',//3-8, 9-32, 33-38  M
 				't_ssssss_frrrrrrrrrrrrrrrrrrrrrrr_ssssss_t',//3-8, 9-31, 32-37  N
 				't_ssssss_eeeeeeeeeeeeeeeeeeeeeeee_ssssss_t',//3-8, 9-32, 33-38  P
 				't_ssssss_feeeeeeeeeeeeeeeeeeeeeee_ssssss_t',//3-8, 9-31, 32-37  Q
 				't_ssssss_eeeeeeeeeeeeeeeeeeeeeeee_ssssss_t',//3-8, 9-32, 33-38  R
-				'__ssssss_feeeeeeeeeeeeeeeeeeeeeee_ssssss__',//3-8, 9-31, 32-37  S
+				'v_ssssss_feeeeeeeeeeeeeeeeeeeeeee_ssssss_v',//3-8, 9-31, 32-37  S
 				't_ssssss_feeeeeeeeeeeeeeeeeeeeeef_ssssss_t',//4-9, 10-31, 32-37 T
 				't_ssssss_ffeeeeeeeeeeeeeeeeeeeeef_ssssss_t',//4-9, 10-30, 31-36 U
 				't_ssssss_feeeeeeeeeeeeeeeeeeeeeef_ssssss_t',//4-9, 10-31, 32-37 V
 				't_ssssss_ffeeeeee_________eeeeeef_ssssss_t',//4-9, 10-30, 31-36 W
 				't________fffeeeee_________eeeeeff________t',//11-30  		   X
 				't________________________________________t',//nothing		   Y
-				'___________rrrrrrrrrrrrrrrrrrrr___________',//11-30  		   Z
+				'v__________rrrrrrrrrrrrrrrrrrrr__________v',//11-30  		   Z
 				'__________________________________________',//nothing
 				'__tttttttttttttttttttttttttttttttttttttt__',//2-39 AA
 				'__ftttttttttttttttttttttttttttttttttttff__',//3-37 BB
@@ -182,7 +183,17 @@
 					price   : 0,
 					classes : 'seatCharts-seat seatCharts-cell blocked', // blocked seat
 					category: 'blocked'
-				}
+				},
+				w: {
+					price   : 25,
+					classes : 'seatCharts-seat seatCharts-cell available wheel', // cat 25
+					category: 'Cat $25 wheel chair seat'
+				},	
+				v: {
+					price   : 21,
+					classes : 'seatCharts-seat seatCharts-cell available wheel', // cat 25
+					category: 'Cat $21 wheel chair seat'
+				}	
 			
 			},
 			click: function () {
@@ -191,7 +202,6 @@
             		category = this.data().category,
             		id = this.node().attr("id"),
             		all_seat;
-
             		
             		$.post('include/get_real_seat_name.php', {'seat_code': id}, function(data) {
             			real_seat_name = data;  
@@ -385,7 +395,17 @@
 					price   : 0,
 					classes : 'seatCharts-seat seatCharts-cell blocked', // blocked seat
 					category: 'blocked'
-				}
+				},
+				w: {
+					price   : 25,
+					classes : 'seatCharts-seat seatCharts-cell available wheel', // cat 25
+					category: 'Cat $25 wheel chair seat'
+				},	
+				v: {
+					price   : 21,
+					classes : 'seatCharts-seat seatCharts-cell available wheel', // cat 25
+					category: 'Cat $21 wheel chair seat'
+				}	
 			
 			},
 			click: function () {

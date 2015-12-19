@@ -83,6 +83,11 @@ div.seatCharts-seat.third {
 	background-color: #E16B56;
 }
 
+div.seatCharts-seat.wheel {
+	background-color: #EDE275;
+}
+
+
 div.seatCharts-row:after {
 	clear: both;
 }

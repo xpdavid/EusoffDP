@@ -312,6 +312,7 @@
 		for ($i = 48; $i <= 66; $i ++) {
 			echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'LL', '" . $i . "', '2_" . (72 - $i) . "_3'); \r\n";
 		}
+
 		// row UL
 		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '1', '2_1_3'); \r\n";
 		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '2', '2_2_3'); \r\n";
@@ -349,5 +350,19 @@
 		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '38', '2_3_43'); \r\n";
 		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '39', '2_2_41'); \r\n";
 		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (2, 'UL', '40', '2_1_41'); \r\n";
+
+
+		// wheel chair seats		
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Wheel Chair', '1', '1_1_7'); \r\n";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Wheel Chair', '1', '1_1_8'); \r\n";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Wheel Chair', '1', '1_1_35'); \r\n";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Wheel Chair', '1', '1_1_36'); \r\n";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Wheel Chair', '1', '1_7_1'); \r\n";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Wheel Chair', '1', '1_7_42'); \r\n";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Wheel Chair', '1', '1_14_1'); \r\n";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Wheel Chair', '1', '1_14_42'); \r\n";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Wheel Chair', '1', '1_21_1'); \r\n";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Wheel Chair', '1', '1_21_42'); \r\n";
+
 
 ?>
