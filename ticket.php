@@ -129,9 +129,9 @@
 				't_ssssss_feeeeeeeeeeeeeeeeeeeeeef_ssssss_t',//4-9, 10-31, 32-37 H
 				't_ssssss_feeeeeeeeeeeeeeeeeeeeeee_ssssss_t',//3-8, 9-31, 32-37  J
 				'__ssssss_eeeeeeeeeeeeeeeeeeeeeeee_ssssss__',//3-8, 9-32, 33-38  K
-				't_ssssss_feeeeeeeeeeeeeeeeeeeeeee_ssssss_t',//3-8, 9-31, 32-37  L
-				't_ssssss_eeeeeeeeeeeeeeeeeeeeeeee_ssssss_t',//3-8, 9-32, 33-38  M
-				't_ssssss_feeeeeeeeeeeeeeeeeeeeeee_ssssss_t',//3-8, 9-31, 32-37  N
+				't_ssssss_frrrrrrrrrrrrrrrrrrrrrrr_ssssss_t',//3-8, 9-31, 32-37  L
+				't_ssssss_rrrrrrrrrrrrrrrrrrrrrrrr_ssssss_t',//3-8, 9-32, 33-38  M
+				't_ssssss_frrrrrrrrrrrrrrrrrrrrrrr_ssssss_t',//3-8, 9-31, 32-37  N
 				't_ssssss_eeeeeeeeeeeeeeeeeeeeeeee_ssssss_t',//3-8, 9-32, 33-38  P
 				't_ssssss_feeeeeeeeeeeeeeeeeeeeeee_ssssss_t',//3-8, 9-31, 32-37  Q
 				't_ssssss_eeeeeeeeeeeeeeeeeeeeeeee_ssssss_t',//3-8, 9-32, 33-38  R
