@@ -25,10 +25,17 @@
 
 </head>
 <body style="background-image: url('img/prison_bg.png');">
-  <script>
-          var flower1 = new flower("Type1", 5, "f_1");
-          var flower2 = new flower("Type2", 6, "f_2");
-          var flower3 = new flower("Type3", 7, "f_3");
+    <script>
+
+          var flower1 = new flower("Sunflower (single)", 5.00, "f_1");
+          var flower2 = new flower("Rose (single)", 3.50, "f_2");
+          var flower3 = new flower("Roses (bouquet of 3)", 15.00, "f_3");
+          var flower4 = new flower("Gerbera (single)", 2.50, "f_4");
+          var flower5 = new flower("Gerberas (bouquet of 3)", 10.00, "f_5");
+          var flower6 = new flower("Plushtoy 1 (40cm)", 5.00, "f_6");
+          var flower7 = new flower("Plushtoy 1 (90cm)", 12.00, "f_7");
+          var flower8 = new flower("Plushtoy 2 (42cm)", 5.00, "f_8");
+          var flower9 = new flower("Plushtoy 2 (90cm)", 15.00, "f_9");
 
           var count_down = new clock(600, "count_down", function(){
             alert("Time expired, please try again");
@@ -56,6 +63,12 @@
             flower1.init();
             flower2.init();
             flower3.init();
+            flower4.init();
+            flower5.init();
+            flower6.init();
+            flower7.init();
+            flower8.init();
+            flower9.init();
 
           });
   </script>
@@ -112,21 +125,65 @@
         <img class="pure-img flower" src="static/img/flower1.jpg">
       </div>
       <div class="pure-u-1-3">
-        <img class="pure-img flower" src="static/img/flower1.jpg">
+        <img class="pure-img flower" src="static/img/flower2.jpg">
       </div>
       <div class="pure-u-1-3">
-        <img class="pure-img flower" src="static/img/flower1.jpg">
+        <img class="pure-img flower" src="static/img/flower2.jpg">
       </div>
     </div>
     <div class="pure-g">
       <div class="pure-u-1-3">
-        <button class="pure-button" onclick="flower1.add()">Type 1 S$5.00</button>
+        <button class="pure-button" onclick="flower1.add()">Sunflower (single) S$5.00</button>
       </div>
       <div class="pure-u-1-3">
-        <button class="pure-button" onclick="flower2.add()">Type 2 S$6.00</button>
+        <button class="pure-button" onclick="flower2.add()">Rose (single) S$3.50</button>
       </div>
       <div class="pure-u-1-3">
-        <button class="pure-button" onclick="flower3.add()">Type 3 S$7.00</button>
+        <button class="pure-button" onclick="flower3.add()">Roses (bouquet of 3) S$15.00</button>
+      </div>
+    </div>
+     <div class="pure-g">
+      <div class="pure-u-1-3">
+        <img class="pure-img flower" src="static/img/flower3.jpg">
+      </div>
+      <div class="pure-u-1-3">
+        <img class="pure-img flower" src="static/img/flower3.jpg">
+      </div>
+      <div class="pure-u-1-3">
+        <img class="pure-img flower" src="static/img/flower4.jpg">
+      </div>
+    </div>
+    <div class="pure-g">
+      <div class="pure-u-1-3">
+        <button class="pure-button" onclick="flower4.add()">Gerbera (single) S$2.50</button>
+      </div>
+      <div class="pure-u-1-3">
+        <button class="pure-button" onclick="flower5.add()">Gerberas (bouquet of 3) S$10.00</button>
+      </div>
+      <div class="pure-u-1-3">
+        <button class="pure-button" onclick="flower6.add()">Plushtoys 1 (40cm) S$5.00</button>
+      </div>
+    </div>
+     <div class="pure-g">
+      <div class="pure-u-1-3">
+        <img class="pure-img flower" src="static/img/flower4.jpg">
+      </div>
+      <div class="pure-u-1-3">
+        <img class="pure-img flower" src="static/img/flower5.jpg">
+      </div>
+      <div class="pure-u-1-3">
+        <img class="pure-img flower" src="static/img/flower5.jpg">
+      </div>
+    </div>
+    <div class="pure-g">
+      <div class="pure-u-1-3">
+        <button class="pure-button" onclick="flower7.add()">Plushtoys 1 (90cm) S$12.00</button>
+      </div>
+      <div class="pure-u-1-3">
+        <button class="pure-button" onclick="flower8.add()">Plushtoys 2 (42cm) S$5.00</button>
+      </div>
+      <div class="pure-u-1-3">
+        <button class="pure-button" onclick="flower9.add()">Plushtoys 2 (90cm) S$15.00</button>
       </div>
     </div>
   </div>
@@ -144,31 +201,60 @@
       </thead>
       <tbody>
         <tr>
-          <td>Type 1</td>
-          <td><input type="button" value="-" id = "f_1_minus" /><input type="text" value="0" id  ="f_1_quantity" /><input type="button" value="+" id = "f_1_add" /></td>
-          <td>S$<span id = "f_1_total">0</span>.00</td>
+          <td>Sunflower (single) </td>
+          <td><input type="button" value="-" id = "f_1_minus"/><input type="text" value="0" id  ="f_1_quantity" /><input type="button" value="+" id = "f_1_add" /></td>
+          <td>S$<span id = "f_1_total">0.00</span></td>
         </tr>
         <tr>
-          <td>Type 2</td>
+          <td>Rose (single) </td>
           <td><input type="button" value="-" id = "f_2_minus"/><input type="text" value="0" id  ="f_2_quantity"/><input type="button" value="+" id = "f_2_add" /></td>
-          <td>S$<span id = "f_2_total">0</span>.00</td>
+          <td>S$<span id = "f_2_total">0.00</span></td>
         </tr>
         <tr>
-          <td>Type 3</td>
+          <td>Roses (bouquet of 3) </td>
           <td><input type="button" value="-" id = "f_3_minus"/><input type="text" value="0" id  ="f_3_quantity"/><input type="button" value="+" id = "f_3_add" /></td>
-          <td>S$<span id = "f_3_total">0</span>.00</td>
+          <td>S$<span id = "f_3_total">0.00</span></td>
+        </tr>
+        <tr>
+          <td>Gerbera (single) </td>
+          <td><input type="button" value="-" id = "f_4_minus"/><input type="text" value="0" id  ="f_4_quantity"/><input type="button" value="+" id = "f_4_add" /></td>
+          <td>S$<span id = "f_4_total">0.00</span></td>
+        </tr>
+        <tr>
+          <td>Gerberas (bouquet of 3)</td>
+          <td><input type="button" value="-" id = "f_5_minus"/><input type="text" value="0" id  ="f_5_quantity"/><input type="button" value="+" id = "f_5_add" /></td>
+          <td>S$<span id = "f_5_total">0.00</span></td>
+        </tr>
+        <tr>
+          <td>Plushtoy 1 (40cm) </td>
+          <td><input type="button" value="-" id = "f_6_minus"/><input type="text" value="0" id  ="f_6_quantity"/><input type="button" value="+" id = "f_6_add" /></td>
+          <td>S$<span id = "f_6_total">0.00</span></td>
+        </tr>
+        <tr>
+          <td>Plushtoy 1 (90cm) </td>
+          <td><input type="button" value="-" id = "f_7_minus"/><input type="text" value="0" id  ="f_7_quantity"/><input type="button" value="+" id = "f_7_add" /></td>
+          <td>S$<span id = "f_7_total">0.00</span></td>
+        </tr>
+        <tr>
+          <td>Plushtoy 2 (42cm) </td>
+          <td><input type="button" value="-" id = "f_8_minus"/><input type="text" value="0" id  ="f_8_quantity"/><input type="button" value="+" id = "f_8_add" /></td>
+          <td>S$<span id = "f_8_total">0.00</span></td>
+        </tr>
+        <tr>
+          <td>Plushtoy 2 (90cm) </td>
+          <td><input type="button" value="-" id = "f_9_minus"/><input type="text" value="0" id  ="f_9_quantity"/><input type="button" value="+" id = "f_9_add" /></td>
+          <td>S$<span id = "f_9_total">0.00</span></td>
         </tr>
       </tbody>
     </table>
     <hr>
     <div style="text-align: right;">
-      Total:S$
-      <span id="flower_price">0</span>.00
+      Total:S$<span id="flower_price">0.00</span>
     </div>
   </div>
 
   <div class="container_p">
-    <h3 style="color:white">Total Price: S$<span id="total_price">0</span>.00</h3>
+    <h3 style="color:white">Total Price: S$<span id="total_price">0</span></h3>
     <form action="checkout.php" id = "checkout_form" method="post">
       <input type="hidden" id="pre_data" value='<?php echo $_POST['data']; ?>' />
       <input type="hidden" id="datas" value="" name="data"/>

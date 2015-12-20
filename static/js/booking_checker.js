@@ -161,10 +161,10 @@ function personal_detail_checker() {
 
 
 function compute_total_price() {
-	var total_flower = flower1.total + flower2.total + flower3.total;
-	$("#flower_price").html(flower1.total + flower2.total + flower3.total);
+	var total_flower = flower1.total + flower2.total + flower3.total + flower4.total + flower5.total + flower6.total + flower7.total + flower8.total + flower9.total;
+	$("#flower_price").html(total_flower.toFixed(2));
 	var total_ticket = compute_total();
-	$("#total_price").html(total_ticket + total_flower);
+	$("#total_price").html((total_ticket + total_flower).toFixed(2));
 }
 
 function checkout() {
@@ -172,7 +172,13 @@ function checkout() {
 	var flower_data = {
 		flower_1 : flower1,
 		flower_2 : flower2,
-		flower_3 : flower3
+		flower_3 : flower3,
+		flower_4 : flower4,
+		flower_5 : flower5,
+		flower_6 : flower6,
+		flower_7 : flower7,
+		flower_8 : flower8,
+		flower_9 : flower9
 	};
 	pre_data["flower"] = flower_data;
 	$("#datas").val(JSON.stringify(pre_data));
@@ -209,7 +215,7 @@ flower.prototype.set_quantity = function(quantity) {
 
 flower.prototype.update_display = function() {
 	$("#" + this.id + "_quantity").val(this.quantity);
-	$("#" + this.id + "_total").html(this.total);
+	$("#" + this.id + "_total").html(this.total.toFixed(2));
 	compute_total_price();
 }
 
