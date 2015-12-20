@@ -149,7 +149,20 @@ function trigger_info(user_id) {
 
 
 		// flower
-		// ...
+		$("#sunflowers").html(user_info.flower.flower_1.quantity);
+
+		$("#roses_1").html(user_info.flower.flower_2.quantity);
+
+		$("#roses_2").html(user_info.flower.flower_3.quantity);
+
+		$("#gerberas_1").html(user_info.flower.flower_4.quantity);
+		$("#gerberas_2").html(user_info.flower.flower_5.quantity);
+
+		$("#plushtoys_1_1").html(user_info.flower.flower_6.quantity); 
+		$("#plushtoys_1_2").html(user_info.flower.flower_7.quantity); 
+
+		$("#plushtoys_2_1").html(user_info.flower.flower_8.quantity);
+		$("#plushtoys_2_2").html(user_info.flower.flower_9.quantity);
 
 		swal({   title: "<small>User info</small>",   text: $("#for_user_info").html(),   html: true });
 

@@ -37,7 +37,7 @@
 
         // third change seat status
         foreach($data -> select_seat  as $seat_code => $value) {
-          change_seat_status($seat_code, SEAT_STATUS_OCCUPIED, $user_id);
+          change_seat_status($seat_code, SEAT_STATUS_BOOKED, $user_id);
         }
 
 
