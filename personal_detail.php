@@ -85,7 +85,7 @@
 	<ol class="progress">  
 		<li data-step="1" class="is-complete" data-step="1">Step 1: Select your seats</li>  
 		<li data-step="2" class="is-active">Step 2: Your booking details</li>  
-		<li data-step="3" >Step 3: 'Flower Buddle'</li>
+		<li data-step="3" >Step 3: Flower Bundle</li>
 		<li data-step="4" class="progress__last">Step 4: Checkout</li>
 	</ol>
 	</div>

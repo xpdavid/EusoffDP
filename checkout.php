@@ -37,7 +37,7 @@
 
         // third change seat status
         foreach($data -> select_seat  as $seat_code => $value) {
-          change_seat_status($seat_code, SEAT_STATUS_BOOKED, $user_id);
+          change_seat_status($seat_code, SEAT_STATUS_OCCUPIED, $user_id);
         }
 
 
@@ -46,7 +46,7 @@
         <h2>Your booking details have been successfully stored in our database</h2>
         <h3>Booking Reference: $booking_id</h3>
         <p>
-          Please transfer S$$total_price.00 to to POSB 032-62536-3 and then email dpsponsorship@eusoff.nus.edu.sg with your reference number. 
+          Please transfer <strong> S$$total_price.00  </strong> to POSB account <strong> 032-62536-3 </strong> and email your Booking Reference to <strong> dpsponsorship@eusoff.nus.edu.sg </strong> . 
         </p>
 MSG_HEADER;
 
@@ -100,7 +100,7 @@ MSG_HEADER;
   <ol class="progress">  
     <li data-step="1" class="is-complete">Step 1: Select your seats</li>  
     <li data-step="2" class="is-complete" >Step 2: Your booking details</li>  
-    <li data-step="3" class="is-complete">Step 3: 'Flower Buddle'</li>
+    <li data-step="3" class="is-complete">Step 3: Flower Bundle</li>
     <li data-step="4" class="progress__last is-active">Step 4: Checkout</li>
   </ol>
   </div>

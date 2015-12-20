@@ -36,7 +36,7 @@ function check_seat_between(sc, all_seat, floor, ignore_id){
 		var new_seat_1_status = "unavailable";var new_seat_2_status = "unavailable"; // assume is unavailable for all
 		var new_seat_3_status = "unavailable";var new_seat_4_status = "unavailable";
 		try { new_seat_1_status = sc.get(new_seat_1).status(); } catch(err) {} // update the status
-		try { new_seat_2_status = sc.get(new_seat_2).status(); } catch(err) {} // the seat id may no be existed, catch the error
+		try { new_seat_2_status = sc.get(new_seat_2).status(); } catch(err) {} // the seat id may not exist, catch the error
 		try { new_seat_3_status = sc.get(new_seat_3).status(); } catch(err) {}
 		try { new_seat_4_status = sc.get(new_seat_4).status(); } catch(err) {} 
 		

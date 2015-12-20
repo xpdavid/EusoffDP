@@ -353,16 +353,16 @@
 
 
 		// wheel chair seats		
-		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Wheel Chair', '1', '1_1_7'); \r\n";
-		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Wheel Chair', '1', '1_1_8'); \r\n";
-		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Wheel Chair', '1', '1_1_35'); \r\n";
-		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Wheel Chair', '1', '1_1_36'); \r\n";
-		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Wheel Chair', '1', '1_7_1'); \r\n";
-		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Wheel Chair', '1', '1_7_42'); \r\n";
-		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Wheel Chair', '1', '1_14_1'); \r\n";
-		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Wheel Chair', '1', '1_14_42'); \r\n";
-		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Wheel Chair', '1', '1_21_1'); \r\n";
-		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'Wheel Chair', '1', '1_21_42'); \r\n";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'WC', '2', '1_1_7'); \r\n";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'WC', '1', '1_1_8'); \r\n";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'WC', '10', '1_1_35'); \r\n";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'WC', '9', '1_1_36'); \r\n";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'WC', '3', '1_7_1'); \r\n";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'WC', '8', '1_7_42'); \r\n";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'WC', '4', '1_14_1'); \r\n";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'WC', '7', '1_14_42'); \r\n";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'WC', '5', '1_21_1'); \r\n";
+		echo "INSERT INTO seat (level, row, col, seat_code) VALUES (1, 'WC', '6', '1_21_42'); \r\n";
 
 
 ?>

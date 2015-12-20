@@ -40,6 +40,7 @@
 		#info {
 			margin-left: 20px;
 			margin-right: 20px;
+			text-align: center;
 			color: white;
 			font-family: "helvetica";		
 		}
