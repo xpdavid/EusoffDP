@@ -121,70 +121,76 @@
   <div class="container_p">
   <h3 style="color:white; text-align:left;">Purchase of flower(s) for Charity:</h3>
     <div class="pure-g">
-      <div class="pure-u-1-3">
+      <div class="pure-u-1-4">
         <img class="pure-img flower" src="static/img/flower1.jpg">
       </div>
-      <div class="pure-u-1-3">
+      <div class="pure-u-1-4">
         <img class="pure-img flower" src="static/img/flower2.jpg">
       </div>
-      <div class="pure-u-1-3">
+      <div class="pure-u-1-4">
         <img class="pure-img flower" src="static/img/flower2.jpg">
+      </div>
+      <div class="pure-u-1-4">
+        <img class="pure-img flower" src="static/img/flower3.jpg">
       </div>
     </div>
     <div class="pure-g">
-      <div class="pure-u-1-3">
-        <button class="pure-button" onclick="flower1.add()">Sunflower (single) S$5.00</button>
+      <div class="pure-u-1-4">
+        <button class="pure-button" onclick="flower1.add()">Sunflower (single)<br/>S$5.00</button>
       </div>
-      <div class="pure-u-1-3">
-        <button class="pure-button" onclick="flower2.add()">Rose (single) S$3.50</button>
+      <div class="pure-u-1-4">
+        <button class="pure-button" onclick="flower2.add()">Rose (single)<br/>S$3.50</button>
       </div>
-      <div class="pure-u-1-3">
-        <button class="pure-button" onclick="flower3.add()">Roses (bouquet of 3) S$15.00</button>
+      <div class="pure-u-1-4">
+        <button class="pure-button" onclick="flower3.add()">Roses (bouquet of 3)<br/>S$15.00</button>
       </div>
-    </div>
-     <div class="pure-g">
-      <div class="pure-u-1-3">
-        <img class="pure-img flower" src="static/img/flower3.jpg">
-      </div>
-      <div class="pure-u-1-3">
-        <img class="pure-img flower" src="static/img/flower3.jpg">
-      </div>
-      <div class="pure-u-1-3">
-        <img class="pure-img flower" src="static/img/flower4.jpg">
-      </div>
-    </div>
-    <div class="pure-g">
-      <div class="pure-u-1-3">
-        <button class="pure-button" onclick="flower4.add()">Gerbera (single) S$2.50</button>
-      </div>
-      <div class="pure-u-1-3">
-        <button class="pure-button" onclick="flower5.add()">Gerberas (bouquet of 3) S$10.00</button>
-      </div>
-      <div class="pure-u-1-3">
-        <button class="pure-button" onclick="flower6.add()">Plushtoys 1 (40cm) S$5.00</button>
+      <div class="pure-u-1-4">
+        <button class="pure-button" onclick="flower4.add()">Gerbera (single)<br/>S$2.50</button>
       </div>
     </div>
      <div class="pure-g">
-      <div class="pure-u-1-3">
+      <div class="pure-u-1-4">
+        <img class="pure-img flower" src="static/img/flower3.jpg">
+      </div>
+      <div class="pure-u-1-4">
         <img class="pure-img flower" src="static/img/flower4.jpg">
       </div>
-      <div class="pure-u-1-3">
-        <img class="pure-img flower" src="static/img/flower5.jpg">
+       <div class="pure-u-1-4">
+        <img class="pure-img flower" src="static/img/flower4.jpg">
       </div>
-      <div class="pure-u-1-3">
+      <div class="pure-u-1-4">
         <img class="pure-img flower" src="static/img/flower5.jpg">
       </div>
     </div>
     <div class="pure-g">
-      <div class="pure-u-1-3">
-        <button class="pure-button" onclick="flower7.add()">Plushtoys 1 (90cm) S$12.00</button>
+      <div class="pure-u-1-4">
+        <button class="pure-button" onclick="flower5.add()">Gerberas (bouquet of 3)<br/>S$10.00</button>
       </div>
-      <div class="pure-u-1-3">
-        <button class="pure-button" onclick="flower8.add()">Plushtoys 2 (42cm) S$5.00</button>
+      <div class="pure-u-1-4">
+        <button class="pure-button" onclick="flower6.add()">Plushtoys 1 (40cm)<br/>S$5.00</button>
       </div>
-      <div class="pure-u-1-3">
-        <button class="pure-button" onclick="flower9.add()">Plushtoys 2 (90cm) S$15.00</button>
+       <div class="pure-u-1-4">
+        <button class="pure-button" onclick="flower7.add()">Plushtoys 1 (90cm)<br/>S$12.00</button>
       </div>
+      <div class="pure-u-1-4">
+        <button class="pure-button" onclick="flower8.add()">Plushtoys 2 (42cm)<br/>S$5.00</button>
+      </div>
+    </div>
+     <div class="pure-g">
+      <div class="pure-u-1-4">
+        <img class="pure-img flower" src="static/img/flower5.jpg">
+      </div>
+      <div class="pure-u-1-4"></div>
+      <div class="pure-u-1-4"></div>
+      <div class="pure-u-1-4"></div>
+    </div>
+    <div class="pure-g">
+      <div class="pure-u-1-4">
+        <button class="pure-button" onclick="flower9.add()">Plushtoys 2 (90cm)<br/>S$15.00</button>
+      </div>
+      <div class="pure-u-1-4"></div>
+      <div class="pure-u-1-4"></div>
+      <div class="pure-u-1-4"></div>
     </div>
   </div>
 
