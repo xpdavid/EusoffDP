@@ -25,7 +25,7 @@
 
 		$collect_json = json_encode($collect);
 		$flower_json = json_encode($flower);
-
+		
 		$stmt = $db_conn->prepare("INSERT INTO " . USER_TABLE . "(email, name, matric_num, collect, flower) VALUES (?, ?, ?, ?, ?)");
 		$stmt->bind_param("sssss", $email, $name, $matric_num, $collect_json, $flower_json);
 		$stmt->execute();

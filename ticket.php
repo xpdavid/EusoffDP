@@ -503,7 +503,7 @@
 	<div style="text-align: right;">
 		Qunatity:
 		<span id="booking_quantity">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		Total:
+		Total: S$
 		<span id="booking_price">0</span>.00
 	</div>
 	<div class="alert-box warning" id="alert_box" style="display:none;">Notice: You cannot leave a seat between.</div>

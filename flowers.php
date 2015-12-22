@@ -19,6 +19,7 @@
   <!--<![endif]-->
   <link rel="stylesheet" href="static/css/layouts/marketing.css" />
   <link rel="stylesheet" href="static/css/jquery/jquery-ui.css" />
+  <link rel="stylesheet" href="static/css/flower.css" />
 
     <script src="static/js/jquery-2.1.1.min.js"></script>
     <script src="static/js/booking_checker.js"></script>
@@ -148,6 +149,52 @@
         <button class="pure-button" onclick="flower4.add()">Gerbera (single)<br/>S$2.50</button>
       </div>
     </div>
+    <div class="pure-g">
+        <div class="pure-u-1-4">
+          <div class="pure-u-1-8">
+            <input type="button" value="-" id = "f_1_minus"/>
+          </div>
+          <div class="pure-u-1-4">
+            <input type="text" value="0" id="f_1_quantity"/>
+          </div>
+          <div class="pure-u-1-8">
+            <input type="button" value="+" id = "f_1_add"/>
+          </div>
+        </div>
+        <div class="pure-u-1-4">
+          <div class="pure-u-1-8">
+            <input type="button" value="-" id = "f_2_minus"/>
+          </div>
+          <div class="pure-u-1-4">
+            <input type="text" value="0" id="f_2_quantity"/>
+          </div>
+          <div class="pure-u-1-8">
+            <input type="button" value="+" id = "f_2_add"/>
+          </div>
+        </div>
+        <div class="pure-u-1-4">
+          <div class="pure-u-1-8">
+            <input type="button" value="-" id = "f_3_minus"/>
+          </div>
+          <div class="pure-u-1-4">
+            <input type="text" value="0" id="f_3_quantity"/>
+          </div>
+          <div class="pure-u-1-8">
+            <input type="button" value="+" id = "f_3_add"/>
+          </div>
+        </div>
+        <div class="pure-u-1-4">
+          <div class="pure-u-1-8">
+            <input type="button" value="-" id = "f_4_minus"/>
+          </div>
+          <div class="pure-u-1-4">
+            <input type="text" value="0" id="f_4_quantity"/>
+          </div>
+          <div class="pure-u-1-8">
+            <input type="button" value="+" id = "f_4_add"/>
+          </div>
+        </div>
+    </div>
      <div class="pure-g">
       <div class="pure-u-1-4">
         <img class="pure-img flower" src="static/img/flower3.jpg">
@@ -176,6 +223,52 @@
         <button class="pure-button" onclick="flower8.add()">Plushtoys 2 (42cm)<br/>S$5.00</button>
       </div>
     </div>
+    <div class="pure-g">
+        <div class="pure-u-1-4">
+          <div class="pure-u-1-8">
+            <input type="button" value="-" id = "f_5_minus"/>
+          </div>
+          <div class="pure-u-1-4">
+            <input type="text" value="0" id="f_5_quantity"/>
+          </div>
+          <div class="pure-u-1-8">
+            <input type="button" value="+" id = "f_5_add"/>
+          </div>    
+        </div>
+        <div class="pure-u-1-4">
+          <div class="pure-u-1-8">
+            <input type="button" value="-" id = "f_6_minus"/>
+          </div>
+          <div class="pure-u-1-4">
+            <input type="text" value="0" id="f_6_quantity"/>
+          </div>
+          <div class="pure-u-1-8">
+            <input type="button" value="+" id = "f_6_add"/>
+          </div>
+        </div>
+        <div class="pure-u-1-4">
+          <div class="pure-u-1-8">
+            <input type="button" value="-" id = "f_7_minus"/>
+          </div>
+          <div class="pure-u-1-4">
+            <input type="text" value="0" id="f_7_quantity"/>
+          </div>
+          <div class="pure-u-1-8">
+            <input type="button" value="+" id = "f_7_add"/>
+          </div>
+        </div>
+        <div class="pure-u-1-4">
+          <div class="pure-u-1-8">
+            <input type="button" value="-" id = "f_8_minus"/>
+          </div>
+          <div class="pure-u-1-4">
+            <input type="text" value="0" id="f_8_quantity"/>
+          </div>
+          <div class="pure-u-1-8">
+            <input type="button" value="+" id = "f_8_add"/>
+          </div>
+        </div>
+    </div>
      <div class="pure-g">
       <div class="pure-u-1-4">
         <img class="pure-img flower" src="static/img/flower5.jpg">
@@ -192,11 +285,29 @@
       <div class="pure-u-1-4"></div>
       <div class="pure-u-1-4"></div>
     </div>
+    <div class="pure-g">
+      <div class="pure-u-1-4">
+        <div class="pure-u-1-8">
+          <input type="button" value="-" id = "f_9_minus"/>
+        </div>
+        <div class="pure-u-1-4">
+          <input type="text" value="0" id="f_9_quantity"/>
+        </div>
+        <div class="pure-u-1-8">
+          <input type="button" value="+" id = "f_9_add"/>
+        </div>
+      </div>
+      <div class="pure-u-1-4"></div>
+      <div class="pure-u-1-4"></div>
+      <div class="pure-u-1-4"></div>
+    </div>
   </div>
-
+  
+    
   <br>
-  <div class="summary" id = "summary_flower" style="background: rgba(0, 0, 0, 0.8); width:72%; padding:10px;">
+  <div class="summary" id = "summary_flower">
     <h3>Flowers Summary</h3>
+    <hr>
     <table border="0" width="100%" id = "summary_flower_table">
       <thead>
         <tr>
@@ -206,56 +317,56 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr id = "f_1_summary">
           <td>Sunflower (single) </td>
-          <td><input type="button" value="-" id = "f_1_minus"/><input type="text" value="0" id  ="f_1_quantity" /><input type="button" value="+" id = "f_1_add" /></td>
+          <td><span id = "f_1_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0<br></span></td>
           <td>S$<span id = "f_1_total">0.00</span></td>
         </tr>
-        <tr>
+        <tr id = "f_2_summary">
           <td>Rose (single) </td>
-          <td><input type="button" value="-" id = "f_2_minus"/><input type="text" value="0" id  ="f_2_quantity"/><input type="button" value="+" id = "f_2_add" /></td>
+          <td><span id = "f_2_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span></td>
           <td>S$<span id = "f_2_total">0.00</span></td>
         </tr>
-        <tr>
+        <tr id = "f_3_summary">
           <td>Roses (bouquet of 3) </td>
-          <td><input type="button" value="-" id = "f_3_minus"/><input type="text" value="0" id  ="f_3_quantity"/><input type="button" value="+" id = "f_3_add" /></td>
+          <td><span id = "f_3_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span></td>
           <td>S$<span id = "f_3_total">0.00</span></td>
         </tr>
-        <tr>
+        <tr id = "f_4_summary">
           <td>Gerbera (single) </td>
-          <td><input type="button" value="-" id = "f_4_minus"/><input type="text" value="0" id  ="f_4_quantity"/><input type="button" value="+" id = "f_4_add" /></td>
+          <td><span id = "f_4_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span></td>
           <td>S$<span id = "f_4_total">0.00</span></td>
         </tr>
-        <tr>
+        <tr id = "f_5_summary">
           <td>Gerberas (bouquet of 3)</td>
-          <td><input type="button" value="-" id = "f_5_minus"/><input type="text" value="0" id  ="f_5_quantity"/><input type="button" value="+" id = "f_5_add" /></td>
+          <td><span id = "f_5_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span></td>
           <td>S$<span id = "f_5_total">0.00</span></td>
         </tr>
-        <tr>
+        <tr id = "f_6_summary">
           <td>Plushtoy 1 (40cm) </td>
-          <td><input type="button" value="-" id = "f_6_minus"/><input type="text" value="0" id  ="f_6_quantity"/><input type="button" value="+" id = "f_6_add" /></td>
+          <td><span id = "f_6_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span></td>
           <td>S$<span id = "f_6_total">0.00</span></td>
         </tr>
-        <tr>
+        <tr id = "f_7_summary">
           <td>Plushtoy 1 (90cm) </td>
-          <td><input type="button" value="-" id = "f_7_minus"/><input type="text" value="0" id  ="f_7_quantity"/><input type="button" value="+" id = "f_7_add" /></td>
+          <td><span id = "f_7_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span></td>
           <td>S$<span id = "f_7_total">0.00</span></td>
         </tr>
-        <tr>
+        <tr id = "f_8_summary">
           <td>Plushtoy 2 (42cm) </td>
-          <td><input type="button" value="-" id = "f_8_minus"/><input type="text" value="0" id  ="f_8_quantity"/><input type="button" value="+" id = "f_8_add" /></td>
+          <td><span id = "f_8_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span></td>
           <td>S$<span id = "f_8_total">0.00</span></td>
         </tr>
-        <tr>
+        <tr id = "f_9_summary">
           <td>Plushtoy 2 (90cm) </td>
-          <td><input type="button" value="-" id = "f_9_minus"/><input type="text" value="0" id  ="f_9_quantity"/><input type="button" value="+" id = "f_9_add" /></td>
+          <td><span id = "f_9_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span></td>
           <td>S$<span id = "f_9_total">0.00</span></td>
         </tr>
       </tbody>
     </table>
     <hr>
     <div style="text-align: right;">
-      Total:S$<span id="flower_price">0.00</span>
+      Total: S$<span id="flower_price">0.00</span>
     </div>
   </div>
 

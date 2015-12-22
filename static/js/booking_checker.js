@@ -215,8 +215,15 @@ flower.prototype.set_quantity = function(quantity) {
 
 flower.prototype.update_display = function() {
 	$("#" + this.id + "_quantity").val(this.quantity);
+	$("#" + this.id + "_quantity_summary").html("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + this.quantity);
 	$("#" + this.id + "_total").html(this.total.toFixed(2));
 	compute_total_price();
+	if (this.quantity == 0){
+		$("#" + this.id + "_summary").hide();
+	}
+	else{
+		$("#" + this.id + "_summary").show();	
+	}
 }
 
 flower.prototype.init = function() {
@@ -238,6 +245,7 @@ flower.prototype.init = function() {
 		}
 		self.update_display();
 	});
+	$("#" + this.id + "_summary").hide();
 }
 
 
