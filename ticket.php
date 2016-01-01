@@ -142,7 +142,7 @@
 				's_ssssss_ffeeeeee_________eeeeeef_ssssss_s',//4-9, 10-30, 31-36 W
 				's________fffeeeee_________eeeeeff________s',//11-30  		   X
 				's________________________________________s',//nothing		   Y
-				'w__________eeeeeeeeeeeeeeeeeeee__________w',//11-30  		   Z
+				'w__________ssssssssssssssssssss__________w',//11-30  		   Z
 				'__________________________________________',//nothing
 				'__ssssssssssssssssssssssssssssssssssssss__',//2-39 AA
 				'__fsssssssssssssssssssssssssssssssssssff__',//3-37 BB
