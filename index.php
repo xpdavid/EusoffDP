@@ -8,7 +8,7 @@
 	<style type="text/css">
 		body {
 			overflow:hidden;
-			background-image: url('img/prison_bg.png');
+			background-image: url('img/background.jpg');
 		}
 		#light {
 			position:absolute;
@@ -26,7 +26,7 @@
 		#title {
 			position: absolute;
 			top: 2%;
-			left: 33%;
+			left: 43%;
 		}
 		#infobox {
 			position: absolute;
@@ -51,7 +51,7 @@
   			width: 100px;
   			margin: 20px;
   			overflow: hidden;
-   
+   			
   			-webkit-box-shadow: 5px 5px 5px #111;
           			box-shadow: 5px 5px 5px #111;  
 		}
@@ -81,12 +81,6 @@
 	<script></script>
 	<div id='title'>
 		<img src="img/title.png" width="700" height="200">
-	</div>
-	<div id='barb_wire'>
-		<img src="img/barb_wire.gif" style="position:absolute;top:59%;left:-2%" height="300px" width="500px">
-	</div>
-	<div id='barb_wire2'>
-		<img src="img/barb_wire2.gif" style="position:absolute;top:75%;left:70%" height="200px" width="500px">
 	</div>
 	<div id='home' class='focus icon' style="position:absolute;top:33%;left:51%" onclick="">
 		<a href="home.php"><img src="img/icon_home.png" onmouseover="this.src='img/text_home.png';" onmouseout="this.src='img/icon_home.png';" alt="cricket"></a>

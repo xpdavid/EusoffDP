@@ -6,7 +6,7 @@
 <head>
 	<style type="text/css">
 		body {
-			background-image: url('img/prison_bg.png');
+			background-image: url('img/background.jpg');
 			overflow-y: auto;
 			overflow-x: hidden;
 		}
@@ -56,15 +56,9 @@
 	</style>
 </head>
 <body>
-	<div id='barb_wire'>
-		<img src="img/barb_wire.gif">
-	</div>
-	<div id='barb_wire2'>
-		<img src="img/barb_wire2.gif">
-	</div>
 	<div id="container">
 		<div id="title">
-			<a href="/<?php echo RELATIVE_PATH;?>"><img src="img/title.png" width="700" height="200"></a>
+			<a href="index.php"><img src="img/title.png" width="700" height="200"></a>
 		</div>
 		<div id="video">
 			<iframe src="http://www.youtube.com/embed/tNLVoPN1chg">

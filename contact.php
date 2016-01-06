@@ -6,7 +6,7 @@
 <head>
 	<style type="text/css">
 		body {
-			background-image: url('img/prison_bg.png');
+			background-image: url('img/background.jpg');
 			overflow: hidden;
 		}
 		#body {
@@ -47,15 +47,9 @@
 	</style>
 </head>
 <body>
-	<div id='barb_wire'>
-		<img src="img/barb_wire.gif" style="position:absolute;top:-7%;left:80%" height="200px" width="400px">
-	</div>
-	<div id='barb_wire2'>
-		<img src="img/barb_wire2.gif" style="position:absolute;top:0%;left:-12%" height="200px" width="600px">
-	</div>
 	<div id="body">
 		<div id="title">
-			<a href="/<?php echo RELATIVE_PATH; ?>"><img src="img/title.png" width="700" height="200"></a>
+			<a href="index.php"><img src="img/title.png" width="700" height="200"></a>
 		</div>
 		<div id="poster"><img src="img/poster.png" width="280" height="400"></div>
 		<div id="infobox">

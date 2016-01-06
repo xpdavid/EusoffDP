@@ -21,7 +21,7 @@
 </head>
 <body>
 <div class='head-pic'>
-        <a href="/<? echo RELATIVE_PATH;?>"><img src="img/title.png" width="300" height="75"></a>
+        <a href="index.php"><img src="img/title.png" width="300" height="75"></a>
 </div>
 
     <div id='gallery-dancer' class='focus icon' style="position:absolute;top:15%;left:15%">
