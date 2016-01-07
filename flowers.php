@@ -32,11 +32,11 @@
           var flower2 = new flower("Rose (single)", 3.50, "f_2");
           var flower3 = new flower("Roses (bouquet of 3)", 15.00, "f_3");
           var flower4 = new flower("Gerbera (single)", 2.50, "f_4");
-          var flower5 = new flower("Gerberas (bouquet of 3)", 10.00, "f_5");
+          var flower5 = new flower("Gerberas (bouquet of 3)", 12.00, "f_5");
           var flower6 = new flower("Plushtoy 1 (40cm)", 5.00, "f_6");
           var flower7 = new flower("Plushtoy 1 (90cm)", 12.00, "f_7");
           var flower8 = new flower("Plushtoy 2 (42cm)", 5.00, "f_8");
-          var flower9 = new flower("Plushtoy 2 (90cm)", 15.00, "f_9");
+          var flower9 = new flower("Plushtoy 2 (90cm)", 12.00, "f_9");
 
           var count_down = new clock(600, "count_down", function(){
             alert("Time expired, please try again");
@@ -211,7 +211,7 @@
     </div>
     <div class="pure-g">
       <div class="pure-u-1-4">
-        <button class="pure-button" onclick="flower5.add()">Gerberas (bouquet of 3)<br/>S$10.00</button>
+        <button class="pure-button" onclick="flower5.add()">Gerberas (bouquet of 3)<br/>S$12.00</button>
       </div>
       <div class="pure-u-1-4">
         <button class="pure-button" onclick="flower6.add()">Plushtoys 1 (40cm)<br/>S$5.00</button>
@@ -279,7 +279,7 @@
     </div>
     <div class="pure-g">
       <div class="pure-u-1-4">
-        <button class="pure-button" onclick="flower9.add()">Plushtoys 2 (90cm)<br/>S$15.00</button>
+        <button class="pure-button" onclick="flower9.add()">Plushtoys 2 (90cm)<br/>S$12.00</button>
       </div>
       <div class="pure-u-1-4"></div>
       <div class="pure-u-1-4"></div>

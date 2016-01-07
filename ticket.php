@@ -129,9 +129,9 @@
 				's_ssssss_feeeeeeeeeeeeeeeeeeeeeef_ssssss_s',//4-9, 10-31, 32-37 H
 				's_ssssss_feeeeeeeeeeeeeeeeeeeeeee_ssssss_s',//3-8, 9-31, 32-37  J
 				'w_ssssss_eeeeeeeeeeeeeeeeeeeeeeee_ssssss_w',//3-8, 9-32, 33-38  K
-				's_ssssss_feeeeerrrrrrrrrrrrreeeee_ssssss_s',//3-8, 9-31, 32-37  L
-				's_ssssss_rrrrrrrrrrrrrrrrrrrrrrrr_ssssss_s',//3-8, 9-32, 33-38  M
-				's_ssssss_frrrrrrrrrrrrrrrrrrrrrrr_ssssss_s',//3-8, 9-31, 32-37  N
+				'r_ssssss_feeeeerrrrrrrrrrrrreeeee_ssssss_r',//3-8, 9-31, 32-37  L
+				'r_ssssss_rrrrrrrrrrrrrrrrrrrrrrrr_ssssss_r',//3-8, 9-32, 33-38  M
+				'r_ssssss_frrrrrrrrrrrrrrrrrrrrrrr_ssssss_r',//3-8, 9-31, 32-37  N
 				's_ssssss_eeeeeeeeeeeeeeeeeeeeeeee_ssssss_s',//3-8, 9-32, 33-38  P
 				's_ssssss_feeeeeeeeeeeeeeeeeeeeeee_ssssss_s',//3-8, 9-31, 32-37  Q
 				's_ssssss_eeeeeeeeeeeeeeeeeeeeeeee_ssssss_s',//3-8, 9-32, 33-38  R
@@ -142,7 +142,7 @@
 				's_ssssss_ffeeeeee_________eeeeeef_ssssss_s',//4-9, 10-30, 31-36 W
 				's________fffeeeee_________eeeeeff________s',//11-30  		   X
 				's________________________________________s',//nothing		   Y
-				'w__________ssssssssssssssssssss__________w',//11-30  		   Z
+				'w__________ssssssssrrrrrsssssss__________w',//11-30  		   Z
 				'__________________________________________',//nothing
 				'__ssssssssssssssssssssssssssssssssssssss__',//2-39 AA
 				'__fsssssssssssssssssssssssssssssssssssff__',//3-37 BB
@@ -323,9 +323,9 @@
 				'__s_____________________________________s__',//9
 				'__s_____________________________________s__',//10
 				'__s_____________________________________s__',//11
-				's_s_____________________________________s_s',//12
+				'r_s_____________________________________s_r',//12
 				'__s_____________________________________s__',//13
-				's_s_____________________________________s_s',//14
+				'r_s_____________________________________s_r',//14
 				'__s_____________________________________s__',//15
 				's_s_____________________________________s_s',//16
 				'__s_____________________________________s__',//17
@@ -345,7 +345,7 @@
 				's_s_____________________________________s_s',//30
 				's_s_____________________________________s_s',//31
 				's_s_____________________________________s_s',//32
-				's_s_ffffssssssssssssfffffsssssssssssfff_s_s',//33 + A 7-34
+				's_s_ffffssssssssssssrrrrfsssssssssssfff_s_s',//33 + A 7-34
 				'____fffssssssssssssssfffssssssssssssfff____',//B 6-34
 				'____fssssssssssssssssssssssssssssssssff____',//C 5-36
 				'____fsssssssssssssssssssssssssssssssssf____',//D 4-36

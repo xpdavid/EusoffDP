@@ -16,9 +16,10 @@ Eusoff Dance Production website
 ##Proposed Changes
 ###General
 * Change fonts to `Helvetica` or similar
+* Change background
+* Change title
 
 ###Booking Page
-* Change background
 * Add seat selection restriction: Cannot leave one seat empty in between booked seats
 * Modify the layout of the page with an immediate update of information in the side bar
 * Include a Personal Detail page after seat selection
@@ -27,16 +28,21 @@ Eusoff Dance Production website
   *  Email Address
   *  Mailing Address
   *  Modes of Ticket Collection: from friends / mailing
-  *  Purchase of flower(s) for Charity: Amount
+	  *  Additional charge for registered mail
+  *  Purchase of flower(s) for Charity: 
+	  *  Type
+	  *  Amount
+	  *  Colour Preference
+	  *  Special Requests for Bouquets
+	  *  Collection method
+		  *  Backstage distribution by our committee members
+		  *  Self-collection at front-of-house on show day, 6:15 - 7:30
 
 ###Checkout Page
-* Display information prompting users to transfer payment to designated bank account (to be confirmed)
+* Display information prompting users to transfer payment to designated bank account upon email confirmation (to be confirmed)
 
 ###Gallery
 * Change background
-
-###Index Page
-* Modify the spin of menu buttons
 
 ###Synopsis Page
 * Modify the layout into one column  
