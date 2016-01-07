@@ -136,7 +136,7 @@
     		<div class="pure-u-1-3"><input id= "email" type="email" placeholder="Email Address"></div>
 		</div>
 		<div class="pure-g">
-    		<div class="pure-u-1-3"><p>Modes of Ticket Collection</p></div>
+    		<div class="pure-u-1-3"><p>Ticket Collection Method</p></div>
     		<div class="pure-u-1-3">
     			<select id="collect_method">
               <option >Collect from friends</option>
@@ -146,21 +146,30 @@
 		</div>
     <div id = "mailing">
       <div class="pure-g">
-        <div class="pure-u-1-3"><p>Address line 1: </p></div>
+        <div class="pure-u-1-3"><p>Address line 1 </p></div>
         <div class="pure-u-2-3">
          <input id= "address_1" type="text" placeholder="Address line 1">
         </div>
       </div>
       <div class="pure-g">
-        <div class="pure-u-1-3"><p>Address line 2: </p></div>
+        <div class="pure-u-1-3"><p>Address line 2 </p></div>
         <div class="pure-u-2-3">
           <input id= "address_2" type="text" placeholder="Address line 2">
         </div>
       </div>
       <div class="pure-g">
-        <div class="pure-u-1-3"><p>ZIP: </p></div>
+        <div class="pure-u-1-3"><p>ZIP </p></div>
         <div class="pure-u-1-3">
           <input id= "zip" type="text" placeholder="ZIP">
+        </div>
+      </div>
+      <div class="pure-g">
+        <div class="pure-u-1-3"><p>Mail Type </p></div>
+        <div class="pure-u-1-3">
+                <select id="mail_type">
+                    <option >Normal Mail</option>
+                    <option>Registered Mail ($1.50)</option>
+                </select>
         </div>
       </div>
       <div class="pure-g">

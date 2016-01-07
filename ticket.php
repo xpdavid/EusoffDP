@@ -81,7 +81,7 @@
 </div>
 <br />
 <div class='head-pic'>
-		<a href="/<?php echo RELATIVE_PATH;?>"><img src="img/title.png" width="300" height="75"></a>
+		<a href="index.php"><img src="img/title.png" width="300" height="75"></a>
 </div>
 <div id='floor-menu' style="text-align: center">
 	<button type="submit" id="choose-first-floor" class="pure-button pure-button-floor selected">first floor</button>

@@ -123,11 +123,18 @@ function wrap_personal_detail() {
 			}
 		};
 	if ($("#collect_method").get(0).selectedIndex == 1) {
-			details["collect"]["address_1"] = $("#address_1").val(),
-			details["collect"]["address_2"] = $("#address_2").val(),
-			details["collect"]["zip"] = $("#zip").val(),
-			details["collect"]["phone_num"] = $("#phone_num").val()
+			details["collect"]["address_1"] = $("#address_1").val();
+			details["collect"]["address_2"] = $("#address_2").val();
+			details["collect"]["zip"] = $("#zip").val();
+			details["collect"]["phone_num"] = $("#phone_num").val();
+			if ($("#mail_type").get(0).selectedIndex == 1) {
+				details["collect"]["mail_type"] = "Registered Mail";
+			}
+			else {
+				details["collect"]["mail_type"] = "Normal Mail"	;
+			}
 	}
+
 	$("#datas").val(JSON.stringify(details));
 }
 
