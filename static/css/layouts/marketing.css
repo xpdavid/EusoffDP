@@ -9,20 +9,13 @@
  * Most of these are inherited from Base, but I want to change a few.
  */
 body {
-    line-height: 1.7em;
-    color: #7f8c8d;
-    font-size: 13px;
+    background: url(../../../img/background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-label {
-    color: #34495e;
-}
 
 .pure-img-responsive {
     max-width: 100%;

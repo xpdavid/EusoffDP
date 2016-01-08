@@ -4,62 +4,48 @@
 <!doctype html>
 <html>
 <head>
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="static/css/pure/pure.css" />
+  <!--[if lte IE 8]>
+   	<link rel="stylesheet" href="static/css/pure/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="static/css/pure/grids-responsive-min.css">
+  <!--<![endif]-->
+  <link rel="stylesheet" href="static/css/layouts/marketing.css" />
 	<style type="text/css">
-		body {
-			background-image: url('img/background.jpg');
-			overflow: hidden;
-		}
-		#body {
-			margin-left: auto;
-			margin-right: auto;
-			left: 0;
-			right: 0;
-			height: 620px;
-			background-color: rgba(0, 0, 0, 0.7);
-			width: 60%;
-		}
-		#poster {
-			position: absolute;
-			left: 20%;
-			top: 35%;
-		}
-		#title {
-			margin-top: 4%;
-			margin-left: 19%;
-		}
-		#infobox {
-			position: absolute;
-			background-color: rgba(255, 255, 255, 0.15);
-			border: 10px;
-			border-radius: 5px;
-			height: 410px;
-			width: 500px;
-			top: 34%;
-			left: 45%;
-		}
 		#info {
-			margin-left: 20px;
+			background-color: rgba(0, 0, 0, 0.5);
 			margin-right: 20px;
-			text-align: center;
+			font-family: "helvetica";
+			font-size: 15px;
+			text-align: left;
+			padding: 15px;
+			border-radius: 5px;
 			color: white;
-			font-family: "helvetica";		
 		}
 	</style>
 </head>
 <body>
-	<div id="body">
-		<div id="title">
-			<a href="index.php"><img src="img/title.png" width="700" height="200"></a>
-		</div>
-		<div id="poster"><img src="img/poster.png" width="280" height="400"></div>
-		<div id="infobox">
+  <div class="container_p" style="margin-left: 29%">
+    <a href="index.php"><img src="img/title.png" width="700" height="200"></a>
+  </div>
+  	<div class="container_p" style="backgroud: rga(0,0,0,0.5)">
+		<div class="pure-g">
+			<div class="pure-u-1-2">
+				<img src="img/Poster_final.jpg" width="280" height="400">
+			</div>
+			<div class="pure-u-1-2">
+		
 			<div id="info">
-				<p style="text-align: center; font-size: 30px"> Contact Us</p>
+								<p style="text-align: center; font-size: 30px"> Contact Us</p>
 				<p style="font-size: 25px;"><br>10 Kent Ridge Drive,
 				<br>National University of Singapore,
 				<br>Singapore 119242<br>
 				<br>ehdp@eusoff.nus.edu.sg</p>
 			</div>
+		</div>
 		</div>
 	</div>
 </body>

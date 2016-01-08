@@ -25,7 +25,8 @@
     <script src="static/js/booking_checker.js"></script>
 
 </head>
-<body style="background-image: url('img/prison_bg.png');">
+<body>
+<div style="background:rgba(0,0,0,0.5) !important">
     <script>
 
 
@@ -121,7 +122,7 @@
   
   <input type="hidden" name="select_seat" id="select_seat" value='<?php echo $_POST['select_seat']; ?>' />
 	
-  <div class="container_p" style="background: rgba(0, 0, 0, 0.8); width:72%; padding:10px; text-align:left;">
+  <div class="container_p" style="background: rgba(0, 0, 0, 0.8); width:72%; padding:10px; text-align:left; color:white !important">
 		<h3 style="color:white; text-align:left;">Your personal detail:</h3>
 		<div class="pure-g">
     		<div class="pure-u-1-3"><p>Name</p></div>
@@ -192,4 +193,5 @@
   </form>
   <br>
   <?php include('footer.php'); ?>
+  </div>
 </body>

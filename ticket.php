@@ -27,7 +27,8 @@
   <!-- booking helper function -->
   <script src="static/js/booking_checker.js"></script>
 </head>
-<body style="background: black">
+<body>
+<div style="background:rgba(0,0,0,0.5) !important">
   <script type="text/javascript">
   	var select_seat = {};
 
@@ -68,16 +69,43 @@
   	});
   </script>
 <div class="ticket-head">Ticket Booking</div>
-
-<div class="legend" >
-	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #357EC7"></div> &nbsp;&nbsp;&nbsp;Cat $30 seat<br />
-	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #79BF5E"></div> &nbsp;&nbsp;&nbsp;Cat $25 seat<br />
-	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #EDE275"></div> &nbsp;&nbsp;&nbsp;Wheel chair seat<br />
-	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #79A6C4"></div> &nbsp;&nbsp;&nbsp;Reserved seat<br />
-	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #FFF"></div> &nbsp;&nbsp;&nbsp;Selected seat<br />
-	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #F00"></div> &nbsp;&nbsp;&nbsp;Booked seat<br />
-	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #808080"></div> &nbsp;&nbsp;&nbsp;Dummy seat<br />
-	<div class="demo-seatCharts-seat demo-seatCharts-cell" style="background-color : #800080"></div> &nbsp;&nbsp;&nbsp;Blocked seat<br />
+<div style=" width: 80%; margin: auto;">
+<div id="legend" class="seatCharts-legend" style="margin-left:42%">
+	<ul class="seatCharts-legendList">
+		<li class="seatCharts-legendItem">
+			<div class="seatCharts-seat seatCharts-cell" style="background-color : #357EC7"></div>
+			<span class="seatCharts-legendDescription">Cat $30 seat</span>
+		</li>
+		<li class="seatCharts-legendItem">
+			<div class="seatCharts-seat seatCharts-cell" style="background-color : #79BF5E"></div>
+			<span class="seatCharts-legendDescription">Cat $25 seat</span>
+		</li>
+		<li class="seatCharts-legendItem">
+			<div class="seatCharts-seat seatCharts-cell" style="background-color : #EDE275"></div>
+			<span class="seatCharts-legendDescription">Wheel chair seat</span>
+		</li>
+		<li class="seatCharts-legendItem">
+			<div class="seatCharts-seat seatCharts-cell" style="background-color : #79A6C4"></div>
+			<span class="seatCharts-legendDescription">Reserved seat</span>
+		</li>
+		<li class="seatCharts-legendItem">
+			<div class="seatCharts-seat seatCharts-cell" style="background-color : #FFF"></div>
+			<span class="seatCharts-legendDescription">Selected seat</span>
+		</li>
+		<li class="seatCharts-legendItem">
+			<div class="seatCharts-seat seatCharts-cell" style="background-color : #F00"></div>
+			<span class="seatCharts-legendDescription">Booked seat</span>
+		</li>
+		<li class="seatCharts-legendItem">
+			<div class="seatCharts-seat seatCharts-cell" style="background-color : #808080"></div>
+			<span class="seatCharts-legendDescription">Dummy seat</span>
+		</li>
+		<li class="seatCharts-legendItem">
+			<div class="seatCharts-seat seatCharts-cell" style="background-color : #800080"></div>
+			<span class="seatCharts-legendDescription">Blocked seat</span>
+		</li>
+	</ul>
+</div>
 </div>
 <br />
 <div class='head-pic'>
@@ -512,7 +540,7 @@
 		<input type = "button" disabled="disabled" class="pure-button pure-button-disabled" id="booking_button" value="Please select a seat" onclick="$('#summary_submit').submit()"  />
 	</form>
 </div>
-
-</body>
 <?php include('footer.php'); ?>
+</div>
+</body>
 </html>

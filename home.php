@@ -4,53 +4,40 @@
 <!doctype html>
 <html>
 <head>
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="static/css/pure/pure.css" />
+  <!--[if lte IE 8]>
+   	<link rel="stylesheet" href="static/css/pure/grids-responsive-old-ie-min.css">
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="static/css/pure/grids-responsive-min.css">
+  <!--<![endif]-->
+  <link rel="stylesheet" href="static/css/layouts/marketing.css" />
 	<style type="text/css">
-		body {
-			background-image: url('img/background.jpg');
-		}
-		#body {
-			margin-left: auto;
-			margin-right: auto;
-			left: 0;
-			right: 0;
-			height: 750px;
-			background-color: rgba(0, 0, 0, 0.7);
-			width: 60%;
-		}
-		#poster {
-			position: absolute;
-			left: 20%;
-			top: 35%;
-		}
-		#title {
-			margin-top: 4%;
-			margin-left: 19%;
-		}
-		#infobox {
-			position: absolute;
-			background-color: rgba(255, 255, 255, 0.2);
-			border: 10px;
-			border-radius: 5px;
-			width: 500px;
-			top: 34%;
-			left: 45%;
-		}
 		#info {
-			margin-left: 20px;
+			background-color: rgba(0, 0, 0, 0.5);
 			margin-right: 20px;
-			color: white;
 			font-family: "helvetica";
 			font-size: 15px;
+			text-align: left;
+			padding: 15px;
+			border-radius: 5px;
+			color: white;
 		}
 	</style>
 </head>
 <body>
-	<div id="body">
-		<div id="title">
-			<a href="index.php"><img src="img/title.png" width="700" height="200"></a>
-		</div>
-		<div id="poster"><img src="img/Poster_final.jpg" width="280" height="400"></div>
-		<div id="infobox">
+  <div class="container_p" style="margin-left: 29%">
+    <a href="index.php"><img src="img/title.png" width="700" height="200"></a>
+  </div>
+	<div class="container_p" style="backgroud: rga(0,0,0,0.5)">
+		<div class="pure-g">
+			<div class="pure-u-1-2">
+				<img src="img/Poster_final.jpg" width="280" height="400">
+			</div>
+			<div class="pure-u-1-2">
+		
 			<div id="info">
 				<p>
 					Since its inaugural show in 1991, Eusoff Hall Dance Production has been a consistent student-initiated effort managed entirely by the residents of Eusoff hall to pursue their passion for the arts. Besides collaborating to stage a spectacular fusion of dance and drama, we are also involved in the backstage planning of the whole production. All in all, almost 200 residents are involved. Taking months of preparation and planning, show day itself is a culmination of five months of sheer hard work. And each year, countless friendships are forged as the production team strives together in a pursuit for excellence.</p>
@@ -64,11 +51,8 @@
 <p>Eusoff Hall Dance Production Team</p>
 			</div>
 		</div>
+		</div>
 	</div>
-</body>
-<br>
-<br>
-<br>
 <br>
 <br>
 <br>

@@ -25,7 +25,8 @@
     <script src="static/js/booking_checker.js"></script>
 
 </head>
-<body style="background-image: url('img/prison_bg.png');">
+<body>
+<div style="background:rgba(0,0,0,0.5) !important">
     <script>
 
           var flower1 = new flower("Sunflower (single)", 5.00, "f_1");
@@ -382,4 +383,5 @@
 
 <br>
   <?php include('footer.php'); ?>
+</div>
 </body>

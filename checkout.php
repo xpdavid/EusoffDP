@@ -86,14 +86,13 @@ MSG_HEADER;
 
 </head>
 
-<body style="background-image: url('img/prison_bg.png');">
-
+<body>
   <div class="container_p">
     <a href="index.php"><img src="img/title.png" width="700" height="200"></a>
   </div>
 
   <div class="container_p">
-    <h2 style="color:white; text-align:left;">Ticket Booking:</h2>
+    <h2 style="color:white; text-align:left; color:black">Ticket Booking:</h2>
   </div>
 
   <div class="step_bar_warp">

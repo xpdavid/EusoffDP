@@ -5,32 +5,12 @@
 <html>
 <head>
 	<title>Continuum - EHDP 2015/ 2016</title>
+	<link rel="stylesheet" href="static/css/layouts/marketing.css" />
 	<style type="text/css">
-		body {
-			overflow:hidden;
-			background-image: url('img/background.jpg');
-		}
-		#light {
-			position:absolute;
-			left:0;
-			top:0;
-			z-index:2001;
-			height:200px;
-			width:200px;
-			border:100px solid rgba(0, 0, 0, 0.7);
-			border-radius:200px;
-			border:1px solid #000\9;
-			background-color:green\9;
-			filter:progid:DXImageTransform.Microsoft.Chroma(color=green) progid:DXImageTransform.Microsoft.Alpha(opacity=60)\9;
-		}
-		#title {
-			position: absolute;
-			top: 2%;
-			left: 43%;
-		}
+	
 		#infobox {
 			position: absolute;
-			background-color: rgba(255, 255, 255, 0.10);
+			background-color: rgba(0, 0, 0, 0.50);
 			border: 10px;
 			border-radius: 5px;
 			width: 400px;
@@ -39,8 +19,8 @@
 		}
 		.info {
 			margin-left: 20px;
-			color: white;
 			font-family: "helvetica";
+			color: white
 		}
 
 		.icon {
@@ -78,10 +58,9 @@
 
 </head>
 <body scroll=0>
-	<script></script>
-	<div id='title'>
-		<img src="img/title.png" width="700" height="200">
-	</div>
+  <div class="container_p" style="margin-left: 29%">
+    <a href="index.php"><img src="img/title.png" width="700" height="200"></a>
+  </div>
 	<div id='home' class='focus icon' style="position:absolute;top:33%;left:51%" onclick="">
 		<a href="home.php"><img src="img/icon_home.png" onmouseover="this.src='img/text_home.png';" onmouseout="this.src='img/icon_home.png';" alt="cricket"></a>
 	</div>
@@ -109,26 +88,6 @@
 			<br>Ticket prices: $25 and $30
 		</p>
 	</div>
-	<script type='text/javascript'>
-		var w = screen.width;
-		console.log(w);
-		var l = document.getElementById('light');
-		l.style.borderWidth = (w+200)+'px';
-		console.log(l.style.borderWidth);
-		l.style.borderRadius = w*2+'px';
-		l.style.top = l.style.left = (-w-200)+'px';
-		document.onmousemove = function(e){
-			with(l.style)
-			{
-				left =((e&&e.clientX?e.clientX:event.clientX)-w-300)+'px';
-				top = ((e&&e.clientY?e.clientY:event.clientY)-w-300)+'px';
-			}
-		};
-
-		//function loadMainPage(){
-		//	window.location.href = "new_main.html";
-		//}
-	</script>
 	<div style = "position:absolute; bottom:2%; left: 45%"><?php include('footer.php'); ?> </div>
 </body>
 
