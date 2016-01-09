@@ -14,7 +14,10 @@
             <li><img src="static/img/gallery/DP/Cast/cast-9.jpg" width="100%" alt="Oops" /></li>
             <li><img src="static/img/gallery/DP/Cast/cast-10.jpg" width="100%" alt="Oops" /></li>
             <li><img src="static/img/gallery/DP/Cast/cast-11.jpg" width="100%" alt="Oops" /></li>
-
+            <li><img src="static/img/gallery/DP/Cast/cast-12.jpg" width="100%" alt="Oops" /></li>
+            <li><img src="static/img/gallery/DP/Cast/cast-13.jpg" width="100%" alt="Oops" /></li>
+            <li><img src="static/img/gallery/DP/Cast/cast-14.jpg" width="100%" alt="Oops" /></li>
+            <li><img src="static/img/gallery/DP/Cast/cast-15.jpg" width="100%" alt="Oops" /></li>
 
         </ul>
     

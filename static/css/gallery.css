@@ -3,14 +3,9 @@
 	padding:0;
 }
 
-html{
-	background:url('../img/gallery/page_bg_tile.jpg') #202027;
-}
 
 body{
 	color:#999;
-	
-	background-image:url('../img/gallery/contour2.png'),url('../img/gallery/page_bg.jpg');
 	background-repeat:no-repeat,no-repeat;
 	background-position: center 269px, center -200px;
 
