@@ -62,22 +62,22 @@
     <a href="index.php"><img src="img/title.png" width="700" height="200"></a>
   </div>
 	<div id='home' class='focus icon' style="position:absolute;top:33%;left:51%" onclick="">
-		<a href="home.php"><img src="img/icon_home.png" onmouseover="this.src='img/text_home.png';" onmouseout="this.src='img/icon_home.png';" alt="cricket"></a>
+		<a href="home.php"><img src="img/icon_home.png" onmouseover="this.src='img/text_home.png';" onmouseout="this.src='img/icon_home.png';" alt="cricket" width="90" height="90"></a>
 	</div>
 	<div id='gallery' class='focus icon' style="position:absolute;top:33%;left:63%" onclick="">
-		<a href="gallery.php"><img src="img/icon_gallery.png" onmouseover="this.src='img/text_gallery.png';" onmouseout="this.src='img/icon_gallery.png';" alt="cricket"></a>
+		<a href="gallery.php"><img src="img/icon_gallery.png" onmouseover="this.src='img/text_gallery.png';" onmouseout="this.src='img/icon_gallery.png';" alt="cricket" width="90" height="90"></a>
 	</div>
 	<div id='synopsis' class='focus icon' style="position:absolute;top:33%;left:75%" onclick="">
-		<a href="synopsis.php"><img src="img/icon_synopsis.png" onmouseover="this.src='img/text_synopsis.png';" onmouseout="this.src='img/icon_synopsis.png';" alt="cricket"></a>
+		<a href="synopsis.php"><img src="img/icon_synopsis.png" onmouseover="this.src='img/text_synopsis.png';" onmouseout="this.src='img/icon_synopsis.png';" alt="cricket" width="90" height="90"></a>
 	</div>
 	<div id='ticket' class='focus icon' style="position:absolute;top:61%;left:51%" onclick="">
-		<a href="ticket.php"><img src="img/icon_ticket.png" onmouseover="this.src='img/text_ticket.png';" onmouseout="this.src='img/icon_ticket.png';" alt="cricket"></a>
+		<a href="ticket.php"><img src="img/icon_ticket.png" onmouseover="this.src='img/text_ticket.png';" onmouseout="this.src='img/icon_ticket.png';" alt="cricket" width="90" height="90"></a>
 	</div>
 	<div id='contact' class='focus icon' style="position:absolute;top:61%;left:63%" onclick="">
-		<a href="contact.php"><img src="img/icon_contact.png" onmouseover="this.src='img/text_contact.png';" onmouseout="this.src='img/icon_contact.png';" alt="cricket"></a>
+		<a href="contact.php"><img src="img/icon_contact.png" onmouseover="this.src='img/text_contact.png';" onmouseout="this.src='img/icon_contact.png';" alt="cricket" width="90" height="90"></a>
 	</div>
 	<div id='sponsor' class='focus icon' style="position:absolute;top:61%;left:75%" onclick="">
-		<a href="sponsor.php"><img src="img/icon_sponsor.png" onmouseover="this.src='img/text_sponsor.png';" onmouseout="this.src='img/icon_sponsor.png';" alt="cricket"></a>
+		<a href="sponsor.php"><img src="img/icon_sponsor.png" onmouseover="this.src='img/text_sponsor.png';" onmouseout="this.src='img/icon_sponsor.png';" alt="cricket" width="90" height="90"></a>
 	</div>
 	<div id='infobox'> 
 		<p class='info' style='font-size:25px;'>General Information</p>
