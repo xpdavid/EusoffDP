@@ -1,7 +1,7 @@
 <?php require_once "gallery-header.php"; ?>
 <div id="slideShowContainer">
 	
-    <div id="slideShow" style="height: 480px">
+    <div id="slideShow">
     
     	<ul>
         	<li><img src="static/img/gallery/DP/Choreographers/choreo-1.jpg" width="100%" alt="Oops" /></li>

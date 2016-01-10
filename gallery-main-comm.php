@@ -4,10 +4,10 @@
     <div id="slideShow">
     
     	<ul>
-        	<li><img src="static/img/gallery/DP/MC/mc-1.png" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/MC/mc-2.png" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/MC/mc-3.png" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/MC/mc-4.png" width="100%" alt="Oops" /></li>
+        	<li><img src="static/img/gallery/DP/MC/mc-1.jpg" width="100%" alt="Oops" /></li>
+            <li><img src="static/img/gallery/DP/MC/mc-2.jpg" width="100%" alt="Oops" /></li>
+            <li><img src="static/img/gallery/DP/MC/mc-3.jpg" width="100%" alt="Oops" /></li>
+            <li><img src="static/img/gallery/DP/MC/mc-4.jpg" width="100%" alt="Oops" /></li>
             <li><img src="static/img/gallery/DP/MC/mc-5.jpg" width="100%" alt="Oops" /></li>
             <li><img src="static/img/gallery/DP/MC/mc-6.jpg" width="100%" alt="Oops" /></li>
             <li><img src="static/img/gallery/DP/MC/mc-7.jpg" width="100%" alt="Oops" /></li>

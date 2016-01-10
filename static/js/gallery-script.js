@@ -10,93 +10,30 @@ $(document).ready(function(){
 	
 	updateZindex();
 
-	// if($.support.transform){
-	
-	// 	// Modern browsers with support for css3 transformations
-	
-	// 	// li.find('img').css('rotate',function(i){
-	// 	// 	// Rotating the images counterclockwise
-	// 	// 	return (-180*i) + 'deg';
-	// 	// });
-	
-	// 	// Binding a custom event. the direction and degrees parameters
-	// 	// are passed when the event is triggered later on in the code.
-	
-	// 	slideShow.bind('rotateContainer',function(e,direction,degrees){
-			
-	// 		// Enlarging the slideshow and photo:
-			
-	// 		slideShow.animate({
-	// 			height      : 598,
-	// 			width       : 887,
-	// 			marginTop	: 0,
-	// 			marginLeft	: 0
-	// 		},'slow',function(){
-				
-	// 			if(direction == 'next'){
-				
-	// 				// Moving the topmost image containing Li at
-	// 				// the bottom after a fadeOut animation
-					
-	// 				$('li:first').fadeOut('slow',function(){
-	// 					$(this).remove().appendTo(ul).show();
-	// 					updateZindex();
-	// 				});
-	// 			}
-	// 			else {
-					
-	// 				// Showing the bottomost Li element on top 
-	// 				// with a fade in animation. Notice that we are
-	// 				// updating the z-indexes.
-					
-	// 				var liLast = $('li:last').hide().remove().prependTo(ul);
-	// 				updateZindex();
-	// 				liLast.fadeIn('slow');
-	// 			}
-				
-	// 			// Rotating the slideShow. css('rotate') gives us the
-	// 			// current rotation in radians. We are converting it to
-	// 			// degress so we can add 90 or -90 to rotate it to its new value.
-				
-	// 			slideShow.animate({				
-	// 				rotate:Math.round($.rotate.radToDeg(slideShow.css('rotate'))+degrees) + 'deg'
-	// 			},'slow').animate({
-	// 				height      : 578,
-	// 				width       : 867,
-	// 				marginTop	: 10,
-	// 				marginLeft	: 10
-	// 			},'fast');
-	// 		});
-	// 	});
-		
-	// 	// By triggering the custom events below, we can 
-	// 	// show the previous / next images in the slideshow.
-		
-	// 	slideShow.bind('showNext',function(){
-	// 		slideShow.trigger('rotateContainer',['next',180]);
-	// 	});
-		
-	// 	slideShow.bind('showPrevious',function(){
-	// 		slideShow.trigger('rotateContainer',['previous',-180]);
-	// 	});
-	// }
-	
-	// else{
+	updateImageDimension($(ul.find('li')[0]).find("img"));
 		
 		// Fallback for Internet Explorer and older browsers
 		
-		slideShow.bind('showNext',function(){
-			$('li:first').fadeOut(800,function(){
-				$(this).remove().appendTo(ul).show();
-				updateZindex();
-			});
-		});
-		
-		slideShow.bind('showPrevious',function(){
-			var liLast = $('li:last').hide().remove().prependTo(ul);
+	slideShow.bind('showNext',function(){
+		$('li:first').fadeOut(800, function(){
+			$(this).remove().appendTo(ul).show();
+
+			updateImageDimension($($(this).siblings()[0]).find("img"));
+
 			updateZindex();
-			liLast.fadeIn(800);
+				
 		});
+	});
+		
+	slideShow.bind('showPrevious',function(){
+		var liLast = $('li:last').hide().remove().prependTo(ul);
+
+		updateImageDimension($($('li:last').siblings()[0]).find("img"));
+		
+		updateZindex();
+
+		liLast.fadeIn(800);
+	});
 	// }
 	
 	// Listening for clicks on the arrows, and
@@ -129,6 +66,39 @@ $(document).ready(function(){
 		ul.find('li').css('z-index',function(i){
 			return cnt-i;
 		});
+	}
+
+	function updateImageDimension(screenImage){
+		// constant
+		slideshow_width = 867
+
+		var theImage = new Image();
+		theImage.src = screenImage.attr("src");
+
+		// Get accurate measurements from that.
+		var imageWidth = theImage.width;
+		var imageHeight = theImage.height;
+		
+		// caculate new image height according to the ratio
+		var new_image_height = parseInt((imageHeight / imageWidth) * slideshow_width);
+
+		slideShow.animate({
+    		height: new_image_height + "px"
+  		}, 800, function() {
+    		// Animation complete.
+  		});
+
+		//slideShow.css("height", new_image_height + "px")
+
+		$("#slideShowContainer").animate({
+    		height: new_image_height + "px"
+  		}, 800, function() {
+    		// Animation complete.
+  		});
+
+		//$("#slideShowContainer").css("height", new_image_height  + "px")
+
+
 	}
 
 });
