@@ -136,7 +136,6 @@ function wrap_personal_detail() {
 	}
 
 	$("#datas").val(JSON.stringify(details));
-	window.alert(JSON.stringify(details));
 }
 
 function personal_detail_checker() {
