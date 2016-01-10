@@ -16,24 +16,6 @@
             <li><img src="static/img/gallery/DP/MC/mc-10.jpg" width="100%" alt="Oops" /></li>
             <li><img src="static/img/gallery/DP/MC/mc-11.jpg" width="100%" alt="Oops" /></li>
             <li><img src="static/img/gallery/DP/MC/mc-12.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/MC/mc-13.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/MC/mc-14.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/MC/mc-15.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/MC/mc-16.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/MC/mc-17.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/MC/mc-18.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/MC/mc-19.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/MC/mc-20.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/MC/mc-21.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/MC/mc-22.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/MC/mc-23.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/MC/mc-24.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/MC/mc-25.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/MC/mc-26.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/MC/mc-27.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/MC/mc-28.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/MC/mc-29.jpg" width="100%" alt="Oops" /></li>
-
             
 
 
