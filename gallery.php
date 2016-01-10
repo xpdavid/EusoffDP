@@ -4,21 +4,15 @@
     <div id="slideShow">
     
     	<ul>
-        	<li><img src="static/img/gallery/DP/Dance/D1-1.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/Dance/D2-1.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/Dance/D2-2.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/Dance/D3-1.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/Dance/D3-2.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/Dance/D4-1.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/Dance/D5-1.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/Dance/D5-2.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/Dance/D6-1.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/Dance/D6-2.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/Dance/D7-1.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/Dance/D7-2.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/Dance/D7-3.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/Dance/D8-1.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/Dance/D8-2.jpg" width="100%" alt="Oops" /></li>
+        	<li><img src="static/img/gallery/DP/Dance/D1.jpg" width="100%" alt="Oops" /></li>
+            <li><img src="static/img/gallery/DP/Dance/D2.jpg" width="100%" alt="Oops" /></li>
+            <li><img src="static/img/gallery/DP/Dance/D3.jpg" width="100%" alt="Oops" /></li>
+            <li><img src="static/img/gallery/DP/Dance/D4.jpg" width="100%" alt="Oops" /></li>
+            <li><img src="static/img/gallery/DP/Dance/D5.jpg" width="100%" alt="Oops" /></li>
+            <li><img src="static/img/gallery/DP/Dance/D6.jpg" width="100%" alt="Oops" /></li>
+            <li><img src="static/img/gallery/DP/Dance/D7.jpg" width="100%" alt="Oops" /></li>
+            <li><img src="static/img/gallery/DP/Dance/D8.jpg" width="100%" alt="Oops" /></li>
+            <li><img src="static/img/gallery/DP/Dance/D9.jpg" width="100%" alt="Oops" /></li>
 
         </ul>
     

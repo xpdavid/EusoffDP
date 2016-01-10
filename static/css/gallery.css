@@ -3,6 +3,7 @@
 	padding:0;
 }
 
+
 html{
 	background:url('../img/gallery/page_bg_tile2.jpg') #202027;
 }
@@ -10,6 +11,7 @@ html{
 body{
 	color:#999;
 	background-image: none;	
+
 	background-repeat:no-repeat,no-repeat;
 	background-position: center 269px, center -200px;
 
