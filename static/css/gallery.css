@@ -4,8 +4,14 @@
 }
 
 
+html{
+	background:url('../img/gallery/page_bg_tile2.jpg') #202027;
+}
+
 body{
 	color:#999;
+	background-image: none;	
+
 	background-repeat:no-repeat,no-repeat;
 	background-position: center 269px, center -200px;
 
@@ -60,7 +66,7 @@ body{
 	overflow:hidden;
 	width:36px;
 	height:37px;
-	background:url('../img/gallery/arrows2.png') no-repeat;
+	background:url('../img/gallery/arrows.png') no-repeat;
 	position:absolute;
 	top:50%;
 	margin-top:-21px;

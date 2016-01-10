@@ -1,7 +1,7 @@
 function compute_total(){
 	var s_table = $("#summary_table");
 	var count = $("#summary_table tbody tr").size();
-	var total = 0;
+	var total = 0.0;
 
 	// update quantity
 	$('#booking_quantity').html(count);
@@ -9,9 +9,9 @@ function compute_total(){
 	// update prices
 	s_table.find('.single_price').each(function(i){
 		var price_tmp = $(this).html();
-		total = total + parseInt(price_tmp.substring(2, price_tmp.length));
+		total = total + parseFloat(price_tmp.substring(2, price_tmp.length));
 	}); 
-	$('#booking_price').html(total);
+	$('#booking_price').html(total.toFixed(2));
 	
 	// update summary
 	check_has_item_in_summary();

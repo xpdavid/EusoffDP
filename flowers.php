@@ -55,7 +55,9 @@
                     ".00</td></tr>");
             
             }
-
+            if (pre_data.collect.mail_type == "Registered Mail"){
+              $("#summary_table>tbody").append("<tr><td>Registered Mail Charge</td><td>-</td><td class=\"single_price\">S$1.50</td></tr>");
+            }
             compute_total();
             compute_total_price();
 
@@ -107,10 +109,10 @@
     </table>
     <hr>
     <div style="text-align: right;">
-      Qunatity:
+      Quantity:
       <span id="booking_quantity">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       Total:S$
-      <span id="booking_price">0</span>.00
+      <span id="booking_price">0.00</span>
     </div>
   </div>
 

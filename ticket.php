@@ -27,8 +27,8 @@
   <!-- booking helper function -->
   <script src="static/js/booking_checker.js"></script>
 </head>
-<body>
-<div style="background:rgba(0,0,0,0.5) !important">
+<body style="color:#E5EAED;">
+<div style="background:rgba(0,0,0,0.65) !important">
   <script type="text/javascript">
   	var select_seat = {};
 
@@ -70,11 +70,11 @@
   </script>
 <div class="ticket-head">Ticket Booking</div>
 <div style=" width: 80%; margin: auto;">
-<div id="legend" class="seatCharts-legend" style="margin-left:42%">
+<div id="legend" class="seatCharts-legend" style="margin-left:42%;">
 	<ul class="seatCharts-legendList">
 		<li class="seatCharts-legendItem">
 			<div class="seatCharts-seat seatCharts-cell" style="background-color : #357EC7"></div>
-			<span class="seatCharts-legendDescription">Cat $30 seat</span>
+			<span class="seatCharts-legendDescription">Cat $28 seat</span>
 		</li>
 		<li class="seatCharts-legendItem">
 			<div class="seatCharts-seat seatCharts-cell" style="background-color : #79BF5E"></div>

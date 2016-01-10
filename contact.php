@@ -16,33 +16,33 @@
   <link rel="stylesheet" href="static/css/layouts/marketing.css" />
 	<style type="text/css">
 		#info {
-			background-color: rgba(0, 0, 0, 0.5);
+			background-color: rgba(0, 0, 0, 0);
 			margin-right: 20px;
-			font-family: "helvetica";
+			font-family: Verdana;
 			font-size: 15px;
 			text-align: left;
 			padding: 15px;
 			border-radius: 5px;
-			color: white;
+			color: #444e53;
 		}
 	</style>
 </head>
 <body>
-  <div class="container_p" style="margin-left: 29%">
+  <div class="container_p" style="margin-left: 30%">
     <a href="index.php"><img src="img/title.png" width="700" height="200"></a>
   </div>
   	<div class="container_p" style="backgroud: rga(0,0,0,0.5)">
 		<div class="pure-g">
-			<div class="pure-u-1-2">
-				<img src="img/Poster_final.jpg" width="280" height="400">
-			</div>
-			<div class="pure-u-1-2">
-		
+			<div class="pure-u-1-2"></div>
+			<div class="pure-u-1-2">		
 			<div id="info">
-								<p style="text-align: center; font-size: 30px"> Contact Us</p>
-				<p style="font-size: 25px;"><br>10 Kent Ridge Drive,
+				<p style="font-size: 40px;"> Contact Us</p>
+				<p style="font-size: 25px;">
+				<i style="font-family: 'Courier New';">ADDRESS</i>
+				<br>10 Kent Ridge Drive,
 				<br>National University of Singapore,
-				<br>Singapore 119242<br>
+				<br>Singapore 119242<br><br>
+				<i style="font-family: 'Courier New';">EMAIL</i>
 				<br>ehdp@eusoff.nus.edu.sg</p>
 			</div>
 		</div>
