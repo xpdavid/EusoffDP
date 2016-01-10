@@ -120,6 +120,7 @@ function trigger_info(user_id) {
 		$("#email").html("");
 		$("#m_num").html("");
 		$("#collect_method").html("");
+		$("#mail_type").html("/");
 		$("#address_line_1").html("/");
 		$("#address_line_2").html("/");
 		$("#zip").html("/");
@@ -141,6 +142,7 @@ function trigger_info(user_id) {
 
 		if (user_info.collect.method == 1) { // collect by mailing
 			$("#collect_method").html("Collect by mailing");
+			$("#mail_type").html(user_info.collect.mail_type);
 			$("#address_line_1").html(user_info.collect.address_1);
 			$("#address_line_2").html(user_info.collect.address_2);
 			$("#zip").html(user_info.collect.zip);

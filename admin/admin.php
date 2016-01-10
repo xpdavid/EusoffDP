@@ -64,6 +64,7 @@
 </head>
 
 <body>
+<div style="background:rgba(0,0,0,0.65) !important; height:100%">
 <script type="text/javascript">
     $(document).ready(function() {
         get_pending_booking();
@@ -157,7 +158,10 @@
             </tr>
             <tr>
                 <td>Collect method</td>
-                <td><span id="collect_method"></span></td>
+                <td>
+                    <span id="collect_method"></span><br>
+                    <span id="mail_type"></span>
+                </td>
             </tr>
             <tr class="pure-table-odd">
                 <td>Address Line 1</td>
@@ -208,5 +212,5 @@
         </tbody>
     </table>
 </div>
-
+</div>
 </body>
