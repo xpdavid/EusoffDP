@@ -12,7 +12,7 @@
 			overflow: hidden;
 		}
 		.info {
-			font-size: 27px;
+			font-size: 150%;
 			color: #444e53;
 			text-align: center;
 			margin-right: 7%;
