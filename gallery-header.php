@@ -34,5 +34,5 @@
         <a href="gallery-main-comm.php"><img src="img/maincomm-icon.png" onmouseover="this.src='img/maincomm-text.png';" onmouseout="this.src='img/maincomm-icon.png';" alt="main comm"></a>
     </div>
     <div id='gallery-choreo' class='focus icon' style="position:absolute;top:15%;left:78%" onclick="">
-        <a href="gallery-choreo.php"><img src="img/comm-icon.png" onmouseover="this.src='img/comm-text.png';" onmouseout="this.src='img/comm-icon.png';" alt="choreo"></a>
+        <a href="gallery-choreo.php"><img src="img/choreo-icon.png" onmouseover="this.src='img/choreo-text.png';" onmouseout="this.src='img/choreo-icon.png';" alt="choreo"></a>
     </div>

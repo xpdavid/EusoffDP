@@ -12,7 +12,6 @@
             <li><img src="static/img/gallery/DP/Dance/D6.jpg" width="100%" alt="Oops" /></li>
             <li><img src="static/img/gallery/DP/Dance/D7.jpg" width="100%" alt="Oops" /></li>
             <li><img src="static/img/gallery/DP/Dance/D8.jpg" width="100%" alt="Oops" /></li>
-            <li><img src="static/img/gallery/DP/Dance/D9.jpg" width="100%" alt="Oops" /></li>
 
         </ul>
     

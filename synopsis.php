@@ -34,7 +34,7 @@
 			<div class="pure-u-5-12">
 			</div>
 			<div class="pure-u-7-12">
-				<iframe src="http://www.youtube.com/embed/eet9HYMX8TA" style="width:395px;height:230px">
+				<iframe src="https://www.youtube.com/embed/eet9HYMX8TA" style="width:395px;height:230px">
 				</iframe>
 			</div>
 		</div>
