@@ -110,7 +110,7 @@
 			Qunatity:
 			<span id="booking_quantity">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			Total:
-			<span id="booking_price">0</span>.00
+			<span id="booking_price">0</span>
 		</div>
 	</div>
 	<div class="container_p">

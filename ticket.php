@@ -532,7 +532,7 @@
 		Qunatity:
 		<span id="booking_quantity">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		Total: S$
-		<span id="booking_price">0</span>.00
+		<span id="booking_price">0.00</span>
 	</div>
 	<div class="alert-box warning" id="alert_box" style="display:none;">Notice: You cannot leave a seat between.</div>
 	<form action="personal_detail.php" method="post" id="summary_submit">
