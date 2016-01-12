@@ -2,7 +2,7 @@
     if (!isset($_GET['booking_id']) || !isset($_GET['verify'])) {
         header("location: index.php");
     }
-
+//http://localhost/EW_DP/view_booking.php?booking_id=39&verify=7a71b5d421ef60d84b23346976fa5492
     require_once("include/db.php");
     $stmt = $db_conn->prepare("SELECT * FROM " . BOOKING_TABLE . " WHERE book_id = ?");
     $stmt->bind_param("d", $_GET['booking_id']);
@@ -19,7 +19,7 @@
     $stmt->bind_result($name, $collect, $items, $additional_info);
     while($stmt->fetch()) {}
 
-    if (md5(name) != $_GET['verify']) {
+    if (md5($name) != $_GET['verify']) {
         header("location: index.php");
     }
 
