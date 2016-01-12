@@ -39,8 +39,10 @@
           change_seat_status($seat_code, SEAT_STATUS_BOOKED, $user_id);
         }
 
+
         // last send E-mail
         send_confirm_email($data->name, $booking_id, $data->email);
+
 
         header("location: booking_redirect.php?status=success&booking_id="  . $booking_id . "&total_price=" . $total_price);
     } catch (Exception $e) {
@@ -96,6 +98,8 @@
     }
 
     function send_confirm_email($name, $booking_id, $to) {
+        require_once('Mail.php');
+        require_once('include/constant.php');
         $content = <<<EMAILCONTENT
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -776,9 +780,6 @@ If you wish to purchase further merchandise without tickets, you may proceed to 
     </body>
 </html>
 EMAILCONTENT;
-        //request for file 'Mail.php' in the server
-        if (!file_exists('Mail.php')) return;
-        require_once('Mail.php');
 
         //Subject of the email
         $subject = 'Confirmation Email: Eusoff Hall Dance Production';
