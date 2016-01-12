@@ -255,9 +255,7 @@
 
                 </tbody>
             </table>
-            <span id="user_id" style="display: none;"></span>
     <span class="quantity" id="has_collect">Not Collect</span> <br>
-            <a href="#" id="confirm_collection_trigger" style="color:black;background:rgba(0,255,255,0.4);" onclick='confirm_collect(parseInt($("#user_id").html()))'>Confirm Collection</a>
 
 </div>
 </div>

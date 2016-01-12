@@ -50,7 +50,8 @@ function get_success_booking() {
 			}).then(function(seats_real_names) {
 
 				$("#confirm_table>tbody").append("<tr><td>"
-						+ success_booking.book_id + "</td><td>"
+						+ success_booking.book_id + "<br><button class=\"pure-button button-success\" onclick='confirm_collect(" 
+						+ success_booking.belong_user +")'>Confirm Collection</button></td><td>"
 						+ seats_real_names + "</td><td>SUCCESS(S$" + success_booking.total_price + ")</td><td><button class=\"pure-button button-secondary\" onclick=\"trigger_info("
 						+ success_booking.belong_user + ")\">Click Me</button></td><td><button class=\"pure-button button-warning\" onclick=\"back_to_pending("
 						+ success_booking.book_id + ")\">Back to Pending</button>&nbsp;<button class=\"pure-button button-error\" onclick=\"cancel_booking("
@@ -105,7 +106,8 @@ function get_all_booking() {
 			}).then(function(seats_real_names) {
 
 				$("#confirm_table>tbody").append("<tr class=\""+ status +"\"><td>"
-						+ booking.book_id + "</td><td>"
+						+ booking.book_id + "<br><button class=\"pure-button button-success\" onclick='confirm_collect(" 
+						+ booking.belong_user +")'>Confirm Collection</button></td><td>"
 						+ seats_real_names + "</td><td>"
 						+ status + "(S$" + booking.total_price + ")</td><td><button class=\"pure-button button-secondary\" onclick=\"trigger_info("
 						+ booking.belong_user + ")\">Click Me</button></td><td>"
@@ -143,6 +145,7 @@ function trigger_info(user_id) {
 		$("#name").html(user_info.name);
 		$("#email").html(user_info.email);
 		$("#phone_num").html(user_info.collect.phone_num);
+		try{$("#has_collect").html(user_info.additional_info.collect_status)} catch (err){}
 
 		if (user_info.collect.method == 0) { // collect by friend
 			$("#collect_method").html("Collect by friend");
@@ -188,10 +191,6 @@ function trigger_info(user_id) {
 		$("#stickers5").html(user_info.items.sticker5.quantity);
 
 		$("#performers_name").html(user_info.additional_info.flower_to_performers);
-
-		$("#user_id").html(user_id);
-
-		try{$("#has_collect").html(user_info.additional_info.collect_status)} catch (err){}
 
 		
 		} catch(err) {
