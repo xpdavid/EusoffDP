@@ -22,9 +22,16 @@ function compute_total(){
 function check_seat_between(sc, all_seat, floor, ignore_id){
 	var indicate = true; // assume there is no seat alone
 
+	var ignore_seats = ["1_1_7", "1_1_8", "1_1_35", "1_1_36"] // these are all wheel chair seat
+
 	for(var i = 0; i < all_seat.length; i = i + 1) { // for every select seat
-		
+
 		var id = all_seat[i]; // the current seat
+
+		if (ignore_seats.indexOf(id) >= 0) {
+			continue;
+		}
+
 		var prefix = id.split("_")[1];
 		var suffix = parseInt(id.split("_")[2]);
 		var new_seat_1 = floor + "_" + prefix + "_" + (suffix + 2); // seat two right from the current seat
