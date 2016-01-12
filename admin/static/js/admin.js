@@ -129,6 +129,7 @@ function trigger_info(user_id) {
 		$("#address_line_2").html("/");
 		$("#zip").html("/");
 		$("#phone_num").html("/");
+		$("#has_collect").html("Not Collect");
 
 		try{
 
@@ -188,7 +189,11 @@ function trigger_info(user_id) {
 
 		$("#performers_name").html(user_info.additional_info.flower_to_performers);
 
-			swal({   title: " ",   text: $("#for_user_info").html(),   html: true });
+		$("#user_id").html(user_id);
+
+		try{$("#has_collect").html(user_info.additional_info.collect_status)} catch (err){}
+
+		swal({   title: " ",   text: $("#for_user_info").html(),   html: true });
 		
 		} catch(err) {
 			console.log("The server is sick, please try again");
@@ -288,4 +293,19 @@ function cancel_booking(book_id, seats) {
 				});
 			});
 
+}
+
+function confirm_collect(id) {
+	swal({   
+		title: "Are you sure?",   
+		text: "Make sure he/she has collect her tickets",   
+		type: "info",   
+		showCancelButton: true,   
+		confirmButtonColor: "#1CB840",
+		confirmButtonText: "Yes, Confirm Collection",   
+		closeOnConfirm: false }, 
+		function(){
+			$.post('include/confirm_collection.php', {'user_id': id}, function(data){});
+			swal("Confirmed", "Confirmed Collection!", "success");
+		});
 }
