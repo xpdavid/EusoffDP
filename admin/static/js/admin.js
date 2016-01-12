@@ -167,6 +167,8 @@ function trigger_info(user_id) {
 		$("#plushtoys_2_1").html(user_info.items.flower_8.quantity);
 		$("#plushtoys_2_2").html(user_info.items.flower_9.quantity);
 
+		try{
+
 		$("#shirt_xxs").html(user_info.items.shirt_xxs.quantity);
 		$("#shirt_xs").html(user_info.items.shirt_xs.quantity);
 		$("#shirt_s").html(user_info.items.shirt_s.quantity);
@@ -181,7 +183,10 @@ function trigger_info(user_id) {
 		$("#stickers5").html(user_info.items.sticker5.quantity);
 
 		$("#performers_name").html(user_info.additional_info.flower_to_performers);
-		console.log(user_info)
+		
+		} catch(err) {
+			console.log("This is the old booking information");
+		}
 
 		swal({   title: "<small>User info</small>",   text: $("#for_user_info").html(),   html: true });
 
