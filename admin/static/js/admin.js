@@ -1,15 +1,17 @@
 function get_pending_booking() {
 	$("#current_table").html("Pending_booking");
 	$("#confirm_table>tbody").html("");
-	$.post('include/get_booking.php', {'status': 0}, function(pending_seats) { //0 refer to BOOKING_STATUS_PENDING
-    	pending_seats = JSON.parse(pending_seats);
+	$.post('include/get_booking.php', {'status': 0}, function(pending_bookings) { //0 refer to BOOKING_STATUS_PENDING
+		pending_bookings = JSON.parse(pending_bookings);
 		function do_loop(i) {
-			var pending_booking = pending_seats[i];
+			var pending_booking = pending_bookings[i];
+
+			pending_booking.seats = JSON.parse(pending_booking.seats);
 
 			$.ajax({
 						method: 'GET',
 						url: '../include/get_real_seat_name.php',
-						data: {seat_code: pending_booking.seats}
+						data: {seat_code: pending_booking.seats.all_seat_code}
 					})
 					.then(function(seats_real_names) {
 
@@ -19,11 +21,11 @@ function get_pending_booking() {
 								+ pending_booking.belong_user + ")\">Click Me</button></td><td><button class=\"pure-button button-success\" onclick=\"confirm_booking("
 								+ pending_booking.book_id + ")\">Confirm Booking</button>&nbsp;<button class=\"pure-button button-error\" onclick=\"cancel_booking("
 								+ pending_booking.book_id + ", '"
-								+ pending_booking.seats + "')\">Cancel Booking</button>");
+								+ pending_booking.seats.all_seat_code + "')\">Cancel Booking</button>");
 					});
 		}
 
-		for(var i = 0; i < pending_seats.length; i++) {
+		for(var i = 0; i < pending_bookings.length; i++) {
 			do_loop(i);
     	}
 
@@ -33,28 +35,30 @@ function get_pending_booking() {
 function get_success_booking() {
 	$("#current_table").html("Success_booking");
 	$("#confirm_table>tbody").html("");
-	$.post('include/get_booking.php', {'status': 1}, function(pending_seats) { //1 refer to BOOKING_STATUS_SUCCEED
-		pending_seats = JSON.parse(pending_seats);
+	$.post('include/get_booking.php', {'status': 1}, function(success_bookings) { //1 refer to BOOKING_STATUS_SUCCEED
+		var success_bookings = JSON.parse(success_bookings);
 
 		function do_loop(i) {
-			var pending_booking = pending_seats[i];
+			var success_booking = success_bookings[i];
+
+			success_booking.seats = JSON.parse(success_booking.seats);
 
 			$.ajax({
 				method: 'GET',
 				url: '../include/get_real_seat_name.php',
-				data: {seat_code: pending_booking.seats}
+				data: {seat_code: success_booking.seats.all_seat_code}
 			}).then(function(seats_real_names) {
 
 				$("#confirm_table>tbody").append("<tr><td>"
-						+ pending_booking.book_id + "</td><td>"
-						+ seats_real_names + "</td><td>SUCCESS(S$" + pending_booking.total_price + ")</td><td><button class=\"pure-button button-secondary\" onclick=\"trigger_info("
-						+ pending_booking.belong_user + ")\">Click Me</button></td><td><button class=\"pure-button button-warning\" onclick=\"back_to_pending("
-						+ pending_booking.book_id + ")\">Back to Pending</button>&nbsp;<button class=\"pure-button button-error\" onclick=\"cancel_booking("
-						+ pending_booking.book_id + ", '"
-						+ pending_booking.seats + "')\">Cancel Booking</button></td></tr>");
+						+ success_booking.book_id + "</td><td>"
+						+ seats_real_names + "</td><td>SUCCESS(S$" + success_booking.total_price + ")</td><td><button class=\"pure-button button-secondary\" onclick=\"trigger_info("
+						+ success_booking.belong_user + ")\">Click Me</button></td><td><button class=\"pure-button button-warning\" onclick=\"back_to_pending("
+						+ success_booking.book_id + ")\">Back to Pending</button>&nbsp;<button class=\"pure-button button-error\" onclick=\"cancel_booking("
+						+ success_booking.book_id + ", '"
+						+ success_booking.seats.all_seat_code + "')\">Cancel Booking</button></td></tr>");
 			});
 		}
-		for(var i = 0; i < pending_seats.length; i++) {
+		for(var i = 0; i < success_bookings.length; i++) {
 			do_loop(i);
 		}
 
@@ -64,50 +68,51 @@ function get_success_booking() {
 function get_all_booking() {
 	$("#current_table").html("All_booking");
 	$("#confirm_table>tbody").html("");
-	$.post('include/get_booking.php', {'status': -1}, function(pending_seats) { //1 refer to BOOKING_STATUS_SUCCEED
-		pending_seats = JSON.parse(pending_seats);
+	$.post('include/get_booking.php', {'status': -1}, function(bookings) { //1 refer to BOOKING_STATUS_SUCCEED
+		var bookings = JSON.parse(bookings);
 
 		function do_loop(i) {
 			var status,
 					operation = "",
-					pending_booking = pending_seats[i];
+					booking = bookings[i];
 
+			booking.seats = JSON.parse(booking.seats);
 
-			if (pending_booking.status == 0) {
+			if (booking.status == 0) {
 				status = "PENDING";
 				operation = "<button class=\"pure-button button-success\" onclick=\"confirm_booking("
-						+ pending_booking.book_id + ")\">Confirm Booking</button>&nbsp;<button class=\"pure-button button-error\" onclick=\"cancel_booking("
-						+ pending_booking.book_id + ", '"
-						+ pending_booking.seats + "')\">Cancel Booking</button>";
+						+ booking.book_id + ")\">Confirm Booking</button>&nbsp;<button class=\"pure-button button-error\" onclick=\"cancel_booking("
+						+ booking.book_id + ", '"
+						+ booking.seats.all_seat_code + "')\">Cancel Booking</button>";
 			}
 
-			if (pending_booking.status == 1) {
+			if (booking.status == 1) {
 				status = "SUCCEED";
 				operation = "<button class=\"pure-button button-warning\" onclick=\"back_to_pending("
-						+ pending_booking.book_id + ")\">Back to Pending</button>&nbsp;<button class=\"pure-button button-error\" onclick=\"cancel_booking("
-						+ pending_booking.book_id + ", '"
-						+ pending_booking.seats + "')\">Cancel Booking</button>"
+						+ booking.book_id + ")\">Back to Pending</button>&nbsp;<button class=\"pure-button button-error\" onclick=\"cancel_booking("
+						+ booking.book_id + ", '"
+						+ booking.seats.all_seat_code + "')\">Cancel Booking</button>"
 			}
 
-			if (pending_booking.status == 2) {
+			if (booking.status == 2) {
 				status = "CANCELLED";
 			}
 
 			$.ajax({
 				method: 'GET',
 				url: '../include/get_real_seat_name.php',
-				data: {seat_code: pending_booking.seats}
+				data: {seat_code: booking.seats.all_seat_code}
 			}).then(function(seats_real_names) {
 
 				$("#confirm_table>tbody").append("<tr class=\""+ status +"\"><td>"
-						+ pending_booking.book_id + "</td><td>"
+						+ booking.book_id + "</td><td>"
 						+ seats_real_names + "</td><td>"
-						+ status + "(S$" + pending_booking.total_price + ")</td><td><button class=\"pure-button button-secondary\" onclick=\"trigger_info("
-						+ pending_booking.belong_user + ")\">Click Me</button></td><td>"
+						+ status + "(S$" + booking.total_price + ")</td><td><button class=\"pure-button button-secondary\" onclick=\"trigger_info("
+						+ booking.belong_user + ")\">Click Me</button></td><td>"
 						+ operation + "</td></tr>");
 			});
 		}
-		for(var i = 0; i < pending_seats.length; i++) {
+		for(var i = 0; i < bookings.length; i++) {
 			do_loop(i);
 		}
 
@@ -125,7 +130,7 @@ function trigger_info(user_id) {
 		$("#zip").html("/");
 		$("#phone_num").html("/");
 
-
+		try{
 
 		user_info = JSON.parse(user_info);
 		user_info.items = JSON.parse(user_info.items);
@@ -167,7 +172,6 @@ function trigger_info(user_id) {
 		$("#plushtoys_2_1").html(user_info.items.flower_8.quantity);
 		$("#plushtoys_2_2").html(user_info.items.flower_9.quantity);
 
-		try{
 
 		$("#shirt_xxs").html(user_info.items.shirt_xxs.quantity);
 		$("#shirt_xs").html(user_info.items.shirt_xs.quantity);
@@ -183,12 +187,13 @@ function trigger_info(user_id) {
 		$("#stickers5").html(user_info.items.sticker5.quantity);
 
 		$("#performers_name").html(user_info.additional_info.flower_to_performers);
+
+			swal({   title: " ",   text: $("#for_user_info").html(),   html: true });
 		
 		} catch(err) {
-			console.log("This is the old booking information");
+			console.log("The server is sick, please try again");
 		}
 
-		swal({   title: "<small>User info</small>",   text: $("#for_user_info").html(),   html: true });
 
 
     });

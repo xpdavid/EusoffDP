@@ -23,10 +23,16 @@
         }
         $all_seat_code = substr($all_seat_code, 1, strlen($all_seat_code) - 1); // delete the beginning ','
 
+        $seats->all_seat_code = $all_seat_code;
+
+        $seats->select_seat = $data -> select_seat;
+
+        $seats_json = json_encode($seats);
+
         $total_price = $data -> total_price;
 
         // store_booking
-        $booking_id = store_booking($user_id, $all_seat_code, $total_price);
+        $booking_id = store_booking($user_id, $seats_json, $total_price);
 
         // third change seat status
         foreach($data -> select_seat  as $seat_code => $value) {

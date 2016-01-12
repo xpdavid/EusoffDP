@@ -64,12 +64,19 @@
 
     <style type="text/css">
         .sweet-alert {
-            width: 815px !important;
+            width: 800px !important;
             left: 35% !important;
         }
 
         .show_user {
             margin: 20px;
+        }
+
+        .pure-table_sm td {
+            padding: 1px;
+        }
+        .pure-table_sm th {
+            padding: 1px;
         }
     </style>
 </head>
@@ -151,7 +158,7 @@
 
 <div id = "for_user_info" style="display: none;">
 
-    <table class="pure-table show_user" width="780px">
+    <table class="pure-table show_user pure-table_sm" width="780px">
                 <thead>
                 <td colspan="2"><strong>Basic information</strong></td>
                 <td colspan="2"><strong>Flower</strong></td>
@@ -207,36 +214,31 @@
                 </tbody>
             </table>
 
-    <table class="pure-table show_user" width="780px">
+    <table class="pure-table show_user pure-table_sm" width="780px">
                 <thead>
-                <td colspan="2" ><strong>Shirts</strong></td>
-                <td colspan="2" ><strong>Stickers</strong></td>
+                <td colspan="4" ><strong>Shirts</strong></td>
+                <td colspan="4" ><strong>Stickers</strong></td>
                 </thead>
                 <tbody>
                 <tr class="pure-table-odd">
                     <td>XXS</td>
                     <td><span class="quantity" id="shirt_xxs">0</span></td>
-                    <td>Stickers 1</td>
-                    <td><span class="quantity" id="stickers1">0</span></td>
-                </tr>
-
-                <tr>
                     <td>XS</td>
                     <td><span class="quantity" id="shirt_xs">0</span></td>
+                    <td>Stickers 1</td>
+                    <td><span class="quantity" id="stickers1">0</span></td>
                     <td>Stickers 2</td>
                     <td><span class="quantity" id="stickers2">0</span></td>
                 </tr>
 
+
                 <tr class="pure-table-odd">
                     <td>S</td>
                     <td><span class="quantity" id="shirt_s">0</span></td>
-                    <td>Stickers 3</td>
-                    <td><span class="quantity" id="stickers3">0</span></td>
-                </tr>
-
-                <tr>
                     <td>M</td>
                     <td><span class="quantity" id="shirt_m">0</span></td>
+                    <td>Stickers 3</td>
+                    <td><span class="quantity" id="stickers3">0</span></td>
                     <td>Stickers 4</td>
                     <td><span class="quantity" id="stickers4">0</span></td>
                 </tr>
@@ -244,13 +246,10 @@
                 <tr class="pure-table-odd">
                     <td>L</td>
                     <td><span class="quantity" id="shirt_l">0</span></td>
-                    <td>Stickers 5</td>
-                    <td><span class="quantity" id="stickers5">0</span></td>
-                </tr>
-
-                <tr >
                     <td>XL</td>
                     <td><span class="quantity" id="shirt_xl">0</span></td>
+                    <td>Stickers 5</td>
+                    <td><span class="quantity" id="stickers5">0</span></td>
                     <td></td>
                     <td></td>
                 </tr>
