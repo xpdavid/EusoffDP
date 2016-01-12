@@ -193,11 +193,12 @@ function trigger_info(user_id) {
 
 		try{$("#has_collect").html(user_info.additional_info.collect_status)} catch (err){}
 
-		swal({   title: " ",   text: $("#for_user_info").html(),   html: true });
 		
 		} catch(err) {
 			console.log("The server is sick, please try again");
 		}
+
+		swal({   title: " ",   text: $("#for_user_info").html(),   html: true });
 
 
 
