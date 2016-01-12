@@ -567,7 +567,7 @@ function send_success_email($name, $booking_id, $to) {
 
 <p dir="ltr" style="line-height:1.38;margin-top:0pt;margin-bottom:0pt;"><span style="font-size:14px"><span id="docs-internal-guid-9f64a0df-3567-c5a3-5401-8f6968b1010b"><span style="background-color: transparent;color: #000000;font-family: arial;vertical-align: baseline;white-space: pre-wrap;">Here are your booking details:</span></span></span><br>
 &nbsp;</p>
-<a href="http://eusoff.nus.edu.sg/dance-production/view_booking.php?booking_id=$booking_id&verify=$verify" target="_blank">http://eusoff.nus.edu.sg/dance-production/view_booking.php?booking_id=$booking_id</a>
+<a href="http://eusoff.nus.edu.sg/dance-production/view_booking.php?booking_id=$booking_id&verify=$verify" target="_blank">http://eusoff.nus.edu.sg/dance-production/view_booking.php?booking_id=$booking_id&verify=$verify</a>
 
 <p style="box-sizing: border-box; margin: 0px 0px 10px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px;"><br>
 If you wish to purchase further merchandise without tickets, you may proceed to this link:&nbsp;<a href="http://goo.gl/forms/hck0nqYTXw" style="box-sizing: border-box;background-color: transparent;color: #337AB7;text-decoration: none;">http://goo.gl/forms/hck0nqYTXw</a></p>
