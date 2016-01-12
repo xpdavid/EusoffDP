@@ -100,6 +100,7 @@
     function send_confirm_email($name, $booking_id, $to) {
         require_once('Mail.php');
         require_once('include/constant.php');
+        $verify = md5($name);
         $content = <<<EMAILCONTENT
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
@@ -647,7 +648,7 @@
                             <span style="font-size:16px"><span style="font-family:helvetica neue,helvetica,arial,sans-serif">Dear $name,</span></span><br>
 <br>
 <span style="font-family:helvetica neue,helvetica,arial,sans-serif; font-size:14px">Thank you for purchasing tickets to Eusoff Hall Dance Production’s Continuum 2016! Your order is as stated:</span><br>
-<a href="http://eusoff.nus.edu.sg/dance-production/view_booking.php?booking_id=$booking_id" target="_blank">http://eusoff.nus.edu.sg/dance-production/view_booking.php?booking_id=$booking_id</a>
+<a href="http://eusoff.nus.edu.sg/dance-production/view_booking.php?booking_id=$booking_id&verify=$verify" target="_blank">http://eusoff.nus.edu.sg/dance-production/view_booking.php?booking_id=$booking_id</a>
 <p style="box-sizing: border-box; margin: 0px 0px 10px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px;"><br>
 If you wish to purchase further merchandise without tickets, you may proceed to this link:&nbsp;<a href="http://goo.gl/forms/hck0nqYTXw" style="box-sizing: border-box;background-color: transparent;color: #337AB7;text-decoration: none;">http://goo.gl/forms/hck0nqYTXw</a></p>
 
