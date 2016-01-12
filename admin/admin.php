@@ -179,7 +179,8 @@
                     <td>Collect method</td>
                     <td>
                         <span id="collect_method"></span><br>
-                        <span id="mail_type"></span>
+                        <span id="mail_type"></span><br>
+                        <a href="#" id="update_mail_info" style="color:black;display: none;" onclick="update_mail_info.call(this);">Update Mail Info</a>
                     </td>
                     <td>Gerberas</td>
                     <td>$2.50(single) : <span class="quantity" id="gerberas_1"></span><br> $10 (bouquet of 3) : <span class="quantity" id="gerberas_2"></span></td>

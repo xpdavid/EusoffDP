@@ -149,6 +149,7 @@ function trigger_info(user_id) {
 
 		if (user_info.collect.method == 0) { // collect by friend
 			$("#collect_method").html("Collect by friend");
+			$("#update_mail_info").css("display", "none");
 		}
 
 		if (user_info.collect.method == 1) { // collect by mailing
@@ -157,6 +158,8 @@ function trigger_info(user_id) {
 			$("#address_line_1").html(user_info.collect.address_1);
 			$("#address_line_2").html(user_info.collect.address_2);
 			$("#zip").html(user_info.collect.zip);
+			$("#update_mail_info").css("display", "block");
+			$("#update_mail_info").attr("user_id", user_id);
 		}
 
 
@@ -311,7 +314,28 @@ function confirm_collect(id) {
 		confirmButtonText: "Yes, Confirm Collection",   
 		closeOnConfirm: false }, 
 		function(){
-			$.post('include/confirm_collection.php', {'user_id': id}, function(data){});
+			$.post('include/add_info_to_user.php', {'user_id': id , 'action' : 'confirm_collect'}, function(data){});
 			swal("Confirmed", "Confirmed Collection!", "success");
 		});
+}
+
+function update_mail_info() {
+	var user_id = $(this).attr("user_id");
+	$.post('include/get_user_info.php', {'user_id': user_id}, function(user_info) {
+		user_info = JSON.parse(user_info);
+		user_info.additional_info = JSON.parse(user_info.additional_info);
+
+		swal({   title: "Update Mailing Information!",
+				text: "You can write something here to inform users (e.g Your Tracking Number is xxxxxx / Your mail has sent, Please mind your mailbox.) The original one is :" + user_info.additional_info.mail_info,
+				type: "input",
+				showCancelButton: true,
+				closeOnConfirm: false,
+				animation: "slide-from-top",
+				inputPlaceholder: "Your Tracking Number is xxxxxx" },
+			function(inputValue){
+				if (inputValue === false) return false;
+				$.post('include/add_info_to_user.php', {'user_id': user_id , 'action' : 'update_mail_info', 'content' : inputValue}, function(data){});
+				swal("Nice!", "You wrote: " + inputValue, "success");
+			});
+	});
 }

@@ -94,4 +94,23 @@
 		
 		return $stmt->execute();
 	}
+
+	function update_mail_info($user_id, $content) {
+		global $db_conn;
+
+		$stmt = $db_conn->prepare("SELECT additional_info FROM " . USER_TABLE . " WHERE id = ?");
+		$stmt->bind_param("d", $user_id);
+		$stmt->execute();
+		$stmt->bind_result($additional_info);
+		while($stmt->fetch()) {
+			$additional_info = json_decode($additional_info);
+		}
+
+		$additional_info->mail_info = $content;
+
+		$stmt = $db_conn->prepare("UPDATE " . USER_TABLE . " SET additional_info = ? WHERE id = ?");
+		$stmt->bind_param("sd", json_encode($additional_info), $user_id);
+
+		return $stmt->execute();
+	}
 ?>

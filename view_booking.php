@@ -116,7 +116,7 @@
         </table>
         <?php
             if ($collect->method == 1) {
-             echo "<p class='lead'>Mailing Information: </p>";
+             echo "<p class='lead'>Mailing Information: " . $additional_info->mail_info . "</p>";
           }
         ?>
         <?php
