@@ -7,6 +7,9 @@
 <p>
 	Please transfer <strong> S$$total_price</strong> to POSB account savings <strong> 032-62536-3 </strong> and email your Booking Reference to <strong> dpsponsorship@eusoff.nus.edu.sg </strong> .
 </p>
+<p>
+A confirmation email has been sent to you.
+</p>
 MSG_HEADER;
 
 	$error_msg = "<h2>An error occured, Please Try again</h2>";
