@@ -647,7 +647,7 @@
                             <span style="font-size:16px"><span style="font-family:helvetica neue,helvetica,arial,sans-serif">Dear $name,</span></span><br>
 <br>
 <span style="font-family:helvetica neue,helvetica,arial,sans-serif; font-size:14px">Thank you for purchasing tickets to Eusoff Hall Dance Production’s Continuum 2016! Your order is as stated:</span><br>
-<a href="http://eusoff.nus.edu.sg/dance-production/view_booking.php?booking_id=$booking_id" target="_blank">http://eusoff.nus.edu.sg/dance-production/view_booking.php?booking_id=123</a>
+<a href="http://eusoff.nus.edu.sg/dance-production/view_booking.php?booking_id=$booking_id" target="_blank">http://eusoff.nus.edu.sg/dance-production/view_booking.php?booking_id=$booking_id</a>
 <p style="box-sizing: border-box; margin: 0px 0px 10px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px;"><br>
 If you wish to purchase further merchandise without tickets, you may proceed to this link:&nbsp;<a href="http://goo.gl/forms/hck0nqYTXw" style="box-sizing: border-box;background-color: transparent;color: #337AB7;text-decoration: none;">http://goo.gl/forms/hck0nqYTXw</a></p>
 
