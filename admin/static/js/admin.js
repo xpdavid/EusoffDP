@@ -19,7 +19,7 @@ function get_pending_booking() {
 								+ pending_booking.book_id + "</td><td>"
 								+ seats_real_names + "</td><td>PENDING(S$" + pending_booking.total_price + ")</td><td><button class=\"pure-button button-secondary\" onclick=\"trigger_info("
 								+ pending_booking.belong_user + ")\">Click Me</button></td><td><button class=\"pure-button button-success\" onclick=\"confirm_booking("
-								+ pending_booking.book_id + ")\">Confirm Booking</button>&nbsp;<button class=\"pure-button button-error\" onclick=\"cancel_booking("
+								+ pending_booking.book_id + ", " + pending_booking.belong_user + ")\">Confirm Booking</button>&nbsp;<button class=\"pure-button button-error\" onclick=\"cancel_booking("
 								+ pending_booking.book_id + ", '"
 								+ pending_booking.seats.all_seat_code + "')\">Cancel Booking</button>");
 					});
@@ -82,7 +82,7 @@ function get_all_booking() {
 			if (booking.status == 0) {
 				status = "PENDING";
 				operation = "<button class=\"pure-button button-success\" onclick=\"confirm_booking("
-						+ booking.book_id + ")\">Confirm Booking</button>&nbsp;<button class=\"pure-button button-error\" onclick=\"cancel_booking("
+						+ booking.book_id + ", "+ booking.belong_user + ")\">Confirm Booking</button>&nbsp;<button class=\"pure-button button-error\" onclick=\"cancel_booking("
 						+ booking.book_id + ", '"
 						+ booking.seats.all_seat_code + "')\">Cancel Booking</button>";
 			}
@@ -230,7 +230,7 @@ function change_booking_status(id, status) {
 	});
 }
 
-function confirm_booking(book_id) {
+function confirm_booking(book_id, user_id) {
 	swal({   title: "Are you sure to confirm the booking?",   
 		text: "Make sure you have recieved the correct money",   
 		type: "info",   
@@ -240,6 +240,12 @@ function confirm_booking(book_id) {
 		closeOnConfirm: false }, 
 		function(){
 			change_booking_status(book_id, 1); // 1 refer to BOOKING_STATUS_SUCCEED
+			$.post('include/get_user_info.php', {'user_id': user_id}, function(user_info) {
+				user_info = JSON.parse(user_info);
+				$.post('include/send_success_mail.php', 
+					{'name' : user_info.name, 'booking_id' : book_id, 'email' : user_info.email}, 
+					function(){});
+			});
 		});
 }
 
