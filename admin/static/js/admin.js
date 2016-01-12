@@ -118,7 +118,6 @@ function trigger_info(user_id) {
 	$.post('include/get_user_info.php', {'user_id': user_id}, function(user_info) { //0 refer to BOOKING_STATUS_PENDING
 		$("#name").html("");
 		$("#email").html("");
-		$("#m_num").html("");
 		$("#collect_method").html("");
 		$("#mail_type").html("/");
 		$("#address_line_1").html("/");
@@ -127,14 +126,17 @@ function trigger_info(user_id) {
 		$("#phone_num").html("/");
 
 
+
 		user_info = JSON.parse(user_info);
+		user_info.items = JSON.parse(user_info.items);
 		user_info.collect = JSON.parse(user_info.collect);
-		user_info.flower = JSON.parse(user_info.flower);
+		user_info.additional_info = JSON.parse(user_info.additional_info)
+
+		console.log(user_info);
 
 		$("#name").html(user_info.name);
 		$("#email").html(user_info.email);
-		$("#m_num").html(user_info.matric_num);
-
+		$("#phone_num").html(user_info.collect.phone_num);
 
 		if (user_info.collect.method == 0) { // collect by friend
 			$("#collect_method").html("Collect by friend");
@@ -146,25 +148,40 @@ function trigger_info(user_id) {
 			$("#address_line_1").html(user_info.collect.address_1);
 			$("#address_line_2").html(user_info.collect.address_2);
 			$("#zip").html(user_info.collect.zip);
-			$("#phone_num").html(user_info.collect.phone_num);
 		}
 
 
 		// flower
-		$("#sunflowers").html(user_info.flower.flower_1.quantity);
+		$("#sunflowers").html(user_info.items.flower_1.quantity);
 
-		$("#roses_1").html(user_info.flower.flower_2.quantity);
+		$("#roses_1").html(user_info.items.flower_2.quantity);
 
-		$("#roses_2").html(user_info.flower.flower_3.quantity);
+		$("#roses_2").html(user_info.items.flower_3.quantity);
 
-		$("#gerberas_1").html(user_info.flower.flower_4.quantity);
-		$("#gerberas_2").html(user_info.flower.flower_5.quantity);
+		$("#gerberas_1").html(user_info.items.flower_4.quantity);
+		$("#gerberas_2").html(user_info.items.flower_5.quantity);
 
-		$("#plushtoys_1_1").html(user_info.flower.flower_6.quantity); 
-		$("#plushtoys_1_2").html(user_info.flower.flower_7.quantity); 
+		$("#plushtoys_1_1").html(user_info.items.flower_6.quantity);
+		$("#plushtoys_1_2").html(user_info.items.flower_7.quantity);
 
-		$("#plushtoys_2_1").html(user_info.flower.flower_8.quantity);
-		$("#plushtoys_2_2").html(user_info.flower.flower_9.quantity);
+		$("#plushtoys_2_1").html(user_info.items.flower_8.quantity);
+		$("#plushtoys_2_2").html(user_info.items.flower_9.quantity);
+
+		$("#shirt_xxs").html(user_info.items.shirt_xxs.quantity);
+		$("#shirt_xs").html(user_info.items.shirt_xs.quantity);
+		$("#shirt_s").html(user_info.items.shirt_s.quantity);
+		$("#shirt_m").html(user_info.items.shirt_m.quantity);
+		$("#shirt_l").html(user_info.items.shirt_l.quantity);
+		$("#shirt_xl").html(user_info.items.shirt_xl.quantity);
+
+		$("#stickers1").html(user_info.items.sticker1.quantity);
+		$("#stickers2").html(user_info.items.sticker2.quantity);
+		$("#stickers3").html(user_info.items.sticker3.quantity);
+		$("#stickers4").html(user_info.items.sticker4.quantity);
+		$("#stickers5").html(user_info.items.sticker5.quantity);
+
+		$("#performers_name").html(user_info.additional_info.flower_to_performers);
+		console.log(user_info)
 
 		swal({   title: "<small>User info</small>",   text: $("#for_user_info").html(),   html: true });
 

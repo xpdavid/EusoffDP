@@ -760,6 +760,12 @@ For personal_detail.php
   margin: auto;
 } 
 
+._container {
+  text-align: center;
+  width: 80%;
+  margin: auto;
+} 
+
 .container_p span{
   font-weight: 200;
   font-size: 30px;
@@ -774,8 +780,9 @@ For personal_detail.php
 For flowers.php
 */
 
-.flower {
+.item {
   padding: 5px;
+  margin: auto;
 }
 
 #summary_flower_table input {

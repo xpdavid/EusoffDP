@@ -20,7 +20,7 @@ CREATE TABLE booking (
 	book_id INT AUTO_INCREMENT,
 	seats TEXT,
 	status INT DEFAULT 0, # 0 pending, 1 success, 2 cancelled, 3 blocked
-	total_price INT NOT NULL,
+	total_price FLOAT NOT NULL,
 	belong_user INT,
 	booking_time DATETIME,
 	PRIMARY KEY (book_id)
@@ -30,9 +30,9 @@ CREATE TABLE user (
 	id INT AUTO_INCREMENT,
 	email VARCHAR(50) NOT NULL,
 	name VARCHAR(50) NOT NULL,
-	matric_num VARCHAR(9) NOT NULL,
 	collect TEXT NOT NULL,
-	flower TEXT,
+	items TEXT,
+	additional_info TEXT,
 	PRIMARY KEY (id)
 );
 

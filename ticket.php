@@ -28,7 +28,7 @@
   <script src="static/js/booking_checker.js"></script>
 </head>
 <body style="color:#E5EAED;">
-<div style="background:rgba(0,0,0,0.65) !important">
+<div style="background:rgba(0,0,0,0.65) !important;">
   <script type="text/javascript">
   	var select_seat = {};
 
@@ -123,7 +123,7 @@
 	<ol class="progress">  
 		<li class="is-active" data-step="1">Step 1: Select your seats</li>  
 		<li data-step="2">Step 2: Your booking details</li>  
-		<li data-step="3">Step 3: Flower Bundle</li>
+		<li data-step="3">Step 3: Flowers, shirts and stickers</li>
 		<li data-step="4" class="progress__last">Step 4: Checkout</li>
 	</ol>
 </div>

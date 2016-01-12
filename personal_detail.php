@@ -24,10 +24,16 @@
     <script src="static/js/jquery-2.1.1.min.js"></script>
     <script src="static/js/booking_checker.js"></script>
 
+  <script src="admin/static/sweetalert/dist/sweetalert.min.js"></script> 
+  <link rel="stylesheet" type="text/css" href="admin/static/sweetalert/dist/sweetalert.css">
+
 </head>
 <body>
-<div style="background:rgba(0,0,0,0.5) !important">
+<div style="background:rgba(0,0,0,0.65) !important;">
     <script>
+        function PDPA() {
+          swal({   confirmButtonText:"I Agree", title: "PDPA Disclaimer",   text: '<div style="text-align:left"><p>(i)  Purpose of Personal Data Collection: <br>“To place an order for Eusoff Hall Dance Production’s merchandise, please provide the requested information by completing this form. Payment and collection details will also be requested via this form.”</p><p>(ii) Consent to provide Personal Data <br>“By indicating your consent to provide your personal data in this form, you agree to receive updates and important announcements related to the sales, payment and collection of your merchandise purchase. Please select your preferred mode of communication: <br><ul><li>Email</li><li>Phone</li></ul>All personal information will be kept confidential and used for the purposes stated only.”</p></div>',   html: true });
+        }
 
 
         var count_down = new clock(600, "count_down", function(){
@@ -60,17 +66,26 @@
             $("#collect_method").change(function(){
               // collect by friends
               if($("#collect_method").get(0).selectedIndex == 0) {
-                  $("#mailing").hide();
+                  $("#mailing").fadeOut();
+                  $("#collect_method_info").fadeOut();
               }
 
               // collect by mailing
               if($("#collect_method").get(0).selectedIndex == 1) {
-                  $("#mailing").show();
+                  $("#mailing").fadeIn();
+                  $("#collect_method_info").fadeIn();
               }
 
             });
+
             $("#mailing").hide(); // hide by default
 
+            // to check whether we had exceed certain mailing date
+            var today = new Date();
+            if (today.getTime() > 1453996800000) {// 29 Jan,2016
+                // we don't allow the email option
+                $("#collect_method option:last").remove();
+            }
 
         });
     </script>
@@ -86,7 +101,7 @@
 	<ol class="progress">  
 		<li data-step="1" class="is-complete" data-step="1">Step 1: Select your seats</li>  
 		<li data-step="2" class="is-active">Step 2: Your booking details</li>  
-		<li data-step="3" >Step 3: Flower Bundle</li>
+		<li data-step="3" >Step 3: Flowers, shirts and stickers</li>
 		<li data-step="4" class="progress__last">Step 4: Checkout</li>
 	</ol>
 	</div>
@@ -123,26 +138,29 @@
   <input type="hidden" name="select_seat" id="select_seat" value='<?php echo $_POST['select_seat']; ?>' />
 	
   <div class="container_p" style="background: rgba(0, 0, 0, 0.8); width:72%; padding:10px; text-align:left; color:white !important">
-		<h3 style="color:white; text-align:left;">Your personal detail:</h3>
+		<h3 style="color:white; text-align:left;">Your personal detail: &nbsp;&nbsp;&nbsp;<a href="#" onclick="PDPA();" style="color:white;">PDPA disclaimer</a></h3>
 		<div class="pure-g">
     		<div class="pure-u-1-3"><p>Name</p></div>
     		<div class="pure-u-1-3"><p><input id="name" type="text" placeholder="Name"></p></div>
 		</div>
 		<div class="pure-g">
-    		<div class="pure-u-1-3"><p>Matriculation Number</p></div>
-    		<div class="pure-u-1-3"><p><input id="m_num" type="text" placeholder="Matriculation Number"></p></div>
-		</div>
-		<div class="pure-g">
     		<div class="pure-u-1-3"><p>Email Address</p></div>
     		<div class="pure-u-1-3"><input id= "email" type="email" placeholder="Email Address"></div>
 		</div>
+    <div class="pure-g">
+      <div class="pure-u-1-3"><p>Phone number:</p></div>
+      <div class="pure-u-1-3">
+        <input id= "phone_num" type="text" placeholder="Phone number">
+      </div>
+    </div>
 		<div class="pure-g">
     		<div class="pure-u-1-3"><p>Ticket Collection Method</p></div>
-    		<div class="pure-u-1-3">
+    		<div class="pure-u-2-3">
     			<select id="collect_method">
               <option >Collect from friends</option>
-              <option>Mailing (Only in Singapore)</option>
+              <option>Mailing</option>
           </select>
+          <span id="collect_method_info" style="font-size:15px;text-decoration:underline;display:none">(Only in Singapore, for tickets purchased by 29 January)</span>
         </div>
 		</div>
     <div id = "mailing">
@@ -171,12 +189,6 @@
                     <option >Normal Mail</option>
                     <option>Registered Mail ($1.50)</option>
                 </select>
-        </div>
-      </div>
-      <div class="pure-g">
-        <div class="pure-u-1-3"><p>Phone number:</p></div>
-        <div class="pure-u-1-3">
-          <input id= "phone_num" type="text" placeholder="Phone number">
         </div>
       </div>
     </div>

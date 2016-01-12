@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Flowers</title>
+  <title>Flowers, shirts and stickers</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="static/css/pure/pure.css" />
@@ -22,22 +22,36 @@
   <link rel="stylesheet" href="static/css/flower.css" />
 
     <script src="static/js/jquery-2.1.1.min.js"></script>
+
     <script src="static/js/booking_checker.js"></script>
 
 </head>
 <body>
-<div style="background:rgba(0,0,0,0.5) !important">
+<div style="background:rgba(0,0,0,0.65) !important;">
     <script>
 
-          var flower1 = new flower("Sunflower (single)", 5.00, "f_1");
-          var flower2 = new flower("Rose (single)", 3.50, "f_2");
-          var flower3 = new flower("Roses (bouquet of 3)", 15.00, "f_3");
-          var flower4 = new flower("Gerbera (single)", 2.50, "f_4");
-          var flower5 = new flower("Gerberas (bouquet of 3)", 12.00, "f_5");
-          var flower6 = new flower("Plushtoy 1 (40cm)", 5.00, "f_6");
-          var flower7 = new flower("Plushtoy 1 (90cm)", 12.00, "f_7");
-          var flower8 = new flower("Plushtoy 2 (42cm)", 5.00, "f_8");
-          var flower9 = new flower("Plushtoy 2 (90cm)", 12.00, "f_9");
+          var flower1 = new item("Sunflower (single)", 5.00, "f_1");
+          var flower2 = new item("Rose (single)", 3.50, "f_2");
+          var flower3 = new item("Roses (bouquet of 3)", 15.00, "f_3");
+          var flower4 = new item("Gerbera (single)", 2.50, "f_4");
+          var flower5 = new item("Gerberas (bouquet of 3)", 12.00, "f_5");
+          var flower6 = new item("Plushtoy 1 (40cm)", 5.00, "f_6");
+          var flower7 = new item("Plushtoy 1 (90cm)", 12.00, "f_7");
+          var flower8 = new item("Plushtoy 2 (42cm)", 5.00, "f_8");
+          var flower9 = new item("Plushtoy 2 (90cm)", 12.00, "f_9");
+          
+          var shirt_xxs = new item("Shirts (XXS)", 15.00, "s_xxs");
+          var shirt_xs = new item("Shirts (XS)", 15.00, "s_xs");
+          var shirt_s = new item("Shirts (S)", 15.00, "s_s");
+          var shirt_m = new item("Shirts (M)", 15.00, "s_m");
+          var shirt_l = new item("Shirts (L)", 15.00, "s_l");
+          var shirt_xl = new item("Shirts (XL)", 15.00, "s_xl");
+
+          var sticker1 = new item("Sticker 1", 1.00, "st_1");
+          var sticker2 = new item("Sticker 2", 1.00, "st_2");
+          var sticker3 = new item("Sticker 3", 1.00, "st_3");
+          var sticker4 = new item("Sticker 4", 1.00, "st_4");
+          var sticker5 = new item("Sticker 5", 1.00, "st_5");
 
           var count_down = new clock(600, "count_down", function(){
             alert("Time expired, please try again");
@@ -74,13 +88,39 @@
             flower8.init();
             flower9.init();
 
+            shirt_xxs.init();
+            shirt_xs.init();
+            shirt_s.init();
+            shirt_m.init();
+            shirt_l.init();
+            shirt_xl.init();
+
+            sticker1.init();
+            sticker2.init();
+            sticker3.init();
+            sticker4.init();
+            sticker5.init();
+
+
+            $("#delivered_to_performers").click(function(){
+                if ($("#delivered_to_performers").prop("checked")) {
+                  $($("#delivered_to_performers").parent().siblings()).fadeIn();
+                    $("#performers_name").val(" ");
+                } else {
+                  $($("#delivered_to_performers").parent().siblings()).fadeOut();
+                    $("#performers_name").val("No")
+                }
+            });
+
+            $($("#delivered_to_performers").parent().siblings()).fadeOut(); // by defualt
+
           });
   </script>
-  <div class="container_p">
+  <div class="_container">
     <a href="index.php"><img src="img/title.png" width="700" height="200"></a>
   </div>
 
-  <div class="container_p">
+  <div class="_container">
     <h2 style="color:white; text-align:left;">Ticket Booking:</h2>
   </div>
 
@@ -88,7 +128,7 @@
   <ol class="progress">  
     <li data-step="1" class="is-complete">Step 1: Select your seats</li>  
     <li data-step="2" class="is-complete" >Step 2: Your booking details</li>  
-    <li data-step="3" class="is-active">Step 3: Flower Bundle</li>
+    <li data-step="3" class="is-active">Step 3: Flowers, shirts and stickers</li>
     <li data-step="4" class="progress__last">Step 4: Checkout</li>
   </ol>
   </div>
@@ -122,20 +162,29 @@
     </div>
   </div>
 
-  <div class="container_p">
-  <h3 style="color:white; text-align:left;">Purchase of flower(s) for Charity:</h3>
+  <div class="_container">
+  <h3 style="color:white; text-align:left;">Purchase of flower(s) for Charity: <small>Flowers may be collected at front of house or delivered to the performer(s)</small></h3>
+   <div class="pure-g" style="font-size:17px">
+      <div class="pure-u-1-3" style="color:white;">
+        <input id="delivered_to_performers" type="checkbox"> I want to deliverer to the performer(s)
+      </div>
+      <div class="pure-u-1-3" style="text-align:right; color:white;">Please Enter Performers name: &nbsp;&nbsp;</div>
+      <div class="pure-u-1-3">
+        <input type="text" value="No" id = "performers_name" style="text-align:left;" />
+      </div>
+   </div>
     <div class="pure-g">
       <div class="pure-u-1-4">
-        <img class="pure-img flower" src="static/img/flower1.jpg">
+        <img class="pure-img item" src="static/img/flower1.jpg">
       </div>
       <div class="pure-u-1-4">
-        <img class="pure-img flower" src="static/img/flower2.jpg">
+        <img class="pure-img item" src="static/img/flower2.jpg">
       </div>
       <div class="pure-u-1-4">
-        <img class="pure-img flower" src="static/img/flower2.jpg">
+        <img class="pure-img item" src="static/img/flower2.jpg">
       </div>
       <div class="pure-u-1-4">
-        <img class="pure-img flower" src="static/img/flower3.jpg">
+        <img class="pure-img item" src="static/img/flower3.jpg">
       </div>
     </div>
     <div class="pure-g">
@@ -200,16 +249,16 @@
     </div>
      <div class="pure-g">
       <div class="pure-u-1-4">
-        <img class="pure-img flower" src="static/img/flower3.jpg">
+        <img class="pure-img item" src="static/img/flower3.jpg">
       </div>
       <div class="pure-u-1-4">
-        <img class="pure-img flower" src="static/img/flower4.jpg">
+        <img class="pure-img item" src="static/img/flower4.jpg">
       </div>
        <div class="pure-u-1-4">
-        <img class="pure-img flower" src="static/img/flower4.jpg">
+        <img class="pure-img item" src="static/img/flower4.jpg">
       </div>
       <div class="pure-u-1-4">
-        <img class="pure-img flower" src="static/img/flower5.jpg">
+        <img class="pure-img item" src="static/img/flower5.jpg">
       </div>
     </div>
     <div class="pure-g">
@@ -274,7 +323,7 @@
     </div>
      <div class="pure-g">
       <div class="pure-u-1-4">
-        <img class="pure-img flower" src="static/img/flower5.jpg">
+        <img class="pure-img item" src="static/img/flower5.jpg">
       </div>
       <div class="pure-u-1-4"></div>
       <div class="pure-u-1-4"></div>
@@ -305,13 +354,244 @@
       <div class="pure-u-1-4"></div>
     </div>
   </div>
+
+<!---->
+
+  <div class="_container">
+  <h3 style="color:white; text-align:left;">Shirts</h3>
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <img class="pure-img item" src="static/img/shirt.png">
+      </div>
+      <div class="pure-u-1-2">
+        
+        <div class="pure-g">
+          <div class="pure-u-1-2">
+            <button class="pure-button" onclick="shirt_xxs.add()">Shirt (XXS)<br/>S$15.00</button>
+          </div>
+          <div class="pure-u-1-2">
+            <button class="pure-button" onclick="shirt_xs.add()">Shirt (XS)<br/>S$15.00</button>
+          </div>
+        </div>
+        <div class="pure-g">
+          <div class="pure-u-1-2">
+            <div class="pure-u-1-8">
+              <input type="button" value="-" id = "s_xxs_minus"/>
+            </div>
+            <div class="pure-u-1-4">
+              <input type="text" value="0" id="s_xxs_quantity"/>
+            </div>
+            <div class="pure-u-1-8">
+              <input type="button" value="+" id = "s_xxs_add"/>
+            </div>
+          </div>
+          <div class="pure-u-1-2">
+            <div class="pure-u-1-8">
+              <input type="button" value="-" id = "s_xs_minus"/>
+            </div>
+            <div class="pure-u-1-4">
+              <input type="text" value="0" id="s_xs_quantity"/>
+            </div>
+            <div class="pure-u-1-8">
+              <input type="button" value="+" id = "s_xs_add"/>
+            </div>
+          </div>
+        </div>
+
+                <div class="pure-g">
+          <div class="pure-u-1-2">
+            <button class="pure-button" onclick="shirt_s.add()">Shirt (S)<br/>S$15.00</button>
+          </div>
+          <div class="pure-u-1-2">
+            <button class="pure-button" onclick="shirt_m.add()">Shirt (M)<br/>S$15.00</button>
+          </div>
+        </div>
+        <div class="pure-g">
+          <div class="pure-u-1-2">
+            <div class="pure-u-1-8">
+              <input type="button" value="-" id = "s_s_minus"/>
+            </div>
+            <div class="pure-u-1-4">
+              <input type="text" value="0" id="s_s_quantity"/>
+            </div>
+            <div class="pure-u-1-8">
+              <input type="button" value="+" id = "s_s_add"/>
+            </div>
+          </div>
+          <div class="pure-u-1-2">
+            <div class="pure-u-1-8">
+              <input type="button" value="-" id = "s_m_minus"/>
+            </div>
+            <div class="pure-u-1-4">
+              <input type="text" value="0" id="s_m_quantity"/>
+            </div>
+            <div class="pure-u-1-8">
+              <input type="button" value="+" id = "s_m_add"/>
+            </div>
+          </div>
+        </div>
+
+        <div class="pure-g">
+          <div class="pure-u-1-2">
+            <button class="pure-button" onclick="shirt_l.add()">Shirt (L)<br/>S$15.00</button>
+          </div>
+          <div class="pure-u-1-2">
+            <button class="pure-button" onclick="shirt_xl.add()">Shirt (XL)<br/>S$15.00</button>
+          </div>
+        </div>
+
+        <div class="pure-g">
+          <div class="pure-u-1-2">
+            <div class="pure-u-1-8">
+              <input type="button" value="-" id = "s_l_minus"/>
+            </div>
+            <div class="pure-u-1-4">
+              <input type="text" value="0" id="s_l_quantity"/>
+            </div>
+            <div class="pure-u-1-8">
+              <input type="button" value="+" id = "s_l_add"/>
+            </div>
+          </div>
+          <div class="pure-u-1-2">
+            <div class="pure-u-1-8">
+              <input type="button" value="-" id = "s_xl_minus"/>
+            </div>
+            <div class="pure-u-1-4">
+              <input type="text" value="0" id="s_xl_quantity"/>
+            </div>
+            <div class="pure-u-1-8">
+              <input type="button" value="+" id = "s_xl_add"/>
+            </div>
+          </div>
+        </div>
+
+    </div>
+    
+  </div>
+  </div>
   
+ <div class="_container">
+  <h3 style="color:white; text-align:left;">Stickers</h3>
+    <div class="pure-g">
+      <div class="pure-u-1-4">
+        <img class="pure-img item" src="static/img/sticker1.jpg">
+      </div>
+      <div class="pure-u-1-4">
+        <img class="pure-img item" src="static/img/sticker2.jpg">
+      </div>
+      <div class="pure-u-1-4">
+        <img class="pure-img item" src="static/img/sticker3.jpg">
+      </div>
+      <div class="pure-u-1-4">
+        <img class="pure-img item" src="static/img/sticker4.jpg">
+      </div>
+    </div>
+    <div class="pure-g">
+      <div class="pure-u-1-4">
+        <button class="pure-button" onclick="sticker1.add()">Sticker 1<br/>S$1.00</button>
+      </div>
+      <div class="pure-u-1-4">
+        <button class="pure-button" onclick="sticker2.add()">Sticker 2<br/>S$1.00</button>
+      </div>
+      <div class="pure-u-1-4">
+        <button class="pure-button" onclick="sticker3.add()">Sticker 3<br/>S$1.00</button>
+      </div>
+      <div class="pure-u-1-4">
+        <button class="pure-button" onclick="sticker4.add()">Sticker 4<br/>S$1.00</button>
+      </div>
+    </div>
+    <div class="pure-g">
+        <div class="pure-u-1-4">
+          <div class="pure-u-1-8">
+            <input type="button" value="-" id = "st_1_minus"/>
+          </div>
+          <div class="pure-u-1-4">
+            <input type="text" value="0" id="st_1_quantity"/>
+          </div>
+          <div class="pure-u-1-8">
+            <input type="button" value="+" id = "st_1_add"/>
+          </div>
+        </div>
+        <div class="pure-u-1-4">
+          <div class="pure-u-1-8">
+            <input type="button" value="-" id = "st_2_minus"/>
+          </div>
+          <div class="pure-u-1-4">
+            <input type="text" value="0" id="st_2_quantity"/>
+          </div>
+          <div class="pure-u-1-8">
+            <input type="button" value="+" id = "st_2_add"/>
+          </div>
+        </div>
+        <div class="pure-u-1-4">
+          <div class="pure-u-1-8">
+            <input type="button" value="-" id = "st_3_minus"/>
+          </div>
+          <div class="pure-u-1-4">
+            <input type="text" value="0" id="st_3_quantity"/>
+          </div>
+          <div class="pure-u-1-8">
+            <input type="button" value="+" id = "st_3_add"/>
+          </div>
+        </div>
+        <div class="pure-u-1-4">
+          <div class="pure-u-1-8">
+            <input type="button" value="-" id = "st_4_minus"/>
+          </div>
+          <div class="pure-u-1-4">
+            <input type="text" value="0" id="st_4_quantity"/>
+          </div>
+          <div class="pure-u-1-8">
+            <input type="button" value="+" id = "st_4_add"/>
+          </div>
+        </div>
+    </div>
+     <div class="pure-g">
+      <div class="pure-u-1-4">
+        <img class="pure-img item" src="static/img/sticker5.jpg">
+      </div>
+      <div class="pure-u-1-4">
+      </div>
+       <div class="pure-u-1-4">
+      </div>
+      <div class="pure-u-1-4">
+      </div>
+    </div>
+    <div class="pure-g">
+      <div class="pure-u-1-4">
+        <button class="pure-button" onclick="sticker5.add()">Sticker 5<br/>S$1.00</button>
+      </div>
+      <div class="pure-u-1-4">
+      </div>
+       <div class="pure-u-1-4">
+      </div>
+      <div class="pure-u-1-4">
+      </div>
+    </div>
+    <div class="pure-g">
+        <div class="pure-u-1-4">
+          <div class="pure-u-1-8">
+            <input type="button" value="-" id = "st_5_minus"/>
+          </div>
+          <div class="pure-u-1-4">
+            <input type="text" value="0" id="st_5_quantity"/>
+          </div>
+          <div class="pure-u-1-8">
+            <input type="button" value="+" id = "st_5_add"/>
+          </div>    
+        </div>
+    </div>
+
+
+  </div>
+
+
     
   <br>
-  <div class="summary" id = "summary_flower">
-    <h3>Flowers Summary</h3>
+  <div class="summary">
+    <h3>Item Summary</h3>
     <hr>
-    <table border="0" width="100%" id = "summary_flower_table">
+    <table border="0" width="100%" >
       <thead>
         <tr>
           <th width="40%"><strong>Items</strong></th>
@@ -365,15 +645,78 @@
           <td><span id = "f_9_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span></td>
           <td>S$<span id = "f_9_total">0.00</span></td>
         </tr>
+
+        <tr id = "s_xxs_summary">
+          <td>Shirt (XXS) </td>
+          <td><span id = "s_xxs_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span></td>
+          <td>S$<span id = "s_xxs_total">0.00</span></td>
+        </tr>
+
+        <tr id = "s_xs_summary">
+          <td>Shirt (XS) </td>
+          <td><span id = "s_xs_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span></td>
+          <td>S$<span id = "s_xs_total">0.00</span></td>
+        </tr>
+        
+        <tr id = "s_s_summary">
+          <td>Shirt (S) </td>
+          <td><span id = "s_s_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span></td>
+          <td>S$<span id = "s_s_total">0.00</span></td>
+        </tr>
+
+        <tr id = "s_m_summary">
+          <td>Shirt (M) </td>
+          <td><span id = "s_m_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span></td>
+          <td>S$<span id = "s_m_total">0.00</span></td>
+        </tr>
+
+        <tr id = "s_l_summary">
+          <td>Shirt (L) </td>
+          <td><span id = "s_l_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span></td>
+          <td>S$<span id = "s_l_total">0.00</span></td>
+        </tr>
+
+        <tr id = "s_xl_summary">
+          <td>Shirt (XL) </td>
+          <td><span id = "s_xl_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span></td>
+          <td>S$<span id = "s_xl_total">0.00</span></td>
+        </tr>
+
+        <tr id = "st_1_summary">
+          <td>Sticker 1 </td>
+          <td><span id = "st_1_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span></td>
+          <td>S$<span id = "st_1_total">0.00</span></td>
+        </tr>
+        <tr id = "st_2_summary">
+          <td>Sticker 2 </td>
+          <td><span id = "st_2_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span></td>
+          <td>S$<span id = "st_2_total">0.00</span></td>
+        </tr>
+        <tr id = "st_3_summary">
+          <td>Sticker 3 </td>
+          <td><span id = "st_3_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span></td>
+          <td>S$<span id = "st_3_total">0.00</span></td>
+        </tr>
+        <tr id = "st_4_summary">
+          <td>Sticker 4 </td>
+          <td><span id = "st_4_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span></td>
+          <td>S$<span id = "st_4_total">0.00</span></td>
+        </tr>
+        <tr id = "st_5_summary">
+          <td>Sticker 5 </td>
+          <td><span id = "st_5_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span></td>
+          <td>S$<span id = "st_5_total">0.00</span></td>
+        </tr>
+
       </tbody>
     </table>
     <hr>
     <div style="text-align: right;">
-      Total: S$<span id="flower_price">0.00</span>
+      Total: S$<span id="item_price">0.00</span>
     </div>
   </div>
 
-  <div class="container_p">
+  <div class="_container">
     <h3 style="color:white">Total Price: S$<span id="total_price">0</span></h3>
     <form action="checkout.php" id = "checkout_form" method="post">
       <input type="hidden" id="pre_data" value='<?php echo $_POST['data']; ?>' />

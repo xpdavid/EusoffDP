@@ -20,14 +20,11 @@
 		return $seat_code;
 	}
 
-	function create_user($email, $name, $matric_num, $collect, $flower) {
+	function create_user($email, $name, $collect, $items, $additional_info) {
 		global $db_conn;
-
-		$collect_json = json_encode($collect);
-		$flower_json = json_encode($flower);
 		
-		$stmt = $db_conn->prepare("INSERT INTO " . USER_TABLE . "(email, name, matric_num, collect, flower) VALUES (?, ?, ?, ?, ?)");
-		$stmt->bind_param("sssss", $email, $name, $matric_num, $collect_json, $flower_json);
+		$stmt = $db_conn->prepare("INSERT INTO " . USER_TABLE . "(email, name, collect, items, additional_info) VALUES (?, ?, ?, ?, ?)");
+		$stmt->bind_param("sssss", $email, $name, $collect, $items, $additional_info);
 		$stmt->execute();
 
 		$stmt = $db_conn->prepare("SELECT LAST_INSERT_ID();");

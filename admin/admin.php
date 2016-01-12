@@ -61,6 +61,17 @@
     <!--sweetalert http://t4t5.github.io/sweetalert/-->
     <script src="static/sweetalert/dist/sweetalert.min.js"></script> 
     <link rel="stylesheet" type="text/css" href="static/sweetalert/dist/sweetalert.css">
+
+    <style type="text/css">
+        .sweet-alert {
+            width: 815px !important;
+            left: 35% !important;
+        }
+
+        .show_user {
+            margin: 20px;
+        }
+    </style>
 </head>
 
 <body>
@@ -139,78 +150,114 @@
 
 
 <div id = "for_user_info" style="display: none;">
-    <table class="pure-table" width="100%">
-        <thead>
-            <td colspan="2" ><strong>Basic information</strong></td>
-        </thead>
-        <tbody>
-            <tr class="pure-table-odd">
-                <td>Name</td>
-                <td><span id="name"></span></td>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td><span id="email"></span></td>
-            </tr>
-            <tr class="pure-table-odd">
-                <td>Matriculate Number</td>
-                <td><span id="m_num"></span></td>
-            </tr>
-            <tr>
-                <td>Collect method</td>
-                <td>
-                    <span id="collect_method"></span><br>
-                    <span id="mail_type"></span>
-                </td>
-            </tr>
-            <tr class="pure-table-odd">
-                <td>Address Line 1</td>
-                <td><span id="address_line_1">/</span></td>
-            </tr>
-            <tr>
-                <td>Address Line 2</td>
-                <td><span id="address_line_2">/</span></td>
-            </tr>
-            <tr class="pure-table-odd">
-                <td>ZIP</td>
-                <td><span id="zip">/</span></td>
-            </tr>
-            <tr>
-                <td>Phone number</td>
-                <td><span id="phone_num">/</span></td>
-            </tr>
-        </tbody>
-    </table>
-    <br>
-    <table class="pure-table" width="100%">
-        <thead>
-        <td colspan="2" ><strong>Flower</strong></td>
-        </thead>
-        <tbody>
-        <tr class="pure-table-odd">
-            <td>Sunflowers</td>
-            <td>$5(single) : <span class="quantity" id="sunflowers"></span></td>
-        </tr>
 
-        <tr>
-            <td>Roses</td>
-            <td>$3.50(single) : <span class="quantity" id="roses_1"></span>, $15 (bouquet of 3) : <span class="quantity" id="roses_2"></span></td>
-        </tr>
+    <table class="pure-table show_user" width="780px">
+                <thead>
+                <td colspan="2"><strong>Basic information</strong></td>
+                <td colspan="2"><strong>Flower</strong></td>
+                </thead>
+                <tbody>
+                <tr class="pure-table-odd">
+                    <td>Name</td>
+                    <td><span id="name"></span></td>
+                    <td width="100px">Sunflowers</td>
+                    <td>$5(single) : <span class="quantity" id="sunflowers"></span></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><span id="email"></span></td>
+                    <td>Roses</td>
+                    <td>$3.50(single) : <span class="quantity" id="roses_1"></span><br> $15 (bouquet of 3) : <span class="quantity" id="roses_2"></span></td>
+                </tr>
+                <tr class="pure-table-odd">
+                    <td>Collect method</td>
+                    <td>
+                        <span id="collect_method"></span><br>
+                        <span id="mail_type"></span>
+                    </td>
+                    <td>Gerberas</td>
+                    <td>$2.50(single) : <span class="quantity" id="gerberas_1"></span><br> $10 (bouquet of 3) : <span class="quantity" id="gerberas_2"></span></td>
+                </tr>
+                <tr >
+                    <td>Phone number</td>
+                    <td><span id="phone_num">/</span></td>
+                    <td>Plushtoys</td>
+                    <td>Type1: $5(40 cm) : <span class="quantity" id="plushtoys_1_1"></span>, &nbsp;$12 (90cm) : <span class="quantity" id="plushtoys_1_2"></span><br>
+                        Type2: $5(42 cm) : <span class="quantity" id="plushtoys_2_1"></span>, &nbsp;$15 (90cm) : <span class="quantity" id="plushtoys_2_2"></span>
+                    </td>
+                </tr>
+                <tr class="pure-table-odd">
+                    <td>Address Line 1</td>
+                    <td><span id="address_line_1">/</span></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Address Line 2</td>
+                    <td><span id="address_line_2">/</span></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="pure-table-odd">
+                    <td>ZIP</td>
+                    <td><span id="zip">/</span></td>
+                    <td>Delivered to the performer(s) </td>
+                    <td><span id="performers_name"></span></td>
+                </tr>
+                </tbody>
+            </table>
 
-        <tr class="pure-table-odd">
-            <td>Gerberas</td>
-            <td>$2.50(single) : <span class="quantity" id="gerberas_1"></span>, $10 (bouquet of 3) : <span class="quantity" id="gerberas_2"></span></td>
-        </tr>
+    <table class="pure-table show_user" width="780px">
+                <thead>
+                <td colspan="2" ><strong>Shirts</strong></td>
+                <td colspan="2" ><strong>Stickers</strong></td>
+                </thead>
+                <tbody>
+                <tr class="pure-table-odd">
+                    <td>XXS</td>
+                    <td><span class="quantity" id="shirt_xxs">0</span></td>
+                    <td>Stickers 1</td>
+                    <td><span class="quantity" id="stickers1">0</span></td>
+                </tr>
 
-        <tr>
-            <td>Plushtoys</td>
-            <td>Type1: $5(40 cm) : <span class="quantity" id="plushtoys_1_1"></span>, &nbsp;$12 (90cm) : <span class="quantity" id="plushtoys_1_2"></span><br>
-                Type2: $5(42 cm) : <span class="quantity" id="plushtoys_2_1"></span>, &nbsp;$15 (90cm) : <span class="quantity" id="plushtoys_2_2"></span>
-            </td>
-        </tr>
+                <tr>
+                    <td>XS</td>
+                    <td><span class="quantity" id="shirt_xs">0</span></td>
+                    <td>Stickers 2</td>
+                    <td><span class="quantity" id="stickers2">0</span></td>
+                </tr>
 
-        </tbody>
-    </table>
+                <tr class="pure-table-odd">
+                    <td>S</td>
+                    <td><span class="quantity" id="shirt_s">0</span></td>
+                    <td>Stickers 3</td>
+                    <td><span class="quantity" id="stickers3">0</span></td>
+                </tr>
+
+                <tr>
+                    <td>M</td>
+                    <td><span class="quantity" id="shirt_m">0</span></td>
+                    <td>Stickers 4</td>
+                    <td><span class="quantity" id="stickers4">0</span></td>
+                </tr>
+
+                <tr class="pure-table-odd">
+                    <td>L</td>
+                    <td><span class="quantity" id="shirt_l">0</span></td>
+                    <td>Stickers 5</td>
+                    <td><span class="quantity" id="stickers5">0</span></td>
+                </tr>
+
+                <tr >
+                    <td>XL</td>
+                    <td><span class="quantity" id="shirt_xl">0</span></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+                </tbody>
+            </table>
+
 </div>
 </div>
 </body>
