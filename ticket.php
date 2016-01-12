@@ -29,9 +29,23 @@
 </head>
 <body style="color:#E5EAED;">
 <div style="background:rgba(0,0,0,0.65) !important;">
+<div id="booking_tip">1 K 22</div>
   <script type="text/javascript">
-
   	$(document).ready(function(){
+  		function show_tip(e) {
+  			try{
+  				if($(".seatCharts-seat.focused").length > 0) {
+  					$("#booking_tip").css("top", e.clientY + 10 + "px");
+  					$("#booking_tip").css("left", e.clientX + 10 + "px");
+  					$("#booking_tip").show();
+  					$.post('include/get_real_seat_name.php', {'seat_code': $(".seatCharts-seat.focused").attr("id")}, function(data) {
+  						$("#booking_tip").html(data);
+  					});
+  				} else {
+  					$("#booking_tip").hide();
+  				}
+  			} catch (err) {}
+  		}
 
   		$('#choose-first-floor').click(function() {
   			$('#choose-first-floor').addClass('selected');
@@ -45,6 +59,14 @@
   			$('#choose-first-floor').removeClass('selected');
   			$('#floor2').show();
   			$('#floor1').hide();
+  		});
+
+  		$("#floor1").mousemove(function(e){
+  			show_tip(e);
+  		});
+
+  		$("#floor2").mousemove(function(e){
+  			show_tip(e);
   		});
 
 
