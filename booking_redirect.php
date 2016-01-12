@@ -9,7 +9,7 @@
 </p>
 MSG_HEADER;
 
-	$error_msg = "<h2>An error occured when stored in database</h2>";
+	$error_msg = "<h2>An error occured, Please Try again</h2>";
 
 	if ($_GET["status"] == "error") {
 		$msg = $error_msg;
