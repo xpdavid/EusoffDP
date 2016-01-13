@@ -756,7 +756,7 @@ If you wish to purchase further merchandise without tickets, you may proceed to 
                     <tbody><tr>
                         
                         <td valign="top" class="mcnTextContent" style="padding-top:9px; padding-right: 18px; padding-bottom: 9px; padding-left: 18px;">
-                        
+                             <em>This is a system-generated email, Please do not reply!</em>
                             <em>Copyright © 2014-2016, Eusoffworks All rights reserved.</em>
                         </td>
                     </tr>

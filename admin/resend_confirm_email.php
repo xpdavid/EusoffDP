@@ -24,7 +24,7 @@ if (isset($_SESSION["login"]) || $_SESSION["login"]) {
 
 function send_confirm_email($name, $booking_id, $to) {
         require_once('Mail.php');
-        require_once('include/constant.php');
+        require_once("../include/constant.php");
         $verify = md5($name);
         $content = <<<EMAILCONTENT
 <!doctype html>
