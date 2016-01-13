@@ -154,10 +154,10 @@
       </div>
     </div>
 		<div class="pure-g">
-    		<div class="pure-u-1-3"><p>Ticket Collection Method</p></div>
+    		<div class="pure-u-1-3"><p>Ticket Collection Method</p> <span style="font-size:15px;text-decoration:underline;">Collection details will be emailed to you</span></div>
     		<div class="pure-u-2-3">
     			<select id="collect_method">
-              <option >Collect from friends</option>
+              <option >Self-collection</option>
               <option>Mailing</option>
           </select>
           <span id="collect_method_info" style="font-size:15px;text-decoration:underline;display:none">(Only in Singapore, for tickets purchased by 29 January)</span>

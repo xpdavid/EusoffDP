@@ -193,7 +193,7 @@
 	</table>
 	<hr>
 	<div style="text-align: right;">
-		Qunatity:
+		Quantity:
 		<span id="booking_quantity">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		Total: S$
 		<span id="booking_price">0.00</span>
@@ -239,7 +239,7 @@
 				's_ssssss_ffeeeeee_________eeeeeef_ssssss_s',//4-9, 10-30, 31-36 W
 				's________fffeeeee_________eeeeeff________s',//11-30  		   X
 				's________________________________________s',//nothing		   Y
-				'w__________ssssssssrrrrrsssssss__________w',//11-30  		   Z
+				'w__________rrrrrrrrrrrrrrrrrrrr__________w',//11-30  		   Z
 				'__________________________________________',//nothing
 				'__ssssssssssssssssssssssssssssssssssssss__',//2-39 AA
 				'__fsssssssssssssssssssssssssssssssssssff__',//3-37 BB
