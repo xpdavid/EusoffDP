@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_SESSION["login"]) || $_SESSION["login"]) {
     if (isset($_REQUEST["booking_id"])) {
         require_once("../include/constant.php");
