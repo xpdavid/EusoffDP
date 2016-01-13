@@ -147,8 +147,8 @@ function trigger_info(user_id) {
 		$("#phone_num").html(user_info.collect.phone_num);
 		try{$("#has_collect").html(user_info.additional_info.collect_status)} catch (err){}
 
-		if (user_info.collect.method == 0) { // collect by friend
-			$("#collect_method").html("Collect by friend");
+		if (user_info.collect.method == 0) { // self-collection
+			$("#collect_method").html("Self-collection");
 			$("#update_mail_info").css("display", "none");
 		}
 
