@@ -180,12 +180,12 @@ function trigger_info(user_id) {
 		$("#plushtoys_2_2").html(user_info.items.flower_9.quantity);
 
 
-		$("#shirt_xxs").html(user_info.items.shirt_xxs.quantity);
-		$("#shirt_xs").html(user_info.items.shirt_xs.quantity);
+		//$("#shirt_xxs").html(user_info.items.shirt_xxs.quantity);
+		//$("#shirt_xs").html(user_info.items.shirt_xs.quantity);
 		$("#shirt_s").html(user_info.items.shirt_s.quantity);
 		$("#shirt_m").html(user_info.items.shirt_m.quantity);
 		$("#shirt_l").html(user_info.items.shirt_l.quantity);
-		$("#shirt_xl").html(user_info.items.shirt_xl.quantity);
+		//$("#shirt_xl").html(user_info.items.shirt_xl.quantity);
 
 		$("#stickers1").html(user_info.items.sticker1.quantity);
 		$("#stickers2").html(user_info.items.sticker2.quantity);

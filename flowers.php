@@ -40,12 +40,12 @@
           var flower8 = new item("Plushtoy 2 (42cm)", 5.00, "f_8");
           var flower9 = new item("Plushtoy 2 (90cm)", 12.00, "f_9");
           
-          var shirt_xxs = new item("Shirts (XXS)", 15.00, "s_xxs");
-          var shirt_xs = new item("Shirts (XS)", 15.00, "s_xs");
+          //var shirt_xxs = new item("Shirts (XXS)", 15.00, "s_xxs");
+          //var shirt_xs = new item("Shirts (XS)", 15.00, "s_xs");
           var shirt_s = new item("Shirts (S)", 15.00, "s_s");
           var shirt_m = new item("Shirts (M)", 15.00, "s_m");
           var shirt_l = new item("Shirts (L)", 15.00, "s_l");
-          var shirt_xl = new item("Shirts (XL)", 15.00, "s_xl");
+          //var shirt_xl = new item("Shirts (XL)", 15.00, "s_xl");
 
           var sticker1 = new item("Sticker 1", 1.00, "st_1");
           var sticker2 = new item("Sticker 2", 1.00, "st_2");
@@ -88,12 +88,12 @@
             flower8.init();
             flower9.init();
 
-            shirt_xxs.init();
-            shirt_xs.init();
+            //shirt_xxs.init();
+            //shirt_xs.init();
             shirt_s.init();
             shirt_m.init();
             shirt_l.init();
-            shirt_xl.init();
+            //shirt_xl.init();
 
             sticker1.init();
             sticker2.init();
@@ -365,7 +365,7 @@
       </div>
       <div class="pure-u-1-2">
         
-        <div class="pure-g">
+        <!--<div class="pure-g">
           <div class="pure-u-1-2">
             <button class="pure-button" onclick="shirt_xxs.add()">Shirt (XXS)<br/>S$15.00</button>
           </div>
@@ -396,9 +396,9 @@
               <input type="button" value="+" id = "s_xs_add"/>
             </div>
           </div>
-        </div>
+        </div>-->
 
-                <div class="pure-g">
+        <div class="pure-g">
           <div class="pure-u-1-2">
             <button class="pure-button" onclick="shirt_s.add()">Shirt (S)<br/>S$15.00</button>
           </div>
@@ -436,7 +436,7 @@
             <button class="pure-button" onclick="shirt_l.add()">Shirt (L)<br/>S$15.00</button>
           </div>
           <div class="pure-u-1-2">
-            <button class="pure-button" onclick="shirt_xl.add()">Shirt (XL)<br/>S$15.00</button>
+            <!--<button class="pure-button" onclick="shirt_xl.add()">Shirt (XL)<br/>S$15.00</button>-->
           </div>
         </div>
 
@@ -453,7 +453,7 @@
             </div>
           </div>
           <div class="pure-u-1-2">
-            <div class="pure-u-1-8">
+            <!--<div class="pure-u-1-8">
               <input type="button" value="-" id = "s_xl_minus"/>
             </div>
             <div class="pure-u-1-4">
@@ -461,7 +461,7 @@
             </div>
             <div class="pure-u-1-8">
               <input type="button" value="+" id = "s_xl_add"/>
-            </div>
+            </div>-->
           </div>
         </div>
 
@@ -646,7 +646,7 @@
           <td>S$<span id = "f_9_total">0.00</span></td>
         </tr>
 
-        <tr id = "s_xxs_summary">
+        <!--<tr id = "s_xxs_summary">
           <td>Shirt (XXS) </td>
           <td><span id = "s_xxs_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span></td>
           <td>S$<span id = "s_xxs_total">0.00</span></td>
@@ -657,7 +657,7 @@
           <td><span id = "s_xs_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span></td>
           <td>S$<span id = "s_xs_total">0.00</span></td>
         </tr>
-        
+        -->
         <tr id = "s_s_summary">
           <td>Shirt (S) </td>
           <td><span id = "s_s_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span></td>
@@ -676,11 +676,11 @@
           <td>S$<span id = "s_l_total">0.00</span></td>
         </tr>
 
-        <tr id = "s_xl_summary">
+        <!--<tr id = "s_xl_summary">
           <td>Shirt (XL) </td>
           <td><span id = "s_xl_quantity_summary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0</span></td>
           <td>S$<span id = "s_xl_total">0.00</span></td>
-        </tr>
+        </tr>-->
 
         <tr id = "st_1_summary">
           <td>Sticker 1 </td>

@@ -186,12 +186,9 @@ function compute_total_price() {
 						flower7.total + 
 						flower8.total + 
 						flower9.total +
-						shirt_xxs.total + 
-						shirt_xs.total +
 						shirt_s.total +
 						shirt_m.total +
 						shirt_l.total +
-						shirt_xl.total + 
 						sticker1.total +
 						sticker2.total +
 						sticker3.total +
@@ -216,12 +213,9 @@ function checkout() {
 		flower_7 : flower7,
 		flower_8 : flower8,
 		flower_9 : flower9,
-		shirt_xxs : shirt_xxs,
-		shirt_xs : shirt_xs,
 		shirt_s : shirt_s,
 		shirt_m : shirt_m,
 		shirt_l : shirt_l,
-		shirt_xl : shirt_xl,
 		sticker1 : sticker1,
 		sticker2 : sticker2,
 		sticker3 : sticker3,
