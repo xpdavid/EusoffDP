@@ -135,6 +135,25 @@
         </div>
     </div>
 </div>
+
+<div class="container">
+    <h2 style="text-align: left;">Filter (<span id="filter_info">All</span>)</h2>
+    <div class="pure-g">
+        <div class="pure-u-1-4">
+            <button class="pure-button pure-button-primary" onclick="booking_filter('mail')">With mailing</button>
+        </div>
+        <div class="pure-u-1-4">
+            <button class="pure-button button-success" onclick="booking_filter('not_collect')">Not collected</button>
+        </div>
+        <div class="pure-u-1-4">
+            
+        </div>
+        <div class="pure-u-1-4">
+            
+        </div>
+    </div>
+</div>
+
 <br>
 
 <div class="container booking_confirm">

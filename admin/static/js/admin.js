@@ -1,5 +1,6 @@
 function get_pending_booking() {
 	$("#current_table").html("Pending_booking");
+	$("#filter_info").html("'All'");
 	$("#confirm_table>tbody").html("");
 	$.post('include/get_booking.php', {'status': 0}, function(pending_bookings) { //0 refer to BOOKING_STATUS_PENDING
 		pending_bookings = JSON.parse(pending_bookings);
@@ -15,7 +16,7 @@ function get_pending_booking() {
 					})
 					.then(function(seats_real_names) {
 
-						$("#confirm_table>tbody").append("<tr><td>"
+						$("#confirm_table>tbody").append("<tr belong_user=\"" + pending_booking.belong_user + "\"><td>"
 								+ pending_booking.book_id + "</td><td>"
 								+ seats_real_names + "</td><td>PENDING(S$" + pending_booking.total_price + ")</td><td><button class=\"pure-button button-secondary\" onclick=\"trigger_info("
 								+ pending_booking.belong_user + ")\">Click Me</button></td><td><button class=\"pure-button button-success\" onclick=\"confirm_booking("
@@ -34,6 +35,7 @@ function get_pending_booking() {
 
 function get_success_booking() {
 	$("#current_table").html("Success_booking");
+	$("#filter_info").html("'All'");
 	$("#confirm_table>tbody").html("");
 	$.post('include/get_booking.php', {'status': 1}, function(success_bookings) { //1 refer to BOOKING_STATUS_SUCCEED
 		var success_bookings = JSON.parse(success_bookings);
@@ -49,7 +51,7 @@ function get_success_booking() {
 				data: {seat_code: success_booking.seats.all_seat_code}
 			}).then(function(seats_real_names) {
 
-				$("#confirm_table>tbody").append("<tr><td>"
+				$("#confirm_table>tbody").append("<tr belong_user=\"" + success_booking.belong_user + "\"><td>"
 						+ success_booking.book_id + "<br><button class=\"pure-button button-success\" onclick='confirm_collect(" 
 						+ success_booking.belong_user +")'>Confirm Collection</button></td><td>"
 						+ seats_real_names + "</td><td>SUCCESS(S$" + success_booking.total_price + ")</td><td><button class=\"pure-button button-secondary\" onclick=\"trigger_info("
@@ -68,6 +70,7 @@ function get_success_booking() {
 
 function get_all_booking() {
 	$("#current_table").html("All_booking");
+	$("#filter_info").html("'All'");
 	$("#confirm_table>tbody").html("");
 	$.post('include/get_booking.php', {'status': -1}, function(bookings) { //1 refer to BOOKING_STATUS_SUCCEED
 		var bookings = JSON.parse(bookings);
@@ -105,7 +108,7 @@ function get_all_booking() {
 				data: {seat_code: booking.seats.all_seat_code}
 			}).then(function(seats_real_names) {
 
-				$("#confirm_table>tbody").append("<tr class=\""+ status +"\"><td>"
+				$("#confirm_table>tbody").append("<tr class=\""+ status +"\" belong_user=\"" + booking.belong_user + "\"><td>"
 						+ booking.book_id + "<br><button class=\"pure-button button-success\" onclick='confirm_collect(" 
 						+ booking.belong_user +")'>Confirm Collection</button></td><td>"
 						+ seats_real_names + "</td><td>"
@@ -338,4 +341,35 @@ function update_mail_info() {
 				swal("Nice!", "You wrote: " + inputValue, "success");
 			});
 	});
+}
+
+function booking_filter(msg) {
+	if (msg == "mail") {
+		$("#filter_info").append(" 'With Mailing'");
+		$.each($("#confirm_table>tbody>tr"), function() {
+			var $this_tr = $(this);
+			$.post('include/get_user_info.php', {'user_id': $this_tr.attr("belong_user")}, function(user_info) {
+				user_info = JSON.parse(user_info);
+				user_info.collect = JSON.parse(user_info.collect);
+				if (user_info.collect.method == 0) {
+					$this_tr.remove();
+				}
+			});
+		});
+	}
+
+	if (msg == "not_collect") {
+		$("#filter_info").append(" 'Not_collect'");
+		$.each($("#confirm_table>tbody>tr"), function() {
+			var $this_tr = $(this);
+			$.post('include/get_user_info.php', {'user_id': $this_tr.attr("belong_user")}, function(user_info) {
+				user_info = JSON.parse(user_info);
+				user_info.additional_info = JSON.parse(user_info.additional_info);
+				console.log(user_info);
+				if (user_info.additional_info.collect_status !== undefined) {
+					$this_tr.remove();
+				}
+			});
+		});
+	}
 }
