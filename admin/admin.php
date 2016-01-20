@@ -146,7 +146,7 @@
             <button class="pure-button button-success" onclick="booking_filter('not_collect')">Not collected</button>
         </div>
         <div class="pure-u-1-4">
-            
+            <button class="pure-button button-warning" onclick="booking_filter('flower_shirt_sticker')">With flowers,stickers,shirts</button>
         </div>
         <div class="pure-u-1-4">
             

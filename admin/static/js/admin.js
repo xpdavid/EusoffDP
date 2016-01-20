@@ -365,8 +365,28 @@ function booking_filter(msg) {
 			$.post('include/get_user_info.php', {'user_id': $this_tr.attr("belong_user")}, function(user_info) {
 				user_info = JSON.parse(user_info);
 				user_info.additional_info = JSON.parse(user_info.additional_info);
-				console.log(user_info);
 				if (user_info.additional_info.collect_status !== undefined) {
+					$this_tr.remove();
+				}
+			});
+		});
+	}
+
+	if (msg == "flower_shirt_sticker") {
+		$("#filter_info").append(" 'Flower Shirt Sticker'");
+		$.each($("#confirm_table>tbody>tr"), function() {
+			var $this_tr = $(this);
+			$.post('include/get_user_info.php', {'user_id': $this_tr.attr("belong_user")}, function(user_info) {
+				user_info = JSON.parse(user_info);
+				items = JSON.parse(user_info.items);
+				var has = false;
+				for(item in items) {
+					if (items[item].quantity > 0) {
+						has = true;
+						break; 
+					}
+				}
+				if (!has) {
 					$this_tr.remove();
 				}
 			});
