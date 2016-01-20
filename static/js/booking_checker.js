@@ -229,8 +229,16 @@ function checkout() {
 
 	pre_data["total_price"] = compute_total_price();
 
-	$("#datas").val(JSON.stringify(pre_data));
-	$("#checkout_form").submit();
+	$("#checkout_button").attr("value", "Checking out, Please do not refresh!");
+
+	$("#checkout_button").attr({"disabled":"disabled"});
+
+	$("#checkout_button").css("background", "rgb(119, 119, 119)");
+
+	$.post('checkout.php', {data : JSON.stringify(pre_data)}, function(data) {
+  		window.location.href= data; 
+  	});
+	
 }
 
 // item object

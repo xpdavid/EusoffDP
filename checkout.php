@@ -1,7 +1,7 @@
 <?php
   // first check has data
   if ($_POST['data'] == "") {
-    header("location: ticket.php"); 
+    echo "booking_redirect.php?status=error"; 
   }
     require_once("include/db.php");
 
@@ -44,9 +44,9 @@
         send_confirm_email($data->name, $booking_id, $data->email);
 
 
-        header("location: booking_redirect.php?status=success&booking_id="  . $booking_id . "&total_price=" . $total_price);
+        echo "booking_redirect.php?status=success&booking_id="  . $booking_id . "&total_price=" . $total_price;
     } catch (Exception $e) {
-        header("location: booking_redirect.php?status=error");
+        echo "booking_redirect.php?status=error";
     }
 
     function verify_price($data) {

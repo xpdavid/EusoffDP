@@ -718,12 +718,8 @@
 
   <div class="_container">
     <h3 style="color:white">Total Price: S$<span id="total_price">0</span></h3>
-    <form action="checkout.php" id = "checkout_form" method="post">
       <input type="hidden" id="pre_data" value='<?php echo $_POST['data']; ?>' />
-      <input type="hidden" id="datas" value="" name="data"/>
-      <input type = "button" class="button-success pure-button" id="booking_button" value="Continue" style = "display:none;">
-      <input type = "button" class="button-success pure-button" id="booking_button" value="Checkout!" onclick="checkout()">
-    </form>
+      <input type = "button" class="button-success pure-button" value="Checkout!" onclick="checkout()" id="checkout_button">
   </div>
 
 <br>
