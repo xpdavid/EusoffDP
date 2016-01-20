@@ -400,7 +400,7 @@
 
         <div class="pure-g">
           <div class="pure-u-1-2">
-            <button class="pure-button" onclick="shirt_s.add()">Shirt (S)<br/>S$15.00</button>
+            <button class="pure-button" onclick="" disabled="disabled">Shirt (S)<br/>S$15.00</button>
           </div>
           <div class="pure-u-1-2">
             <button class="pure-button" onclick="shirt_m.add()">Shirt (M)<br/>S$15.00</button>
@@ -408,6 +408,7 @@
         </div>
         <div class="pure-g">
           <div class="pure-u-1-2">
+          <!--
             <div class="pure-u-1-8">
               <input type="button" value="-" id = "s_s_minus"/>
             </div>
@@ -417,6 +418,7 @@
             <div class="pure-u-1-8">
               <input type="button" value="+" id = "s_s_add"/>
             </div>
+          !--> Sold Out
           </div>
           <div class="pure-u-1-2">
             <div class="pure-u-1-8">
