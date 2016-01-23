@@ -104,15 +104,15 @@
 
             $("#delivered_to_performers").click(function(){
                 if ($("#delivered_to_performers").prop("checked")) {
-                  $($("#delivered_to_performers").parent().siblings()).fadeIn();
+                    $("#performers_name").parent().parent().fadeIn();
                     $("#performers_name").val(" ");
                 } else {
-                  $($("#delivered_to_performers").parent().siblings()).fadeOut();
+                    $("#performers_name").parent().parent().fadeOut();
                     $("#performers_name").val("No")
                 }
             });
 
-            $($("#delivered_to_performers").parent().siblings()).fadeOut(); // by defualt
+            $("#performers_name").parent().parent().fadeOut(); // by defualt
 
           });
   </script>
@@ -165,11 +165,14 @@
   <div class="_container">
   <h3 style="color:white; text-align:left;">Purchase of flower(s) for Charity: <small>Flowers may be collected at front of house or delivered to the performer(s)</small></h3>
    <div class="pure-g" style="font-size:17px">
-      <div class="pure-u-1-3" style="color:white;">
-        <input id="delivered_to_performers" type="checkbox"> I want to deliverer to the performer(s)
+      <div class="pure-u-2-3" style="color:white; text-align:left">
+        <input id="delivered_to_performers" type="checkbox"> I want to deliver to the performer(s) backstage
       </div>
-      <div class="pure-u-1-3" style="text-align:right; color:white;">Please Enter Performers name: &nbsp;&nbsp;</div>
-      <div class="pure-u-1-3">
+   </div>
+   <br>
+   <div  class="pure-g" style="font-size:17px;">
+      <div class="pure-u-1-3" style="text-align:left; color:white;">Please Enter Performers name, number of flowers, name of sender (e.g. Sara Tan - 1 rose - FROM Peter, Ben Lin - 1 sunflower - FROM Bob): &nbsp;&nbsp;</div>
+      <div class="pure-u-2-3">
         <input type="text" value="No" id = "performers_name" style="text-align:left;" />
       </div>
    </div>
