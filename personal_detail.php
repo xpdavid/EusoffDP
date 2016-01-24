@@ -82,7 +82,7 @@
 
             // to check whether we had exceed certain mailing date
             var today = new Date();
-            if (today.getTime() > 1453996800000) {// 29 Jan,2016
+            if (today.getTime() > 1453478400000) {// 23 Jan,2016
                 // we don't allow the email option
                 $("#collect_method option:last").remove();
             }
@@ -157,7 +157,7 @@
     		<div class="pure-u-1-3"><p>Ticket Collection Method</p> <span style="font-size:15px;text-decoration:underline;">Collection details will be emailed to you</span></div>
     		<div class="pure-u-2-3">
     			<select id="collect_method">
-              <option >Self-collection</option>
+              <option >Collect at Front of House</option>
               <option>Mailing</option>
           </select>
           <span id="collect_method_info" style="font-size:15px;text-decoration:underline;display:none">(Only in Singapore, for tickets purchased by 29 January)</span>
