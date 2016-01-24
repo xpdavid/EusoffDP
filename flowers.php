@@ -163,7 +163,7 @@
   </div>
 
   <div class="_container">
-  <h3 style="color:white; text-align:left;">Purchase of flower(s) for Charity: <small>Flowers may be collected at front of house or delivered to the performer(s)</small></h3>
+  <h3 style="color:white; text-align:left;">Purchase of flower(s): <small>Flowers may be collected at front of house or delivered to the performer(s)</small></h3>
    <div class="pure-g" style="font-size:17px">
       <div class="pure-u-2-3" style="color:white; text-align:left">
         <input id="delivered_to_performers" type="checkbox"> I want to deliver to the performer(s) backstage
