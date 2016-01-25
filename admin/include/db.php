@@ -26,9 +26,9 @@
 	function get_booking($status) { // when $status == -1, getting all seat
 		global $db_conn;
 
-		$sql = "SELECT * FROM " . BOOKING_TABLE . " WHERE status = ? ORDER BY booking_time DESC LIMIT 100";
+		$sql = "SELECT * FROM " . BOOKING_TABLE . " WHERE status = ? ORDER BY booking_time DESC";
 		if ($status == -1) {
-			$sql = "SELECT * FROM " . BOOKING_TABLE . " ORDER BY booking_time DESC LIMIT 100" ;
+			$sql = "SELECT * FROM " . BOOKING_TABLE . " ORDER BY booking_time DESC" ;
 		}
 
 		$stmt = $db_conn->prepare($sql);
