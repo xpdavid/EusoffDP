@@ -406,7 +406,7 @@
             <button class="pure-button" onclick="" disabled="disabled">Shirt (S)<br/>S$15.00</button>
           </div>
           <div class="pure-u-1-2">
-            <button class="pure-button" onclick="shirt_m.add()">Shirt (M)<br/>S$15.00</button>
+            <button class="pure-button" onclick="shirt_m.add()" disabled="disabled">Shirt (M)<br/>S$15.00</button>
           </div>
         </div>
         <div class="pure-g">
@@ -424,6 +424,7 @@
           !--> Sold Out
           </div>
           <div class="pure-u-1-2">
+            <!--
             <div class="pure-u-1-8">
               <input type="button" value="-" id = "s_m_minus"/>
             </div>
@@ -433,6 +434,7 @@
             <div class="pure-u-1-8">
               <input type="button" value="+" id = "s_m_add"/>
             </div>
+            !--> Sold Out
           </div>
         </div>
 
@@ -476,8 +478,8 @@
   </div>
   
  <div class="_container">
-  <h3 style="color:white; text-align:left;">Stickers</h3>
-    <div class="pure-g">
+  <h3 style="color:white; text-align:left;">Stickers (Sold Out)</h3>
+    <!--<div class="pure-g">
       <div class="pure-u-1-4">
         <img class="pure-img item" src="static/img/sticker1.jpg">
       </div>
@@ -587,7 +589,7 @@
         </div>
     </div>
 
-
+!-->
   </div>
 
 
