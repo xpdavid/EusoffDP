@@ -10,6 +10,18 @@
 		return $con;
 	}
 
+	function get_seat_status($seat_code) {
+		global $db_conn;
+
+		$stmt = $db_conn->prepare("SELECT status FROM " . SEAT_TABLE . " WHERE seat_code = ?");
+		$stmt->bind_param("s", $seat_code);
+		$stmt->execute();
+		$stmt->bind_result($status);
+		while($stmt->fetch()){
+		};
+		return $status;
+	}
+
 	function change_seat_status($seat_code, $status, $booking_id) {
 		global $db_conn;
 

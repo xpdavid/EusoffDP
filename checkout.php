@@ -12,6 +12,13 @@
             throw new Exception("Error Processing Request", 1);          
         }
 
+        // check the avalabile of the seat
+        foreach($data -> select_seat  as $seat_code => $value) {
+            if (get_seat_status($seat_code) == SEAT_STATUS_BOOKED) {
+                throw new Exception("Error Processing Request", 1); 
+            }
+        }
+
         // first create user
         $user_id = create_user($data->email, $data->name, json_encode($data->collect), json_encode($data->items), json_encode($data->additional_info));
 
