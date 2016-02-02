@@ -2,6 +2,7 @@
   // first check has data
   if ($_POST['data'] == "") {
     echo "booking_redirect.php?status=error"; 
+    die();
   }
     require_once("include/db.php");
 
@@ -9,13 +10,13 @@
         $data = json_decode($_POST['data']);
         // security check e.g whether the price is correct
         if (!verify_price($data)) {
-            throw new Exception("Error Processing Request", 1);          
+            die("booking_redirect.php?status=error");         
         }
 
         // check the avalabile of the seat
         foreach($data -> select_seat  as $seat_code => $value) {
             if (get_seat_status($seat_code) == SEAT_STATUS_BOOKED) {
-                throw new Exception("Error Processing Request", 1); 
+                die("booking_redirect.php?status=error");
             }
         }
 
